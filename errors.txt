@@ -1,0 +1,10 @@
+﻿I'm sorry, but errors were detected in your script. Please correct the
+errors listed below, and try again.
+
+
+File "game/script.rpy", line 62: expected ':' not found.
+    label placeholder;
+                     ^
+
+Ren'Py Version: Ren'Py 8.1.0.23051307
+Mon May 29 17:20:30 2023
