@@ -1,4 +1,4 @@
-screen evt_choose_char:
+screen evt_choose_path:
     hbox:
         xalign 0.5
         yalign 0.1
@@ -8,7 +8,19 @@ screen evt_choose_char:
             yalign 0.5
             padding (50,50)
             margin (0,0,10,0)
-            text "Choose your character."
+            text "Choose a path."
+
+screen evt_choose_town_path:
+    hbox:
+        xalign 0.5
+        yalign 0.1
+        frame:
+            background "#706969"
+            xalign 0.5
+            yalign 0.5
+            padding (50,50)
+            margin (0,0,10,0)
+            text "Choose a path."
 
 screen evt_choose_route: 
     hbox: 

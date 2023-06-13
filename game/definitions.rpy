@@ -8,18 +8,21 @@ init python:
 # Declare characters used by this game. The color argument colorizes the
 # name of the character.
 
-define drpsilicon =  Actor(Character("Dr. Psilicon", who_color="ffff00", what_color="#5e1f1f"), "Dr. Psilicon")
+define drpsilicon =  Actor(Character("Dr. Psilicon", who_color="ffff00", what_color="#8ac924"), "Dr. Psilicon")
 
 define gnome = Actor(Character("Gnome", who_color="#c00606"), "Gnome")
 
 define terrorlytz = Actor(Character("Terrorlytz", color="#460beb"), "Terrorlytz")
 
+define commercialcris = Actor(Character("Commercial Cris", color="#460beb"), "Terrorlytz")
+
+define mysteryspacewoman = Actor(Character("Mystery Space Woman", color="#460beb"), "Terrorlytz")
 
 
 # backgrounds 
-image bg_tavern  = "backgrounds/tavern/bg_tavern.png"
+#image bg_tavern  = "backgrounds/tavern/bg_tavern.png"
 
-image bg_choose_path = "bg_tavern"
+#image bg_choose_path = "bg_tavern"
 
 
 
