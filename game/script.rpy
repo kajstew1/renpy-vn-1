@@ -56,16 +56,20 @@ label start:
 label crash_fork:
     scene bg_fork with dissolve
     
-    # terrorlytz.c "Which way do you want to go?"
-    show screen evt_choose_path
+    # terrorlightz.c "Which way do you want to go?"
+    #show screen evt_choose_path
+   
     menu: 
-        "Left...":
+        "Choose a path."
+        "Left..." if (persistent.path_to_outskirts_taken == False or persistent.path_to_tavern_taken == False):
             #show screen evt_choose_path
             #call screen evt_choose_route with dissolve
+            $ persistent.path_to_town_taken = True
             jump path_town_fork
-        "Right...":
+        "Right..." if persistent.path_to_hut_taken == False:
             #show screen evt_choose_path 
             #call screen evt_choose_route with dissolve
+            $ persistent.path_to_hut_taken = True
             jump path_hut
         "No thank you!": 
             return
@@ -78,54 +82,57 @@ label path_hut:
     hide screen evt_choose_path
     scene bg_hut with dissolve
 
-    #show terrorlytztalking at left
+    show terrorlightz_talking at left
     
-    terrorlytz.c "Come inside to meet me."
+    terrorlightz.c "Come inside to meet me."
 
-    jump hut_meet_terrorlytz
+    jump hut_meet_terrorlightz
     
 
-label hut_meet_terrorlytz:
+label hut_meet_terrorlightz:
     scene bg_insidehut with dissolve
 
-    show terrorlytztalking at right
+    show terrorlightz_talking at right
     
-    terrorlytz.c "Some text meeting terrorlytz."
+    terrorlightz.c "Some text meeting terrorlightz."
 
     jump hut_forage
 
 label hut_forage:
     scene bg_hut with dissolve
 
-    show terrorlytztalking at right
+    show terrorlightz_talking at right
 
-    terrorlytz.c "Some text foraging."
+    terrorlightz.c "Some text foraging."
 
     jump hut_remember
 
 label hut_remember:
     scene bg_hut with dissolve
 
-    show terrorlytztalking at right
+    show terrorlightz_talking at right
 
-    terrorlytz.c "Some text remembering eating mushrooms on a way spaceship."
+    terrorlightz.c "Some text remembering eating mushrooms on a way spaceship."
 
-    return
+    jump game_over
 
 
 label path_town_fork:
     scene bg_town with dissolve
     
-    # terrorlytz.c "Which way do you want to go?"
-    show screen evt_choose_path
+    # terrorlightz.c "Which way do you want to go?"
+    #show screen evt_choose_path
     menu: 
-        "Town...":
-            #show screen evt_choose_path
+        "Choose a path."
+        "Town..." if persistent.path_to_outskirts_taken == False:
+            #show screen evt_cthoose_path
             #call screen evt_choose_route with dissolve
+            $ persistent.path_to_outskirts_taken = True
             jump path_town_outskirts
-        "Tavern...":
+        "Tavern..." if persistent.path_to_tavern_taken == False:
             #show screen evt_choose_path 
             #call screen evt_choose_route with dissolve
+            $ persistent.path_to_tavern_taken = True
             jump path_tavern
        
     
@@ -142,22 +149,22 @@ label path_town_outskirts:
     "Hi. Could I get directions?"
     #mysteryspacewoman.c "some text"
 
-    return
+    jump town_alley
 
 
 label town_alley:
     scene bg_townalley with dissolve
 
-    show terrorlytztalking at right
+    show terrorlightztalking at right
 
-    terrorlytz.c "Following a girl to a dark alley."
+    terrorlightz.c "Following a girl to a dark alley."
 
-    return
-
-
+    jump game_over
 
 
-label path_tavern_alt:
+
+
+label path_tavern:
     #show bg_tavern with dissolve
     hide screen evt_choose_path
 
@@ -167,7 +174,7 @@ label path_tavern_alt:
 
 
 
-label path_tavern:
+label path_tavern_alt:
     # to unlock 3d perspectives
     camera:
         perspective True
@@ -199,7 +206,16 @@ label path_tavern:
 
     return
 
+label game_over:
+    menu: 
+        "You have died.  Would you like to restart?"
+        "Yes":
+            jump start
+        "No":
+            return
 
+label placeholder:
+    jump start
 
 
 label variable1: 

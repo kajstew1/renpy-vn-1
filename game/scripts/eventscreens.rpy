@@ -1,7 +1,7 @@
 screen evt_choose_path:
     hbox:
         xalign 0.5
-        yalign 0.1
+        yalign 0.9
         frame:
             background "#706969"
             xalign 0.5
