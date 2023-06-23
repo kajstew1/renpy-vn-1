@@ -82,7 +82,7 @@ cache/
 # Editors.
 /jedit
 /atom
-/vscode
+/.vscode
 
 # Generated source.
 /renpy/vc_version.py

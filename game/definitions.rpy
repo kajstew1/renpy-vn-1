@@ -10,13 +10,13 @@ init python:
 
 define drpsilicon =  Actor(Character("Dr. Psilicon", who_color="ffff00", what_color="#8ac924"), "Dr. Psilicon")
 
-define gnome = Actor(Character("Gnome", who_color="#c00606"), "Gnome")
+#define gnome = Actor(Character("Gnome", who_color="#c00606"), "Gnome")
 
-define terrorlytz = Actor(Character("Terrorlytz", color="#460beb"), "Terrorlytz")
+define terrorlightz = Actor(Character("Terrorlightz", color="#460beb"), "Terrorlightz")
 
-define commercialcris = Actor(Character("Commercial Cris", color="#460beb"), "Terrorlytz")
+define commercialcris = Actor(Character("Commercial Cris", color="#460beb"), "Commercial Cris")
 
-define mysteryspacewoman = Actor(Character("Mystery Space Woman", color="#460beb"), "Terrorlytz")
+define mysteryspacewoman = Actor(Character("Mystery Space Woman", color="#460beb"), "Mystery Space Woman")
 
 
 # backgrounds 
@@ -25,13 +25,24 @@ define mysteryspacewoman = Actor(Character("Mystery Space Woman", color="#460beb
 #image bg_choose_path = "bg_tavern"
 
 
-
+# images
 image drp casual neutral = "drp_casual_neutral.png"
 image drp casual talking = "drp_casual_talking.png"
-image gnome casual neutral = "gnome_casual_neutral.png"
+
+image terrorlightz neutral = "terrorlightz_neutral.png"
+image terrorlightz talking = "terrorlightz_talking.png"
+#image gnome casual neutral = "gnome_casual_neutral.png"
+
+
+
+# variables
+default persistent.path_to_hut_taken = False
+default persistent.path_to_town_taken = False
+default persistent.path_to_outskirts_taken = False
+default persistent.path_to_tavern_taken = False
+
 
 image mytext = ParameterizedText(style="something")
-
 style something:
     outlines [(3, "#000", 0, 0 )]
     xalign 0.5
