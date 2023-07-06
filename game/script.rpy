@@ -61,12 +61,14 @@ label crash_fork:
    
     menu: 
         "Choose a path."
-        "Left..." if (persistent.path_to_outskirts_taken == False or persistent.path_to_tavern_taken == False):
+        "Left...":
+            # if (persistent.path_to_outskirts_taken == False or persistent.path_to_tavern_taken == False):
             #show screen evt_choose_path
             #call screen evt_choose_route with dissolve
             $ persistent.path_to_town_taken = True
             jump path_town_fork
-        "Right..." if persistent.path_to_hut_taken == False:
+        "Right...":
+            #if persistent.path_to_hut_taken == False:
             #show screen evt_choose_path 
             #call screen evt_choose_route with dissolve
             $ persistent.path_to_hut_taken = True
@@ -124,12 +126,14 @@ label path_town_fork:
     #show screen evt_choose_path
     menu: 
         "Choose a path."
-        "Town..." if persistent.path_to_outskirts_taken == False:
+        "Town...": 
+            #if persistent.path_to_outskirts_taken == False:
             #show screen evt_cthoose_path
             #call screen evt_choose_route with dissolve
             $ persistent.path_to_outskirts_taken = True
             jump path_town_outskirts
-        "Tavern..." if persistent.path_to_tavern_taken == False:
+        "Tavern...":
+            #if persistent.path_to_tavern_taken == False:
             #show screen evt_choose_path 
             #call screen evt_choose_route with dissolve
             $ persistent.path_to_tavern_taken = True
@@ -144,18 +148,17 @@ label path_town_outskirts:
     hide screen evt_choose_path
     scene bg_townoutskirts with dissolve
     
-    show mysteryspacewoman at left
+    show mysteryspacewoman_talking at left
 
-    "Hi. Could I get directions?"
-    #mysteryspacewoman.c "some text"
-
+    mysteryspacewoman.c "Hi. Could I get directions?"
+    
     jump town_alley
 
 
 label town_alley:
     scene bg_townalley with dissolve
 
-    show terrorlightztalking at right
+    show terrorlightz_talking at right
 
     terrorlightz.c "Following a girl to a dark alley."
 
@@ -213,6 +216,11 @@ label game_over:
             jump start
         "No":
             return
+
+label reset:
+    $ persistent._clear()
+    jump start
+
 
 label placeholder:
     jump start

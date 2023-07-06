@@ -205,13 +205,29 @@ style input:
 ##
 ## https://www.renpy.org/doc/html/screen_special.html#choice
 
-screen choice(items):
+#screen choice(items):
+#    style_prefix "choice"
+#    vbox:
+#        for i in items:
+#           textbutton i.caption action i.action
+
+screen choice(items): 
     style_prefix "choice"
+    vbox: 
+        for i in items: 
+            if i.chosen: 
+                textbutton i.caption style "choice_chosen_button" action i.action 
+            else: 
+                textbutton i.caption action i.action
 
-    vbox:
-        for i in items:
-            textbutton i.caption action i.action
 
+
+style choice_chosen_button is choice_button:
+    color "#9999cc"
+    background "#49495c"
+    
+style choice_chosen_button_text is choice_button_text:
+    color "#9999cc"
 
 style choice_vbox is vbox
 style choice_button is button
@@ -229,6 +245,8 @@ style choice_button is default:
 
 style choice_button_text is default:
     properties gui.button_text_properties("choice_button")
+
+
 
 
 ## Quick Menu screen ###########################################################
@@ -298,6 +316,7 @@ screen navigation():
         if main_menu:
 
             textbutton _("Start") action Start()
+            textbutton "Reset" action ShowMenu("reset")
 
         else:
 
@@ -1117,6 +1136,27 @@ style help_label_text:
 ## Additional screens
 ################################################################################
 
+screen reset:
+    tag menu
+   
+    #zorder 1
+    modal True
+    use navigation
+    $persistent._clear()
+    #textbutton _("return back") action Return() 
+    #frame  ypadding 10  xpadding 10 xalign 0 yalign 0 xfill True yfill True:
+    #    vbox xalign 0 yalign 0:               
+    #        text u"{b}Extra story{/b}" xpos 0.5 xanchor 0.5 yanchor 0.5 ypos 0.5 yoffset 15
+            #side "c r b" spacing 5:
+            #    area (10, 25, 780, 480)#(xpos, ypos, width, height).                        
+            #    viewport id "vp_extra_story": 
+            #        mousewheel True
+            #        draggable True
+            #        has vbox : 
+            #            text u"And this text you have to replace with your extra story" 
+            #vbar value YScrollValue("vp_extra_story")       
+            #textbutton _("return back") action Return()  xpos 0.5   xanchor 0.5  yoffset 35    
+            
 
 ## Confirm screen ##############################################################
 ##

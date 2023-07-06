@@ -33,6 +33,11 @@ image terrorlightz neutral = "terrorlightz_neutral.png"
 image terrorlightz talking = "terrorlightz_talking.png"
 #image gnome casual neutral = "gnome_casual_neutral.png"
 
+image mysteryspacewoman neutral = "msw_neutral.png"
+image mysteryspacewoman talking = "msw_talking.png"
+
+image commercialcris neutral = "cc_neutral.png"
+image commercialcris talking = "cc_talking.png"
 
 
 # variables
@@ -41,6 +46,8 @@ default persistent.path_to_town_taken = False
 default persistent.path_to_outskirts_taken = False
 default persistent.path_to_tavern_taken = False
 
+# to disable chosen paths
+#define config.menu_include_disabled = True
 
 image mytext = ParameterizedText(style="something")
 style something:
