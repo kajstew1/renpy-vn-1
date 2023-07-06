@@ -213,6 +213,7 @@ style input:
 
 screen choice(items): 
     style_prefix "choice"
+    
     vbox: 
         for i in items: 
             if i.chosen: 
@@ -225,6 +226,7 @@ screen choice(items):
 style choice_chosen_button is choice_button:
     color "#9999cc"
     background "#49495c"
+    hover_background "#00a"
     
 style choice_chosen_button_text is choice_button_text:
     color "#9999cc"
@@ -1142,8 +1144,10 @@ screen reset:
     #zorder 1
     modal True
     use navigation
-    $persistent._clear()
-    #textbutton _("return back") action Return() 
+    $ persistent._clear(progress=False)
+    $ persistent.__dict__['_chosen'] = {}
+
+    textbutton _("return back") action Return() 
     #frame  ypadding 10  xpadding 10 xalign 0 yalign 0 xfill True yfill True:
     #    vbox xalign 0 yalign 0:               
     #        text u"{b}Extra story{/b}" xpos 0.5 xanchor 0.5 yanchor 0.5 ypos 0.5 yoffset 15

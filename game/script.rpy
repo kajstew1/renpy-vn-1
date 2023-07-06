@@ -58,7 +58,7 @@ label crash_fork:
     
     # terrorlightz.c "Which way do you want to go?"
     #show screen evt_choose_path
-   
+    
     menu: 
         "Choose a path."
         "Left...":

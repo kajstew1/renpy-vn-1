@@ -4,6 +4,7 @@ init python:
             self.c = character
             self.name = name
 
+    persistent.__dict__['_chosen'] = {}
 
 # Declare characters used by this game. The color argument colorizes the
 # name of the character.
