@@ -318,7 +318,8 @@ screen navigation():
         if main_menu:
 
             textbutton _("Start") action Start()
-            textbutton "Reset" action ShowMenu("reset")
+
+            #textbutton "Reset" action ShowMenu("reset")
 
         else:
 
@@ -1144,7 +1145,7 @@ screen reset:
     #zorder 1
     modal True
     use navigation
-    $ persistent._clear(progress=False)
+    #$ persistent._clear(progress=False)
     $ persistent.__dict__['_chosen'] = {}
 
     textbutton _("return back") action Return() 
