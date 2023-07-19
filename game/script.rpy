@@ -319,8 +319,8 @@ label path_tavern:
     hide screen evt_choose_path
 
     call screen tavern_nav
-    
-    jump tavern_drink
+    mysteryspacewoman.c "Hi. Could I get directions?"
+    jump path_tavern_drink
 
 
 
@@ -369,9 +369,28 @@ label reset:
     jump start
 
 
-label placeholder:
-    jump start
+label path_tavern_bin:
+    $ seen_labels.add("tavern_bin")
+    "Tavern bin reporting"
+    jump path_town_fork
 
+label path_tavern_heater:
+    $ seen_labels.add("tavern_heater")
+    "Tavern heater reporting"
+    jump path_town_fork
+    
+label path_tavern_patron:
+    $ seen_labels.add("tavern_patron")
+    "Tavern patron reporting"
+    jump path_town_fork
+
+label path_tavern_sign:
+    $ seen_labels.add("tavern_sign")
+    "Tavern sign reporting"
+    jump path_town_fork
+
+label path_tavern_drink:
+    jump path_town_fork
 
 label variable1: 
     hide screen evt_choose_char

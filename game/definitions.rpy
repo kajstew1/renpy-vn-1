@@ -5,6 +5,7 @@ init python:
             self.name = name
 
     #persistent.__dict__['_chosen'] = {}
+    seen_labels = Set([])
 
 # Declare characters used by this game. The color argument colorizes the
 # name of the character.

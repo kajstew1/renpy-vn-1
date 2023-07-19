@@ -44,25 +44,32 @@ screen tavern_nav:
     
     imagebutton auto "tavern_bin_%s":
         focus_mask True  # in case any transparent pixels in image mask in the image box they are clickable
-        hovered SetVariable("screen_tooltip", "Bartender")
+        hovered SetVariable("screen_tooltip", "Bin")
         unhovered SetVariable("screen_tooltip", "")
-        action Jump ("placeholder")
+        action If ("tavern_bin" in seen_labels, false=[Hide(None), None, Jump ("path_tavern_bin")])
         
 
     imagebutton auto "tavern_heater_%s":
         focus_mask True  # in case any transparent pixels in image mask in the image box they are clickable
-        hovered SetVariable("screen_tooltip", "Patron")
+        hovered SetVariable("screen_tooltip", "Heater")
         unhovered SetVariable("screen_tooltip", "")
-        action Jump ("placeholder")
+        action If ("tavern_heater" in seen_labels, false=[Hide(None), None, Jump ("path_tavern_heater")])
 
     imagebutton auto "tavern_patron_%s":
         focus_mask True  # in case any transparent pixels in image mask in the image box they are clickable
         hovered SetVariable("screen_tooltip", "Patron")
         unhovered SetVariable("screen_tooltip", "")
-        action Jump ("placeholder")
+        action If ("tavern_patron" in seen_labels, false=[Hide(None), None, Jump ("path_tavern_patron")])
 
     imagebutton auto "tavern_sign_%s":
         focus_mask True  # in case any transparent pixels in image mask in the image box they are clickable
-        hovered SetVariable("screen_tooltip", "Patron")
+        hovered SetVariable("screen_tooltip", "Sign")
         unhovered SetVariable("screen_tooltip", "")
-        action Jump ("placeholder")
+        action If ("tavern_sign" in seen_labels, false=[Hide(None), None, Jump ("path_tavern_sign")])
+
+    frame:
+        xpadding 50
+        ypadding 5
+        xalign 0.1
+        yalign 0.1
+        textbutton "Exit" action Jump("start")
