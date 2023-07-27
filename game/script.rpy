@@ -189,6 +189,9 @@ After another half an hour, you came across a change in scenery.
     jump crash_fork
 
 
+
+
+
 label crash_fork:
     scene bg_fork with dissolve
     
@@ -202,7 +205,7 @@ What once was a temperate, lush, green landscape, turned into a dry, sandy, moun
 
     $LongNVLText(narrator, (
     '''\
-You had a feeling that there was a right or wrong answer to your choice from here. You had better choose the right one or fear the repercussions
+You had a feeling that there was a right or wrong answer to your choice from here. You had better choose the right one or fear the repercussions.
     '''
     ))
 
@@ -226,17 +229,163 @@ You had a feeling that there was a right or wrong answer to your choice from her
     
     return
 
+
+
+
 label path_hut:
     #show bg_tavern with dissolve
     hide screen evt_choose_path
     scene bg_hut with dissolve
 
-    show terrorlightz_talking at left
+    #show terrorlightz_talking at left
     
-    terrorlightz.c "Come inside to meet me."
+    #terrorlightz.c "Come inside to meet me."
+    $LongNVLText(narrator, (
+    '''\
+You stood transfixed at the shadowed silhouette of the strange moon behind the cover of the sharp mountain peaks. You feel it calling to you, moving your feet faster than your mind could keep up. 
+    '''
+    ))
 
-    jump hut_meet_terrorlightz
+    $LongNVLText(narrator, (
+    '''\
+Without much of a voluntary choice, you make your way down the sandy, gravel path. 
+    '''
+    ))
+
+    $LongNVLText(narrator, (
+    '''\
+Hairs prickle your back as you embrace the dark landscape. Something was following you. 
+    '''
+    ))
+
+    $LongNVLText(narrator, (
+    '''\
+You are not a soldier. You aren’t a survivalist. You are a wounded captain without a weapon or a ship. If something was following you, you are more than likely dead. 
+    '''
+    ))
+
+    $LongNVLText(narrator, (
+    '''\
+You feel a cold sweat forming at your brow as you force your feet to move forward. Against all of your base instincts, you don’t look behind you. If you looked, you would accept the fear that threatened to spill out of your insides. 
+    '''
+    ))
+
+    $LongNVLText(narrator, (
+    '''\
+“I should’ve chosen the safer path,” you curse as you force yourself to come up with an escape plan. 
+    '''
+    ))
+
+    $LongNVLText(narrator, (
+    '''\
+Over the thunderous beat of your heart, you hear soft footsteps coming towards you. Whatever was following you was doing so very slowly and very calmly. It must be a big, confident creature. You still have time. You could use it to your advantage that they want to play with their food. 
+    '''
+    ))
+
+    $LongNVLText(narrator, (
+    '''\
+About 10 meters ahead of you, you see that the jagged mountains converge, creating what could only be described as a small tunnel. If you were to make it through the narrow gap before the creature catches up to you, you could possibly delay your imminent death.
+    '''
+    ))
+
+    $LongNVLText(narrator, (
+    '''\
+You clutch onto your wounded stomach with a small prayer that your thrown together plan wouldn’t reopen the cut and begin your mad dash to the ominous tunnel. 
+    '''
+    ))
+
+    $LongNVLText(narrator, (
+    '''\
+You wish you had trained harder when you had the chance. You barely made the cutoff for the academy with your running scores. Not for lack of talent, but for a lack of effort. 
+    '''
+    ))
+
+    $LongNVLText(narrator, (
+    '''\
+You curse your past self as you choke on your ragged breaths, involuntarily running in a zigzag pattern as you spare yourself a few glances behind you. With the lack of regular exercise, your feet threaten to trip on themselves at any moment as your hands desperately search for any sort of leverage point to pull yourself quicker to your destination. 
+    '''
+    ))
+
+    $LongNVLText(narrator, (
+    '''\
+The air behind you begins to get warmer as you realize you are losing this race. 
+    '''
+    ))
+
+    $LongNVLText(narrator, (
+    '''\
+“Only a few more feet!” You shout to convince yourself you still had a chance. 
+    '''
+    ))
+
+    $LongNVLText(narrator, (
+    '''\
+You feel a presence looming over you with every step now. Matching you step by step. You aren’t going to make it, it’s faster. 
+    '''
+    ))
+
+    $LongNVLText(narrator, (
+    '''\
+You scan the area in a desperate attempt to come up with another strategy, you could almost hold onto the entrance to the tunnel now. You had to do something. 
+    '''
+    ))
+
+    $LongNVLText(narrator, (
+    '''\
+You sharply turn left and then double back. Claws scraped against the mountain rock. You didn’t look back, you just threw your body into the tunnel’s entrance. 
+    '''
+    ))
+
+    $LongNVLText(narrator, (
+    '''\
+You hear screams coming outside of the narrow gap. You made it. You were safe! You could barely believe it. 
+    '''
+    ))
+
+    $LongNVLText(narrator, (
+    '''\
+“Go find food elsewhere, you confounded beast!” You roar, the sound echoing off of the rocky walls. You only feel a little curious to know what kind of creature you had just barely outran, but not enough to peer through the opening to find out. 
+    '''
+    ))
+
+    jump cave
+    #jump hut_meet_terrorlightz
+
+
+label cave:
+    scene bg_insidehut with dissolve
+
+    #show terrorlightz_talking at right
     
+    #terrorlightz.c "Some text meeting terrorlightz."
+
+    $LongNVLText(narrator, (
+    '''\
+After taking a few minutes to properly settle your heartbeat, you blindly make your way down the pitch black tunnel. You use the only tool available to you to navigate–your sense of touch. You feel your way forward with your hands, taking much longer than you had the patience for. Out of the oven, into the fire they say. 
+    '''
+    ))
+
+    $LongNVLText(narrator, (
+    '''\
+It had taken a half an hour of blind exploration until you found a light source to follow. You barely believe it when you realize that the light might actually lead you to somewhere safe. 
+    '''
+    ))
+
+    $LongNVLText(narrator, (
+    '''\
+You examine the exit of the tunnel. You see grass and weeds dotting the ground in a pleasant array, a warm welcome from the horrific desert landscape you had just escaped from. 
+    '''
+    ))
+
+    $LongNVLText(narrator, (
+    '''\
+Not surprisingly, your wound had opened back up from your harrowing escape. You really hope that you find some sort of town or civilization soon, but even if you couldn’t find help, you feel secure that you had enough excitement for one day. 
+It couldn’t get worse, could it? 
+    '''
+    ))
+    jump hut_forage
+
+
 
 label hut_meet_terrorlightz:
     scene bg_insidehut with dissolve
@@ -271,6 +420,90 @@ label path_town_fork:
     
     # terrorlightz.c "Which way do you want to go?"
     #show screen evt_choose_path
+    $LongNVLText(narrator, (
+    '''\
+Your eyes land on the seemingly safer option. The two suns and neighboring planets were hung in the sky like ornaments on a Christmas tree, brightly lighting the path in front of you.  
+    '''
+    ))
+
+    $LongNVLText(narrator, (
+    '''\
+The right path scared you. It called to you like a siren in turbulent waters, inviting you in with a sweet song. You try to stand your ground in fear of being pulled into the imposing moon’s imaginary gravitational pull. 
+    '''
+    ))
+
+    $LongNVLText(narrator, (
+    '''\
+Gritting your teeth, you tear your attention away from the dark path. Nothing good ever comes from embracing your inhibitions and dismissing your gut instincts. 
+    '''
+    ))
+
+    $LongNVLText(narrator, (
+    '''\
+With more effort than you thought was necessary, you force your feet to move towards the left path. 
+    '''
+    ))
+
+    $LongNVLText(narrator, (
+    '''\
+After walking a meter or two past the fork in the road, you breathe a sigh of relief. The dark spell the large moon had on you finally dissipated. You suddenly feel more yourself again. 
+    '''
+    ))
+
+    $LongNVLText(narrator, (
+    '''\
+Using the array of planets and suns above you as an anchoring point, you continue your journey, even when it feels as though it will never end. 
+    '''
+    ))
+
+    $LongNVLText(narrator, (
+    '''\
+“I really wish I knew how long a day lasts on this god-forsaken planet,” you say to yourself. 
+    '''
+    ))
+
+    $LongNVLText(narrator, (
+    '''\
+Every time you feel like you are making decent progress, the unchanging environment around you reminds you that you aren’t in control of this journey. With no map, no navigation equipment, you only had yourself to reassure you that you are indeed on your way to finding some sort of resources or help. If nothing else, you at least had enough mental fortitude to do that. 
+    '''
+    ))
+
+    $LongNVLText(narrator, (
+    '''\
+To pass the time, your eyes scan the path for signs of footsteps–either friendly or unfriendly. Disconcertingly, you find neither. The wind hasn’t been that strong, so if someone had passed within the last 24 hours, you should be able to identify at least some remindents or indentations in the sand. But sadly, there was nothing. 
+    '''
+    ))
+
+    $LongNVLText(narrator, (
+    '''\
+Well your situation could be worse, you could be running away from some sort of monster, so there’s at least some sort of silver lining. 
+    '''
+    ))
+
+    $LongNVLText(narrator, (
+    '''\
+After a few hours of exploring an endless desert path, you begin to feel weak. Your coughing fits–once rare–are now almost nonstop. In a way to deter the incoming madness from your frail constitution, you start to connect the blood spatters running across your palm for some sort of comfort. 
+    '''
+    ))
+
+    $LongNVLText(narrator, (
+    '''\
+You feel the chill in the air as darkness descends upon the landscape. This day had felt neverending. You feel placated in the fact that the days here didn’t last forever. 
+    '''
+    ))
+
+    $LongNVLText(narrator, (
+    '''\
+Your vision begins to blur and your body feels immovable. Your face droops first, before your eyelids follow in suit. Soon you find yourself collapsed on the ground, surrounded by nothing but the night sky. Before you lose consciousness, you see in your periphery, the imposing moon that had taunted you earlier today. 
+    '''
+    ))
+
+    $LongNVLText(narrator, (
+    '''\
+ “All well that ends well I suppose.”
+    '''
+    ))
+    
     menu: 
         "Choose a path."
         "Town...": 

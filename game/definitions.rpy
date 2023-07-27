@@ -7,6 +7,17 @@ init python:
     #persistent.__dict__['_chosen'] = {}
     seen_labels = Set([])
 
+    def _shake_function(trans, st, at, dt=.5, dist=64):
+        #dt is duration timebase, dist is maximum shake distance in pixel
+        if st <= dt: 
+            trans.xoffset = int((dt-st)*dist*(.5-renpy.random.random())*2)
+            trans.yoffset = int((dt-st)*dist*(.5-renpy.random.random())*2)
+            return 1.0/60
+        else:
+            return None
+
+    
+
 # Declare characters used by this game. The color argument colorizes the
 # name of the character.
 
