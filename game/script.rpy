@@ -235,7 +235,7 @@ You had a feeling that there was a right or wrong answer to your choice from her
 label path_hut:
     #show bg_tavern with dissolve
     hide screen evt_choose_path
-    scene bg_hut with dissolve
+    scene bg_rightpath with dissolve
 
     #show terrorlightz_talking at left
     
@@ -353,7 +353,7 @@ You hear screams coming outside of the narrow gap. You made it. You were safe! Y
 
 
 label cave:
-    scene bg_insidehut with dissolve
+    scene bg_insidecave with dissolve
 
     #show terrorlightz_talking at right
     
@@ -370,6 +370,13 @@ After taking a few minutes to properly settle your heartbeat, you blindly make y
 It had taken a half an hour of blind exploration until you found a light source to follow. You barely believe it when you realize that the light might actually lead you to somewhere safe. 
     '''
     ))
+
+    jump cave_light
+
+
+
+label cave_light:
+    scene bg_lightinsidecave with dissolve
 
     $LongNVLText(narrator, (
     '''\
@@ -416,7 +423,7 @@ label hut_remember:
 
 
 label path_town_fork:
-    scene bg_town with dissolve
+    scene bg_leftpath with dissolve
     
     # terrorlightz.c "Which way do you want to go?"
     #show screen evt_choose_path
