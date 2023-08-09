@@ -216,13 +216,13 @@ You had a feeling that there was a right or wrong answer to your choice from her
             #show screen evt_choose_path
             #call screen evt_choose_route with dissolve
             $ persistent.path_to_town_taken = True
-            jump path_town_fork
+            jump path_left_path_decision
         "Right...":
             #if persistent.path_to_hut_taken == False:
             #show screen evt_choose_path 
             #call screen evt_choose_route with dissolve
             $ persistent.path_to_hut_taken = True
-            jump path_hut
+            jump path_right_path
         "No thank you!": 
             return
     
@@ -232,16 +232,14 @@ You had a feeling that there was a right or wrong answer to your choice from her
 
 
 
-label path_hut:
+label path_right_path:
     #show bg_tavern with dissolve
     hide screen evt_choose_path
-    scene bg_rightpath with dissolve
+    scene bg_fork with dissolve
 
-    #show terrorlightz_talking at left
-    
-    #terrorlightz.c "Come inside to meet me."
     $LongNVLText(narrator, (
     '''\
+!!!!Correct image?!!!!
 You stood transfixed at the shadowed silhouette of the strange moon behind the cover of the sharp mountain peaks. You feel it calling to you, moving your feet faster than your mind could keep up. 
     '''
     ))
@@ -251,9 +249,18 @@ You stood transfixed at the shadowed silhouette of the strange moon behind the c
 Without much of a voluntary choice, you make your way down the sandy, gravel path. 
     '''
     ))
+    jump path_right_path_1
+
+
+label path_right_path_1:
+    #show bg_tavern with dissolve
+
+    scene bg_rightpath with dissolve
+
 
     $LongNVLText(narrator, (
     '''\
+!!!!Correct image?!!!!
 Hairs prickle your back as you embrace the dark landscape. Something was following you. 
     '''
     ))
@@ -272,6 +279,7 @@ You feel a cold sweat forming at your brow as you force your feet to move forwar
 
     $LongNVLText(narrator, (
     '''\
+(Effect - zoom left to the right (In Work))
 “I should’ve chosen the safer path,” you curse as you force yourself to come up with an escape plan. 
     '''
     ))
@@ -290,6 +298,7 @@ About 10 meters ahead of you, you see that the jagged mountains converge, creati
 
     $LongNVLText(narrator, (
     '''\
+(Effect - running, shake up and down (In Work)
 You clutch onto your wounded stomach with a small prayer that your thrown together plan wouldn’t reopen the cut and begin your mad dash to the ominous tunnel. 
     '''
     ))
@@ -348,11 +357,15 @@ You hear screams coming outside of the narrow gap. You made it. You were safe! Y
     '''
     ))
 
-    jump cave
+    jump path_cave
     #jump hut_meet_terrorlightz
 
 
-label cave:
+
+
+
+
+label path_cave:
     scene bg_insidecave with dissolve
 
     #show terrorlightz_talking at right
@@ -371,11 +384,11 @@ It had taken a half an hour of blind exploration until you found a light source 
     '''
     ))
 
-    jump cave_light
+    jump path_cave_light
 
 
 
-label cave_light:
+label path_cave_light:
     scene bg_lightinsidecave with dissolve
 
     $LongNVLText(narrator, (
@@ -390,20 +403,133 @@ Not surprisingly, your wound had opened back up from your harrowing escape. You 
 It couldn’t get worse, could it? 
     '''
     ))
-    jump hut_forage
+    jump path_hut
 
 
 
-label hut_meet_terrorlightz:
+    
+
+
+label path_hut:
+    scene bg_hut with dissolve
+
+    $LongNVLText(narrator, (
+    '''\
+You weakly limp towards the greenery in front of you. You find it to be a blessed respite from the dark, cold cavernous tunnel you had just escaped from. If your hands weren’t currently occupied by holding together your open stomach, you would’ve pinched yourself. 
+    '''
+    ))
+
+    $LongNVLText(narrator, (
+    '''\
+You take in the pleasant view as the soft rays of daylight descend across the grass and shallow water. 
+    '''
+    ))
+
+    $LongNVLText(narrator, (
+    '''\
+You glance at your reflection in the water beneath you, fighting every urge to drink from it. You may not be a survivalist by trade, but you certainly know the dangers of consuming still water–whether it be from an alien planet or not.  
+    '''
+    ))
+
+    $LongNVLText(narrator, (
+    '''\
+Drawing your eyes away from the shallow water, you peer towards the central mass in front of you. You aren’t sure if it is from the blood loss or pure exhaustion, but you almost mistook the small hut for a meaningless pile of branches and moss. You rub your eyes with your free hand, fearing it as a mirage. 
+    '''
+    ))
+
+    $LongNVLText(narrator, (
+    '''\
+You follow the narrow path towards the hut with trepidation–unsure if the worst case scenario is it being occupied or unoccupied. From the outside, you peer through the window covered by a holey, dirty red curtain, looking for any signs of movement. 
+    '''
+    ))
+
+    $LongNVLText(narrator, (
+    '''\
+Once you feel certain that no one is inside, you slowly and carefully pull the curtain aside to get a better look. 
+    '''
+    ))
+
+    $LongNVLText(narrator, (
+    '''\
+“It is as dilapidated inside as it is outside,” you mutter as yourr eyes scan the inside, noticing the rotted wood as it had caved in from persistent pooling water and miscellaneous junk littered all around. 
+    '''
+    ))
+
+    $LongNVLText(narrator, (
+    '''\
+Curiously, the only place left–for the most part–untouched by the destruction was the dining room table, located noticeably in the center of the shelter. Whoever last used this hut had obviously used it for a singular activity. 
+    '''
+    ))
+
+    $LongNVLText(narrator, (
+    '''\
+Shelter was shelter though. At least you wouldn’t be sleeping outside tonight. 
+    '''
+    ))
+
+    $LongNVLText(narrator, (
+    '''\
+You walk towards the open entryway and start your search for supplies while you still have some energy left. Luckily, you are able to find some scraps of worn cloth in one of the junk piles, which you use to tend to your stomach wound. 
+    '''
+    ))
+
+    $LongNVLText(narrator, (
+    '''\
+You are finally starting to feel better about your situation. You had shelter, a–mostly–clean wound, and some half rotting food to eat. As you drift off to sleep you believe that maybe your situation isn’t so bad afterall? 
+    '''
+    ))
+
+    jump path_hut_meet_terrorlightz
+
+
+label path_hut_meet_terrorlightz:
     scene bg_insidehut with dissolve
+
+    $LongNVLText(narrator, (
+    '''\
+Your long overdue sleep is over soon when you hear a deep, guttural voice pierce your ears.“My, my, my. What is this?” 
+    '''
+    ))
+
+    $LongNVLText(narrator, (
+    '''\
+Your eyes jerk open. In front of you stands a figure that appears to be a…person? 
+   '''
+    ))
+
+    $LongNVLText(narrator, (
+    '''\
+“W-who…what are you?” Your voice shakes as you retreat into the corner of your makeshift bed. 
+   '''
+    ))
 
     show terrorlightz_talking at right
     
-    terrorlightz.c "Some text meeting terrorlightz."
+    $LongNVLText(terrorlightz.c, (
+    '''\
+“Now, now… Is that any way to talk to your gracious host?” You feel the vibrations from his voice coarse through your body. Unexplainably, the pale purple-skinned stranger stands before you, wearing a dark teal and amethyst colored pinstripe suit.
+    '''
+    ))
 
-    jump hut_forage
+    $LongNVLText(terrorlightz.c, (
+    '''\
+His glare produces a hypnotic effect that prevents you from moving your body. Meeting his gaze, you notice the complete lack of pupils. Instead you see an optical illusion. His eyes were made up of tight spirals, which move inexplicably in a circular fashion. To further punctuate his ominous presence, smoke continuously emanates out from the corners of his almond eyes. 
+    '''
+    ))
 
-label hut_forage:
+    $LongNVLText(terrorlightz.c, (
+    '''\
+“I-I’m sorry, I didn’t know this space was occupied!” You 
+
+   '''
+    ))
+
+
+    jump path_hut_forage
+
+
+
+label path_hut_forage:
     scene bg_hut with dissolve
 
     show terrorlightz_talking at right
@@ -422,25 +548,29 @@ label hut_remember:
     jump game_over
 
 
-label path_town_fork:
-    scene bg_leftpath with dissolve
-    
-    # terrorlightz.c "Which way do you want to go?"
-    #show screen evt_choose_path
+
+label path_left_path_decision:
+    #show bg_tavern with dissolve
+    hide screen evt_choose_path
+    scene bg_fork with dissolve
+
     $LongNVLText(narrator, (
     '''\
+(Effect - zoom in on left path (In Work))
 Your eyes land on the seemingly safer option. The two suns and neighboring planets were hung in the sky like ornaments on a Christmas tree, brightly lighting the path in front of you.  
     '''
     ))
 
     $LongNVLText(narrator, (
     '''\
+(Effect - zoom in on right path (In Work))
 The right path scared you. It called to you like a siren in turbulent waters, inviting you in with a sweet song. You try to stand your ground in fear of being pulled into the imposing moon’s imaginary gravitational pull. 
     '''
     ))
 
     $LongNVLText(narrator, (
     '''\
+(Effect - zoom out (In Work))
 Gritting your teeth, you tear your attention away from the dark path. Nothing good ever comes from embracing your inhibitions and dismissing your gut instincts. 
     '''
     ))
@@ -450,9 +580,17 @@ Gritting your teeth, you tear your attention away from the dark path. Nothing go
 With more effort than you thought was necessary, you force your feet to move towards the left path. 
     '''
     ))
+    jump path_left_path
 
+
+
+
+label path_left_path:
+    scene bg_leftpath with dissolve
+    
     $LongNVLText(narrator, (
     '''\
+!!!!Correct image?!!!!
 After walking a meter or two past the fork in the road, you breathe a sigh of relief. The dark spell the large moon had on you finally dissipated. You suddenly feel more yourself again. 
     '''
     ))
@@ -510,6 +648,11 @@ Your vision begins to blur and your body feels immovable. Your face droops first
  “All well that ends well I suppose.”
     '''
     ))
+    jump path_town_fork
+
+
+label path_town_fork:
+    scene bg_leftpath with dissolve
     
     menu: 
         "Choose a path."
