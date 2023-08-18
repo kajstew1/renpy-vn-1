@@ -1,8 +1,13 @@
 ﻿# The script of the game goes in this file.
 
-
-
-
+init:
+    transform my_shake:
+        easein 0.2 xoffset 0 yoffset 30
+        easeout 0.2 xoffset 0 yoffset -30
+        #linear 0.1 xoffset 0 yoffset 10
+        #linear 0.1 xoffset 0 yoffset -15
+        #linear 0.1 xoffset 0 yoffset 0
+        repeat
 
 # The game starts here.
 label splashscreen:
@@ -40,6 +45,7 @@ label splashscreen2:
     jump xxxxx
 
 # start of the game
+# Scene 1
 label start:
     
     # Display a message and show an alert box when a button is clicked
@@ -47,6 +53,7 @@ label start:
     
     #show bg_crashsite with dissolve
     scene bg_crashsite with dissolve
+    play music "sounds/effects/crash_beeps_alarms.mp3"
 
     #narration = new Character(.....)
     #Array and multiple lines only used for readability. They have no effect on the text printed.
@@ -58,6 +65,7 @@ label start:
 Smoke billows out of the crashed spacecraft. You, the sole survivor, wake up in a haze. Your blurry eyes, disoriented from the sharp impact, try to make sense of the destruction in front of you. Debris is scattered across the broken grass turf, like a distorted kaleidoscope. 
     '''
     ))
+
 
     $LongNVLText(narrator, (
     '''\
@@ -186,12 +194,16 @@ You are exhausted from your half a day journey through the unending fields of gr
 After another half an hour, you came across a change in scenery.
     '''
     ))
+
+    #stop sound
+    stop music fadeout 3.0
+    
     jump crash_fork
 
 
 
 
-
+# Scene 2
 label crash_fork:
     scene bg_fork with dissolve
     
@@ -231,18 +243,27 @@ You had a feeling that there was a right or wrong answer to your choice from her
 
 
 
-
+# Scene 2a
 label path_right_path:
     #show bg_tavern with dissolve
     hide screen evt_choose_path
-    scene bg_fork with dissolve
+    scene bg_fork with dissolve:
+        #xpos 1.25 ypos 1.3 xanchor 0.5 yanchor 1.0 zoom 2.0
+        subpixel True
+        size (1920, 1080) crop (0, 0, 860, 600) #first tuple is the size of game screen, second is size of picture in pixels
+        easein 4.0 crop (860, 600, 860, 600) # first float is time in seconds, tuples are coordinates of the upper left corner of a rectangle, and the second tuple is the size of that rectangle
+        easeout 8.0 crop (615, 0, 860, 600) #here we change the y coordinate over 8 seconds to pan the image up
+
 
     $LongNVLText(narrator, (
     '''\
-!!!!Correct image?!!!!
+(Effect - zoom to the right (In Work))
 You stood transfixed at the shadowed silhouette of the strange moon behind the cover of the sharp mountain peaks. You feel it calling to you, moving your feet faster than your mind could keep up. 
     '''
     ))
+
+    show bg_fork with dissolve:
+        
 
     $LongNVLText(narrator, (
     '''\
@@ -252,6 +273,7 @@ Without much of a voluntary choice, you make your way down the sandy, gravel pat
     jump path_right_path_1
 
 
+# Scene 2b
 label path_right_path_1:
     #show bg_tavern with dissolve
 
@@ -260,7 +282,6 @@ label path_right_path_1:
 
     $LongNVLText(narrator, (
     '''\
-!!!!Correct image?!!!!
 Hairs prickle your back as you embrace the dark landscape. Something was following you. 
     '''
     ))
@@ -279,7 +300,7 @@ You feel a cold sweat forming at your brow as you force your feet to move forwar
 
     $LongNVLText(narrator, (
     '''\
-(Effect - zoom left to the right (In Work))
+(Effect - zoom in and pan left to the right (In Work))
 “I should’ve chosen the safer path,” you curse as you force yourself to come up with an escape plan. 
     '''
     ))
@@ -296,12 +317,18 @@ About 10 meters ahead of you, you see that the jagged mountains converge, creati
     '''
     ))
 
+    #show bg_rightpath at center, Shake(None, 1.0, dist=5) with None
+
+    scene bg_rightpath at my_shake
+
     $LongNVLText(narrator, (
     '''\
 (Effect - running, shake up and down (In Work)
 You clutch onto your wounded stomach with a small prayer that your thrown together plan wouldn’t reopen the cut and begin your mad dash to the ominous tunnel. 
     '''
     ))
+
+    scene bg_rightpath with dissolve
 
     $LongNVLText(narrator, (
     '''\
@@ -364,7 +391,7 @@ You hear screams coming outside of the narrow gap. You made it. You were safe! Y
 
 
 
-
+# Scene 2c
 label path_cave:
     scene bg_insidecave with dissolve
 
@@ -387,7 +414,7 @@ It had taken a half an hour of blind exploration until you found a light source 
     jump path_cave_light
 
 
-
+# Scene 2d
 label path_cave_light:
     scene bg_lightinsidecave with dissolve
 
@@ -409,12 +436,13 @@ It couldn’t get worse, could it?
 
     
 
-
+# Scene 2e
 label path_hut:
     scene bg_hut with dissolve
 
     $LongNVLText(narrator, (
     '''\
+
 You weakly limp towards the greenery in front of you. You find it to be a blessed respite from the dark, cold cavernous tunnel you had just escaped from. If your hands weren’t currently occupied by holding together your open stomach, you would’ve pinched yourself. 
     '''
     ))
@@ -482,11 +510,16 @@ You are finally starting to feel better about your situation. You had shelter, a
     jump path_hut_meet_terrorlightz
 
 
+# Scene 2f
 label path_hut_meet_terrorlightz:
     scene bg_insidehut with dissolve
 
+
+    
+
     $LongNVLText(narrator, (
     '''\
+(EFFECT: Goes from a blank screen to a blinking effect? )
 Your long overdue sleep is over soon when you hear a deep, guttural voice pierce your ears.“My, my, my. What is this?” 
     '''
     ))
@@ -519,16 +552,68 @@ His glare produces a hypnotic effect that prevents you from moving your body. Me
 
     $LongNVLText(terrorlightz.c, (
     '''\
-“I-I’m sorry, I didn’t know this space was occupied!” You 
+“I-I’m sorry, I didn’t know this space was occupied!” You meekly squeak. How poignant that the first intelligent creature you’ve come across is a straight nightmare.
+    '''
+    ))
 
-   '''
+    $LongNVLText(terrorlightz.c, (
+    '''\
+The ghastly alien cackles at your response. His sharp, pointed teeth glint in the light as he thrusts his head back. “See, now that’s better.” Returning his gaze to you, he gives you a half smirk. “Now that we are back to civility, I suppose introductions are in order.” 
+    '''
+    ))
+
+    $LongNVLText(terrorlightz.c, (
+    '''\In a bizarre turn of events, he gives you an overdramatic bow, his arms outstretched with a flourish. “It’s very nice to meet you, my name is Terrorlightz. I welcome you heartedly to my humble abode.” 
+    '''
+    ))
+
+    $LongNVLText(terrorlightz.c, (
+    '''\
+You are speechless. You can’t fathom how this many contradictions can exist in a singular space. In front of you, stands a nightmarish creature wearing a three-piece suit who supposedly lives in this broken down shack. You can’t tell if you want to laugh or cry. 
+    '''
+    ))
+
+    $LongNVLText(terrorlightz.c, (
+    '''\
+Where in the world are you? 
+    '''
+    ))
+
+    $LongNVLText(terrorlightz.c, (
+    '''\
+After resigning to your fate, you reluctantly return the favor. “My name is (MAIN CHARACTER NAME). As you can probably tell, I’m not from here.” You are careful with your words. You don’t trust this stranger. He was exceptionally unpredictable so you felt that the less you say, the better. 
+    '''
+    ))
+
+    $LongNVLText(terrorlightz.c, (
+    '''\
+His eyes slit, his voice drawing out every word. “Oh my… So I’ve found myself a wounded alien? Now, this is interesting.”
+    '''
+    ))
+
+    $LongNVLText(terrorlightz.c, (
+    '''\
+Before you could come up with a response, Terrorlightz offers you his hand. His eyes honed in on your torn and bloodied clothes. “Consider yourself lucky, alien. I have just the thing to fix you right up.” 
+    '''
+    ))
+
+    $LongNVLText(terrorlightz.c, (
+    '''\
+You stare at his outstretched hand momentarily before you grasp ahold of it. You weakly lift yourself off of the worn, broken couch. The academy only taught you basic first aid and your half-assed attempt at putting your stomach back together isn’t going to cut it. You either slowly bleed out or take a chance that Terrorlightz doesn’t have ulterior motives. 
+    '''
+    ))
+
+    $LongNVLText(terrorlightz.c, (
+    '''\
+He almost reminds you of a shark when his sharpened, pointy teeth glint in the light. “Now, let's forage for some mushrooms.” 
+    '''
     ))
 
 
     jump path_hut_forage
 
 
-
+# Scene 2g
 label path_hut_forage:
     scene bg_hut with dissolve
 
@@ -538,6 +623,8 @@ label path_hut_forage:
 
     jump hut_remember
 
+
+# Scene 2h
 label hut_remember:
     scene bg_hut with dissolve
 
@@ -549,6 +636,7 @@ label hut_remember:
 
 
 
+# Scene 3
 label path_left_path_decision:
     #show bg_tavern with dissolve
     hide screen evt_choose_path
@@ -584,7 +672,7 @@ With more effort than you thought was necessary, you force your feet to move tow
 
 
 
-
+# Scene 3a1
 label path_left_path:
     scene bg_leftpath with dissolve
     
@@ -651,6 +739,7 @@ Your vision begins to blur and your body feels immovable. Your face droops first
     jump path_town_fork
 
 
+# Scene 3b1
 label path_town_fork:
     scene bg_leftpath with dissolve
     
@@ -671,7 +760,7 @@ label path_town_fork:
        
     
 
-
+# Scene 3b1
 label path_town_outskirts:
     #show bg_tavern with dissolve
     #call screen bg_hut
@@ -685,6 +774,7 @@ label path_town_outskirts:
     jump town_alley
 
 
+# Scene 3c1
 label town_alley:
     scene bg_townalley with dissolve
 
@@ -696,7 +786,7 @@ label town_alley:
 
 
 
-
+# Scene 3a2
 label path_tavern:
     #show bg_tavern with dissolve
     hide screen evt_choose_path

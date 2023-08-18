@@ -1,4 +1,5 @@
 init python:
+    
     class Actor:
         def __init__(self, character, name):
             self.c = character
@@ -15,6 +16,19 @@ init python:
             return 1.0/60
         else:
             return None
+           
+    
+
+    def eyewarp(x):
+        return x**1.33
+    eye_open = ImageDissolve("bg_crashsite", .5, ramplen=128, reverse=False, time_warp=eyewarp)
+    eye_shut = ImageDissolve("bg_crashsite", .5, ramplen=128, reverse=True, time_warp=eyewarp)
+
+image black:
+  Solid("#000")
+image white:
+  Solid("#FFF")
+
 
     
 
@@ -72,6 +86,8 @@ style something:
     
 
 init -50 python:
+    import math
+
     def LongNVLText(talker, text):
         text = text.strip()
         splittedText = []
@@ -106,3 +122,7 @@ init -50 python:
                 if (currentPage < totalTextPages): # New page!
                     nvl_clear()
 
+
+    #
+    
+#
