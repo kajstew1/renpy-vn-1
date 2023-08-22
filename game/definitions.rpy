@@ -17,17 +17,21 @@ init python:
         else:
             return None
            
-    
 
     def eyewarp(x):
         return x**1.33
-    eye_open = ImageDissolve("bg_crashsite", .5, ramplen=128, reverse=False, time_warp=eyewarp)
-    eye_shut = ImageDissolve("bg_crashsite", .5, ramplen=128, reverse=True, time_warp=eyewarp)
+
+    #eye_open = ImageDissolve("bg_crashsite", 1.5, ramplen=128, reverse=False, time_warp=eyewarp)
+    #eye_shut = ImageDissolve("backgrounds/eyeopen.png", 1.5, ramplen=128, reverse=True, time_warp=eyewarp)
+
+    #eyeopen = ImageDissolve("bg_crashsite", 1.5, 100)
+    #eyeclose = ImageDissolve("backgrounds/eyeopen.png", 1.5, 100, reverse=True)
+
 
 image black:
-  Solid("#000")
+    Solid("#000")
 image white:
-  Solid("#FFF")
+    Solid("#FFF")
 
 
     

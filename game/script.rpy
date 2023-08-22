@@ -514,9 +514,6 @@ You are finally starting to feel better about your situation. You had shelter, a
 label path_hut_meet_terrorlightz:
     scene bg_insidehut with dissolve
 
-
-    
-
     $LongNVLText(narrator, (
     '''\
 (EFFECT: Goes from a blank screen to a blinking effect? )
@@ -610,7 +607,7 @@ He almost reminds you of a shark when his sharpened, pointy teeth glint in the l
     ))
 
 
-    jump path_hut_forage
+    jump path_hut_forage 
 
 
 # Scene 2g
@@ -619,7 +616,149 @@ label path_hut_forage:
 
     show terrorlightz_talking at right
 
-    terrorlightz.c "Some text foraging."
+    $LongNVLText(terrorlightz.c, (
+    '''\
+With a smooth flick of the wrist, Terrorlightz motions towards the door. Without waiting for any acknowledgement of your intention to follow him, he turns his back and exits the hut. 
+    '''
+    ))
+
+    $LongNVLText(terrorlightz.c, (
+    '''\
+He can’t be serious can he? He actually wants to forage for mushrooms? 
+    '''
+    ))
+
+    $LongNVLText(terrorlightz.c, (
+    '''\
+You hesitantly follow Terrorlightz outside of the hut. It goes against all of your instincts to trust this stranger, even more so to root around for unknown plants. But he hasn’t killed you yet and he’s had ample opportunities. That’s something, isn’t it? 
+    '''
+    ))
+
+    $LongNVLText(terrorlightz.c, (
+    '''\
+Leaving the confines of your temporary shelter reminds you that you are still on an alien, unfamiliar planet. It felt much too easy to forget where you are–even with Terrorlightz’s jarring presence. 
+    '''
+    ))
+
+    $LongNVLText(terrorlightz.c, (
+    '''\
+Stepping out of the hut, the sunlight was blinding. You are forced to squint and throw your hands up to shield your eyes. It must be the start of a new day as the two suns in the sky are much brighter than before. Either you are right and the days here last a long time or the shock from the crash dulled your senses. 
+    '''
+    ))
+
+    $LongNVLText(terrorlightz.c, (
+    '''\
+You feel a sudden rush of homesickness. Will you ever be back home? You had craved space travel for so long and worked so hard to achieve it, but now it seems meaningless. 
+    '''
+    ))
+
+    $LongNVLText(terrorlightz.c, (
+    '''\
+What was it all for? You would have never signed up if you knew you would end up alone, crash landed on a bizarre planet, foraging for–most likely poisonous–mushrooms with an absolute utter madman? 
+    '''
+    ))
+
+    $LongNVLText(terrorlightz.c, (
+    '''\
+I’m sure your crew is laughing at you from the afterlife. How the mighty captain has fallen. 
+    '''
+    ))
+
+    $LongNVLText(terrorlightz.c, (
+    '''\
+Once your eyes finally adjust to the light, you scan the area, Terrorlightz is nowhere in sight. You were only a few steps behind him leaving the hut. Where could he have gone? 
+    '''
+    ))
+
+    $LongNVLText(terrorlightz.c, (
+    '''\
+You feel a sudden urge to run. To where, you aren’t sure, but once you find Terrorlightz, you are pretty positive you won’t have that option again. 
+    '''
+    ))
+
+    $LongNVLText(terrorlightz.c, (
+    '''\
+But at the same time, at least here you have shelter and some promise of food. You barely survived on your own, so it seems foolish to give into your instincts now. 
+    '''
+    ))
+
+    $LongNVLText(terrorlightz.c, (
+    '''\
+With resignation, you decide to stick with Terrorlightz. Better than starving. 
+    '''
+    ))
+
+    $LongNVLText(terrorlightz.c, (
+    '''\
+You search south of the hut where a clump of tall trees swallow the nearby light, blanketing the floor in almost near darkness. If mushrooms grow similarly here as they did in your home planet, this is most likely where they would grow.
+    '''
+    ))
+
+    $LongNVLText(terrorlightz.c, (
+    '''\
+You find Terrorlightz hunched over the base of a thick tree trunk. His dissatisfaction is clear even with his back towards you. His deep, baritone voice almost shakes the ground when he says, “You must know, alien, that it is impolite to make someone wait.” 
+    '''
+    ))
+
+    $LongNVLText(terrorlightz.c, (
+    '''\
+You feel less terrified than you would’ve been thirty minutes ago, which surprises you. You suppose that giving into your fate helped to have lessened the blow.
+    '''
+    ))
+
+    $LongNVLText(terrorlightz.c, (
+    '''\
+“Sorry. You're tall and I can barely walk. Makes for an unfortunate combination.” 
+    '''
+    ))
+
+    $LongNVLText(terrorlightz.c, (
+    '''\
+Ignoring your comment, Terrorlightz points to the ground in front of him. You had to move to stand next to him to see what he was pointing at. 
+    '''
+    ))
+
+    $LongNVLText(terrorlightz.c, (
+    '''\
+You furrow your brow. It was a small mushroom–no larger than a tennis ball–with a wide red brim, covered in a neon pink moss. “What kind of mushroom is it?” 
+    '''
+    ))
+
+    $LongNVLText(terrorlightz.c, (
+    '''\
+Back to his mischievous ways, Terrorlightz turns to face you wearing a devious grin. The spirals in his eyes roll faster than before. 
+    '''
+    ))
+
+    $LongNVLText(terrorlightz.c, (
+    '''\
+Yup, you aren’t totally desensitized yet. He is still terrifying. 
+    '''
+    ))
+
+    $LongNVLText(terrorlightz.c, (
+    '''\
+“This here, dear alien, is a Psilicon mushroom. Very rare indeed, you are quite lucky. Eat one of these and you’ll find what you are looking for.” 
+    '''
+    ))
+
+    $LongNVLText(terrorlightz.c, (
+    '''\
+“What do you mean, find what I’m looking for? I just want something to patch myself back together.” 
+    '''
+    ))
+
+    $LongNVLText(terrorlightz.c, (
+    '''\
+Terrorlightz cackles, plucking the fuzzy mushroom off the moist ground. He inspects it a bit closer and then offers it to you. “Oh, don’t you worry, this will heal you up, and so much more.”
+    '''
+    ))
+
+    $LongNVLText(terrorlightz.c, (
+    '''\
+You gulp. You definitely should have run when you had the chance. 
+    '''
+    ))
 
     jump hut_remember
 
