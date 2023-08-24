@@ -40,6 +40,7 @@ image white:
 # name of the character.
 
 define narrator = Character (None) #, what_slow_cps=0, what_font="fontfile_name.ttf")
+define narrator_nvl = Character (None, kind=nvl) #, what_slow_cps=0, what_font="fontfile_name.ttf")
 
 define drpsilicon =  Actor(Character("Dr. Psilicon", who_color="ffff00", what_color="#8ac924"), "Dr. Psilicon")
 

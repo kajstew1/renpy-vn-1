@@ -66,7 +66,6 @@ Smoke billows out of the crashed spacecraft. You, the sole survivor, wake up in 
     '''
     ))
 
-
     $LongNVLText(narrator, (
     '''\
 Your breathing is staggered as you move to stand, clutching onto your wounded stomach. Blood pools out from inside your dark jumpsuit. 
@@ -85,6 +84,7 @@ The ship was supposed to have been indestructible. No one had been chasing you. 
     '''
     ))
 
+    
     $LongNVLText(narrator, (
     '''\
 An involuntary coughing fit brought about from the dark smoke around you made you come back to your senses. You look at your hand and are horrified to see tiny droplets of blood sprinkled all over your palm.  
@@ -250,19 +250,25 @@ label path_right_path:
     scene bg_fork with dissolve:
         #xpos 1.25 ypos 1.3 xanchor 0.5 yanchor 1.0 zoom 2.0
         subpixel True
-        size (1920, 1080) crop (0, 0, 860, 600) #first tuple is the size of game screen, second is size of picture in pixels
-        easein 4.0 crop (860, 600, 860, 600) # first float is time in seconds, tuples are coordinates of the upper left corner of a rectangle, and the second tuple is the size of that rectangle
-        easeout 8.0 crop (615, 0, 860, 600) #here we change the y coordinate over 8 seconds to pan the image up
-
+        size (1920, 1080) crop (0, 0, 860, 600) # first tuple is the size of game screen, 
+                                                # second is size of picture in pixels
+        easein 4.0 crop (860, 430, 860, 600)    # first float is time in seconds, 
+                                                # tuples are coordinates of the upper left corner of a rectangle 
+                                                # x: final pan right distance (screen is 1920 wide)
+                                                # y, final pan down distance (screen is 1080 high)
+                                                # width, height: size of the cropped rect, 
+                                                # and the second tuple is the size of that rectangle
+        easeout 5.0 crop (860, 300, 860, 600)       # here we change the y coordinate over 8 seconds to pan the image up
+        
 
     $LongNVLText(narrator, (
     '''\
-(Effect - zoom to the right (In Work))
+(Effect - zoom to the right... verify ok)
 You stood transfixed at the shadowed silhouette of the strange moon behind the cover of the sharp mountain peaks. You feel it calling to you, moving your feet faster than your mind could keep up. 
     '''
     ))
 
-    show bg_fork with dissolve:
+    # show bg_fork with dissolve:
         
 
     $LongNVLText(narrator, (
@@ -297,6 +303,19 @@ You are not a soldier. You aren’t a survivalist. You are a wounded captain wit
 You feel a cold sweat forming at your brow as you force your feet to move forward. Against all of your base instincts, you don’t look behind you. If you looked, you would accept the fear that threatened to spill out of your insides. 
     '''
     ))
+
+    scene bg_rightpath with dissolve:
+        #xpos 1.25 ypos 1.3 xanchor 0.5 yanchor 1.0 zoom 2.0
+        subpixel True
+        size (1920, 1080) crop (0, 0, 860, 600) # first tuple is the size of game screen, 
+                                                # second is size of picture in pixels
+        easein 4.0 crop (0, 430, 860, 600)    # first float is time in seconds, 
+                                                # tuples are coordinates of the upper left corner of a rectangle 
+                                                # x: final pan right distance (screen is 1920 wide)
+                                                # y, final pan down distance (screen is 1080 high)
+                                                # width, height: size of the cropped rect, 
+                                                # and the second tuple is the size of that rectangle
+        easeout 5.0 crop (860, 300, 860, 600)       # here we change the y coordinate over 8 seconds to pan the image up
 
     $LongNVLText(narrator, (
     '''\
@@ -779,7 +798,21 @@ label hut_remember:
 label path_left_path_decision:
     #show bg_tavern with dissolve
     hide screen evt_choose_path
-    scene bg_fork with dissolve
+    scene bg_fork with dissolve:
+        #xpos 1.25 ypos 1.3 xanchor 0.5 yanchor 1.0 zoom 2.0
+        subpixel True
+        size (1920, 1080) crop (0, 0, 860, 600) # first tuple is the size of game screen, 
+                                                # second is size of picture in pixels
+        easein 4.0 crop (0, 430, 860, 600)    # first float is time in seconds, 
+                                                # tuples are coordinates of the upper left corner of a rectangle 
+                                                # x: final pan right distance (screen is 1920 wide)
+                                                # y, final pan down distance (screen is 1080 high)
+                                                # width, height: size of the cropped rect, 
+                                                # and the second tuple is the size of that rectangle
+        #easeout 5.0 crop (0, 300, 860, 600)       # here we change the y coordinate over 8 seconds to pan the image up
+        
+
+
 
     $LongNVLText(narrator, (
     '''\
@@ -788,12 +821,39 @@ Your eyes land on the seemingly safer option. The two suns and neighboring plane
     '''
     ))
 
+    scene bg_fork with dissolve:
+        #xpos 1.25 ypos 1.3 xanchor 0.5 yanchor 1.0 zoom 2.0
+        subpixel True
+        size (1920, 1080) crop (0, 0, 860, 600) # first tuple is the size of game screen, 
+                                                # second is size of picture in pixels
+        easein 4.0 crop (860, 430, 860, 600)    # first float is time in seconds, 
+                                                # tuples are coordinates of the upper left corner of a rectangle 
+                                                # x: final pan right distance (screen is 1920 wide)
+                                                # y, final pan down distance (screen is 1080 high)
+                                                # width, height: size of the cropped rect, 
+                                                # and the second tuple is the size of that rectangle
+        #easeout 5.0 crop (0, 300, 860, 600)       # here we change the y coordinate over 8 seconds to pan the image up
+
     $LongNVLText(narrator, (
     '''\
 (Effect - zoom in on right path (In Work))
 The right path scared you. It called to you like a siren in turbulent waters, inviting you in with a sweet song. You try to stand your ground in fear of being pulled into the imposing moon’s imaginary gravitational pull. 
     '''
     ))
+
+    scene bg_fork with dissolve:
+        #xpos 1.25 ypos 1.3 xanchor 0.5 yanchor 1.0 zoom 2.0
+        subpixel True
+        size (1920, 1080) crop (0, 0, 860, 600) # first tuple is the size of game screen, 
+                                                # second is size of picture in pixels
+        easein 4.0 crop (0, 0, 1920, 1080)    # first float is time in seconds, 
+                                                # tuples are coordinates of the upper left corner of a rectangle 
+                                                # x: final pan right distance (screen is 1920 wide)
+                                                # y, final pan down distance (screen is 1080 high)
+                                                # width, height: size of the cropped rect, 
+                                                # and the second tuple is the size of that rectangle
+        #easeout 5.0 crop (0, 300, 860, 600)       # here we change the y coordinate over 8 seconds to pan the image up
+
 
     $LongNVLText(narrator, (
     '''\
