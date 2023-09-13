@@ -543,13 +543,13 @@ Your long overdue sleep is over soon when you hear a deep, guttural voice pierce
     $LongNVLText(narrator, (
     '''\
 Your eyes jerk open. In front of you stands a figure that appears to be a…person? 
-   '''
+    '''
     ))
 
     $LongNVLText(narrator, (
     '''\
 “W-who…what are you?” Your voice shakes as you retreat into the corner of your makeshift bed. 
-   '''
+    '''
     ))
 
     show terrorlightz_talking at right
@@ -624,17 +624,7 @@ You stare at his outstretched hand momentarily before you grasp ahold of it. You
 He almost reminds you of a shark when his sharpened, pointy teeth glint in the light. “Now, let's forage for some mushrooms.” 
     '''
     ))
-
-
-    jump path_hut_forage 
-
-
-# Scene 2g
-label path_hut_forage:
-    scene bg_hut with dissolve
-
-    show terrorlightz_talking at right
-
+    
     $LongNVLText(terrorlightz.c, (
     '''\
 With a smooth flick of the wrist, Terrorlightz motions towards the door. Without waiting for any acknowledgement of your intention to follow him, he turns his back and exits the hut. 
@@ -652,6 +642,17 @@ He can’t be serious can he? He actually wants to forage for mushrooms?
 You hesitantly follow Terrorlightz outside of the hut. It goes against all of your instincts to trust this stranger, even more so to root around for unknown plants. But he hasn’t killed you yet and he’s had ample opportunities. That’s something, isn’t it? 
     '''
     ))
+
+
+    jump path_hut_forage 
+
+
+# Scene 2g
+label path_hut_forage:
+    scene bg_hut with dissolve
+
+    show terrorlightz_talking at right
+
 
     $LongNVLText(terrorlightz.c, (
     '''\
@@ -776,6 +777,267 @@ Terrorlightz cackles, plucking the fuzzy mushroom off the moist ground. He inspe
     $LongNVLText(terrorlightz.c, (
     '''\
 You gulp. You definitely should have run when you had the chance. 
+    '''
+    ))
+
+
+
+
+    $LongNVLText(terrorlightz.c, (
+    '''\
+Sweat beads your forehead as you contemplate your available options. “I appreciate the offer, but I think I’m okay,” you say, patting your stomach wound gently. “A few more nights rest and I’ll be good as new.” 
+    '''
+    ))
+
+    $LongNVLText(terrorlightz.c, (
+    '''\
+You give him your best used car salesman smile to add emphasis to your point. Is this all just a bluff? Yes. You reason that it would take at least a month to be back to full health. 
+    '''
+    ))
+
+    $LongNVLText(terrorlightz.c, (
+    '''\
+But Terrorlightz didn’t need to know that.
+    '''
+    ))
+
+    $LongNVLText(terrorlightz.c, (
+    '''\
+You feel the hairs on your back raise when you meet his eyes. Behind the emptiness there was a hint of madness that wasn’t there before. The normally disconcerting smile crinkled into something more devious. “That’s funny, because I don’t recall giving you an option.” 
+    '''
+    ))
+
+    $LongNVLText(terrorlightz.c, (
+    '''\
+You start slowly walking backwards as Terrorlightz, much too easily, wipes the dirt off of his pants and moves to stand up. Your hands involuntarily reflex from an unclenched to clenched position as your mind races between fight or flight mode. 
+    '''
+    ))
+
+    $LongNVLText(terrorlightz.c, (
+    '''\
+With a cackle Terrorlightz holds the mushroom in an open palm towards you. “Now be a good alien and eat your vegetables.” 
+    '''
+    ))
+
+    $LongNVLText(terrorlightz.c, (
+    '''\
+Flight it is. You turn in the opposite direction, digging your heels into the muddy ground and take off into a sprint. 
+    '''
+    ))
+
+    $LongNVLText(terrorlightz.c, (
+    '''\
+Why is this planet constantly trying to kill you? It would be nice to have one full day that wouldn’t require running for your life. 
+    '''
+    ))
+
+    $LongNVLText(terrorlightz.c, (
+    '''\
+You feel lightheaded as you suck in air as quickly as you exhale. The humidity in the air feels thick in your lungs, making running a much harder endeavor. Mud spits onto your pants as you slide around the rotund trees, trying to distance yourself from the madman close onto your tail.
+    '''
+    ))
+
+    $LongNVLText(terrorlightz.c, (
+    '''\
+You are already at a disadvantage since Terrorlightz knows the area much better than you do, but pray that the darkness from the tree canopy above you can increase your odds. 
+    '''
+    ))
+
+    $LongNVLText(terrorlightz.c, (
+    '''\
+There was little to no noise in the forest save for the soft squelching sounds as you and your assailant’s feet hit the wet ground. 
+    '''
+    ))
+
+    $LongNVLText(terrorlightz.c, (
+    '''\
+This feels worse than last night’s attack. Yesterday, you felt like you were the victim of a hungry animal. Today, it feels personal. 
+    '''
+    ))
+
+    $LongNVLText(terrorlightz.c, (
+    '''\
+Your foot catches on a branch and you slide front first onto the ground. You taste mud as you grasp for a dry patch of ground for leverage, but you aren’t quick enough. Before you can process what was happening, you are being lifted off the ground by your shirt. 
+    '''
+    ))
+
+    $LongNVLText(terrorlightz.c, (
+    '''\
+You struggle against Terrolightz’s fierce grip as he positions you to face him. “You are a difficult one, aren’t you?” You desperately cling onto Terrorlightz’s fierce grip, trying to release yourself, but his strength is inhuman. 
+    '''
+    ))
+
+    $LongNVLText(terrorlightz.c, (
+    '''\
+Using his available hand, Terrolightz reaches into his pocket to retrieve the mushroom and shows it to you. Somehow, despite the scuffle, it is still perfectly preserved. The pink moss covering the mushroom faintly glows among the intense shade. 
+    '''
+    ))
+
+    $LongNVLText(terrorlightz.c, (
+    '''\
+Your eyes grow wide when you realize that you don’t have a choice in this matter anymore. It’s dinner time. 
+    '''
+    ))
+
+    $LongNVLText(terrorlightz.c, (
+    '''\
+With a final cackle, Terrorlightz shoves the mushroom into your mouth, holding it closed until you finally swallow. 
+    '''
+    ))
+
+    $LongNVLText(terrorlightz.c, (
+    '''\
+Then suddenly, Terrolightz, just as easily as he picked you up, drops you to the ground and walks away, leaving you muddy and gasping for air. 
+    '''
+    ))
+
+    $LongNVLText(terrorlightz.c, (
+    '''\
+Your consciousness fades as you enter a dream state. Your vision fills with abstract, colorful shapes that gently pulsate and come in and out of focus. You aren’t an individual anymore, you are part of a singularity. 
+    '''
+    ))
+
+    $LongNVLText(terrorlightz.c, (
+    '''\
+Thoughts and feelings that aren’t your own come through all at once in diverse pitch and tone. The senseless gibberish is impossible to describe, but you understand that it is trying to communicate with you. 
+    '''
+    ))
+
+    $LongNVLText(terrorlightz.c, (
+    '''\
+The geometric shapes start to shrink and organize themselves into what appears to be an image. After it takes shape, you recognize the image as a snapshot of a ship. 
+    '''
+    ))
+
+    $LongNVLText(terrorlightz.c, (
+    '''\
+Wait. Is that your ship? 
+    '''
+    ))
+
+    $LongNVLText(terrorlightz.c, (
+    '''\
+You focus closer in on the front console. On the captain's chair, you recognize the cheap, worn black leather with a sharp gash in the back and the rusty gear shifts positioned directly alongside it. After confirming the most familiar part of the ship, you inspect the rest of the vessel. 
+    '''
+    ))
+
+    $LongNVLText(terrorlightz.c, (
+    '''\
+You can barely believe it. This is your ship!
+    '''
+    ))
+
+    $LongNVLText(terrorlightz.c, (
+    '''\
+You startle when a figure passes through you and sits in the captain’s chair. Even more so when you realize it is you. 
+    '''
+    ))
+
+    $LongNVLText(terrorlightz.c, (
+    '''\
+Was this some sort of a test? Memory? Dream? Parallel universe? You have no idea. 
+    '''
+    ))
+
+    $LongNVLText(terrorlightz.c, (
+    '''\
+A disembodied voice snaps into existence. “Captain, we know it’s your birthday today, so the crew put together a little something for you.” 
+    '''
+    ))
+
+    $LongNVLText(terrorlightz.c, (
+    '''\
+Was that Jack? You couldn’t tell, you are still the only visible figure in the room. 
+    '''
+    ))
+
+    $LongNVLText(terrorlightz.c, (
+    '''\
+Your past self sat with hunched shoulders, looking in the opposite direction. In a monotone voice, you said, “Did you really?” 
+    '''
+    ))
+
+    $LongNVLText(terrorlightz.c, (
+    '''\
+Jack’s voice changed to a higher, more confident pitch. “Of course, you are our captain afterall.” 
+    '''
+    ))
+
+    $LongNVLText(terrorlightz.c, (
+    '''\
+Only you know the expression on your face. Self-deprecation. Your crew hated you, you knew that better than anyone. You believe that this must be yet another prank to undermine your authority. 
+    '''
+    ))
+
+    $LongNVLText(terrorlightz.c, (
+    '''\
+The pink wrapped package appears out of empty space in front of your past self. Even knowing what was coming, your past self still takes the half-hazardly packaged gift and opens it.
+    '''
+    ))
+
+    $LongNVLText(terrorlightz.c, (
+    '''\
+You come close to inspect the gift. Why can’t you remember what was inside? 
+    '''
+    ))
+
+    $LongNVLText(terrorlightz.c, (
+    '''\
+Inside the box and crinkled white tissue paper were two mushrooms. Both identical in size and shape with a white stem and neon red brim. Your past self takes out one of the mushrooms and inspects the white dots decorating the top. 
+    '''
+    ))
+
+    $LongNVLText(terrorlightz.c, (
+    '''\
+Jack’s voice echoes the metallic walls as he laughs. “Now go ahead and take a bite, captain.” 
+    '''
+    ))
+
+    $LongNVLText(terrorlightz.c, (
+    '''\
+Your past self’s shoulders droop even farther in on themselves as your grip tightens onto the mushroom. You see rage in your eyes as well as sadness. The sad captain whispers softly, “If you think you’ll make a laughing stock of me, you are wrong, Jack.” 
+    '''
+    ))
+
+    $LongNVLText(terrorlightz.c, (
+    '''\
+With a clenched fist, your past self quickly stands up from the captain’s chair and addresses the empty audience, “What a kind gift! How lucky I am to have such a wonderful crew.” 
+    '''
+    ))
+
+    $LongNVLText(terrorlightz.c, (
+    '''\
+You gulp as you watch the familiar silhouette take the crushed mushroom and gobble it up with feigned joy. “Quite delicious, thank you.” 
+    '''
+    ))
+
+    $LongNVLText(terrorlightz.c, (
+    '''\
+Your past self dramatically falls onto the floor, unconscious. The disembodied voices of your crew are cheering and high fiving each other. “Finally, we are free! Remember the story boys, the ship was due to crash on an unexplored planet and our courageous captain volunteered to stay behind so we could live.” 
+    '''
+    ))
+
+    $LongNVLText(terrorlightz.c, (
+    '''\
+The scene changes and all the colors disappear, leaving nothing but pure darkness behind. 
+    '''
+    ))
+
+    $LongNVLText(terrorlightz.c, (
+    '''\
+Abruptly, you feel yourself being pulled back to your body and you wake up with a start, gasping for air. 
+    '''
+    ))
+
+    $LongNVLText(terrorlightz.c, (
+    '''\
+You ignore the violent shaking of your legs as you pull yourself up. You snarl, “Those sons of bitches! I won’t let them get away with this.” You violently clutch onto the passing trees as you start running through the thick mud. You have to get back to your ship. There has to be some way to fix this. 
+    '''
+    ))
+
+    $LongNVLText(terrorlightz.c, (
+    '''\
+In your blind rage, you don’t even notice that your stomach wound has healed. 
     '''
     ))
 
