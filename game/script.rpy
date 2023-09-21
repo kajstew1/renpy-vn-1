@@ -7,7 +7,24 @@ init:
         #linear 0.1 xoffset 0 yoffset 10
         #linear 0.1 xoffset 0 yoffset -15
         #linear 0.1 xoffset 0 yoffset 0
-        repeat
+        repeat 10
+
+    transform basic_fade:
+        on show:
+            alpha 0.0
+            linear 3.0 alpha 1.0
+        on hide:
+            alpha 1.0
+            linear 10.0 alpha 0.0
+  
+
+    transform basic_fade_out:
+        linear 1.0 alpha 0.0
+
+    transform basic_fade_in:
+        alpha 0.0
+        linear 1.0 alpha 1.0
+
 
 # The game starts here.
 label splashscreen:
@@ -1041,16 +1058,148 @@ In your blind rage, you don’t even notice that your stomach wound has healed.
     '''
     ))
 
-    jump hut_remember
+    jump ship_remember
 
 
 # Scene 2h
-label hut_remember:
+label ship_remember:
+    scene bg_hut with dissolve
+
+    $LongNVLText(narrator, (
+    '''\
+"Nothing but regret and resentment fill your mind as you clumsily stumble your way through the swamp and into the dark cave."
+(Effect: Shows running (fading and out) from bg_hut to bg_insidecave(In Work))
+    '''
+    ))
+
+    scene bg_insidecave at basic_fade, my_shake with dissolve
+
+    $LongNVLText(narrator, (
+    '''\
+"Even though it was only yesterday that you first entered the cave, you feel none of the terror or fear you felt before."
+(Shows running (fading and out) from bg_insidecave to bg_crashedsite)
+    '''
+    ))
+
+    scene bg_crashsite at basic_fade, my_shake with dissolve
+
+    $LongNVLText(terrorlightz.c, (
+    '''\
+No matter what obstacle comes your way now, you are willing to face it. The only thing that matters is getting to your ship and righting the wrong against you. 
+    '''
+    ))
+
+    $LongNVLText(terrorlightz.c, (
+    '''\
+After a matter of hours, you are exhausted and dehydrated. Your sore limbs fight against you, but you press on. 
+    '''
+    ))
+
+    $LongNVLText(terrorlightz.c, (
+    '''\
+In the distance you see the remnants of what was left of your ship. Your mangled body screams as you sprint to close the distance. 
+    '''
+    ))
+
+    $LongNVLText(terrorlightz.c, (
+    '''\
+Black smoke still emanates from the ship’s exhaust as you approach the destruction. The contaminated air makes it more difficult to breathe than it should. 
+    '''
+    ))
+
+    $LongNVLText(terrorlightz.c, (
+    '''\
+Your heart thunders against your chest as you scramble to climb the fallen, broken pieces of the crew cabin. 
+    '''
+    ))
+
+    $LongNVLText(terrorlightz.c, (
+    '''\
+It takes you a while, but you manage to make progress on your climb. Your tired body almost gives out in the last stretch, but you use the handle from the blown out emergency exit door as leverage to pull yourself inside the ship. 
+    '''
+    ))
+
+    $LongNVLText(terrorlightz.c, (
+    '''\
+Yesterday, you were so wounded and discombobulated that you weren’t able to process the damage. Now, you could finally understand the level of destruction the crash did to the ship. 
+    '''
+    ))
+
+    $LongNVLText(terrorlightz.c, (
+    '''\
+While most of the ship was in a desperate state of disrepair, your cockpit took the brunt of the damage. 
+    '''
+    ))
+
+    $LongNVLText(terrorlightz.c, (
+    '''\
+The ceiling had caved in, light pouring in from the gaps. You snickered solemnly to yourself, at least the light made it easier to navigate around the ship.
+    '''
+    ))
+
+    $LongNVLText(terrorlightz.c, (
+    '''\
+The windshield had shattered, spraying glass all throughout the cabin. 
+    '''
+    ))
+
+    $LongNVLText(terrorlightz.c, (
+    '''\
+To your right, you see what was left of your captain’s chair, only scattered pieces of black leather and wheels remain. In front of you, you see your warped and melted flight instruments. 
+    '''
+    ))
+
+    $LongNVLText(terrorlightz.c, (
+    '''\
+You are pretty sure all of the consoles are busted, but you still try for hours to get the communication console back up and running. 
+    '''
+    ))
+
+    $LongNVLText(terrorlightz.c, (
+    '''\
+All you get is silence. 
+    '''
+    ))
+
+    $LongNVLText(terrorlightz.c, (
+    '''\
+In pure desperation, you maneuver yourself to the back of the ship. 
+    '''
+    ))
+
+    $LongNVLText(terrorlightz.c, (
+    '''\
+The crew wouldn’t be so inhumane that they would leave you without an escape pod. I mean, they hated you, but they wouldn’t be that cruel… would they? 
+    '''
+    ))
+
+    $LongNVLText(terrorlightz.c, (
+    '''\
+The level of resignation you feel as you approach the empty escape pod unit is unparalleled to anything you have felt before. 
+    '''
+    ))
+
+    $LongNVLText(terrorlightz.c, (
+    '''\
+You drop to your knees. Your tattered clothes gently sway in the wind through the gaps in the walls.
+    '''
+    ))
+
+    $LongNVLText(terrorlightz.c, (
+    '''\
+That’s it. You are stuck on a godforsaken planet with only a useless ship to your name. 
+    '''
+    ))
+    jump game_over
+
+
+# Scene 2h1
+label ship_remember_1:
     scene bg_hut with dissolve
 
     show terrorlightz_talking at right
 
-    terrorlightz.c "Some text remembering eating mushrooms on a way spaceship."
+    "Some text remembering eating mushrooms on a way spaceship."
 
     jump game_over
 
