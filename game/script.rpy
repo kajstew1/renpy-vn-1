@@ -19,6 +19,7 @@ init:
   
 
     transform basic_fade_out:
+        alpha 1.0
         linear 1.0 alpha 0.0
 
     transform basic_fade_in:
@@ -70,7 +71,7 @@ label start:
     
     #show bg_crashsite with dissolve
     scene bg_crashsite with dissolve
-    play music "sounds/effects/crash_beeps_alarms.mp3"
+    #play music "sounds/effects/crash_beeps_alarms.mp3"
 
     #narration = new Character(.....)
     #Array and multiple lines only used for readability. They have no effect on the text printed.
@@ -1068,7 +1069,6 @@ label ship_remember:
     $LongNVLText(narrator, (
     '''\
 "Nothing but regret and resentment fill your mind as you clumsily stumble your way through the swamp and into the dark cave."
-(Effect: Shows running (fading and out) from bg_hut to bg_insidecave(In Work))
     '''
     ))
 
@@ -1076,8 +1076,8 @@ label ship_remember:
 
     $LongNVLText(narrator, (
     '''\
+(Effect: Shows running (fading and out) from bg_hut to bg_insidecave(In Work))
 "Even though it was only yesterday that you first entered the cave, you feel none of the terror or fear you felt before."
-(Shows running (fading and out) from bg_insidecave to bg_crashedsite)
     '''
     ))
 
@@ -1085,6 +1085,7 @@ label ship_remember:
 
     $LongNVLText(terrorlightz.c, (
     '''\
+(Shows running (fading and out) from bg_insidecave to bg_crashedsite)
 No matter what obstacle comes your way now, you are willing to face it. The only thing that matters is getting to your ship and righting the wrong against you. 
     '''
     ))
@@ -1282,7 +1283,7 @@ With more effort than you thought was necessary, you force your feet to move tow
 
 
 
-# Scene 3a1
+# Scene 3a
 label path_left_path:
     scene bg_leftpath with dissolve
     
@@ -1343,15 +1344,160 @@ Your vision begins to blur and your body feels immovable. Your face droops first
 
     $LongNVLText(narrator, (
     '''\
- “All well that ends well I suppose.”
+“All's well that ends well I suppose.”
+    '''
+    ))
+    jump path_hospital
+
+
+# Scene 3b
+label path_hospital:
+    scene bg_hospital with dissolve
+    show drp_casual_talking at right
+
+    $LongNVLText(drpsilicon.c, (
+    '''\
+Beep…Beep…Beep…
+    '''
+    ))
+
+    $LongNVLText(drpsilicon.c, (
+    '''\
+A soft, rhythmic hum wakes you from your deep sleep. 
+    '''
+    ))
+
+    $LongNVLText(drpsilicon.c, (
+    '''\
+Through bleary eyes, memories of you collapsing in the desert flood your mind. 
+    '''
+    ))
+
+    $LongNVLText(drpsilicon.c, (
+    '''\
+You’re…you’re alive? 
+    '''
+    ))
+
+    $LongNVLText(drpsilicon.c, (
+    '''\
+As your focus sharpens, you take in your surroundings. To your right you see a heartbeat monitor. To your left you see a slew of medical machines laid out alongside you. Against the wall you see a big blue screen projecting writing that you don’t recognize. 
+    '''
+    ))
+
+    $LongNVLText(drpsilicon.c, (
+    '''\
+Crash landing on Psilicon 5, your perilous journey through the desert. Was that all a dream? Are you home? 
+    '''
+    ))
+
+    $LongNVLText(drpsilicon.c, (
+    '''\
+Before you let optimism take over you, you hear a gentle knock on the door. 
+    '''
+    ))
+
+    $LongNVLText(drpsilicon.c, (
+    '''\
+Not waiting for a response, a figure enters through the doorway.
+    '''
+    ))
+
+    $LongNVLText(drpsilicon.c, (
+    '''\
+Under normal circumstances, you would be happy to see a doctor sporting a crisp white lab coat and blue scrubs holding onto a clipboard chock full of patient notes…But this isn’t a normal circumstance. 
+    '''
+    ))
+
+    $LongNVLText(drpsilicon.c, (
+    '''\
+The “doctor’s” skin was a sickly green, moss color. Taking up half of his face, in lieu of a typical head of hair and eyes, he had a vibrant red mushroom cap, dotted with yellow spots. 
+    '''
+    ))
+
+    $LongNVLText(drpsilicon.c, (
+    '''\
+You silently curse under your breath as you grip the sheets in front of you. Your knuckles turning white, trying to contain your strange cocktail of emotions–fear, rage, sadness–from bursting out. 
+    '''
+    ))
+
+    $LongNVLText(drpsilicon.c, (
+    '''\
+Just when you thought you were out…
+    '''
+    ))
+
+    $LongNVLText(drpsilicon.c, (
+    '''\
+“You’re lucky to be alive, that’s for sure, kid,” the doctor said in a gruff, unemotional voice. 
+    '''
+    ))
+
+    $LongNVLText(drpsilicon.c, (
+    '''\
+You turn to respond to the “doctor”. You already feel awkward. You were never taught on how to communicate with a half-man, half-mushroom.  
+    '''
+    ))
+
+    $LongNVLText(drpsilicon.c, (
+    '''\
+With the ability to make eye contact removed from the situation, you settle for focusing on the more human, bottom half of his face. 
+    '''
+    ))
+
+    $LongNVLText(drpsilicon.c, (
+    '''\
+Still groggy and dehydrated, your words came out strained. “Where am I?”
+    '''
+    ))
+
+    $LongNVLText(drpsilicon.c, (
+    '''\
+The doctor’s mouth tightened into a hard line. He is obviously displeased at your naivety. “Great. A case of convenient amnesia.”
+    '''
+    ))
+
+    $LongNVLText(drpsilicon.c, (
+    '''\
+He taps impatiently with his fingers onto his clipboard as he weighs his options. After a short pause, he sighs in an overly dramatic fashion. “You are in a hospital on the planet Psilicon 5. Due to your subpar piloting, you destroyed a nature preserve. I surely hope you have that ship insured or else you may find yourself in quite the conundrum.” 
+    '''
+    ))
+
+    $LongNVLText(drpsilicon.c, (
+    '''\
+Nature preserve? Insurance? What the hell is he talking about? 
+    '''
+    ))
+
+    $LongNVLText(drpsilicon.c, (
+    '''\
+With the conceited notion he gave you a sufficient debriefing on your situation, the alien doctor starts scribbling notes on his notepad. “Since you only had a case of mild dehydration, you are free to leave at any time. Don’t worry about payment yet, with your ship crashed–we know you’re not going anywhere.” 
+    '''
+    ))
+
+    $LongNVLText(drpsilicon.c, (
+    '''\
+Placing his empty hand into his pocket, he briskly walks out of your room. “We have an escort assigned to you to get you acclimated to the town. He will be here shortly. Stay put for now.” 
+    '''
+    ))
+
+    $LongNVLText(drpsilicon.c, (
+    '''\
+And just as he entered, he was gone. You let your head fall back onto your pillow as you try desperately to make sense of what just happened. 
+    '''
+    ))
+
+    $LongNVLText(drpsilicon.c, (
+    '''\
+You fall back asleep. You hope this was just a long nightmare. 
     '''
     ))
     jump path_town_fork
 
 
-# Scene 3b1
+# Scene 3c
 label path_town_fork:
-    scene bg_leftpath with dissolve
+    scene bg_town with dissolve
     
     menu: 
         "Choose a path."
