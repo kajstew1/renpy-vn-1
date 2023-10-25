@@ -9,6 +9,14 @@ init:
         #linear 0.1 xoffset 0 yoffset 0
         repeat 10
 
+    transform my_bump:
+        easein 0.2 xoffset 0 yoffset 50
+        easeout 0.2 xoffset 0 yoffset -50
+        #linear 0.1 xoffset 0 yoffset 10
+        #linear 0.1 xoffset 0 yoffset -15
+        #linear 0.1 xoffset 0 yoffset 0
+        #repeat 10
+
     transform basic_fade:
         on show:
             alpha 0.0
@@ -43,16 +51,19 @@ label splashscreen:
     # hide mytext with dissolve
     # with Pause(1)
 
-    return
+    #return
+    jump splashscreen2
     
 label splashscreen2:
     scene black
-    with Pause(1)
-    show mytext "You find yourself waking up on a crash ship."
-    with Pause(2)
-  
-    hide mytext with dissolve
-    with Pause(1)
+
+    #show mytext "What name would you like to use?"
+    $ player_name = renpy.input("What is your name?")
+    $ player_name = player_name.strip()
+
+    if player_name == "":
+        $ player_name="[player_name_default]"
+
 
     # show mytext "So Start your journey now!"
     # with Pause(2)
@@ -60,7 +71,8 @@ label splashscreen2:
     # hide mytext with dissolve
     # with Pause(1)
 
-    jump xxxxx
+    #jump xxxxx
+    return
 
 # start of the game
 # Scene 1
@@ -68,7 +80,15 @@ label start:
     
     # Display a message and show an alert box when a button is clicked
     # jump splashscreen2
-    
+    scene black
+
+    with Pause(1)
+    show mytext "[player_name], you find yourself waking up on a crash ship."
+    with Pause(2)
+  
+    hide mytext with dissolve
+    with Pause(1)
+
     #show bg_crashsite with dissolve
     scene bg_crashsite with dissolve
     #play music "sounds/effects/crash_beeps_alarms.mp3"
@@ -240,7 +260,7 @@ You had a feeling that there was a right or wrong answer to your choice from her
     ))
 
     menu: 
-        "Choose a path."
+        "Do you take the right or left path?"
         "Left...":
             # if (persistent.path_to_outskirts_taken == False or persistent.path_to_tavern_taken == False):
             #show screen evt_choose_path
@@ -1497,23 +1517,152 @@ You fall back asleep. You hope this was just a long nightmare.
 
 # Scene 3c
 label path_town_fork:
+    scene bg_hospital with dissolve
+    show commercialcris_talking at right
+
+    $LongNVLText(commercialcris.c, (
+    '''\
+About an hour passes until you finally meet your escort. At this point, you’ve gotten used to the unexpected, but even this was a bit much. 
+    '''
+    ))
+
+    $LongNVLText(commercialcris.c, (
+    '''\
+Above your escort’s shoulder sits a small, outdated TV, projecting an unimpressed expression on his grayscale face. Dressed to the nines, he wears an expensive and sharply tailored suit.  
+    '''
+    ))
+
+    $LongNVLText(commercialcris.c, (
+    '''\
+You brows knit together in confusion…Is this how people dress on Psilicon 5? He can’t possibly have a working retro-style TV for a head, can he? 
+    '''
+    ))
+
+    $LongNVLText(commercialcris.c, (
+    '''\
+Your escort flicks his wrist to look at his silver-plated watch impatiently. “Let’s get going, tourist. I don’t have all day.” 
+    '''
+    ))
+
+    $LongNVLText(commercialcris.c, (
+    '''\
+Without thinking, you blurt out what was on your mind. “Are you a cyborg?” 
+    '''
+    ))
+
+    $LongNVLText(commercialcris.c, (
+    '''\
+He looks at you with squinted eyes and a frown. “Lucky me. I got the comedian.” 
+    '''
+    ))
+
+    $LongNVLText(commercialcris.c, (
+    '''\
+To hide your embarrassment, you focus your attention on grabbing your things from the hospital bed. Pissing off your only hope of navigating the city. Great first impression. 
+    '''
+    ))
+
+    $LongNVLText(commercialcris.c, (
+    '''\
+After gathering your meager belongings, mostly made up of the torn up clothes that you wore yesterday, you shuffle in awkward silence towards your escort. 
+    '''
+    ))
+
+    $LongNVLText(commercialcris.c, (
+    '''\
+Clearing his throat, your escort motions toward himself. “Now that you’ve displayed your comedic talent, let us start with some introductions. My name is Commercial Cris. As the mayor of this town, I’d like to hearby welcome you to Aisthesis, Psilicon 5’s largest city.” 
+    '''
+    ))
+
+    $LongNVLText(commercialcris.c, (
+    '''\
+“Nice to meet you.” You hoist your folded-up belongings underneath your armpit and outstretch your free hand for a handshake. When you are met with just a confused stare, you proceed to return your hand to your side. “My name is [player_name] and as you’ve probably heard, my ship crash landed on this planet.” 
+    '''
+    ))
+
+    $LongNVLText(commercialcris.c, (
+    '''\
+“So I’ve heard. Now let’s get started on your tour. I only have a few hours to spare before my next meeting,” Commercial Cris says as he walks out the door, towards the hospital’s exit. 
+    '''
+    ))
+
+    $LongNVLText(commercialcris.c, (
+    '''\
+You take the hint and follow him out of the hospital. 
+    '''
+    ))
+
     scene bg_town with dissolve
-    
+    show commercialcris_talking at right
+
+    $LongNVLText(commercialcris.c, (
+    '''\
+Upon opening the exit door, you are flooded with a flurry of noises. Jumbled voices speaking in an unfamiliar language, screeching of wheels from kiosks holding a variety of items, clattering of metal from the construction workers fixing the roads. It all felt so familiar yet so different. 
+    '''
+    ))
+
+    $LongNVLText(commercialcris.c, (
+    '''\
+Passing through the crowds with ease, Commercial Cris wastes no time to start his guided tour. “This town was built after the last war. Mainly functioning as a trading post approximately 100 “earth” years ago. Due to the proximity to an abundant amount of natural resources, Aisthesis thrived.” 
+    '''
+    ))
+
+    $LongNVLText(commercialcris.c, (
+    '''\
+Even when a passing kiosk almost runs into him, Commercial Cris continues his tour without missing a step. “We have the best hospitals, schools, and transportation in all of Psilicon 5. Not to mention the alcohol!” Lifting his watch again to check the time, he says, “Since you’ve had quite the day, how about we grab ourselves a drink?” 
+    '''
+    ))
+
+    $LongNVLText(commercialcris.c, (
+    '''\
+As much as you try to focus on Commercial Cris’s tour, you find it hard to concentrate when you are in such a densely packed crowd. Even more so when you look up to the tall, perfectly geometrically shaped buildings. You had never seen such architecture before. You wonder how it was possible to build such a feat with such sharp, awkward angles. 
+    '''
+    ))
+
+    $LongNVLText(commercialcris.c, (
+    '''\
+Distraction was dangerous in a city like this. You nearly fall to the ground after a passing alien crashes into your shoulder. 
+    '''
+    ))
+
+    scene bg_town at my_bump
+
+    $LongNVLText(commercialcris.c, (
+    '''\
+(Effect - shake screen...)
+Your heart races as you realize that you can’t afford to fall in this crowd. This city wouldn’t wait for you. You would most certainly get run over. 
+    '''
+    ))
+
+    $LongNVLText(commercialcris.c, (
+    '''\
+The alien mumbles an apparent irritated apology before scurrying off, leaving you disoriented. In the short scuffle, you almost lose track of Commercial Cris, who has yet to notice—or care—that you aren’t behind him anymore. 
+    '''
+    ))
+
+    $LongNVLText(commercialcris.c, (
+    '''\
+Well if you want to lose your guide, now’s the time. To your right you see a blissfully empty alley you can escape to. 
+    '''
+    ))
+
     menu: 
-        "Choose a path."
-        "Town...": 
-            #if persistent.path_to_outskirts_taken == False:
-            #show screen evt_cthoose_path
+        "Do you catch up to Commercial Cris or escape towards the alley?"
+        "Take the left path into the empty alley...":
+            # if (persistent.path_to_outskirts_taken == False or persistent.path_to_tavern_taken == False):
+            #show screen evt_choose_path
             #call screen evt_choose_route with dissolve
-            $ persistent.path_to_outskirts_taken = True
+            $ persistent.path_to_town_taken = True
             jump path_town_outskirts
-        "Tavern...":
-            #if persistent.path_to_tavern_taken == False:
+        "Catch up to Commercial Cris and go to the tavern...":
+            #if persistent.path_to_hut_taken == False:
             #show screen evt_choose_path 
             #call screen evt_choose_route with dissolve
-            $ persistent.path_to_tavern_taken = True
+            $ persistent.path_to_hut_taken = True
             jump path_tavern
-       
+        "No thank you!": 
+            return
+
     
 
 # Scene 3b1

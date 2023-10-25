@@ -39,6 +39,9 @@ image white:
 # Declare characters used by this game. The color argument colorizes the
 # name of the character.
 
+default player_name_default = "Spaceman"
+define player = Character("[player_name]")
+
 define narrator = Character (None) #, what_slow_cps=0, what_font="fontfile_name.ttf")
 define narrator_nvl = Character (None, kind=nvl) #, what_slow_cps=0, what_font="fontfile_name.ttf")
 
