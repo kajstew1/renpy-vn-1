@@ -10,8 +10,8 @@ init:
         repeat 10
 
     transform my_bump:
-        easein 0.2 xoffset 0 yoffset 50
-        easeout 0.2 xoffset 0 yoffset -50
+        easein 0.2 xoffset 0 yoffset 100
+        easeout 0.2 xoffset 0 yoffset -120
         #linear 0.1 xoffset 0 yoffset 10
         #linear 0.1 xoffset 0 yoffset -15
         #linear 0.1 xoffset 0 yoffset 0
@@ -34,6 +34,10 @@ init:
         alpha 0.0
         linear 1.0 alpha 1.0
 
+    transform exitright:
+        linear 3.0 xpos 1.5 xzoom -1.0
+
+    
 
 # The game starts here.
 label splashscreen:
@@ -1372,7 +1376,7 @@ Your vision begins to blur and your body feels immovable. Your face droops first
 
 # Scene 3b
 label path_hospital:
-    scene bg_hospital with dissolve
+    scene bg_hospital with Fade(3,3,3)
     show drp_casual_talking at right
 
     $LongNVLText(drpsilicon.c, (
@@ -1501,6 +1505,8 @@ Placing his empty hand into his pocket, he briskly walks out of your room. “We
     '''
     ))
 
+    show drp_casual_talking at exitright with dissolve
+
     $LongNVLText(drpsilicon.c, (
     '''\
 And just as he entered, he was gone. You let your head fall back onto your pillow as you try desperately to make sense of what just happened. 
@@ -1518,7 +1524,7 @@ You fall back asleep. You hope this was just a long nightmare.
 # Scene 3c
 label path_town_fork:
     scene bg_hospital with dissolve
-    show commercialcris_talking at right
+    show commercialcris_talking with moveinright
 
     $LongNVLText(commercialcris.c, (
     '''\
@@ -1592,7 +1598,7 @@ You take the hint and follow him out of the hospital.
     '''
     ))
 
-    scene bg_town with dissolve
+    scene bg_town with pushright
     show commercialcris_talking at right
 
     $LongNVLText(commercialcris.c, (
@@ -1625,7 +1631,8 @@ Distraction was dangerous in a city like this. You nearly fall to the ground aft
     '''
     ))
 
-    scene bg_town at my_bump
+    show bg_town with vpunch
+
 
     $LongNVLText(commercialcris.c, (
     '''\
@@ -1634,8 +1641,21 @@ Your heart races as you realize that you can’t afford to fall in this crowd. T
     '''
     ))
 
+    show commercialcris_talking:
+        parallel:
+            #linear 1.0 xalign 1.0
+            easein 3.0 xalign 0.3
+        parallel:
+            #linear 1.0 yalign 1.0
+            linear 0.5 yalign 0.85
+        parallel:
+            linear 3.0 zoom .3
+        parallel: 
+            linear 3.0 alpha 0.3
+        
     $LongNVLText(commercialcris.c, (
     '''\
+(Effect: Show Commercial Cris in the distance)
 The alien mumbles an apparent irritated apology before scurrying off, leaving you disoriented. In the short scuffle, you almost lose track of Commercial Cris, who has yet to notice—or care—that you aren’t behind him anymore. 
     '''
     ))
@@ -1648,20 +1668,18 @@ Well if you want to lose your guide, now’s the time. To your right you see a b
 
     menu: 
         "Do you catch up to Commercial Cris or escape towards the alley?"
-        "Take the left path into the empty alley...":
+        "Go to the empty alley...":
             # if (persistent.path_to_outskirts_taken == False or persistent.path_to_tavern_taken == False):
             #show screen evt_choose_path
             #call screen evt_choose_route with dissolve
             $ persistent.path_to_town_taken = True
             jump path_town_outskirts
-        "Catch up to Commercial Cris and go to the tavern...":
+        "Catch up to Commercial Cris...":
             #if persistent.path_to_hut_taken == False:
             #show screen evt_choose_path 
             #call screen evt_choose_route with dissolve
             $ persistent.path_to_hut_taken = True
             jump path_tavern
-        "No thank you!": 
-            return
 
     
 

@@ -21,6 +21,8 @@ init python:
     def eyewarp(x):
         return x**1.33
 
+    vpunch = Move((0, 40), (0, -40), .10, bounce=True, repeat=True, delay=.275)
+
     #eye_open = ImageDissolve("bg_crashsite", 1.5, ramplen=128, reverse=False, time_warp=eyewarp)
     #eye_shut = ImageDissolve("backgrounds/eyeopen.png", 1.5, ramplen=128, reverse=True, time_warp=eyewarp)
 
