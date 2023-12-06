@@ -78,6 +78,7 @@ image mysteryspacewoman talking = "msw_talking.png"
 image commercialcris neutral = "cc_neutral.png"
 image commercialcris talking = "cc_talking.png"
 
+image drpl = Live2D("images/Alyssa C1", default_fade=0.0, top=0.0, base=1.0, height=1.0, loop=True)
 
 # variables
 default persistent.path_to_hut_taken = False

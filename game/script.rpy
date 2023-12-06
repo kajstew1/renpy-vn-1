@@ -17,6 +17,14 @@ init:
         #linear 0.1 xoffset 0 yoffset 0
         #repeat 10
 
+    transform my_walking:
+        easein 0.4 xoffset 0 yoffset 30
+        easeout 0.4 xoffset 0 yoffset -30
+        #linear 0.1 xoffset 0 yoffset 10
+        #linear 0.1 xoffset 0 yoffset -15
+        #linear 0.1 xoffset 0 yoffset 0
+        repeat
+
     transform basic_fade:
         on show:
             alpha 0.0
@@ -94,8 +102,9 @@ label start:
     with Pause(1)
 
     #show bg_crashsite with dissolve
-    scene bg_crashsite with dissolve
-    #play music "sounds/effects/crash_beeps_alarms.mp3"
+    scene black
+    show bg_crashsite with dissolve
+    play music "sounds/effects/crash_beeps_alarms.mp3"
 
     #narration = new Character(.....)
     #Array and multiple lines only used for readability. They have no effect on the text printed.
@@ -247,7 +256,8 @@ After another half an hour, you came across a change in scenery.
 
 # Scene 2
 label crash_fork:
-    scene bg_fork with dissolve
+    scene black
+    show bg_fork with dissolve
     
     # terrorlightz.c "Which way do you want to go?"
     #show screen evt_choose_path
@@ -289,7 +299,8 @@ You had a feeling that there was a right or wrong answer to your choice from her
 label path_right_path:
     #show bg_tavern with dissolve
     hide screen evt_choose_path
-    scene bg_fork with dissolve:
+    scene black
+    show bg_fork with dissolve:
         #xpos 1.25 ypos 1.3 xanchor 0.5 yanchor 1.0 zoom 2.0
         subpixel True
         size (1920, 1080) crop (0, 0, 860, 600) # first tuple is the size of game screen, 
@@ -325,7 +336,8 @@ Without much of a voluntary choice, you make your way down the sandy, gravel pat
 label path_right_path_1:
     #show bg_tavern with dissolve
 
-    scene bg_rightpath with dissolve
+    scene black
+    show bg_rightpath with dissolve
 
 
     $LongNVLText(narrator, (
@@ -346,7 +358,8 @@ You feel a cold sweat forming at your brow as you force your feet to move forwar
     '''
     ))
 
-    scene bg_rightpath with dissolve:
+    scene black
+    show bg_rightpath with dissolve:
         #xpos 1.25 ypos 1.3 xanchor 0.5 yanchor 1.0 zoom 2.0
         subpixel True
         size (1920, 1080) crop (0, 0, 860, 600) # first tuple is the size of game screen, 
@@ -380,7 +393,8 @@ About 10 meters ahead of you, you see that the jagged mountains converge, creati
 
     #show bg_rightpath at center, Shake(None, 1.0, dist=5) with None
 
-    scene bg_rightpath at my_shake
+    scene black
+    show bg_rightpath at my_shake
 
     $LongNVLText(narrator, (
     '''\
@@ -389,7 +403,8 @@ You clutch onto your wounded stomach with a small prayer that your thrown togeth
     '''
     ))
 
-    scene bg_rightpath with dissolve
+    scene black
+    show bg_rightpath with dissolve
 
     $LongNVLText(narrator, (
     '''\
@@ -454,7 +469,8 @@ You hear screams coming outside of the narrow gap. You made it. You were safe! Y
 
 # Scene 2c
 label path_cave:
-    scene bg_insidecave with dissolve
+    scene black
+    show  bg_insidecave with dissolve
 
     #show terrorlightz_talking at right
     
@@ -477,7 +493,8 @@ It had taken a half an hour of blind exploration until you found a light source 
 
 # Scene 2d
 label path_cave_light:
-    scene bg_lightinsidecave with dissolve
+    scene black
+    show bg_lightinsidecave with dissolve
 
     $LongNVLText(narrator, (
     '''\
@@ -499,7 +516,8 @@ It couldn’t get worse, could it?
 
 # Scene 2e
 label path_hut:
-    scene bg_hut with dissolve
+    scene black
+    show bg_hut with dissolve
 
     $LongNVLText(narrator, (
     '''\
@@ -573,7 +591,8 @@ You are finally starting to feel better about your situation. You had shelter, a
 
 # Scene 2f
 label path_hut_meet_terrorlightz:
-    scene bg_insidehut with dissolve
+    scene black
+    show bg_insidehut with dissolve
 
     $LongNVLText(narrator, (
     '''\
@@ -691,7 +710,8 @@ You hesitantly follow Terrorlightz outside of the hut. It goes against all of yo
 
 # Scene 2g
 label path_hut_forage:
-    scene bg_hut with dissolve
+    scene black
+    show bg_hut with dissolve
 
     show terrorlightz_talking at right
 
@@ -1088,7 +1108,8 @@ In your blind rage, you don’t even notice that your stomach wound has healed.
 
 # Scene 2h
 label ship_remember:
-    scene bg_hut with dissolve
+    scene black
+    show bg_hut with dissolve
 
     $LongNVLText(narrator, (
     '''\
@@ -1096,7 +1117,8 @@ label ship_remember:
     '''
     ))
 
-    scene bg_insidecave at basic_fade, my_shake with dissolve
+    scene black
+    show bg_insidecave at basic_fade, my_shake with dissolve
 
     $LongNVLText(narrator, (
     '''\
@@ -1105,7 +1127,8 @@ label ship_remember:
     '''
     ))
 
-    scene bg_crashsite at basic_fade, my_shake with dissolve
+    scene black
+    show bg_crashsite at basic_fade, my_shake with dissolve
 
     $LongNVLText(terrorlightz.c, (
     '''\
@@ -1220,7 +1243,8 @@ That’s it. You are stuck on a godforsaken planet with only a useless ship to y
 
 # Scene 2h1
 label ship_remember_1:
-    scene bg_hut with dissolve
+    scene black
+    show bg_hut with dissolve
 
     show terrorlightz_talking at right
 
@@ -1234,7 +1258,8 @@ label ship_remember_1:
 label path_left_path_decision:
     #show bg_tavern with dissolve
     hide screen evt_choose_path
-    scene bg_fork with dissolve:
+    scene black
+    show bg_fork with dissolve:
         #xpos 1.25 ypos 1.3 xanchor 0.5 yanchor 1.0 zoom 2.0
         subpixel True
         size (1920, 1080) crop (0, 0, 860, 600) # first tuple is the size of game screen, 
@@ -1257,7 +1282,8 @@ Your eyes land on the seemingly safer option. The two suns and neighboring plane
     '''
     ))
 
-    scene bg_fork with dissolve:
+    scene black
+    show bg_fork with dissolve:
         #xpos 1.25 ypos 1.3 xanchor 0.5 yanchor 1.0 zoom 2.0
         subpixel True
         size (1920, 1080) crop (0, 0, 860, 600) # first tuple is the size of game screen, 
@@ -1277,7 +1303,8 @@ The right path scared you. It called to you like a siren in turbulent waters, in
     '''
     ))
 
-    scene bg_fork with dissolve:
+    scene black
+    show bg_fork with dissolve:
         #xpos 1.25 ypos 1.3 xanchor 0.5 yanchor 1.0 zoom 2.0
         subpixel True
         size (1920, 1080) crop (0, 0, 860, 600) # first tuple is the size of game screen, 
@@ -1309,7 +1336,8 @@ With more effort than you thought was necessary, you force your feet to move tow
 
 # Scene 3a
 label path_left_path:
-    scene bg_leftpath with dissolve
+    scene black
+    show bg_leftpath with dissolve
     
     $LongNVLText(narrator, (
     '''\
@@ -1376,8 +1404,10 @@ Your vision begins to blur and your body feels immovable. Your face droops first
 
 # Scene 3b
 label path_hospital:
-    scene bg_hospital with Fade(3,3,3)
-    show drp_casual_talking at right
+    scene black
+    show bg_hospital with Fade(3,3,3)
+    #show drp_casual_talking at right
+    show drpl blush sad angry at right
 
     $LongNVLText(drpsilicon.c, (
     '''\
@@ -1523,7 +1553,8 @@ You fall back asleep. You hope this was just a long nightmare.
 
 # Scene 3c
 label path_town_fork:
-    scene bg_hospital with dissolve
+    scene black
+    show bg_hospital with dissolve
     show commercialcris_talking with moveinright
 
     $LongNVLText(commercialcris.c, (
@@ -1598,7 +1629,8 @@ You take the hint and follow him out of the hospital.
     '''
     ))
 
-    scene bg_town with pushright
+    scene black
+    show bg_town with pushright
     show commercialcris_talking at right
 
     $LongNVLText(commercialcris.c, (
@@ -1669,11 +1701,12 @@ Well if you want to lose your guide, now’s the time. To your right you see a b
     menu: 
         "Do you catch up to Commercial Cris or escape towards the alley?"
         "Go to the empty alley...":
+            #3c1
             # if (persistent.path_to_outskirts_taken == False or persistent.path_to_tavern_taken == False):
             #show screen evt_choose_path
             #call screen evt_choose_route with dissolve
             $ persistent.path_to_town_taken = True
-            jump path_town_outskirts
+            jump path_town_alley
         "Catch up to Commercial Cris...":
             #if persistent.path_to_hut_taken == False:
             #show screen evt_choose_path 
@@ -1683,28 +1716,225 @@ Well if you want to lose your guide, now’s the time. To your right you see a b
 
     
 
-# Scene 3b1
+
+
+# Scene 3c1
+label path_town_alley:
+    scene black
+    show bg_townalley at my_walking with dissolve
+
+    #show terrorlightz_talking at right
+
+    #terrorlightz.c "Following a girl to a dark alley."
+
+    $LongNVLText(commercialcris.c, (
+    '''\
+You wait until Commercial Cris’s silhouette disappears into the crowd before you slip into the empty alleyway. Much like the alleys on your home planet, it is mostly filled with discarded trash and a distinct smell of urine. 
+    '''
+    ))
+
+    $LongNVLText(commercialcris.c, (
+    '''\
+(Effect - screen bouncing up and down slowly, walking...)
+As you pass by the first round of unused trash cans, you notice a few shady looking aliens leaning onto the walls. The phrase “try not to stand out” runs through your mind as you quickly put your hands in your pockets and briskly walk with a fake air of confidence. 
+    '''
+    ))
+
+    $LongNVLText(commercialcris.c, (
+    '''\
+While you could dodge the shady alien’s stares, you couldn’t ignore the increasing sense of dread you feel as the hairs on your neck perk up. 
+    '''
+    ))
+
+    $LongNVLText(commercialcris.c, (
+    '''\
+“It’s fine. I’m fine, just feeling a bit paranoid,” You say to yourself quietly. Just yesterday you were wandering an empty desert. Today, you are trying to dodge suspicious looking aliens. If this is any indicator how your week is going to go, you aren’t sure how long you are going to keep a hold of your sanity. 
+    '''
+    ))
+
+    $LongNVLText(commercialcris.c, (
+    '''\
+After involuntarily holding your breath as your heart thunders against your chest, you finally exit the alleyway. 
+    '''
+    ))
+
+    $LongNVLText(commercialcris.c, (
+    '''\
+(Effect: Change scene: bg_town alley...)
+Considering the bustling streets you left behind, you could only assume that you are now in the outskirts of the city. 
+    '''
+    ))
+
+    $LongNVLText(commercialcris.c, (
+    '''\
+If you had thought the alleyway was empty, the outskirts are completely barren in comparison. 
+    '''
+    ))
+
+    $LongNVLText(commercialcris.c, (
+    '''\
+The silence is eerie as you make your way through the town. The difference in atmosphere was so starkly different, you almost want to turn and run back to the main strip. The fear of the unknown is man’s greatest fear after all. 
+    '''
+    ))
+
+    $LongNVLText(commercialcris.c, (
+    '''\
+But you resist the feeling and press on. The soft smack of your shoes hitting the synthetic cobblestone makes you hyper aware of your surroundings.
+    '''
+    ))
+
+    $LongNVLText(commercialcris.c, (
+    '''\
+Passing through empty fluorescent lit buildings, you wonder why there isn’t anyone else around. Is it a dangerous area? That doesn’t seem right. 
+    '''
+    ))
+
+    $LongNVLText(commercialcris.c, (
+    '''\
+Is it deserted? More likely, but why would they waste resources on keeping the buildings lit? 
+    '''
+    ))
+
+    $LongNVLText(commercialcris.c, (
+    '''\
+You are so focused on making sense of your situation that you almost miss a trail of pink fabric peeking out from the corner of the next building. 
+    '''
+    ))
+
+    scene black
+    show bg_townalley 
+
+    $LongNVLText(commercialcris.c, (
+    '''\
+(Effect: Stop walking animation, look towards right side...)
+You slow your pace and lean towards the corner. While the other side of the building is dark, you are able to trace the pink fabric to a silhouette of a person wearing a large dress.
+    '''
+    ))
+
+    $LongNVLText(commercialcris.c, (
+    '''\
+You gulp. Another alien. Now will this be a friend or foe? 
+    '''
+    ))
+
+    jump path_town_outskirts
+
+
+
+# Scene 3c2
 label path_town_outskirts:
     #show bg_tavern with dissolve
     #call screen bg_hut
     hide screen evt_choose_path
-    scene bg_townoutskirts with dissolve
     
+    scene black
+    #show bg_townoutskirts with dissolve
+    show bg_townalley with dissolve
+
     show mysteryspacewoman_talking at left
 
-    mysteryspacewoman.c "Hi. Could I get directions?"
+    $LongNVLText(mysteryspacewoman.c, (
+    '''\
+You hesitantly approach the alien on the other side of the dark corner. 
+    '''
+    ))
+
+    $LongNVLText(mysteryspacewoman.c, (
+    '''\
+You knit your eyebrows together as you take in the strange…beautiful alien? 
+    '''
+    ))
+
+    $LongNVLText(mysteryspacewoman.c, (
+    '''\
+Enveloped in a billowing, pastel pink-colored tulle dress, there stands a fragile-looking, turquoise-skinned alien. A soft trail of pink smoke, matching the color of dress, emanates off of her.  
+    '''
+    ))
+
+    $LongNVLText(mysteryspacewoman.c, (
+    '''\
+She takes a few moments to examine you. After she is satisfied, she smirks at you as though she expected you to follow her. 
+    '''
+    ))
+
+    $LongNVLText(mysteryspacewoman.c, (
+    '''\
+Her face–composed of soft, feminine features–produces an empathetic smile. A gentle, melodic voice breaks through the silence. “Hello there, sweetie. Are you lost?” 
+    '''
+    ))
+
+    $LongNVLText(mysteryspacewoman.c, (
+    '''\
+You let out a sigh of relief. Finally, a lucky break. You feel calmer already. 
+    '''
+    ))
+
+    $LongNVLText(mysteryspacewoman.c, (
+    '''\
+Smiling back awkwardly, you say, “You could say that. I’m new here and got separated from my escort.” It feels more like a half-truth, but she didn’t need to know that. 
+    '''
+    ))
+
+    $LongNVLText(mysteryspacewoman.c, (
+    '''\
+Her eyes widen slightly as she brings her slender hand towards her mouth. “Oh my, what poor luck you have. This is such a big city, afterall.”
+    '''
+    ))
+
+    $LongNVLText(mysteryspacewoman.c, (
+    '''\
+Feigning embarrassment, you look downward, clutching the back of your neck. “Yeah it was pretty busy downtown and I got a bit distracted by all of the sights.”
+    '''
+    ))
+
+    $LongNVLText(mysteryspacewoman.c, (
+    '''\
+She cocked her head and frowned disapprovingly. “I can understand that, but do be careful. The first week I moved here I made a wrong turn and got mugged by some ruffians.” 
+    '''
+    ))
+
+    $LongNVLText(mysteryspacewoman.c, (
+    '''\
+You could believe that. An elegant alien like her walking by herself down the wrong street would make her a bigger target than even you–and you aren’t even from this planet. “I’m sorry to hear that. Considering the dangers, you could say I’ve been pretty fortunate.” 
+    '''
+    ))
+
+    $LongNVLText(mysteryspacewoman.c, (
+    '''\
+“That you have, sweetie. Now where are you heading, maybe I could help?” 
+    '''
+    ))
+
+    $LongNVLText(mysteryspacewoman.c, (
+    '''\
+Where are you going? Do they have an immigration center here for unfortunate, lost off-world captains? 
+    '''
+    ))
+
+    $LongNVLText(mysteryspacewoman.c, (
+    '''\
+After a few moments of pondering, you make up your mind. “The nearest ship station,” Maybe you could hitch a ride on the next spaceship heading towards your galaxy. You had valuable navigation skills so you could feasibly trade your services for a ride. 
+    '''
+    ))
+
+    $LongNVLText(mysteryspacewoman.c, (
+    '''\
+She giggles. “I knew you weren’t from here.” She cups her face with her palm as she purses her lips and looks off into the distance. 
+    '''
+    ))
+
+    $LongNVLText(mysteryspacewoman.c, (
+    '''\
+A minute goes by and you start doubting your odds. You start debating if you should ditch the pretty alien and try your luck exploring the city by yourself, but before you open your mouth to speak, she claps her hands excitedly and points toward the narrow alley in front of you. Effect: mysterious space woman bounces up and down for a few seconds. “Oh, of course! We are close to the northeastern facility.” She outstretches a hand towards you. “Come, I’ll take you,” 
+    '''
+    ))
+
+    $LongNVLText(mysteryspacewoman.c, (
+    '''\
+You take her hand and she leads you into the alley.
+    '''
+    ))
     
-    jump town_alley
-
-
-# Scene 3c1
-label town_alley:
-    scene bg_townalley with dissolve
-
-    show terrorlightz_talking at right
-
-    terrorlightz.c "Following a girl to a dark alley."
-
     jump game_over
 
 
