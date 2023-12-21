@@ -1407,7 +1407,8 @@ label path_hospital:
     scene black
     show bg_hospital with Fade(3,3,3)
     #show drp_casual_talking at right
-    show drpl blush sad angry at right
+    show drpl blush at right
+    #  sad angry
 
     $LongNVLText(drpsilicon.c, (
     '''\
@@ -1925,7 +1926,8 @@ She giggles. “I knew you weren’t from here.” She cups her face with her pa
 
     $LongNVLText(mysteryspacewoman.c, (
     '''\
-A minute goes by and you start doubting your odds. You start debating if you should ditch the pretty alien and try your luck exploring the city by yourself, but before you open your mouth to speak, she claps her hands excitedly and points toward the narrow alley in front of you. Effect: mysterious space woman bounces up and down for a few seconds. “Oh, of course! We are close to the northeastern facility.” She outstretches a hand towards you. “Come, I’ll take you,” 
+(Effect - mysterious space woman bounces up and down for a few seconds.)
+A minute goes by and you start doubting your odds. You start debating if you should ditch the pretty alien and try your luck exploring the city by yourself, but before you open your mouth to speak, she claps her hands excitedly and points toward the narrow alley in front of you. “Oh, of course! We are close to the northeastern facility.” She outstretches a hand towards you. “Come, I’ll take you,” 
     '''
     ))
 
@@ -1935,8 +1937,113 @@ You take her hand and she leads you into the alley.
     '''
     ))
     
-    jump game_over
+    jump path_town_alley_again
 
+
+# Scene 3c3
+label path_town_alley_again:
+    #show bg_tavern with dissolve
+    #call screen bg_hut
+    hide screen evt_choose_path
+    
+    scene black
+    #show bg_townoutskirts with dissolve
+    show bg_townalley at my_walking with dissolve
+
+    show mysteryspacewoman_talking at left
+
+    $LongNVLText(mysteryspacewoman.c, (
+    '''\
+(Effect: WALKING ANIMATION)
+After 30 minutes of seemingly aimless turns through endless rows of alleyways, you start to feel anxious. Every turn you take is the same as the last last. Dark and decrepit. While your guide is ever-confident, never once double-backed or hesitating, you still can’t comprehend that this endless maze of alleys would lead anywhere.    '''
+    ))
+
+    $LongNVLText(mysteryspacewoman.c, (
+    '''\
+Is she lost? You hope not. She’s your only hope to get off of this god-forsaken planet. 
+    '''
+    ))
+
+    $LongNVLText(mysteryspacewoman.c, (
+    '''\
+You clear your throat as you make another sharp turn. Finally, she lets go of your hand. Unsurprisingly, it looks just as uninviting as the last. “Um, are you sure we are going in the right direction?” 
+    '''
+    ))
+
+    scene black
+    show bg_townalley 
+    show mysteryspacewoman_talking at left
+
+    $LongNVLText(mysteryspacewoman.c, (
+    '''\
+You hear her giggle softly next to you. “Yes, of course, sweetie. You have to trust me.”
+    '''
+    ))
+
+    $LongNVLText(mysteryspacewoman.c, (
+    '''\
+Trust her? How could you when you only met her an hour ago? Even worse, it is dark out. You lost the little amount of light you had left. Without daylight, you are completely and utterly helpless. 
+    '''
+    ))
+
+    $LongNVLText(mysteryspacewoman.c, (
+    '''\
+It doesn’t seem like your guide is as knowledgeable as you once hoped so you start your own investigation. Though it’s hard to make out in the dark, you feel your way around using the cracked brick-lined walls as your guide. It only takes a minute or two of feeling around, but you start to grow more anxious when you collide with the wall on the other side of the alley. Your assumptions are correct–this alley is a dead end.  
+    '''
+    ))
+
+    $LongNVLText(mysteryspacewoman.c, (
+    '''\
+You gulp and the hairs on the back of your neck perk up. This would be the perfect opportunity for someone to rob you. You shake your head and dismiss the thought. There is no way she is a criminal! 
+    '''
+    ))
+
+    $LongNVLText(mysteryspacewoman.c, (
+    '''\
+As your mind was racing with how to handle this situation, you turn too quickly to the left and trip over an overturned trash can. EFFECT: BOUNCE The metallic lid screeches as it rolls through the alley.
+    '''
+    ))
+
+    $LongNVLText(mysteryspacewoman.c, (
+    '''\
+A soft voice cuts through the darkness. “Don’t worry, sweetie. Let me help you up.” 
+    '''
+    ))
+
+    $LongNVLText(mysteryspacewoman.c, (
+    '''\
+(Effect: PAN UP FROM BOTTOM OF ALIEN TO TOP) 
+You look up and notice the pretty alien hovering over you. Your eyes widen. When did she get so close to you? You didn’t hear her following you.
+     '''
+    ))
+
+    $LongNVLText(mysteryspacewoman.c, (
+    '''\
+You reach up to take her outstretched arm, but pull away before you make contact. Something is very, very wrong. 
+    '''
+    ))
+
+    $LongNVLText(mysteryspacewoman.c, (
+    '''\
+(Effect: PAN IN CLOSER TO ALIEN’s FACE)
+Upon closer inspection of her face, you notice that her eyes, once delicate and gentle, are now cold and expressionless. Her mouth, wider than before, displays pointed, jagged teeth.
+    '''
+    ))
+
+    $LongNVLText(mysteryspacewoman.c, (
+    '''\
+The pink, elegant clothes she once wore melted away, revealing a horrifying wolf-like alien. Her voice, in a deeper pitch, mocks you, “What’s wrong, lost lamb?”
+    '''
+    ))
+
+    $LongNVLText(mysteryspacewoman.c, (
+    '''\
+You scream for the last time as the terrifying alien licks its lips and dives into you. 
+    '''
+    ))
+
+
+    jump game_over
 
 
 # Scene 3a2
