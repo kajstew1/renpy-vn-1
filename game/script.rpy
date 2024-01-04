@@ -2046,13 +2046,248 @@ You scream for the last time as the terrifying alien licks its lips and dives in
     jump game_over
 
 
-# Scene 3a2
+# Scene 3c5
 label path_tavern:
-    #show bg_tavern with dissolve
-    hide screen evt_choose_path
+    scene bg_tavern with dissolve
 
+    show commercialcris_neutral at right
+
+    $LongNVLText(commercialcris.c, (
+    '''\
+You decide to stick with your guide. You are far away from home afterall. Where would you go? 
+    '''
+    ))
+
+    $LongNVLText(commercialcris.c, (
+    '''\
+The sidewalk is positively packed with people, making it difficult to catch up, but after some polite pushing, you are able to close the distance. 
+    '''
+    ))
+
+    $LongNVLText(commercialcris.c, (
+    '''\
+Attempting to hide your exhaustion from your escort, you slow your breaths to a normal pace. Your body is still recovering from your hospital trip. Heat stroke, dehydration, and a crash landing will do that to a person. But with the way your escort hadn’t even spared you a glance since you left the hospital, he didn’t seem to care. 
+    '''
+    ))
+
+    $LongNVLText(commercialcris.c, (
+    '''\
+Typical. 
+    '''
+    ))
+
+    $LongNVLText(commercialcris.c, (
+    '''\
+You felt a little lighter when the tavern came into view. Jovial mummers flood your ears as you approach the threshold. 
+    '''
+    ))
+
+    $LongNVLText(commercialcris.c, (
+    '''\
+Without a door to separate the outside from the inside, it is easy to spot the alien patrons sitting at the bar enjoying their drinks. 
+    '''
+    ))
+
+    $LongNVLText(commercialcris.c, (
+    '''\
+Holding onto the metal trim lining the doorway, Commercial Cris finally turns around to face you. The tv screen displays a clearly disingenuous, engineered grin on his face. With a flourish, he motions inside. “After you, tourist.” 
+    '''
+    ))
+
+    $LongNVLText(commercialcris.c, (
+    '''\
+Eager to get away from the crowds, you walk into the tavern. You guess this is a good time as any to survey your surroundings. 
+    '''
+    ))
+
+
+    jump path_tavern_nav
+
+
+# Scene 3c5a
+label path_tavern_nav:
+    scene bg_tavern with dissolve
+
+    $LongNVLText(narrator, (
+    '''\
+Explore the area by selecting an item. 
+{w=3}{nw} 
+    '''
+    ))
+
+    hide screen evt_choose_path
     call screen tavern_nav
-    mysteryspacewoman.c "Hi. Could I get directions?"
+
+    jump path_tavern_drink
+
+
+
+
+label path_tavern_bin:
+    $ seen_labels.add("tavern_bin")
+
+    $LongNVLText(narrator, (
+    '''\
+Sitting idly outside sits a trash bin. You find some comfort in seeing that even on an alien planet, they have the same strategy to dispose of trash. 
+    '''
+    ))
+    jump path_tavern_nav
+
+label path_tavern_heater:
+    $ seen_labels.add("tavern_heater")
+
+    $LongNVLText(narrator, (
+    '''\
+Centrally placed in the tavern is a giant heater. Ornately decorated in carvings and hanging trinkets, it looms over the tavern’s patrons. You wonder how something that large emitting so much heat hadn’t burned the place down. Maybe it had? 
+    '''
+    ))
+    jump path_tavern_nav
+    
+label path_tavern_patron:
+    $ seen_labels.add("tavern_patron")
+
+    $LongNVLText(narrator, (
+    '''\
+You notice the aliens sitting at the bar. Though you don’t understand their language, the crashing of their pint glasses and laughter made it apparent they are having a good time. 
+    '''
+    ))
+    jump path_tavern_nav
+
+label path_tavern_sign:
+    $ seen_labels.add("tavern_sign")
+
+    $LongNVLText(narrator, (
+    '''\
+Outside of the tavern hangs a single sign in an unfamiliar language. This must mark the name of the establishment. 
+    '''
+    ))
+
+    jump path_tavern_nav
+
+
+
+# Scene 3c6
+label path_tavern_drink:
+    scene black
+    show bg_tavernbartender with dissolve
+
+    show commercialcris_talking at right
+
+    $LongNVLText(narrator, (
+    '''\
+You believe you have gotten a sufficient lay of the land. With a bit less hesitation you move deeper inside of the tavern, Commercial Cris following closely behind.
+    '''
+    ))
+
+    $LongNVLText(commercialcris.c, (
+    '''\
+Past the larger heater, you spy an empty table. You scoot the chair out and take a seat. You watch as Commercial Cris takes the seat directly across from you, his smile unwavering. 
+    '''
+    ))
+
+    $LongNVLText(commercialcris.c, (
+    '''\
+“So, tourist. What’s your poison?” Commercial Cris asks, raising a hand to hail a passing waiter.
+    '''
+    ))
+
+    $LongNVLText(commercialcris.c, (
+    '''\
+You raise your eyebrow. You highly doubt that you could find a drink here that would resemble anything that you are familiar with so you just shrug. “I’ll have what you're having.” 
+    '''
+    ))
+
+    $LongNVLText(commercialcris.c, (
+    '''\
+Eyeing your escort, you grit your teeth, quickly regretting your decision. Anything a tv-human hybrid could drink, probably isn’t good for you. 
+    '''
+    ))
+
+    $LongNVLText(commercialcris.c, (
+    '''\
+Assuming your thoughts, Commercial Cris chuckled. “Right.” 
+    '''
+    ))
+
+    $LongNVLText(commercialcris.c, (
+    '''\
+A green, scaly-faced alien approaches the table with a tablet device in hand. With a voice sounding like it was trapped underwater, she asks, eyeing Commercial Cris, “To what do we owe your presence, your majesty?” 
+    '''
+    ))
+
+    $LongNVLText(commercialcris.c, (
+    '''\
+Commercial Cris leans back onto his chair, hands laying lightly on his stomach. “Oh Belvania, you are a riot.” Tipping his large, rectangular head towards me, he says, “We have a special guest today. You know that spaceship that crashed on Plovita’s nature preserve? Well after the accident yesterday, I thought [player_name] could use a drink.” 
+    '''
+    ))
+
+    $LongNVLText(commercialcris.c, (
+    '''\
+The waiter’s beady, yellow eyes opened in surprise and looked towards you. After looking you up and down, she was obviously unimpressed. “Aye, pilot, did you get your license yesterday? You left quite the mess. It was all over the news.” 
+    '''
+    ))
+
+    $LongNVLText(commercialcris.c, (
+    '''\
+Your nostrils flared and you clench your fist underneath the table. What an ignorant thing to say?! You hardly had much of a choice where you could land after the impact. 
+    '''
+    ))
+
+    $LongNVLText(commercialcris.c, (
+    '''\
+Sensing the rising tension, Commercial Cris clears his throat to take back the attention from the waitress. “My friend will take a glass of Jfetau. Nothing for me as usual.” 
+    '''
+    ))
+
+    $LongNVLText(commercialcris.c, (
+    '''\
+With a few practiced motions, the waitress places the order on the tablet and leaves the table. 
+    '''
+    ))
+
+    $LongNVLText(commercialcris.c, (
+    '''\
+You didn’t realize that you had been holding your breath until you unclench your fist and take a deep breath. 
+    '''
+    ))
+
+    $LongNVLText(commercialcris.c, (
+    '''\
+So what if this planet doesn’t know the truth? If you play your cards right, you’ll be on the next ship and then none of this will matter. 
+    '''
+    ))
+
+    $LongNVLText(commercialcris.c, (
+    '''\
+You turn your focus back on Commercial Cris, who is looking around the tavern with a bored expression. You decide to be blunt and to the point. After that display of rudeness, you think it’s only fair to be candid. “Do you have an inter-galaxy space station here?” 
+    '''
+    ))
+
+    $LongNVLText(commercialcris.c, (
+    '''\
+With a raised eyebrow and sour expression, Commercial Cris responds, “Yes of course. We aren’t primitives.” 
+    '''
+    ))
+
+    $LongNVLText(commercialcris.c, (
+    '''\
+You feel your heart beat faster. Finally, some progress! 
+    '''
+    ))
+
+    $LongNVLText(commercialcris.c, (
+    '''\
+Time to play the good samaritan here. This is your way out! 
+    '''
+    ))
+
+    $LongNVLText(commercialcris.c, (
+    '''\
+You smile and open your mouth to respond, but before you can get any words out you hear glass breaking, loud cursing, and a scuffle.  Effect: Shake screen
+    '''
+    ))
+
+
     jump path_tavern_drink
 
 
@@ -2102,28 +2337,6 @@ label reset:
     jump start
 
 
-label path_tavern_bin:
-    $ seen_labels.add("tavern_bin")
-    "Tavern bin reporting"
-    jump path_town_fork
-
-label path_tavern_heater:
-    $ seen_labels.add("tavern_heater")
-    "Tavern heater reporting"
-    jump path_town_fork
-    
-label path_tavern_patron:
-    $ seen_labels.add("tavern_patron")
-    "Tavern patron reporting"
-    jump path_town_fork
-
-label path_tavern_sign:
-    $ seen_labels.add("tavern_sign")
-    "Tavern sign reporting"
-    jump path_town_fork
-
-label path_tavern_drink:
-    jump path_town_fork
 
 label variable1: 
     hide screen evt_choose_char

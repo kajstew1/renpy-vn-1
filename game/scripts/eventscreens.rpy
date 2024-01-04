@@ -72,4 +72,4 @@ screen tavern_nav:
         ypadding 5
         xalign 0.1
         yalign 0.1
-        textbutton "Exit" action Jump("start")
+        textbutton "Continue" action Jump("path_tavern_drink")
