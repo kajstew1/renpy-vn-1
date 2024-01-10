@@ -104,7 +104,7 @@ label start:
     #show bg_crashsite with dissolve
     scene black
     show bg_crashsite with dissolve
-    play music "sounds/effects/crash_beeps_alarms.mp3"
+    play music "sounds/effects/SCENE_1_crash_beeps_alarms.mp3"
 
     #narration = new Character(.....)
     #Array and multiple lines only used for readability. They have no effect on the text printed.
@@ -2287,6 +2287,142 @@ You smile and open your mouth to respond, but before you can get any words out y
     '''
     ))
 
+
+    scene black
+    show bg_insidetavern with dissolve
+    show commercialcris_talking at right
+
+    $LongNVLText(narrator, (
+    '''\
+You turn your head towards the loud noise. Across the tavern, you see three crouching silhouettes tumbling across the floor. 
+    '''
+    ))
+
+    $LongNVLText(commercialcris.c, (
+    '''\
+Nervously, you look towards your guide who seems utterly amused by this new development. 
+    '''
+    ))
+
+    $LongNVLText(commercialcris.c, (
+    '''\
+With one hand on the table balancing the tv screen, he motions with his free hand towards the noise, “Lucky you, tourist. You get a show with your drink. We can call it an introduction to the culture of Aisthesis.”
+    '''
+    ))
+
+    $LongNVLText(commercialcris.c, (
+    '''\
+You take that as permission to break away from your awkward conversation and examine the scene. You scoot your chair back and approach the growing crowd encircling the fight.
+    '''
+    ))
+
+# (Scene: CHANGE BG TO bg_tavernbartender)
+    scene black
+    show bg_tavernbartender with dissolve
+
+    $LongNVLText(commercialcris.c, (
+    '''\
+Throughout your short tour of the city you’ve noticed that most of the creatures on Psilicon 5 are taller than you. 
+    '''
+    ))
+
+    $LongNVLText(commercialcris.c, (
+    '''\
+You try to stand on an empty chair to get a better view, but soon learn that it is ineffective. Instead, you squirm your way through the crowd until you finally get a better look. 
+    '''
+    ))
+
+#    (Scene: CHANGE BG TO bg_tavernfight)
+    scene black
+    show bg_tavernfight with dissolve
+
+    $LongNVLText(commercialcris.c, (
+    '''\
+In between the excited screeches of the crowd you hear what you could only assume are curses by the three fighting creatures. 
+    '''
+    ))
+
+    $LongNVLText(commercialcris.c, (
+    '''\
+You have never seen anything like it before. A single “human-like” alien sits crouched centrally between the two other aliens in a defensive position, holding his hands in front of him ready to protect him from the next hit. A lion-headed lion stands in front of the human snarling while a bull-headed lion seemingly tries to break up the fight. 
+    '''
+    ))
+
+    $LongNVLText(commercialcris.c, (
+    '''\
+Glasses full of alcohol are thrown back and forth into the crowd. Broken bottles are scattered across the already dirty, uneven wood floor, making the situation more precarious than before. The crowd, disinterested or desensitized to the danger, continues to cheer on the fight. 
+    '''
+    ))
+
+    $LongNVLText(commercialcris.c, (
+    '''\
+You question whether you should stay to watch the scuffle ensue, but before you can make a conscious decision, the human is thrown by the lion-headed alien into the crowd, right in front of your feet. In the heat of the moment, the human claws at your pant legs, trying to get up. 
+    '''
+    ))
+
+    $LongNVLText(commercialcris.c, (
+    '''\
+Right. Time to go. 
+    '''
+    ))
+
+    $LongNVLText(commercialcris.c, (
+    '''\
+Afraid that you are going to become an unwilling participant in this situation, you scurry back to your table. 
+    '''
+    ))
+
+#    (Scene: CHANGE BG TO bg_insidetavern)
+    scene black
+    show bg_insidetavern with dissolve
+
+    $LongNVLText(commercialcris.c, (
+    '''\
+After sitting back into your seat–which you find far more comfortable than before–you notice there is a pint of mysterious liquid in front of you. The waitress must have dropped off while you were away. 
+    '''
+    ))
+
+    $LongNVLText(commercialcris.c, (
+    '''\
+You could really use a drink now. To hell with the consequences. With shaky hands, you take a sip. 
+    '''
+    ))
+
+    $LongNVLText(commercialcris.c, (
+    '''\
+Commercial Cris, all the more amused with your discomfort, smirks at you. “The roof is still intact so I would say you’ve just witnessed a pretty harmless fight.”
+    '''
+    ))
+
+    $LongNVLText(commercialcris.c, (
+    '''\
+Harmless fight he calls it. You nearly got hit in the face by an airborne glass bottle and run over by an over-excited crowd. On your home planet you may have witnessed a fight or two, but those mainly consisted of verbal-screaming matches. Physical fights were considered neanderthal tactics. So yeah, this is hardly “harmless” to you. 
+    '''
+    ))
+
+    $LongNVLText(commercialcris.c, (
+    '''\
+Ignoring the onslaught of Commercial Cris’s snide comments, you dose your discomfort in your drink. It tastes putrid, slimy, bitter, but blissfully alcoholic. After a few large gulps, you start to feel more relaxed. 
+    '''
+    ))
+
+    $LongNVLText(commercialcris.c, (
+    '''\
+Getting the hint that you aren’t going to react to his comments anymore, Commercial Cris frowns at you, glancing down at his watch impatiently. “Alright then, we are playing the quiet game. That’s alright. You have five minutes to finish your drink. I have more to show you and not enough time to do it.” 
+    '''
+    ))
+
+    $LongNVLText(commercialcris.c, (
+    '''\
+Challenge accepted. With an air of feigned confidence, you chug the rest of your drink. 
+    '''
+    ))
+
+    $LongNVLText(commercialcris.c, (
+    '''\
+Aisthesis here you come.
+    '''
+    ))
 
     jump path_tavern_drink
 
