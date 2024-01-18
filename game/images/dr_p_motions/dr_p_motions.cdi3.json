@@ -1,0 +1,391 @@
+{
+	"Version": 3,
+	"Parameters": [
+		{
+			"Id": "toggles",
+			"GroupId": "ParamGroup4",
+			"Name": "--- toggles ---"
+		},
+		{
+			"Id": "blush",
+			"GroupId": "ParamGroup4",
+			"Name": "blush"
+		},
+		{
+			"Id": "angrysad",
+			"GroupId": "ParamGroup4",
+			"Name": "Angry - Sad"
+		},
+		{
+			"Id": "mouthrig",
+			"GroupId": "ParamGroup",
+			"Name": "--- mouth rig ---"
+		},
+		{
+			"Id": "ParamMouthForm",
+			"GroupId": "ParamGroup",
+			"Name": "Mouth Form"
+		},
+		{
+			"Id": "ParamMouthOpenY",
+			"GroupId": "ParamGroup",
+			"Name": "Mouth Open"
+		},
+		{
+			"Id": "anglesrig",
+			"GroupId": "ParamGroup2",
+			"Name": "--- Angles Rig ---"
+		},
+		{
+			"Id": "ParamAngleX",
+			"GroupId": "ParamGroup2",
+			"Name": "Angle X"
+		},
+		{
+			"Id": "ParamAngleY",
+			"GroupId": "ParamGroup2",
+			"Name": "Angle Y"
+		},
+		{
+			"Id": "ParamAngleZ",
+			"GroupId": "ParamGroup2",
+			"Name": "Angle Z"
+		},
+		{
+			"Id": "ParamBodyAngleX",
+			"GroupId": "ParamGroup2",
+			"Name": "Body X"
+		},
+		{
+			"Id": "ParamBodyAngleY",
+			"GroupId": "ParamGroup2",
+			"Name": "Body Y"
+		},
+		{
+			"Id": "ParamBodyAngleZ",
+			"GroupId": "ParamGroup2",
+			"Name": "Body Z"
+		},
+		{
+			"Id": "ParamBreath",
+			"GroupId": "ParamGroup2",
+			"Name": "Breath"
+		},
+		{
+			"Id": "jamurphysics",
+			"GroupId": "ParamGroup3",
+			"Name": "--- Jamur Physics ---"
+		},
+		{
+			"Id": "jamurx1",
+			"GroupId": "ParamGroup3",
+			"Name": "Jamur X1"
+		},
+		{
+			"Id": "jamurx2",
+			"GroupId": "ParamGroup3",
+			"Name": "Jamur X2"
+		},
+		{
+			"Id": "jamurY1",
+			"GroupId": "ParamGroup3",
+			"Name": "Jamur Y1"
+		},
+		{
+			"Id": "jamurY2",
+			"GroupId": "ParamGroup3",
+			"Name": "Jamur Y2"
+		},
+		{
+			"Id": "armphysics",
+			"GroupId": "ParamGroup5",
+			"Name": "--- Arm Physics ---"
+		},
+		{
+			"Id": "armphysics1",
+			"GroupId": "ParamGroup5",
+			"Name": "arm physics"
+		},
+		{
+			"Id": "clothesphysics",
+			"GroupId": "ParamGroup6",
+			"Name": "--- Clothes Physics ---"
+		},
+		{
+			"Id": "collar1",
+			"GroupId": "ParamGroup6",
+			"Name": "Collar 1"
+		},
+		{
+			"Id": "collar2",
+			"GroupId": "ParamGroup6",
+			"Name": "Collar 2"
+		},
+		{
+			"Id": "bigcollar1",
+			"GroupId": "ParamGroup6",
+			"Name": "Big Collar 1"
+		},
+		{
+			"Id": "bigcollar2",
+			"GroupId": "ParamGroup6",
+			"Name": "Big Collar 2"
+		},
+		{
+			"Id": "coat1",
+			"GroupId": "ParamGroup6",
+			"Name": "Coat 1"
+		},
+		{
+			"Id": "coat2",
+			"GroupId": "ParamGroup6",
+			"Name": "Coat 2"
+		},
+		{
+			"Id": "ParamEyeLOpen",
+			"GroupId": "",
+			"Name": "EyeL Open"
+		},
+		{
+			"Id": "ParamEyeLSmile",
+			"GroupId": "",
+			"Name": "EyeL Smile"
+		},
+		{
+			"Id": "ParamEyeROpen",
+			"GroupId": "",
+			"Name": "EyeR Open"
+		},
+		{
+			"Id": "ParamEyeRSmile",
+			"GroupId": "",
+			"Name": "EyeR Smile"
+		},
+		{
+			"Id": "ParamEyeBallX",
+			"GroupId": "",
+			"Name": "Eyeball X"
+		},
+		{
+			"Id": "ParamEyeBallY",
+			"GroupId": "",
+			"Name": "Eyeball Y"
+		},
+		{
+			"Id": "ParamBrowLY",
+			"GroupId": "",
+			"Name": "BrowL Y"
+		},
+		{
+			"Id": "ParamBrowRY",
+			"GroupId": "",
+			"Name": "BrowR Y"
+		},
+		{
+			"Id": "ParamBrowLX",
+			"GroupId": "",
+			"Name": "BrowL X"
+		},
+		{
+			"Id": "ParamBrowRX",
+			"GroupId": "",
+			"Name": "BrowR X"
+		},
+		{
+			"Id": "ParamBrowLAngle",
+			"GroupId": "",
+			"Name": "BrowL Angle"
+		},
+		{
+			"Id": "ParamBrowRAngle",
+			"GroupId": "",
+			"Name": "BrowR Angle"
+		},
+		{
+			"Id": "ParamBrowLForm",
+			"GroupId": "",
+			"Name": "BrowL Form"
+		},
+		{
+			"Id": "ParamBrowRForm",
+			"GroupId": "",
+			"Name": "BrowR Form"
+		},
+		{
+			"Id": "ParamCheek",
+			"GroupId": "",
+			"Name": "Cheek"
+		},
+		{
+			"Id": "ParamHairFront",
+			"GroupId": "",
+			"Name": "Hair Move Front"
+		},
+		{
+			"Id": "ParamHairSide",
+			"GroupId": "",
+			"Name": "Hair Move Side"
+		},
+		{
+			"Id": "ParamHairBack",
+			"GroupId": "",
+			"Name": "Hair Move Back"
+		}
+	],
+	"ParameterGroups": [
+		{
+			"Id": "ParamGroup4",
+			"GroupId": "",
+			"Name": "Toggles"
+		},
+		{
+			"Id": "ParamGroup",
+			"GroupId": "",
+			"Name": "Mouth"
+		},
+		{
+			"Id": "ParamGroup2",
+			"GroupId": "",
+			"Name": "Angles"
+		},
+		{
+			"Id": "ParamGroup3",
+			"GroupId": "",
+			"Name": "Jamur Physics"
+		},
+		{
+			"Id": "ParamGroup5",
+			"GroupId": "",
+			"Name": "Arm Physics"
+		},
+		{
+			"Id": "ParamGroup6",
+			"GroupId": "",
+			"Name": "Clothes Physics"
+		}
+	],
+	"Parts": [
+		{
+			"Id": "jamur",
+			"Name": "jamur"
+		},
+		{
+			"Id": "Face",
+			"Name": "Face"
+		},
+		{
+			"Id": "Part10",
+			"Name": "HeadMALE Copy"
+		},
+		{
+			"Id": "Kerah",
+			"Name": "Kerah"
+		},
+		{
+			"Id": "Jas",
+			"Name": "Jas"
+		},
+		{
+			"Id": "Torso",
+			"Name": "Torso"
+		},
+		{
+			"Id": "Part13",
+			"Name": "NECK MALE Copy"
+		},
+		{
+			"Id": "Arm",
+			"Name": "Arm"
+		},
+		{
+			"Id": "backpart",
+			"Name": "backpart"
+		},
+		{
+			"Id": "Part9",
+			"Name": "jamur Copy"
+		},
+		{
+			"Id": "Part4",
+			"Name": "MOUTH  Copy"
+		},
+		{
+			"Id": "Part18",
+			"Name": "R"
+		},
+		{
+			"Id": "Part11",
+			"Name": "L"
+		},
+		{
+			"Id": "Part12",
+			"Name": "Folder 2"
+		},
+		{
+			"Id": "Part15",
+			"Name": "R"
+		},
+		{
+			"Id": "Part14",
+			"Name": "L"
+		},
+		{
+			"Id": "Part5",
+			"Name": "UPPER LIPS  Copy"
+		},
+		{
+			"Id": "Part6",
+			"Name": "LOWER LIPS Copy"
+		},
+		{
+			"Id": "Part7",
+			"Name": "MOUTH INSIDE  Copy"
+		},
+		{
+			"Id": "Part17",
+			"Name": "RJas"
+		},
+		{
+			"Id": "Part16",
+			"Name": "L Jas"
+		},
+		{
+			"Id": "Part8",
+			"Name": "Folder 5 Copy"
+		}
+	],
+	"CombinedParameters": [
+		[
+			"ParamMouthForm",
+			"ParamMouthOpenY"
+		],
+		[
+			"ParamAngleX",
+			"ParamAngleY"
+		],
+		[
+			"ParamBodyAngleX",
+			"ParamBodyAngleY"
+		],
+		[
+			"jamurx1",
+			"jamurx2"
+		],
+		[
+			"jamurY1",
+			"jamurY2"
+		],
+		[
+			"collar1",
+			"collar2"
+		],
+		[
+			"bigcollar1",
+			"bigcollar2"
+		],
+		[
+			"coat1",
+			"coat2"
+		]
+	]
+}

@@ -50,6 +50,8 @@ init:
 # The game starts here.
 label splashscreen:
     scene black 
+    show drp_motions dr_p_talking
+
     with Pause(1)
     show mytext "Dr. Psilicon Presents......" with dissolve
     with Pause(2)
@@ -68,7 +70,8 @@ label splashscreen:
     
 label splashscreen2:
     scene black
-
+    
+    show drp_motions dr_p_breathing
     #show mytext "What name would you like to use?"
     $ player_name = renpy.input("What is your name?")
     $ player_name = player_name.strip()

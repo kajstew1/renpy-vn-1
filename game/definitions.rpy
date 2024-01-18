@@ -35,7 +35,7 @@ image black:
 image white:
     Solid("#FFF")
 
-
+image drp_motions = Live2D("images/dr_p_motions", default_fade=0.0, loop=True)
     
 
 # Declare characters used by this game. The color argument colorizes the
