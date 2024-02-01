@@ -2341,19 +2341,19 @@ You try to stand on an empty chair to get a better view, but soon learn that it 
 
     $LongNVLText(commercialcris.c, (
     '''\
-In between the excited screeches of the crowd you hear what you could only assume are curses by the three fighting creatures. 
+In between the excited screeches of the crowd you hear what you could only assume are curses by the two fighting creatures.
     '''
     ))
 
     $LongNVLText(commercialcris.c, (
     '''\
-You have never seen anything like it before. A single “human-like” alien sits crouched centrally between the two other aliens in a defensive position, holding his hands in front of him ready to protect him from the next hit. A lion-headed lion stands in front of the human snarling while a bull-headed lion seemingly tries to break up the fight. 
+You have never seen anything like it before. A single “rat-like” alien sits, clutching onto the table, bracing for a fight. A larger, more imposing alien stands in front of the small alien snarling. Their onlooking table mates, a human and a green, bald-headed alien try without success to break up the fight.
     '''
     ))
 
     $LongNVLText(commercialcris.c, (
     '''\
-Glasses full of alcohol are thrown back and forth into the crowd. Broken bottles are scattered across the already dirty, uneven wood floor, making the situation more precarious than before. The crowd, disinterested or desensitized to the danger, continues to cheer on the fight. 
+Before anyone could process the scene before them, glasses full of alcohol are thrown back and forth into the crowd. Broken bottles are scattered across the already dirty, uneven wood floor, making the situation more precarious than before. The crowd, disinterested or desensitized to the danger, continues to cheer on the fight.
     '''
     ))
 
@@ -2427,7 +2427,75 @@ Aisthesis here you come.
     '''
     ))
 
-    jump path_tavern_drink
+    jump path_town_walk
+
+
+# Scene 3c7
+label path_town_walk:
+    scene black
+    show bg_town with dissolve
+
+    show commercialcris_talking at right
+
+    $LongNVLText(narrator, (
+    '''\
+Silently, Commercial Cris eyes you, tapping his watch with finality. With one last gulp of your drink, you get up. If your tavern experience told you anything, it is that this place is full of surprises. Now though, you are a tad tipsy—which makes this misadventure immeasurably less terrifying and much more exciting. 
+    '''
+    ))
+
+    $LongNVLText(commercialcris.c, (
+    '''\
+With far less grace than before, you clumsily scoot your chair out and stand up, Commercial Cris already waiting at the door. 
+    '''
+    ))
+
+    $LongNVLText(commercialcris.c, (
+    '''\
+Your head spins faintly as you walk out of the tavern—almost in a straight line.
+    '''
+    ))
+
+    $LongNVLText(commercialcris.c, (
+    '''\
+Commercial Cris’s tour is about as good as his company at the tavern, short, brief, and a tad impatient. 
+    '''
+    ))
+
+    $LongNVLText(commercialcris.c, (
+    '''\
+The biggest thing that stood out to you about the town is the architecture. The buildings were tall, but with jagged, pointy roofs. To match the structure, the windows are retrofitted in broken, kaleidoscope patterns. 
+    '''
+    ))
+
+    $LongNVLText(commercialcris.c, (
+    '''\
+Did windows serve a different purpose here? You couldn’t imagine that it is possible to see a clear image outside of them. Weird..but kind of cool at the same time. 
+    '''
+    ))
+
+# (EDIT for Alyssa Made change to BG_TOWN and BG_TAVERNFIGHT (highlighted in yellow))
+
+    $LongNVLText(commercialcris.c, (
+    '''\
+After only about 20 minutes, your “tour” of the town ended. He drops you off at exactly where you started, at the hospital. With a noncommittal grin and short wave he mentions he is late to a meeting and quickly scampers away. 
+    '''
+    ))
+
+    $LongNVLText(commercialcris.c, (
+    '''\
+Being much drunker than you were this morning, you find his desertion less infuriating. Your only regret is that you didn’t get the chance to ask about the intergalactic space station. Maybe you could ask one of the nurses?  
+    '''
+    ))
+
+    $LongNVLText(commercialcris.c, (
+    '''\
+With a sigh and zero options, you open the door and enter the hospital. Leaning back into your hospital bed you feel like you haven’t accomplished much today.  
+    '''
+    ))
+
+# GAME OVER–Neutral Ending
+
+    return
 
 
 
