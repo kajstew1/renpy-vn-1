@@ -291,10 +291,103 @@ You had a feeling that there was a right or wrong answer to your choice from her
             $ persistent.path_to_hut_taken = True
             jump path_right_path
         "No thank you!": 
-            return
+            jump path_give_up
     
     
     return
+
+# Scene 4a
+label path_give_up:
+
+
+    $LongNVLText(narrator, (
+    '''\
+You stare at the fork in the road. With zero insight into the landscape and the perilous nature of the planet, you are facing a severe disadvantage. Are your options really only to choose between a right or a left? You don’t think so. You still had a ship. Sure it is partially on fire and almost entirely destroyed, but better the devil you know than the devil you don't, right? 
+    '''
+    ))
+
+    $LongNVLText(narrator, (
+    '''\
+Feeling safer already treading the beaten path–albeit a long one–you make the half’s day journey back to your ship. Your wound is probably infected from all of the sweat and dirt you’ve collected today, but the blood clotted so it is a far less messy affair. 
+    '''
+    ))
+
+    $LongNVLText(narrator, (
+    '''\
+Breathing hard, clutching onto your ripped stomach, you feel weaker with every step you make. Though miraculously, you make it back to your ship. 
+    '''
+    ))
+
+# Change BG to -> bg_crashsite
+    scene black
+    show bg_crashsite with dissolve
+
+    $LongNVLText(narrator, (
+    '''\
+You are in far worse shape than when you first made the journey, but at least you are back.
+    '''
+    ))
+
+    $LongNVLText(narrator, (
+    '''\
+With the last of your remaining strength, you climb up towards the cockpit. You nearly fall multiple times after losing your foothold–resulting in re-opening your stomach wound–but you somehow make it back to your cockpit. 
+    '''
+    ))
+
+# Change BG to -> bg_cockpit
+    scene black
+    show bg_cockpit with dissolve
+
+    $LongNVLText(narrator, (
+    '''\
+Sweating profusely, you crawl into your tattered cockpit chair, the only notable item in the entire room. 
+    '''
+    ))
+
+    $LongNVLText(narrator, (
+    '''\
+You sigh as you lean back into the worn leather seat. 
+    '''
+    ))
+
+    $LongNVLText(narrator, (
+    '''\
+You feel safe. 
+    '''
+    ))
+
+    $LongNVLText(narrator, (
+    '''\
+Quiet. 
+    '''
+    ))
+
+    $LongNVLText(narrator, (
+    '''\
+Alone.
+    '''
+    ))
+
+    $LongNVLText(narrator, (
+    '''\
+The soft hum from the static of your broken flight instruments lulls you into a state of calm. 
+    '''
+    ))
+
+    $LongNVLText(narrator, (
+    '''\
+With your clothes ripped, your hair disheveled, and night descending, you stare into the shattered windshield and slowly fade into a deep sleep. You never wake up. 
+    '''
+    ))
+
+    $LongNVLText(narrator, (
+    '''\
+You are at peace. 
+    '''
+    ))
+# GAME OVER–BAD ENDING 2
+    return
+
 
 
 
@@ -1657,7 +1750,7 @@ Even when a passing kiosk almost runs into him, Commercial Cris continues his to
 
     $LongNVLText(commercialcris.c, (
     '''\
-As much as you try to focus on Commercial Cris’s tour, you find it hard to concentrate when you are in such a densely packed crowd. Even more so when you look up to the tall, perfectly geometrically shaped buildings. You had never seen such architecture before. You wonder how it was possible to build such a feat with such sharp, awkward angles. 
+As much as you try to focus on Commercial Cris’s tour, you find it hard to concentrate when you are in such a densely packed crowd. Even more so when you look up to the tall, perfectly oddly-jagged shaped buildings. You had never seen such architecture before. You wonder how it was possible to build such a feat with such sharp, awkward angles. 
     '''
     ))
 
