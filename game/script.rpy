@@ -48,11 +48,11 @@ init:
     
 
 # The game starts here.
-label splashscreen:
+label start:
     scene black 
-    show drp_motions dr_p_talking
+    #show drp_motions dr_p_breathing
 
-    with Pause(1)
+    #with Pause(1)
     show mytext "Dr. Psilicon Presents......" with dissolve
     with Pause(2)
 
@@ -66,8 +66,66 @@ label splashscreen:
     # with Pause(1)
 
     #return
-    jump splashscreen2
+    jump path_choose_char
     
+label path_choose_char:
+    scene black 
+    show img_cockpit with dissolve
+    menu: 
+        "Would you like to choose your character?"
+        "Ok...":
+            show screen evt_choose_char_txtbox 
+            call screen evt_choose_char_images with dissolve
+        "No thank you!": 
+            return
+    jump path_choose_pronoun
+
+
+label path_chose_char1: 
+    scene black 
+    hide screen evt_choose_char_txtbox
+    show img_cockpit
+    $ player_name = renpy.input("what would you like to name your character?") 
+
+    scene black
+    $LongNVLText(narrator, (
+    '''\
+Synopsis: You, as the protagonist, are a high school student who is struggling with English class. One day, while cleaning out the school library, they discover a mysterious book that seems to be missing some pages. As they begin to read the book, they are transported into the story and must find the missing pages in order to return to their own world.
+    '''
+    ))
+    jump path_choose_pronoun
+    
+
+label path_chose_char2: 
+    scene black 
+    hide screen evt_choose_char_txtbox
+    show img_cockpit
+    $ player_name = renpy.input("what would you like to name your character?") 
+    
+    scene black
+    $LongNVLText(narrator, (
+    '''\
+Synopsis: You, as the protagonist, are a high school student who is struggling with English class. One day, while cleaning out the school library, they discover a mysterious book that seems to be missing some pages. As they begin to read the book, they are transported into the story and must find the missing pages in order to return to their own world.
+    '''
+    ))
+    jump path_choose_pronoun
+
+label path_choose_pronoun:
+    scene black
+
+    #narrator "Now, let's see an example of how this works. I'm going to call up the pronoun menu."
+
+    call pronounselection # This calls a choice menu to select pronouns.
+
+    narrator "Good, you selected pronouns! You chose [selectedpronouns!t], right?"
+
+    narrator "(You can change pronouns if you want by selecting Prefs > Pronouns > Select Pronouns.)"
+
+    #narrator "To show a set of specific pronouns, you can use the following code after replacing the # with the correct number:\n\n{color=#7f7fff}[[pronounlist[[#]!t]{/color}"
+
+    #narrator "For example, if you wanted to display [pronounlist[0]!t], since that is #0 in the list in pronountool.rpy, you would use the following code:\n\n{color=#7f7fff}[[pronounlist[[0]!t\]{/color}"
+    jump splashscreen2
+
 label splashscreen2:
     scene black
     
@@ -86,12 +144,12 @@ label splashscreen2:
     # hide mytext with dissolve
     # with Pause(1)
 
-    #jump xxxxx
-    return
+    jump path_crash_site
+    #return
 
 # start of the game
 # Scene 1
-label start:
+label path_crash_site:
     
     # Display a message and show an alert box when a button is clicked
     # jump splashscreen2

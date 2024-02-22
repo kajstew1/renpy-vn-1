@@ -37,6 +37,37 @@ image white:
 
 image drp_motions = Live2D("images/dr_p_motions", default_fade=0.0, loop=True)
     
+image img_cockpit = im.Scale("backgrounds/bg_cockpit.jpg", 1920, 1080)
+
+
+#choosescreen 
+image boychar:
+    "boy.png" 
+    zoom 0.60 
+ 
+image girlchar: 
+    "girl.png" 
+    zoom 0.50 
+ 
+image boychar2: 
+    "boy2.png" 
+    zoom 0.50 
+    
+image girlchar2: 
+    "girl2.png" 
+    zoom 0.60 
+
+
+
+
+
+
+
+
+
+
+
+
 
 # Declare characters used by this game. The color argument colorizes the
 # name of the character.
