@@ -39,6 +39,7 @@ image drp_motions = Live2D("images/dr_p_motions", default_fade=0.0, loop=True)
     
 image img_cockpit = im.Scale("backgrounds/bg_cockpit.jpg", 1920, 1080)
 
+image img_customization = im.Scale("backgrounds/bg_customization.jpg", 1920, 1080)
 
 #choosescreen 
 image boychar:
@@ -68,7 +69,7 @@ define player = Character("[player_name]")
 
 
 define sidenarrator = Character (None, image="narrator_img")
-image side narrator_img = "side_gnome_casual_neutral.png"
+image side narrator_img = "protagonist_profile"
 
 define narrator = Character (None) #, what_slow_cps=0, what_font="fontfile_name.ttf")
 define narrator_nvl = Character (None, kind=nvl) #, what_slow_cps=0, what_font="fontfile_name.ttf")

@@ -70,7 +70,7 @@ label start:
     
 label path_choose_char:
     scene black 
-    show img_cockpit with dissolve
+    show img_customization with dissolve
 
     
     $LongNVLText(sidenarrator, (
@@ -104,7 +104,7 @@ Yo Yo Yo Yo Yo Yo Yo Yo Yo Yo Yo Yo Yo Yo.”
 label path_chose_char1: 
     scene black 
     hide screen evt_choose_char_txtbox
-    show img_cockpit
+    show img_customization
     $ player_name = renpy.input("what would you like to name your character?") 
     $ player_name = player_name.strip()
 
@@ -120,7 +120,7 @@ Synopsis: You, as the protagonist, are a high school student who is struggling w
 label path_chose_char2: 
     scene black 
     hide screen evt_choose_char_txtbox
-    show img_cockpit
+    show img_customization
     $ player_name = renpy.input("what would you like to name your character?") 
     $ player_name = player_name.strip()
 
