@@ -60,20 +60,15 @@ image girlchar2:
 
 
 
-
-
-
-
-
-
-
-
-
 # Declare characters used by this game. The color argument colorizes the
 # name of the character.
 
 default player_name_default = "Spaceman"
 define player = Character("[player_name]")
+
+
+define sidenarrator = Character (None, image="narrator_img")
+image side narrator_img = "side_gnome_casual_neutral.png"
 
 define narrator = Character (None) #, what_slow_cps=0, what_font="fontfile_name.ttf")
 define narrator_nvl = Character (None, kind=nvl) #, what_slow_cps=0, what_font="fontfile_name.ttf")

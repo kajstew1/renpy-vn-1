@@ -71,14 +71,34 @@ label start:
 label path_choose_char:
     scene black 
     show img_cockpit with dissolve
-    menu: 
-        "Would you like to choose your character?"
-        "Ok...":
-            show screen evt_choose_char_txtbox 
-            call screen evt_choose_char_images with dissolve
-        "No thank you!": 
-            return
-    jump path_choose_pronoun
+
+    
+    $LongNVLText(sidenarrator, (
+    '''\
+Hello.Hello.Hello.Hello.Hello.Hello.Hello.Hello.
+    '''
+    ))
+
+    narrator  "Hi Hi Hi Hi Hi Hi Hi Hi "
+
+    $LongNVLText(mysteryspacewoman.c, (
+    '''\
+Yo Yo Yo Yo Yo Yo Yo Yo Yo Yo Yo Yo Yo Yo.”
+    '''
+    ))
+
+    show screen evt_choose_char_txtbox 
+    call screen evt_choose_char_images with dissolve
+
+
+#    menu: 
+#        "Would you like to choose your character?"
+#        "Ok...":
+#            show screen evt_choose_char_txtbox 
+#            call screen evt_choose_char_images with dissolve
+#        "No thank you!": 
+#            return
+#    jump path_choose_pronoun
 
 
 label path_chose_char1: 
@@ -86,6 +106,7 @@ label path_chose_char1:
     hide screen evt_choose_char_txtbox
     show img_cockpit
     $ player_name = renpy.input("what would you like to name your character?") 
+    $ player_name = player_name.strip()
 
     scene black
     $LongNVLText(narrator, (
@@ -101,6 +122,11 @@ label path_chose_char2:
     hide screen evt_choose_char_txtbox
     show img_cockpit
     $ player_name = renpy.input("what would you like to name your character?") 
+    $ player_name = player_name.strip()
+
+    if player_name == "":
+        $ player_name="[player_name_default]"
+
     
     scene black
     $LongNVLText(narrator, (
@@ -124,8 +150,10 @@ label path_choose_pronoun:
     #narrator "To show a set of specific pronouns, you can use the following code after replacing the # with the correct number:\n\n{color=#7f7fff}[[pronounlist[[#]!t]{/color}"
 
     #narrator "For example, if you wanted to display [pronounlist[0]!t], since that is #0 in the list in pronountool.rpy, you would use the following code:\n\n{color=#7f7fff}[[pronounlist[[0]!t\]{/color}"
-    jump splashscreen2
+    jump path_crash_site
 
+
+# not currently used
 label splashscreen2:
     scene black
     
