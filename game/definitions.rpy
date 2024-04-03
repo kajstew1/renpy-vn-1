@@ -82,7 +82,7 @@ define terrorlightz = Actor(Character("Terrorlightz", color="#460beb"), "Terrorl
 
 define commercialcris = Actor(Character("Commercial Cris", color="#460beb"), "Commercial Cris")
 
-define mysteryspacewoman = Actor(Character("Mystery Space Woman", color="#460beb"), "Mystery Space Woman")
+define mysteryspacewoman = Actor(Character("Mystery Space Woman", color="#3feb0b", who_size=40), "Mystery Space Woman")
 
 
 # backgrounds 
