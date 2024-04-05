@@ -2,12 +2,15 @@
 
 init:
     transform my_shake:
-        easein 0.2 xoffset 0 yoffset 30
-        easeout 0.2 xoffset 0 yoffset -30
-        #linear 0.1 xoffset 0 yoffset 10
-        #linear 0.1 xoffset 0 yoffset -15
-        #linear 0.1 xoffset 0 yoffset 0
-        repeat 10
+        parallel:
+            easein 0.2 xoffset 0 yoffset 30
+            easeout 0.2 xoffset 0 yoffset -30
+            #linear 0.1 xoffset 0 yoffset 10
+            #linear 0.1 xoffset 0 yoffset -15
+            #linear 0.1 xoffset 0 yoffset 0
+            repeat 30
+        parallel:
+            linear 10 zoom 1.5
 
     transform my_bump:
         easein 0.2 xoffset 0 yoffset 100
@@ -18,12 +21,17 @@ init:
         #repeat 10
 
     transform my_walking:
-        easein 0.4 xoffset 0 yoffset 30
-        easeout 0.4 xoffset 0 yoffset -30
-        #linear 0.1 xoffset 0 yoffset 10
-        #linear 0.1 xoffset 0 yoffset -15
-        #linear 0.1 xoffset 0 yoffset 0
-        repeat
+        parallel:
+            easein 0.4 xoffset 0 yoffset 30
+            easeout 0.4 xoffset 0 yoffset -30
+            #linear 0.1 xoffset 0 yoffset 10
+            #linear 0.1 xoffset 0 yoffset -15
+            #linear 0.1 xoffset 0 yoffset 0
+            repeat
+        parallel:
+            linear 10 zoom 1.5
+        #parallel:
+            #easein 4.0 crop (860, 430, 860, 600)
 
     transform basic_fade:
         on show:
@@ -71,7 +79,7 @@ label start:
 label path_choose_char:
     scene black 
     show img_customization with dissolve
-
+#    show ccl angry at right
     
     $LongNVLText(sidenarrator, (
     '''\
@@ -108,12 +116,13 @@ label path_chose_char1:
     $ player_name = renpy.input("what would you like to name your character?") 
     $ player_name = player_name.strip()
 
-    scene black
-    $LongNVLText(narrator, (
-    '''\
-Synopsis: You, as the protagonist, are a high school student who is struggling with English class. One day, while cleaning out the school library, they discover a mysterious book that seems to be missing some pages. As they begin to read the book, they are transported into the story and must find the missing pages in order to return to their own world.
-    '''
-    ))
+
+#    scene black
+#    $LongNVLText(narrator, (
+#    '''\
+#Synopsis: You, as the protagonist, are a high school student who is struggling with English class. One day, while cleaning out the school library, they discover a mysterious book that seems to be missing some pages. As they begin to read the book, they are transported into the story and must find the missing pages in order to return to their own world.
+#    '''
+#    ))
     jump path_choose_pronoun
     
 
@@ -128,16 +137,16 @@ label path_chose_char2:
         $ player_name="[player_name_default]"
 
     
-    scene black
-    $LongNVLText(narrator, (
-    '''\
-Synopsis: You, as the protagonist, are a high school student who is struggling with English class. One day, while cleaning out the school library, they discover a mysterious book that seems to be missing some pages. As they begin to read the book, they are transported into the story and must find the missing pages in order to return to their own world.
-    '''
-    ))
+#    scene black
+#    $LongNVLText(narrator, (
+#    '''\
+#Synopsis: You, as the protagonist, are a high school student who is struggling with English class. One day, while cleaning out the school library, they discover a mysterious book that seems to be missing some pages. As they begin to read the book, they are transported into the story and must find the missing pages in order to return to their own world.
+#    '''
+#    ))
     jump path_choose_pronoun
 
 label path_choose_pronoun:
-    scene black
+#    scene black
 
     #narrator "Now, let's see an example of how this works. I'm going to call up the pronoun menu."
 
@@ -183,12 +192,12 @@ label path_crash_site:
     # jump splashscreen2
     scene black
 
-    with Pause(1)
-    show mytext "[player_name], you find yourself waking up on a crash ship."
-    with Pause(2)
+#    with Pause(1)
+#    show mytext "[player_name], you find yourself waking up on a crash ship."
+#    with Pause(2)
   
-    hide mytext with dissolve
-    with Pause(1)
+#    hide mytext with dissolve
+#    with Pause(1)
 
     #show bg_crashsite with dissolve
     scene black

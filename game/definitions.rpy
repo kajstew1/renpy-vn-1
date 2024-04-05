@@ -74,15 +74,15 @@ image side narrator_img = "side_protagonist_neutral"
 define narrator = Character (None) #, what_slow_cps=0, what_font="fontfile_name.ttf")
 define narrator_nvl = Character (None, kind=nvl) #, what_slow_cps=0, what_font="fontfile_name.ttf")
 
-define drpsilicon =  Actor(Character("Dr. Psilicon", who_color="9EFB65", what_color="#8ac924", who_size=35), "Dr. Psilicon")
+define drpsilicon =  Actor(Character("Dr. Psilicon", who_color="9EFB65", what_color="#8ac924"), "Dr. Psilicon")
 
 #define gnome = Actor(Character("Gnome", who_color="#c00606"), "Gnome")
 
-define terrorlightz = Actor(Character("Terrorlightz", color="#E26EFF", who_size=35), "Terrorlightz")
+define terrorlightz = Actor(Character("Terrorlightz", color="#E26EFF"), "Terrorlightz")
 
-define commercialcris = Actor(Character("Commercial Cris", color="#D5D5D5", who_size=35), "Commercial Cris")
+define commercialcris = Actor(Character("Commercial Cris", color="#D5D5D5"), "Commercial Cris")
 
-define mysteryspacewoman = Actor(Character("Mystery Space Woman", color="#FCA4C5", who_size=35), "Mystery Space Woman")
+define mysteryspacewoman = Actor(Character("Mystery Space Woman", color="#FCA4C5"), "Mystery Space Woman")
 
 
 # backgrounds 
@@ -106,6 +106,12 @@ image commercialcris neutral = "cc_neutral.png"
 image commercialcris talking = "cc_talking.png"
 
 image drpl = Live2D("images/Alyssa C1", default_fade=0.0, top=0.0, base=1.0, height=1.0, loop=True)
+#image ccl = Live2D("images/Commercial_Cris", default_fade=0.0, top=0.0, base=1.0, height=1.0, loop=True)
+#image mswl = Live2D("images/Mysterious_Space_Woman", default_fade=0.0, top=0.0, base=1.0, height=1.0, loop=True)
+#image protl = Live2D("images/Protagonist", default_fade=0.0, top=0.0, base=1.0, height=1.0, loop=True)
+#image tll = Live2D("images/Terrorlightz", default_fade=0.0, top=0.0, base=1.0, height=1.0, loop=True)
+
+
 
 # variables
 default persistent.path_to_hut_taken = False

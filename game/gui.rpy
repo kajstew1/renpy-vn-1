@@ -67,7 +67,7 @@ define gui.interface_text_font = "DejaVuSans.ttf"
 define gui.text_size = 33
 
 ## The size of character names.
-define gui.name_text_size = 45
+define gui.name_text_size = 35
 
 ## The size of text in the game's user interface.
 define gui.interface_text_size = 33
@@ -118,7 +118,7 @@ define gui.namebox_height = None
 
 ## The borders of the box containing the character's name, in left, top, right,
 ## bottom order.
-define gui.namebox_borders = Borders(5, 5, 5, 5)
+define gui.namebox_borders = Borders(30, 10, 30, 10)
 
 ## If True, the background of the namebox will be tiled, if False, the
 ## background of the namebox will be scaled.
