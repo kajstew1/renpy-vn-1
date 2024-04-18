@@ -58,7 +58,22 @@ image girlchar2:
     "girl2.png" 
     zoom 0.60 
 
-
+default she_selected = False
+default he_selected = False
+default they_selected = True
+default pronouns = "They/Them"
+default pronoun1 = "they"
+default pronoun2 = "them"
+default pronoun3 = "their"
+default be = "are"
+#selectedpronouns = pronounlist[pronoun]
+# they = theylist[pronoun]
+# them = themlist[pronoun]
+# their = theirlist[pronoun]
+# theirs = theirslist[pronoun]
+# s = slist[pronoun]
+# es = eslist[pronoun]
+# are = arelist[pronoun]
 
 
 # Declare characters used by this game. The color argument colorizes the
@@ -66,7 +81,7 @@ image girlchar2:
 
 default player_name_default = "Spaceman"
 define player = Character("[player_name]")
-
+default player_name = player_name_default
 
 define sidenarrator = Character (None, image="narrator_img")
 image side narrator_img = "side_protagonist_neutral"

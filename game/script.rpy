@@ -57,24 +57,111 @@ init:
 
 # The game starts here.
 label start:
-    scene black 
+    
+    #scene black 
     #show drp_motions dr_p_breathing
 
     #with Pause(1)
-    show mytext "Dr. Psilicon Presents......" with dissolve
-    with Pause(2)
+    #show mytext "Dr. Psilicon Presents......" with dissolve
+    #with Pause(2)
 
-    hide mytext with dissolve
-    with Pause(1)
-
-    # show mytext "The Back Story" with dissolve
-    # with Pause(2)
-
-    # hide mytext with dissolve
-    # with Pause(1)
+    #hide mytext with dissolve
+    #with Pause(1)
 
     #return
+    #jump path_char_customization
+
+
+
+
+label path_char_customization:
+    scene black 
+    show img_customization
+
+    
+#    if player_name == "":
+#        $ player_name = player_name_default #here you type a name, that will be used, if the player types nothing
+
+#    show screen showName
+    call screen screen_customization_nav
+#    hide screen showName
+
     jump path_choose_char
+
+
+label set_customization_name_vars:
+    $ quick_menu = False
+    $ _skipping = False #disable skip
+    $ player_name = player_name_default 
+    show screen enterName
+    $ renpy.pause(hard=False) #we are using this to stop the the game, but unfortunately skip and auto will ignore this so that's why we disabled skip and auto
+#    $ player_name = renpy.input("what would you like to name your character?") 
+    $ player_name = player_name.strip()
+    "Player name [player_name]"
+
+    jump path_char_customization
+    
+
+
+label set_customization_name_vars1:
+    #your text
+#    "Now, what is my name?"
+    #these things I added for preparation
+    $ quick_menu = False
+    $ _skipping = False #disable skip
+    $ player_name = ""
+    show screen enterName #you do this when you want to show the screen
+    $ _preferences.afm_enable = False #turn off auto
+    $ renpy.pause(hard=False) #we are using this to stop the the game, but unfortunately skip and auto will ignore this so that's why we disabled skip and auto
+
+
+
+
+
+label set_customization_he_vars:
+    $ pronouns = "He/Him"
+    $ pronoun1 = "he"
+    $ pronoun2 = "his"
+    $ pronoun3 = "his"
+    $ be = "is"
+    "pronoun: [pronoun1]: [pronouns]"
+    jump path_char_customization
+
+label set_customization_she_vars:
+    $ pronouns = "She/Her"
+    $ pronoun1 = "she"
+    $ pronoun2 = "her"
+    $ pronoun3 = "her"
+    $ be = "is"
+    "pronoun: [pronoun1]: [pronouns]"
+    jump path_char_customization
+
+label set_customization_they_vars:
+    $ pronouns = "They/Them"
+    $ pronoun1 = "they"
+    $ pronoun2 = "them"
+    $ pronoun3 = "their"
+    $ be = "are"
+    "pronoun: [pronoun1]: [pronouns]"
+    jump path_char_customization
+
+
+
+#now we create the label continue to jump here after we decide the name
+label enter_name_continue:
+    $ player_name = player_name.strip()#this removes spaces at the end
+
+    if player_name == "":
+        $ player_name = player_name_default #here you type a name, that will be used, if the player types nothing
+
+    hide screen enterName
+
+    $ quick_menu = True
+    $ _skipping = True
+    #and now you can continue the game.
+    
+
+
     
 label path_choose_char:
     scene black 
@@ -97,6 +184,7 @@ Yo Yo Yo Yo Yo Yo Yo Yo Yo Yo Yo Yo Yo Yo.”
 
     show screen evt_choose_char_txtbox 
     call screen evt_choose_char_images with dissolve
+
 
 
 #    menu: 
@@ -134,7 +222,7 @@ label path_chose_char2:
     $ player_name = player_name.strip()
 
     if player_name == "":
-        $ player_name="[player_name_default]"
+        $ player_name = "[player_name_default]"
 
     
 #    scene black
