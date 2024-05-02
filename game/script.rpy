@@ -1,6 +1,7 @@
 ﻿# The script of the game goes in this file.
 
 init:
+
     transform my_shake:
         parallel:
             easein 0.2 xoffset 0 yoffset 30
@@ -70,6 +71,7 @@ label start:
 
     #return
     #jump path_char_customization
+    #jump path_choose_char
 
 
 
@@ -279,6 +281,7 @@ label path_crash_site:
     # Display a message and show an alert box when a button is clicked
     # jump splashscreen2
     scene black
+    $ screen_tooltip = ""
 
 #    with Pause(1)
 #    show mytext "[player_name], you find yourself waking up on a crash ship."
@@ -458,7 +461,17 @@ What once was a temperate, lush, green landscape, turned into a dry, sandy, moun
 You had a feeling that there was a right or wrong answer to your choice from here. You had better choose the right one or fear the repercussions.
     '''
     ))
+    $LongNVLText(narrator, (
+    '''\
+You decide to take a look around before you make your decision.
+    '''
+    ))
 
+    call screen screen_crash_fork_nav
+
+
+
+label crash_fork_menu:
     menu: 
         "Do you take the right or left path?"
         "Left...":
@@ -892,7 +905,7 @@ Your eyes jerk open. In front of you stands a figure that appears to be a…pers
     '''
     ))
 
-    show terrorlightz_talking at right
+    show tll angry at right
     
     $LongNVLText(terrorlightz.c, (
     '''\
@@ -1835,7 +1848,8 @@ You fall back asleep. You hope this was just a long nightmare.
 label path_town_fork:
     scene black
     show bg_hospital with dissolve
-    show commercialcris_talking with moveinright
+    #show commercialcris_talking with moveinright
+    show ccl cc_breathing
 
     $LongNVLText(commercialcris.c, (
     '''\
@@ -2111,7 +2125,7 @@ label path_town_outskirts:
     #show bg_townoutskirts with dissolve
     show bg_townalley with dissolve
 
-    show mysteryspacewoman_talking at left
+    show mswl angry at left
 
     $LongNVLText(mysteryspacewoman.c, (
     '''\

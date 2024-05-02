@@ -66,6 +66,8 @@ default pronoun1 = "they"
 default pronoun2 = "them"
 default pronoun3 = "their"
 default be = "are"
+default screen_tooltip = ""
+
 #selectedpronouns = pronounlist[pronoun]
 # they = theylist[pronoun]
 # them = themlist[pronoun]
@@ -121,10 +123,10 @@ image commercialcris neutral = "cc_neutral.png"
 image commercialcris talking = "cc_talking.png"
 
 image drpl = Live2D("images/Alyssa C1", default_fade=0.0, top=0.0, base=1.0, height=1.0, loop=True)
-#image ccl = Live2D("images/Commercial_Cris", default_fade=0.0, top=0.0, base=1.0, height=1.0, loop=True)
-#image mswl = Live2D("images/Mysterious_Space_Woman", default_fade=0.0, top=0.0, base=1.0, height=1.0, loop=True)
-#image protl = Live2D("images/Protagonist", default_fade=0.0, top=0.0, base=1.0, height=1.0, loop=True)
-#image tll = Live2D("images/Terrorlightz", default_fade=0.0, top=0.0, base=1.0, height=1.0, loop=True)
+image ccl = Live2D("images/Commercial_Cris", default_fade=0.0, top=0.0, base=1.0, height=1.0, loop=True)
+image mswl = Live2D("images/myst_s_woman_motions", default_fade=0.0, top=0.0, base=1.0, height=1.0, loop=True)
+image protl = Live2D("images/protagonist_motions", default_fade=0.0, top=0.0, base=1.0, height=1.0, loop=True)
+image tll = Live2D("images/terrorlightz_motions", default_fade=0.0, top=0.0, base=1.0, height=1.0, loop=True)
 
 
 
