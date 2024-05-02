@@ -32,9 +32,6 @@ screen evt_choose_char_images:
 
 
 
-
-
-
 screen evt_choose_path:
     hbox:
         xalign 0.5
@@ -144,15 +141,13 @@ screen screen_customization_nav:
         #action ToggleVariable("he_selected", True, False)
         #selected (True)
 
-
-
     imagebutton auto "cc_they_%s":
         focus_mask True  # in case any transparent pixels in image mask in the image box they are clickable
         hovered SetVariable("screen_tooltip", "They/Them")
         unhovered SetVariable("screen_tooltip", "")
         action If ("cc_they" in seen_labels, false=[Hide(None), None, Jump("set_customization_they_vars")])
         #action ToggleVariable("they_selected", True, False)
-        #selected (True)
+        #   selected (True)
 
     imagebutton auto "cc_confirm_%s":
         focus_mask True  # in case any transparent pixels in image mask in the image box they are clickable
@@ -190,6 +185,62 @@ screen screen_customization_nav:
 
 
 
+
+
+
+screen screen_crash_fork_nav:
+    add "bg_fork"
+    modal True  # prevents from interacting with assets under or below it
+#    add screen showName
+
+    hbox:
+        xalign 0.5
+        yalign 0.5
+        xanchor 0.5
+        xsize 500
+        #ysize 500
+
+        frame:
+            background "#706969"
+            
+            #padding (50,50)
+            #margin (0,0,10,0)
+            text "[screen_tooltip]"
+
+    imagebutton auto "left_moon_%s":
+        focus_mask True  # in case any transparent pixels in image mask in the image box they are clickable
+        hovered SetVariable("screen_tooltip", "To your left, you spot an iridescent colored moon surrounded by four small planets. You aren’t sure why, but you feel a sense of warmth when you look at them.")
+        unhovered SetVariable("screen_tooltip", "")
+        action If ("cc_name" in seen_labels, false=[Hide(None), None, Jump("set_customization_name_vars")])
+
+
+
+    imagebutton auto "left_path_%s":
+        focus_mask True  # in case any transparent pixels in image mask in the image box they are clickable
+        hovered SetVariable("screen_tooltip", "Below you to your left, you observe a smooth, sandy-looking path leading out towards a lush outcropping of mountains.")
+        unhovered SetVariable("screen_tooltip", "")
+        action NullAction()
+
+    imagebutton auto "right_moon_%s":
+        focus_mask True  # in case any transparent pixels in image mask in the image box they are clickable
+        hovered SetVariable("screen_tooltip", "To your right, you spot a colossal moon. Its deeply cavernous, cerulean craters are in sharp contrast to the lighter-colored surface, creating a dangerously beautiful contrast. The longer you stare at it, the more uneasy you feel.")
+        unhovered SetVariable("screen_tooltip", "")
+        action NullAction()
+ 
+    imagebutton auto "right_path_%s":
+        focus_mask True  # in case any transparent pixels in image mask in the image box they are clickable
+        hovered SetVariable("screen_tooltip", "Below you to your right, you see a rocky, gravel path leading to a sparse spread of jagged, narrow mountains. When you lean to the side to get a better look at where the path leads, you think you see an opening. Could that be a tunnel?")
+        unhovered SetVariable("screen_tooltip", "")
+        action NullAction()
+
+    frame:
+        xpadding 50
+        ypadding 5
+        xalign 0.5
+        yalign 0.1
+        xanchor 0.5
+        textbutton "Click to continue after checking the area" action Jump("crash_fork_menu")
+
 screen tavern_nav:
     add "bg_tavern"
     modal True  # prevents from interacting with assets under or below it
@@ -224,3 +275,4 @@ screen tavern_nav:
         xalign 0.1
         yalign 0.1
         textbutton "Continue" action Jump("path_tavern_drink")
+
