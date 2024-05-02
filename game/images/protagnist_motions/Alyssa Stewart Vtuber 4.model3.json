@@ -3,7 +3,7 @@
 	"FileReferences": {
 		"Moc": "Alyssa Stewart Vtuber 4.moc3",
 		"Textures": [
-			"Alyssa Stewart Vtuber 4.4096/texture_00.png"
+			"Alyssa Stewart Vtuber 4.1024/texture_00.png"
 		],
 		"Physics": "Alyssa Stewart Vtuber 4.physics3.json",
 		"DisplayInfo": "Alyssa Stewart Vtuber 4.cdi3.json"
@@ -12,6 +12,11 @@
 		{
 			"Target": "Parameter",
 			"Name": "EyeBlink",
+			"Ids": []
+		},
+		{
+			"Target": "Parameter",
+			"Name": "LipSync",
 			"Ids": []
 		}
 	]
