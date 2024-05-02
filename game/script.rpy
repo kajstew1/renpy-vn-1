@@ -905,7 +905,7 @@ Your eyes jerk open. In front of you stands a figure that appears to be a…pers
     '''
     ))
 
-    show tll angry at right
+    show tll  at right
     
     $LongNVLText(terrorlightz.c, (
     '''\

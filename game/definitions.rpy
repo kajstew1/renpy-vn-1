@@ -123,7 +123,7 @@ image commercialcris neutral = "cc_neutral.png"
 image commercialcris talking = "cc_talking.png"
 
 image drpl = Live2D("images/Alyssa C1", default_fade=0.0, top=0.0, base=1.0, height=1.0, loop=True)
-image ccl = Live2D("images/Commercial_Cris", default_fade=0.0, top=0.0, base=1.0, height=1.0, loop=True)
+image ccl = Live2D("images/cc_motions", default_fade=0.0, top=0.0, base=1.0, height=1.0, loop=True)
 image mswl = Live2D("images/myst_s_woman_motions", default_fade=0.0, top=0.0, base=1.0, height=1.0, loop=True)
 image protl = Live2D("images/protagonist_motions", default_fade=0.0, top=0.0, base=1.0, height=1.0, loop=True)
 image tll = Live2D("images/terrorlightz_motions", default_fade=0.0, top=0.0, base=1.0, height=1.0, loop=True)
