@@ -168,7 +168,7 @@ label enter_name_continue:
 label path_choose_char:
     scene black 
     show img_customization with dissolve
-#    show ccl angry at right
+#    show ccl cc_breathing at right
     
     $LongNVLText(sidenarrator, (
     '''\
@@ -2125,7 +2125,7 @@ label path_town_outskirts:
     #show bg_townoutskirts with dissolve
     show bg_townalley with dissolve
 
-    show mswl angry at left
+    show mswl myst_s_woman_breathing at left
 
     $LongNVLText(mysteryspacewoman.c, (
     '''\
