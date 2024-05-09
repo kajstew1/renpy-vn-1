@@ -105,26 +105,21 @@ screen enterName:
 #                keysym('K_RETURN', 'K_KP_ENTER') #you can also add keysym to activate it with a keyboard
 #                activate_sound("audio/tick.ogg") #you can also add a sound when clicked
 
-style enterName_input:
-    size 30
-    color "FFFFFF"
 
-style showName_text:
-    size 30
-    color "FFFFFF"
+
 
 # renpy.call_screen
 screen screen_customization_nav:
     add "bg_customization"
     modal True  # prevents from interacting with assets under or below it
 #    add screen showName
+    default p_player_name_input = VariableInputValue("player_name", default=False)
+    
+    #frame:
+        #textbutton "Dismiss":
+        #    xalign 0.5
+        #    action Jump ("start")
 
-    imagebutton auto "cc_name_%s":
-        focus_mask True  # in case any transparent pixels in image mask in the image box they are clickable
-        hovered SetVariable("screen_tooltip", "name")
-        unhovered SetVariable("screen_tooltip", "")
-        action If ("cc_name" in seen_labels, false=[Hide(None), None, Jump("set_customization_name_vars")])
- 
     imagebutton auto "cc_she_%s":
         focus_mask True  # in case any transparent pixels in image mask in the image box they are clickable
         hovered SetVariable("screen_tooltip", "She/Her")
@@ -162,14 +157,23 @@ screen screen_customization_nav:
 #        yalign 0.1
 #        textbutton "Continue" action Jump("path_crash_site")
     
+    #imagebutton auto "cc_name_%s":
+    #    focus_mask True  # in case any transparent pixels in image mask in the image box they are clickable
+    #    hovered SetVariable("screen_tooltip", "name")
+    #    unhovered SetVariable("screen_tooltip", "")
+    #    action If ("cc_name" in seen_labels, false=[Hide(None), None, Jump("set_customization_name_vars")])
+ 
     frame: #now we want to do vbox to make the input below the textbox
-        xpos 550 #with this you define location of the vbox (if you would type xalign 0 and yalign 0 it would appear in top left corner)
-        ypos 700
-        xpadding 50
-        ypadding 15
-        xsize 690
-        ysize 68
-        add Solid ("000000")
+        xanchor 0.5
+        yanchor 0.5
+        xpos 895 #with this you define location of the vbox (if you would type xalign 0 and yalign 0 it would appear in top left corner)
+        ypos 735
+        xpadding 0  #50
+        ypadding 0  #15
+        xsize 600 #
+        ysize 68 #68
+        add Solid ("#9799FF") #("#00FFFF") 
+        #background "backgrounds/character_customization/cc_name_box.png" #Assuming it is located in the images folder.
         #there is a link to all of positional properties: https://www.renpy.org/doc/html/style_properties.html#position-style-properties
         #text "What is your name?": #we added text using this
         #    size 20 #in here you can edit the text with those: https://www.renpy.org/doc/html/style_properties.html#text-style-properties
@@ -178,14 +182,28 @@ screen screen_customization_nav:
         #            pause 0.5 #you can add a pause
         #            linear 2 alpha 1.0 #now you add how it's changed (I used linear but here are all: https://www.renpy.org/doc/html/atl.html#warpers) then the time of the animation and then to what it is changed
 
-        input default "[player_name]":#now we add input which will be below the text because it's in the vbox. In default you can type something that will be already typed when the screen will be shown
-            xanchor 0
-            pixel_width(500)#this to not allow too long name
-            value VariableInputValue("player_name")#with this you save the input to a variable.
+        #input default "[player_name]":#now we add input which will be below the text because it's in the vbox. In default you can type something that will be already typed when the screen will be shown
+        #    xanchor 0.5
+        #    pixel_width(500)#this to not allow too long name
+        #    value VariableInputValue("player_name")#with this you save the input to a variable.
+        style_prefix "enterName"
+        hbox:
+            button:
+                xsize 600
+                action p_player_name_input.Toggle()
+                input:
+                    pixel_width(500)
+                    value p_player_name_input
 
 
+style enterName_input:
+    size 30
+    color "000000"
+    hover_color "#F44336"
 
-
+style showName_text:
+    size 30
+    color "#F44336"
 
 
 screen screen_crash_fork_nav:
