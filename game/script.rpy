@@ -70,8 +70,9 @@ label start:
     #with Pause(1)
 
     #return
-    #jump path_char_customization
+    jump path_char_customization
     #jump path_choose_char
+    #jump path_town_outskirts
 
 
 
@@ -2015,7 +2016,7 @@ Well if you want to lose your guide, now’s the time. To your right you see a b
 # Scene 3c1
 label path_town_alley:
     scene black
-    show bg_townalley at my_walking with dissolve
+    show mswl myst_s_woman_breathing at left
 
     #show terrorlightz_talking at right
 
@@ -2124,14 +2125,16 @@ label path_town_outskirts:
     scene black
     #show bg_townoutskirts with dissolve
     show bg_townalley with dissolve
+    show mswl myst_s_woman_breathing at center with dissolve
 
-    show mswl myst_s_woman_breathing at left
 
     $LongNVLText(mysteryspacewoman.c, (
     '''\
 You hesitantly approach the alien on the other side of the dark corner. 
     '''
     ))
+
+    show bg_townalley with dissolve
 
     $LongNVLText(mysteryspacewoman.c, (
     '''\
@@ -2151,12 +2154,14 @@ She takes a few moments to examine you. After she is satisfied, she smirks at yo
     '''
     ))
 
+    show mswl myst_s_woman_talking at center 
     $LongNVLText(mysteryspacewoman.c, (
     '''\
 Her face–composed of soft, feminine features–produces an empathetic smile. A gentle, melodic voice breaks through the silence. “Hello there, sweetie. Are you lost?” 
     '''
     ))
 
+    show mswl myst_s_woman_breathing
     $LongNVLText(mysteryspacewoman.c, (
     '''\
 You let out a sigh of relief. Finally, a lucky break. You feel calmer already. 
@@ -2169,36 +2174,42 @@ Smiling back awkwardly, you say, “You could say that. I’m new here and got s
     '''
     ))
 
+    show mswl myst_s_woman_talking
     $LongNVLText(mysteryspacewoman.c, (
     '''\
 Her eyes widen slightly as she brings her slender hand towards her mouth. “Oh my, what poor luck you have. This is such a big city, afterall.”
     '''
     ))
 
+    show mswl myst_s_woman_breathing
     $LongNVLText(mysteryspacewoman.c, (
     '''\
 Feigning embarrassment, you look downward, clutching the back of your neck. “Yeah it was pretty busy downtown and I got a bit distracted by all of the sights.”
     '''
     ))
 
+    show mswl myst_s_woman_talking
     $LongNVLText(mysteryspacewoman.c, (
     '''\
 She cocked her head and frowned disapprovingly. “I can understand that, but do be careful. The first week I moved here I made a wrong turn and got mugged by some ruffians.” 
     '''
     ))
 
+    show mswl myst_s_woman_breathing
     $LongNVLText(mysteryspacewoman.c, (
     '''\
 You could believe that. An elegant alien like her walking by herself down the wrong street would make her a bigger target than even you–and you aren’t even from this planet. “I’m sorry to hear that. Considering the dangers, you could say I’ve been pretty fortunate.” 
     '''
     ))
 
+    show mswl myst_s_woman_talking
     $LongNVLText(mysteryspacewoman.c, (
     '''\
 “That you have, sweetie. Now where are you heading, maybe I could help?” 
     '''
     ))
 
+    show mswl myst_s_woman_breathing
     $LongNVLText(mysteryspacewoman.c, (
     '''\
 Where are you going? Do they have an immigration center here for unfortunate, lost off-world captains? 
@@ -2211,27 +2222,36 @@ After a few moments of pondering, you make up your mind. “The nearest ship sta
     '''
     ))
 
+    show mswl myst_s_woman_talking
     $LongNVLText(mysteryspacewoman.c, (
     '''\
 She giggles. “I knew you weren’t from here.” She cups her face with her palm as she purses her lips and looks off into the distance. 
     '''
     ))
 
+    show mswl myst_s_woman_breathing 
     $LongNVLText(mysteryspacewoman.c, (
     '''\
 (Effect - mysterious space woman bounces up and down for a few seconds.)
-A minute goes by and you start doubting your odds. You start debating if you should ditch the pretty alien and try your luck exploring the city by yourself, but before you open your mouth to speak, she claps her hands excitedly and points toward the narrow alley in front of you. “Oh, of course! We are close to the northeastern facility.” She outstretches a hand towards you. “Come, I’ll take you,” 
+A minute goes by and you start doubting your odds. You start debating if you should ditch the pretty alien and try your luck exploring the city by yourself, but before you open your mouth to speak, she claps her hands excitedly and points toward the narrow alley in front of you. 
     '''
     ))
 
+    show mswl myst_s_woman_talking
+    $LongNVLText(mysteryspacewoman.c, (
+    '''\
+“Oh, of course! We are close to the northeastern facility.” She outstretches a hand towards you. “Come, I’ll take you.” 
+    '''
+    ))
+    
+    show mswl myst_s_woman_breathing
     $LongNVLText(mysteryspacewoman.c, (
     '''\
 You take her hand and she leads you into the alley.
     '''
     ))
-    
-    jump path_town_alley_again
 
+    jump path_town_alley_again
 
 # Scene 3c3
 label path_town_alley_again:
