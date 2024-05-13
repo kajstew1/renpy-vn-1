@@ -2224,7 +2224,7 @@ After a few moments of pondering, you make up your mind. “The nearest ship sta
     '''
     ))
 
-    show mswl myst_s_woman_talking
+    show mswl myst_s_woman_giggle
     $LongNVLText(mysteryspacewoman.c, (
     '''\
 She giggles. “I knew you weren’t from here.” She cups her face with her palm as she purses her lips and looks off into the distance. 
