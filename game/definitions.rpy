@@ -81,9 +81,10 @@ default screen_tooltip = ""
 # Declare characters used by this game. The color argument colorizes the
 # name of the character.
 
-default player_name_default = "Spaceman"
+default player_name_default = "Space Traveler"
 define player = Character("[player_name]")
 default player_name = player_name_default
+
 
 define sidenarrator = Character (None, image="narrator_img")
 image side narrator_img = "side_protagonist_neutral"

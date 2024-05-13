@@ -68,7 +68,7 @@ label start:
 
     #hide mytext with dissolve
     #with Pause(1)
-
+    
     #return
     jump path_char_customization
     #jump path_choose_char
@@ -79,7 +79,7 @@ label start:
 
 label path_char_customization:
     scene black 
-    show img_customization
+    #show img_customization
 
     
 #    if player_name == "":
@@ -95,7 +95,7 @@ label path_char_customization:
 label set_customization_name_vars:
     $ quick_menu = False
     $ _skipping = False #disable skip
-    $ player_name = player_name_default 
+    $ player_name = [player_name]
     show screen enterName
     $ renpy.pause(hard=False) #we are using this to stop the the game, but unfortunately skip and auto will ignore this so that's why we disabled skip and auto
 #    $ player_name = renpy.input("what would you like to name your character?") 
@@ -127,7 +127,8 @@ label set_customization_he_vars:
     $ pronoun2 = "his"
     $ pronoun3 = "his"
     $ be = "is"
-    "pronoun: [pronoun1]: [pronouns]"
+    
+    #"pronoun: [pronoun1]: [pronouns]"
     jump path_char_customization
 
 label set_customization_she_vars:
@@ -136,7 +137,8 @@ label set_customization_she_vars:
     $ pronoun2 = "her"
     $ pronoun3 = "her"
     $ be = "is"
-    "pronoun: [pronoun1]: [pronouns]"
+    
+    #"pronoun: [pronoun1]: [pronouns]"
     jump path_char_customization
 
 label set_customization_they_vars:
@@ -145,7 +147,7 @@ label set_customization_they_vars:
     $ pronoun2 = "them"
     $ pronoun3 = "their"
     $ be = "are"
-    "pronoun: [pronoun1]: [pronouns]"
+    #"pronoun: [pronoun1]: [pronouns]"
     jump path_char_customization
 
 
