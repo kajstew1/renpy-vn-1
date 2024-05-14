@@ -58,9 +58,11 @@ image girlchar2:
     "girl2.png" 
     zoom 0.60 
 
-default she_selected = False
-default he_selected = False
-default they_selected = True
+
+#default she_selected = False
+#default he_selected = False
+#default they_selected = True
+default pronoun1_selected = "they"
 default pronouns = "They/Them"
 default pronoun1 = "they"
 default pronoun2 = "them"
@@ -84,6 +86,7 @@ default screen_tooltip = ""
 default player_name_default = "Space Traveler"
 define player = Character("[player_name]")
 default player_name = player_name_default
+default p_player_name_input = VariableInputValue("player_name", default=False)
 
 
 define sidenarrator = Character (None, image="narrator_img")

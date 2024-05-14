@@ -92,8 +92,8 @@ label path_char_customization:
 
 
 label set_customization_name_vars:
-    $ quick_menu = False
-    $ _skipping = False #disable skip
+    #$ quick_menu = False
+    #$ _skipping = False #disable skip
     $ player_name = [player_name]
     show screen enterName
     $ renpy.pause(hard=False) #we are using this to stop the the game, but unfortunately skip and auto will ignore this so that's why we disabled skip and auto
@@ -109,8 +109,8 @@ label set_customization_name_vars1:
     #your text
 #    "Now, what is my name?"
     #these things I added for preparation
-    $ quick_menu = False
-    $ _skipping = False #disable skip
+    #$ quick_menu = False
+    #$ _skipping = False #disable skip
     $ player_name = ""
     show screen enterName #you do this when you want to show the screen
     $ _preferences.afm_enable = False #turn off auto
@@ -126,9 +126,11 @@ label set_customization_he_vars:
     $ pronoun2 = "his"
     $ pronoun3 = "his"
     $ be = "is"
+    $ pronoun1_selected = pronoun1
     
     #"pronoun: [pronoun1]: [pronouns]"
     jump path_char_customization
+    
 
 label set_customization_she_vars:
     $ pronouns = "She/Her"
@@ -136,9 +138,11 @@ label set_customization_she_vars:
     $ pronoun2 = "her"
     $ pronoun3 = "her"
     $ be = "is"
+    $ pronoun1_selected = pronoun1
     
     #"pronoun: [pronoun1]: [pronouns]"
     jump path_char_customization
+    
 
 label set_customization_they_vars:
     $ pronouns = "They/Them"
@@ -146,8 +150,10 @@ label set_customization_they_vars:
     $ pronoun2 = "them"
     $ pronoun3 = "their"
     $ be = "are"
+    $ pronoun1_selected = pronoun1
     #"pronoun: [pronoun1]: [pronouns]"
     jump path_char_customization
+    
 
 
 

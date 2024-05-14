@@ -87,23 +87,11 @@ screen enterName:
         xsize 690
         ysize 68
         add Solid ("000000")
-        #there is a link to all of positional properties: https://www.renpy.org/doc/html/style_properties.html#position-style-properties
-        #text "What is your name?": #we added text using this
-        #    size 20 #in here you can edit the text with those: https://www.renpy.org/doc/html/style_properties.html#text-style-properties
-        #    at transform: #with this you can animate the text
-        #            alpha 0 #here you type parameters which are used at first
-        #            pause 0.5 #you can add a pause
-        #            linear 2 alpha 1.0 #now you add how it's changed (I used linear but here are all: https://www.renpy.org/doc/html/atl.html#warpers) then the time of the animation and then to what it is changed
-
-        input default "[player_name_default]":#now we add input which will be below the text because it's in the vbox. In default you can type something that will be already typed when the screen will be shown
+ 
+        input default "[player_name]":# now we add input which will be below the text because it's in the vbox. In default you can type something that will be already typed when the screen will be shown
             xanchor 0
-            pixel_width(500)#this to not allow too long name
-            value VariableInputValue("player_name")#with this you save the input to a variable.
-
-#        textbutton "OK":
-#                action Jump("enter_name_continue")#in action you type what will happen, when you click ok
-#                keysym('K_RETURN', 'K_KP_ENTER') #you can also add keysym to activate it with a keyboard
-#                activate_sound("audio/tick.ogg") #you can also add a sound when clicked
+            pixel_width(500) # this to not allow too long name
+            value VariableInputValue("player_name") # with this you save the input to a variable.
 
 
 
@@ -113,36 +101,73 @@ screen screen_customization_nav:
     add "bg_customization"
     modal True  # prevents from interacting with assets under or below it
 #    add screen showName
-    default p_player_name_input = VariableInputValue("player_name", default=False)
+    
     
     #frame:
         #textbutton "Dismiss":
         #    xalign 0.5
         #    action Jump ("start")
 
+    frame: #now we want to do vbox to make the input below the textbox
+        xanchor 0.5
+        yanchor 0.5
+        xpos 895 #with this you define location of the vbox (if you would type xalign 0 and yalign 0 it would appear in top left corner)
+        ypos 735
+        xpadding 0  #50
+        ypadding 0  #15
+        xsize 600 #
+        ysize 50 #68
+        add Solid ("#9799FF") #("#00FFFF") 
+        #background "backgrounds/character_customization/cc_name_box.png" #Assuming it is located in the images folder.
+        #there is a link to all of positional properties: https://www.renpy.org/doc/html/style_properties.html#position-style-properties
+        #text "What is your name?": #we added text using this
+        #    size 20 #in here you can edit the text with those: https://www.renpy.org/doc/html/style_properties.html#text-style-properties
+        #    at transform: #with this you can animate the text
+        #            alpha 0 #here you type parameters which are used at first
+        #            pause 0.5 #you can add a pause
+        #            linear 2 alpha 1.0 #now you add how it's changed (I used linear but here are all: https://www.renpy.org/doc/html/atl.html#warpers) then the time of the animation and then to what it is changed
+
+        #input default "[player_name]":#now we add input which will be below the text because it's in the vbox. In default you can type something that will be already typed when the screen will be shown
+        #    xanchor 0.5
+        #    pixel_width(500)#this to not allow too long name
+        #    value VariableInputValue("player_name")#with this you save the input to a variable.
+        style_prefix "enterName"
+        hbox:
+            button:
+                xsize 600
+                input:  
+                    pixel_width(500)
+                    value VariableInputValue("player_name") # with this you save the input to a variable.
+                #action p_player_name_input.Toggle()
+                action SetVariable("player_name", player_name)
+
+
     imagebutton auto "cc_she_%s":
         focus_mask True  # in case any transparent pixels in image mask in the image box they are clickable
         hovered SetVariable("screen_tooltip", "She/Her")
         unhovered SetVariable("screen_tooltip", "")
         #action ToggleVariable("she_selected", True, False)
-        action [ToggleVariable("she_selected", True, False), If ("cc_she" in seen_labels, false=[Hide(None), None, Jump("set_customization_she_vars")])]
-        #selected (True)
+        #action [ToggleVariable("she_selected", True, False), SelectedIf(she_selected), If ("cc_she" in seen_labels, false=[Hide(None), None, Jump("set_customization_she_vars")])]
+        action [SetVariable ("pronoun1_selected", "she"), SelectedIf(pronoun1_selected =="she"), If ("cc_she" in seen_labels, false=[Hide(None), None, Call("set_customization_she_vars")])]
+ 
 
     imagebutton auto "cc_he_%s":
         focus_mask True  # in case any transparent pixels in image mask in the image box they are clickable
         hovered SetVariable("screen_tooltip", "He/Him")
         unhovered SetVariable("screen_tooltip", "")
-        action If ("cc_he" in seen_labels, false=[Hide(None), None, Jump("set_customization_he_vars")])
+        #action [ToggleVariable("he_selected", True, False), SelectedIf(he_selected),If ("cc_he" in seen_labels, false=[Hide(None), None, Jump("set_customization_he_vars")])]
+        action [SetVariable ("pronoun1_selected", "she"), SelectedIf(pronoun1_selected =="he"), If ("cc_he" in seen_labels, false=[Hide(None), None, Call("set_customization_he_vars")])]
         #action ToggleVariable("he_selected", True, False)
-        #selected (True)
+        #action [If ("cc_she" in seen_labels, false=[Hide(None), None, Call("set_customization_he_vars")], SelectedIf(he_selected))]
 
     imagebutton auto "cc_they_%s":
         focus_mask True  # in case any transparent pixels in image mask in the image box they are clickable
         hovered SetVariable("screen_tooltip", "They/Them")
         unhovered SetVariable("screen_tooltip", "")
-        action If ("cc_they" in seen_labels, false=[Hide(None), None, Jump("set_customization_they_vars")])
+        #action [ToggleVariable("they_selected", True, False), SelectedIf(they_selected),If ("cc_they" in seen_labels, false=[Hide(None), None, Jump("set_customization_they_vars")])]
+        action [SetVariable ("pronoun1_selected", "she"), SelectedIf(pronoun1_selected =="they"), If ("cc_they" in seen_labels, false=[Hide(None), None, Call("set_customization_they_vars")])]
         #action ToggleVariable("they_selected", True, False)
-        #   selected (True)
+        #action [If ("cc_they" in seen_labels, false=[Hide(None), None, Call("set_customization_she_vars")], SelectedIf(they_selected))]
 
     imagebutton auto "cc_confirm_%s":
         focus_mask True  # in case any transparent pixels in image mask in the image box they are clickable
@@ -163,43 +188,15 @@ screen screen_customization_nav:
     #    unhovered SetVariable("screen_tooltip", "")
     #    action If ("cc_name" in seen_labels, false=[Hide(None), None, Jump("set_customization_name_vars")])
  
-    frame: #now we want to do vbox to make the input below the textbox
-        xanchor 0.5
-        yanchor 0.5
-        xpos 895 #with this you define location of the vbox (if you would type xalign 0 and yalign 0 it would appear in top left corner)
-        ypos 735
-        xpadding 0  #50
-        ypadding 0  #15
-        xsize 600 #
-        ysize 68 #68
-        add Solid ("#9799FF") #("#00FFFF") 
-        #background "backgrounds/character_customization/cc_name_box.png" #Assuming it is located in the images folder.
-        #there is a link to all of positional properties: https://www.renpy.org/doc/html/style_properties.html#position-style-properties
-        #text "What is your name?": #we added text using this
-        #    size 20 #in here you can edit the text with those: https://www.renpy.org/doc/html/style_properties.html#text-style-properties
-        #    at transform: #with this you can animate the text
-        #            alpha 0 #here you type parameters which are used at first
-        #            pause 0.5 #you can add a pause
-        #            linear 2 alpha 1.0 #now you add how it's changed (I used linear but here are all: https://www.renpy.org/doc/html/atl.html#warpers) then the time of the animation and then to what it is changed
-
-        #input default "[player_name]":#now we add input which will be below the text because it's in the vbox. In default you can type something that will be already typed when the screen will be shown
-        #    xanchor 0.5
-        #    pixel_width(500)#this to not allow too long name
-        #    value VariableInputValue("player_name")#with this you save the input to a variable.
-        style_prefix "enterName"
-        hbox:
-            button:
-                xsize 600
-                action p_player_name_input.Toggle()
-                input:
-                    pixel_width(500)
-                    value p_player_name_input
-
+    
 
 style enterName_input:
     size 30
     color "000000"
-    hover_color "#F44336"
+    hover_color "#7836f4"
+    bold True
+    
+    
 
 style showName_text:
     size 30
