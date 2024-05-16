@@ -2133,7 +2133,7 @@ label path_town_outskirts:
     scene black
     #show bg_townoutskirts with dissolve
     show bg_townalley with dissolve
-    show mswl myst_s_woman_breathing at center with dissolve
+    show mswl myst_s_woman_breathing at center
 
 
     $LongNVLText(mysteryspacewoman.c, (
@@ -2182,7 +2182,7 @@ Smiling back awkwardly, you say, “You could say that. I’m new here and got s
     '''
     ))
 
-    show mswl myst_s_woman_talking
+    show mswl myst_s_woman_giggle
     $LongNVLText(mysteryspacewoman.c, (
     '''\
 Her eyes widen slightly as she brings her slender hand towards her mouth. “Oh my, what poor luck you have. This is such a big city, afterall.”
