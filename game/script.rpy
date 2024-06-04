@@ -1,4 +1,4 @@
-﻿# The script of the game goes in this file.
+# The script of the game goes in this file.
 
 init:
 
@@ -72,7 +72,7 @@ label start:
     #return
     jump path_char_customization
     #jump path_choose_char
-    #jump path_town_outskirts
+    #jump path_town_alley_again
 
 
 
@@ -2282,8 +2282,7 @@ label path_town_alley_again:
     scene black
     #show bg_townoutskirts with dissolve
     show bg_townalley at my_walking with dissolve
-
-    show mysteryspacewoman_talking at left
+    show mswl myst_s_woman_breathing
 
     $LongNVLText(mysteryspacewoman.c, (
     '''\
@@ -2305,7 +2304,7 @@ You clear your throat as you make another sharp turn. Finally, she lets go of yo
 
     scene black
     show bg_townalley 
-    show mysteryspacewoman_talking at left
+    show mswl myst_s_woman_giggle
 
     $LongNVLText(mysteryspacewoman.c, (
     '''\
@@ -2313,6 +2312,7 @@ You hear her giggle softly next to you. “Yes, of course, sweetie. You have to 
     '''
     ))
 
+    show mswl myst_s_woman_breathing
     $LongNVLText(mysteryspacewoman.c, (
     '''\
 Trust her? How could you when you only met her an hour ago? Even worse, it is dark out. You lost the little amount of light you had left. Without daylight, you are completely and utterly helpless. 
@@ -2325,24 +2325,36 @@ It doesn’t seem like your guide is as knowledgeable as you once hoped so you s
     '''
     ))
 
+#point and click
+
     $LongNVLText(mysteryspacewoman.c, (
     '''\
 You gulp and the hairs on the back of your neck perk up. This would be the perfect opportunity for someone to rob you. You shake your head and dismiss the thought. There is no way she is a criminal! 
     '''
     ))
 
+    show mswl myst_s_woman_scary_transition
     $LongNVLText(mysteryspacewoman.c, (
     '''\
 As your mind was racing with how to handle this situation, you turn too quickly to the left and trip over an overturned trash can. EFFECT: BOUNCE The metallic lid screeches as it rolls through the alley.
     '''
     ))
-
+    
+    show mswl myst_s_woman_scary
     $LongNVLText(mysteryspacewoman.c, (
     '''\
-A soft voice cuts through the darkness. “Don’t worry, sweetie. Let me help you up.” 
+A soft voice cuts through the darkness. 
+'''
+    ))
+    
+    show mswl myst_s_woman_scary_happy_talking
+    $LongNVLText(mysteryspacewoman.c, (
+    '''\
+“Don’t worry, sweetie. Let me help you up.” 
     '''
     ))
 
+    show mswl myst_s_woman_scary_happy
     $LongNVLText(mysteryspacewoman.c, (
     '''\
 (Effect: PAN UP FROM BOTTOM OF ALIEN TO TOP) 
@@ -2356,6 +2368,7 @@ You reach up to take her outstretched arm, but pull away before you make contact
     '''
     ))
 
+    show mswl myst_s_woman_scary
     $LongNVLText(mysteryspacewoman.c, (
     '''\
 (Effect: PAN IN CLOSER TO ALIEN’s FACE)
@@ -2363,12 +2376,21 @@ Upon closer inspection of her face, you notice that her eyes, once delicate and 
     '''
     ))
 
+    show mswl myst_s_woman_scary
     $LongNVLText(mysteryspacewoman.c, (
     '''\
-The pink, elegant clothes she once wore melted away, revealing a horrifying wolf-like alien. Her voice, in a deeper pitch, mocks you, “What’s wrong, lost lamb?”
+The pink, elegant clothes she once wore melted away, revealing a horrifying wolf-like alien. Her voice, in a deeper pitch, mocks you. 
     '''
     ))
 
+    show mswl myst_s_woman_scary_happy_talking
+    $LongNVLText(mysteryspacewoman.c, (
+   '''\
+“What’s wrong, lost lamb?”
+    '''
+    ))
+
+    show mswl myst_s_woman_scary_happy
     $LongNVLText(mysteryspacewoman.c, (
     '''\
 You scream for the last time as the terrifying alien licks its lips and dives into you. 
