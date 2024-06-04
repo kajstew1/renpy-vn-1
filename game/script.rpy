@@ -228,7 +228,7 @@ label path_chose_char1:
 label path_chose_char2: 
     scene black 
     hide screen evt_choose_char_txtbox
-    show img_customization
+    show img_customization 
     $ player_name = renpy.input("what would you like to name your character?") 
     $ player_name = player_name.strip()
 
@@ -456,6 +456,7 @@ After another half an hour, you came across a change in scenery.
 label crash_fork:
     scene black
     show bg_fork with dissolve
+    play music "sounds/effects/SCENE_2.mp3"
     
     # terrorlightz.c "Which way do you want to go?"
     #show screen evt_choose_path
@@ -601,6 +602,8 @@ label path_right_path:
     #show bg_tavern with dissolve
     hide screen evt_choose_path
     scene black
+    play music "sounds/effects/SCENE_2a.mp3"
+
     show bg_fork with dissolve:
         parallel:
             #xpos 1.25 ypos 1.3 xanchor 0.5 yanchor 1.0 zoom 2.0
@@ -1718,7 +1721,8 @@ Your vision begins to blur and your body feels immovable. Your face droops first
 # Scene 3b
 label path_hospital:
     scene black
-    show bg_hospital with Fade(3,3,3)
+    #show bg_hospital with Fade(3,3,3)
+    show bg_hospital with in_eye
     #show drp_casual_talking at right
     show drpl blush at right
     #  sad angry
@@ -1859,6 +1863,7 @@ And just as he entered, he was gone. You let your head fall back onto your pillo
 
     $LongNVLText(drpsilicon.c, (
     '''\
+    (EFFECT TODO:  Dr. Psilicon fades out, transition either fades him out to the BG or transition him out of frame)
 You fall back asleep. You hope this was just a long nightmare. 
     '''
     ))
@@ -1874,6 +1879,9 @@ label path_town_fork:
 
     $LongNVLText(commercialcris.c, (
     '''\
+(Effect: Fades from black to BG)
+(Effect: Enters Commercial Cris (transition in))
+
 About an hour passes until you finally meet your escort. At this point, you’ve gotten used to the unexpected, but even this was a bit much. 
     '''
     ))
@@ -1950,6 +1958,8 @@ You take the hint and follow him out of the hospital.
 
     $LongNVLText(commercialcris.c, (
     '''\
+(Effect: Transition from hospital to town BG
+(Effect: Commercial Cris transitions in)
 Upon opening the exit door, you are flooded with a flurry of noises. Jumbled voices speaking in an unfamiliar language, screeching of wheels from kiosks holding a variety of items, clattering of metal from the construction workers fixing the roads. It all felt so familiar yet so different. 
     '''
     ))

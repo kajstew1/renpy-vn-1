@@ -29,6 +29,8 @@ init python:
     #eyeopen = ImageDissolve("bg_crashsite", 1.5, 100)
     #eyeclose = ImageDissolve("backgrounds/eyeopen.png", 1.5, 100, reverse=True)
 
+define in_eye = ImageDissolve("images/eye.png", 6.0)
+define out_eye = ImageDissolve("images/eye.png", 6.0, reverse=True)
 
 image black:
     Solid("#000")
