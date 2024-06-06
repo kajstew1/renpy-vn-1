@@ -5,7 +5,6 @@ init python:
             self.c = character
             self.name = name
 
-    #persistent.__dict__['_chosen'] = {}
     seen_labels = Set([])
 
     def _shake_function(trans, st, at, dt=.5, dist=64):
@@ -29,6 +28,19 @@ init python:
     #eyeopen = ImageDissolve("bg_crashsite", 1.5, 100)
     #eyeclose = ImageDissolve("backgrounds/eyeopen.png", 1.5, 100, reverse=True)
 
+
+# variables
+default persistent.path_variables_set = False
+default persistent.path_to_hut_taken = False
+default persistent.path_to_town_taken = False
+default persistent.path_to_outskirts_taken = False
+default persistent.path_to_tavern_taken = False
+
+# to disable chosen paths
+define config.menu_include_disabled = True
+
+define in_eye_fast = ImageDissolve("images/eye.png", 1.0)
+define out_eye_fast = ImageDissolve("images/eye.png", 1.0, reverse=True)
 define in_eye = ImageDissolve("images/eye.png", 6.0)
 define out_eye = ImageDissolve("images/eye.png", 6.0, reverse=True)
 
@@ -136,14 +148,6 @@ image tll = Live2D("images/terrorlightz_motions", default_fade=0.0, top=0.0, bas
 
 
 
-# variables
-default persistent.path_to_hut_taken = False
-default persistent.path_to_town_taken = False
-default persistent.path_to_outskirts_taken = False
-default persistent.path_to_tavern_taken = False
-
-# to disable chosen paths
-#define config.menu_include_disabled = True
 
 image mytext = ParameterizedText(style="something")
 style something:

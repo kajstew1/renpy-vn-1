@@ -2,6 +2,7 @@
 
 init:
 
+
     transform my_shake:
         parallel:
             easein 0.2 xoffset 0 yoffset 30
@@ -54,7 +55,7 @@ init:
     transform exitright:
         linear 3.0 xpos 1.5 xzoom -1.0
 
-    
+
 
 # The game starts here.
 label start:
@@ -73,7 +74,6 @@ label start:
     jump path_char_customization
     #jump path_choose_char
     #jump path_town_alley_again
-
 
 
 
@@ -482,6 +482,7 @@ You decide to take a look around before you make your decision.
 
 
 label crash_fork_menu:
+    $config.menu_include_disabled = False
     menu: 
         "Do you take the right or left path?"
         "Left...":
@@ -681,9 +682,10 @@ You feel a cold sweat forming at your brow as you force your feet to move forwar
                                                 # and the second tuple is the size of that rectangle
         easeout 5.0 crop (860, 300, 860, 600)       # here we change the y coordinate over 8 seconds to pan the image up
 
+
+#(Effect - zoom in and pan left to the right (In Work))
     $LongNVLText(narrator, (
     '''\
-(Effect - zoom in and pan left to the right (In Work))
 “I should’ve chosen the safer path,” you curse as you force yourself to come up with an escape plan. 
     '''
     ))
@@ -705,9 +707,9 @@ About 10 meters ahead of you, you see that the jagged mountains converge, creati
     scene black
     show bg_rightpath at my_shake
 
+# (Effect - running, shake up and down (In Work)
     $LongNVLText(narrator, (
     '''\
-(Effect - running, shake up and down (In Work)
 You clutch onto your wounded stomach with a small prayer that your thrown together plan wouldn’t reopen the cut and begin your mad dash to the ominous tunnel. 
     '''
     ))
@@ -903,9 +905,9 @@ label path_hut_meet_terrorlightz:
     scene black
     show bg_insidehut with dissolve
 
+# (EFFECT: Goes from a blank screen to a blinking effect? ) 
     $LongNVLText(narrator, (
     '''\
-(EFFECT: Goes from a blank screen to a blinking effect? )
 Your long overdue sleep is over soon when you hear a deep, guttural voice pierce your ears.“My, my, my. What is this?” 
     '''
     ))
@@ -1429,9 +1431,9 @@ label ship_remember:
     scene black
     show bg_insidecave at basic_fade, my_shake with dissolve
 
+# (Effect: Shows running (fading and out) from bg_hut to bg_insidecave(In Work))
     $LongNVLText(narrator, (
     '''\
-(Effect: Shows running (fading and out) from bg_hut to bg_insidecave(In Work))
 "Even though it was only yesterday that you first entered the cave, you feel none of the terror or fear you felt before."
     '''
     ))
@@ -1612,9 +1614,9 @@ Your eyes land on the seemingly safer option. The two suns and neighboring plane
                                                 # and the second tuple is the size of that rectangle
         #easeout 5.0 crop (0, 300, 860, 600)       # here we change the y coordinate over 8 seconds to pan the image up
 
+# (Effect - zoom in on right path (In Work))
     $LongNVLText(narrator, (
     '''\
-(Effect - zoom in on right path (In Work))
 The right path scared you. It called to you like a siren in turbulent waters, inviting you in with a sweet song. You try to stand your ground in fear of being pulled into the imposing moon’s imaginary gravitational pull. 
     '''
     ))
@@ -1634,9 +1636,9 @@ The right path scared you. It called to you like a siren in turbulent waters, in
         #easeout 5.0 crop (0, 300, 860, 600)       # here we change the y coordinate over 8 seconds to pan the image up
 
 
+# (Effect - zoom out (In Work))
     $LongNVLText(narrator, (
     '''\
-(Effect - zoom out (In Work))
 Gritting your teeth, you tear your attention away from the dark path. Nothing good ever comes from embracing your inhibitions and dismissing your gut instincts. 
     '''
     ))
@@ -1657,7 +1659,6 @@ label path_left_path:
     
     $LongNVLText(narrator, (
     '''\
-!!!!Correct image?!!!!
 After walking a meter or two past the fork in the road, you breathe a sigh of relief. The dark spell the large moon had on you finally dissipated. You suddenly feel more yourself again. 
     '''
     ))
@@ -1877,11 +1878,10 @@ label path_town_fork:
     #show commercialcris_talking with moveinright
     show ccl cc_breathing
 
+# (Effect: Fades from black to BG)
+# (Effect: Enters Commercial Cris (transition in))
     $LongNVLText(commercialcris.c, (
     '''\
-(Effect: Fades from black to BG)
-(Effect: Enters Commercial Cris (transition in))
-
 About an hour passes until you finally meet your escort. At this point, you’ve gotten used to the unexpected, but even this was a bit much. 
     '''
     ))
@@ -1956,10 +1956,10 @@ You take the hint and follow him out of the hospital.
     show bg_town with pushright
     show commercialcris_talking at right
 
+# (Effect: Transition from hospital to town BG
+# (Effect: Commercial Cris transitions in)
     $LongNVLText(commercialcris.c, (
     '''\
-(Effect: Transition from hospital to town BG
-(Effect: Commercial Cris transitions in)
 Upon opening the exit door, you are flooded with a flurry of noises. Jumbled voices speaking in an unfamiliar language, screeching of wheels from kiosks holding a variety of items, clattering of metal from the construction workers fixing the roads. It all felt so familiar yet so different. 
     '''
     ))
@@ -1991,9 +1991,9 @@ Distraction was dangerous in a city like this. You nearly fall to the ground aft
     show bg_town with vpunch
 
 
+# (Effect - shake screen...)
     $LongNVLText(commercialcris.c, (
     '''\
-(Effect - shake screen...)
 Your heart races as you realize that you can’t afford to fall in this crowd. This city wouldn’t wait for you. You would most certainly get run over. 
     '''
     ))
@@ -2010,9 +2010,9 @@ Your heart races as you realize that you can’t afford to fall in this crowd. T
         parallel: 
             linear 3.0 alpha 0.3
         
+# (Effect: Show Commercial Cris in the distance)
     $LongNVLText(commercialcris.c, (
     '''\
-(Effect: Show Commercial Cris in the distance)
 The alien mumbles an apparent irritated apology before scurrying off, leaving you disoriented. In the short scuffle, you almost lose track of Commercial Cris, who has yet to notice—or care—that you aren’t behind him anymore. 
     '''
     ))
@@ -2058,9 +2058,9 @@ You wait until Commercial Cris’s silhouette disappears into the crowd before y
     '''
     ))
 
+# (Effect - screen bouncing up and down slowly, walking...)
     $LongNVLText(commercialcris.c, (
     '''\
-(Effect - screen bouncing up and down slowly, walking...)
 As you pass by the first round of unused trash cans, you notice a few shady looking aliens leaning onto the walls. The phrase “try not to stand out” runs through your mind as you quickly put your hands in your pockets and briskly walk with a fake air of confidence. 
     '''
     ))
@@ -2083,9 +2083,9 @@ After involuntarily holding your breath as your heart thunders against your ches
     '''
     ))
 
+# (Effect: Change scene: bg_town alley...)
     $LongNVLText(commercialcris.c, (
     '''\
-(Effect: Change scene: bg_town alley...)
 Considering the bustling streets you left behind, you could only assume that you are now in the outskirts of the city. 
     '''
     ))
@@ -2129,9 +2129,10 @@ You are so focused on making sense of your situation that you almost miss a trai
     scene black
     show bg_townalley 
 
+
+# (Effect: Stop walking animation, look towards right side...)
     $LongNVLText(commercialcris.c, (
     '''\
-(Effect: Stop walking animation, look towards right side...)
 You slow your pace and lean towards the corner. While the other side of the building is dark, you are able to trace the pink fabric to a silhouette of a person wearing a large dress.
     '''
     ))
@@ -2259,10 +2260,10 @@ She giggles. “I knew you weren’t from here.” She cups her face with her pa
     '''
     ))
 
+#(Effect - mysterious space woman bounces up and down for a few seconds.)
     show mswl myst_s_woman_breathing 
     $LongNVLText(mysteryspacewoman.c, (
     '''\
-(Effect - mysterious space woman bounces up and down for a few seconds.)
 A minute goes by and you start doubting your odds. You start debating if you should ditch the pretty alien and try your luck exploring the city by yourself, but before you open your mouth to speak, she claps her hands excitedly and points toward the narrow alley in front of you. 
     '''
     ))
@@ -2294,9 +2295,9 @@ label path_town_alley_again:
     show bg_townalley at my_walking with dissolve
     show mswl myst_s_woman_breathing
 
+# (Effect: WALKING ANIMATION)
     $LongNVLText(mysteryspacewoman.c, (
     '''\
-(Effect: WALKING ANIMATION)
 After 30 minutes of seemingly aimless turns through endless rows of alleyways, you start to feel anxious. Every turn you take is the same as the last last. Dark and decrepit. While your guide is ever-confident, never once double-backed or hesitating, you still can’t comprehend that this endless maze of alleys would lead anywhere.    '''
     ))
 
@@ -2364,12 +2365,12 @@ A soft voice cuts through the darkness.
     '''
     ))
 
+# (Effect: PAN UP FROM BOTTOM OF ALIEN TO TOP) 
     show mswl myst_s_woman_scary_happy
     $LongNVLText(mysteryspacewoman.c, (
     '''\
-(Effect: PAN UP FROM BOTTOM OF ALIEN TO TOP) 
 You look up and notice the pretty alien hovering over you. Your eyes widen. When did she get so close to you? You didn’t hear her following you.
-     '''
+    '''
     ))
 
     $LongNVLText(mysteryspacewoman.c, (

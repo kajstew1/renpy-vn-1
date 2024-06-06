@@ -319,7 +319,7 @@ screen navigation():
 
             textbutton _("Start") action Start()
 
-            #textbutton "Reset" action ShowMenu("reset")
+            #textbutton "Reset Paths" action ShowMenu("reset_paths")
 
         else:
 
@@ -758,6 +758,12 @@ screen preferences():
 
                 ## Additional vboxes of type "radio_pref" or "check_pref" can be
                 ## added here, to add additional creator-defined preferences.
+                # Adding reset_paths eventscreens function to reset the paths taken vars
+                vbox:
+                    label _("Click to Reset Path History")
+                    textbutton _("Reset Path History"):
+                        style "reset_paths_text"
+                        action ShowMenu("reset_paths")
 
             null height (4 * gui.pref_spacing)
 

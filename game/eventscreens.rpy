@@ -1,3 +1,18 @@
+
+screen reset_paths():
+    $ persistent.path_variables_set = False
+    $ persistent.path_to_hut_taken = False
+    $ persistent.path_to_town_taken = False
+    $ persistent.path_to_outskirts_taken = False
+    $ persistent.path_to_tavern_taken = False 
+    $ persistent.__dict__['_chosen'] = {}
+
+style reset_paths_text is text:
+    size 45
+    hover_color "#FF00FF"             # Pink
+    outlines [ (0, "#0000FF", 1, 1) ] # Blue
+    color "#FF0000"                   # Red
+
 screen evt_choose_char_txtbox:
     hbox:
         xalign 0.5
