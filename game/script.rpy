@@ -2379,7 +2379,21 @@ You reach up to take her outstretched arm, but pull away before you make contact
     '''
     ))
 
-    show mswl myst_s_woman_scary
+    show mswl myst_s_woman_scary:
+        subpixel True 
+        xzoom 2.0 yzoom 2.0 
+        parallel:
+            xpos 0.5 zoom 1.0 
+            linear 3.05 xpos 0.5 zoom 1.75 
+        parallel:
+            ypos 1.0 
+            linear 0.01 ypos 1.0 
+            linear 3.05 ypos 2.75 
+    with Pause(3.16)
+    show mswl myst_s_woman_scary:
+        pos (0.5, 2.75) zoom 1.75 
+
+  
     $LongNVLText(mysteryspacewoman.c, (
     '''\
 (Effect: PAN IN CLOSER TO ALIEN’s FACE)
