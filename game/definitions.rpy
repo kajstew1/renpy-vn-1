@@ -49,8 +49,7 @@ image black:
 image white:
     Solid("#FFF")
 
-image drp_motions = Live2D("images/dr_p_motions", default_fade=0.0, loop=True)
-    
+
 image img_cockpit = im.Scale("backgrounds/bg_cockpit.jpg", 1920, 1080)
 
 image img_customization = im.Scale("backgrounds/bg_customization.jpg", 1920, 1080)
@@ -94,6 +93,9 @@ default screen_tooltip = ""
 # are = arelist[pronoun]
 
 
+
+
+
 # Declare characters used by this game. The color argument colorizes the
 # name of the character.
 
@@ -103,8 +105,31 @@ default player_name = player_name_default
 default p_player_name_input = VariableInputValue("player_name", default=False)
 
 
+image drp_motions = Live2D("images/dr_p_motions", default_fade=0.0, loop=True)
+    
+
+##  Declare characters here
+#define config.layers = [ 'master', 'transient','screens','character', 'overlay' ] #make a whole new layer for the char- screw side image(i never quite get it anyway)!
+#define config.tag_layer = {'narrator_img':'character'}  #tag it so every cohan image is automatically place on the 'character' layer. Alternatively, you can use "onlayer" to manually put him in there every time
+#define config.menu_clear_layers = ['character'] # clear it so the char will disappear when enter game screen, otherwise he will awkwardly stay there
+  
+#define sidenarrator1 = Character(None, image="narrator_img")
+
+
+define char = Character('Me', image="charimage")
+image side charimage = Live2D("images/myst_s_woman_motions/myst_s_woman_motions.model3.json", loop=True)
+
 define sidenarrator = Character (None, image="narrator_img")
-image side narrator_img = "side_protagonist_neutral"
+image side narrator_img = Live2D("images/protagonist_motions/protagonist_motions.model3.json", loop=True, zoom=.14)
+#image side narrator_img = Live2D("images/protagonist_motions/protagonist_motions.model3.json", loop=True, motions="protag_breathing", zoom=.1)
+
+#image side narrator_img = "side_protagonist_neutral"
+
+image ccl = Live2D("images/cc_motions", default_fade=0.0, top=0.0, base=1.0, height=1.0, loop=True)
+image mswl = Live2D("images/myst_s_woman_motions", default_fade=0.0, top=0.0, base=1.0, height=1.0, loop=True)
+image protl = Live2D("images/protagonist_motions", default_fade=0.0, top=0.0, base=1.0, height=1.0, loop=True)
+image tll = Live2D("images/terrorlightz_motions", default_fade=0.0, top=0.0, base=1.0, height=1.0, loop=True)
+
 
 define narrator = Character (None) #, what_slow_cps=0, what_font="fontfile_name.ttf")
 define narrator_nvl = Character (None, kind=nvl) #, what_slow_cps=0, what_font="fontfile_name.ttf")
@@ -141,10 +166,6 @@ image commercialcris neutral = "cc_neutral.png"
 image commercialcris talking = "cc_talking.png"
 
 image drpl = Live2D("images/Alyssa C1", default_fade=0.0, top=0.0, base=1.0, height=1.0, loop=True)
-image ccl = Live2D("images/cc_motions", default_fade=0.0, top=0.0, base=1.0, height=1.0, loop=True)
-image mswl = Live2D("images/myst_s_woman_motions", default_fade=0.0, top=0.0, base=1.0, height=1.0, loop=True)
-image protl = Live2D("images/protagonist_motions", default_fade=0.0, top=0.0, base=1.0, height=1.0, loop=True)
-image tll = Live2D("images/terrorlightz_motions", default_fade=0.0, top=0.0, base=1.0, height=1.0, loop=True)
 
 
 
@@ -188,11 +209,44 @@ init -50 python:
             currentPage = currentPage + 1
 
             if (len(printText) > 0): # Only print something if there is something to print
-                talker(printText)
+                talker (printText)
             
                 if (currentPage < totalTextPages): # New page!
                     nvl_clear()
 
+    def LongNVLText1(talker, text):
+        text = text.strip()
+        splittedText = []
+
+        maxPageLength = 199 # 947Max. number of chars per page
+        
+        while (len(text) > maxPageLength):
+            foundBlankPosition = text.rfind(' ', 0, maxPageLength + 1)
+        
+            if (foundBlankPosition < 0):
+                foundBlankPosition = maxPageLength + 1 # If no blank present then print all you get
+                
+                
+            subText = text[0:foundBlankPosition + 1]
+                
+            splittedText.append(subText)
+                
+            text = text[foundBlankPosition:].strip()
+            
+        if (len(text) > 0):
+            splittedText.append(text) # Print all remaining text
+        
+        totalTextPages = len(splittedText)
+        currentPage = 0
+        
+        for printText in splittedText:
+            currentPage = currentPage + 1
+
+            if (len(printText) > 0): # Only print something if there is something to print
+                talker (printText)
+            
+                if (currentPage < totalTextPages): # New page!
+                    nvl_clear()
 
     #
     
