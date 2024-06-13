@@ -93,6 +93,9 @@ default screen_tooltip = ""
 # are = arelist[pronoun]
 
 
+
+
+
 # Declare characters used by this game. The color argument colorizes the
 # name of the character.
 
@@ -105,11 +108,21 @@ default p_player_name_input = VariableInputValue("player_name", default=False)
 image drp_motions = Live2D("images/dr_p_motions", default_fade=0.0, loop=True)
     
 
+##  Declare characters here
+#define config.layers = [ 'master', 'transient','screens','character', 'overlay' ] #make a whole new layer for the char- screw side image(i never quite get it anyway)!
+#define config.tag_layer = {'narrator_img':'character'}  #tag it so every cohan image is automatically place on the 'character' layer. Alternatively, you can use "onlayer" to manually put him in there every time
+#define config.menu_clear_layers = ['character'] # clear it so the char will disappear when enter game screen, otherwise he will awkwardly stay there
+  
+#define sidenarrator1 = Character(None, image="narrator_img")
+
+
 define char = Character('Me', image="charimage")
 image side charimage = Live2D("images/myst_s_woman_motions/myst_s_woman_motions.model3.json", loop=True)
 
 define sidenarrator = Character (None, image="narrator_img")
-image side narrator_img = Live2D("images/dr_p_motions/dr_p_motions.model3.json", loop=True, motions="dr_p_talking")
+image side narrator_img = Live2D("images/protagonist_motions/protagonist_motions.model3.json", loop=True, zoom=.14)
+#image side narrator_img = Live2D("images/protagonist_motions/protagonist_motions.model3.json", loop=True, motions="protag_breathing", zoom=.1)
+
 #image side narrator_img = "side_protagonist_neutral"
 
 image ccl = Live2D("images/cc_motions", default_fade=0.0, top=0.0, base=1.0, height=1.0, loop=True)
