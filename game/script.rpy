@@ -2344,13 +2344,30 @@ You gulp and the hairs on the back of your neck perk up. This would be the perfe
     '''
     ))
 
+    window auto hide
+    show bg_townalley:
+        subpixel True xzoom 1.0 zoom 1.25 
+        parallel:
+            xpos 0.5 zpos 0.0 
+            linear 0.01 xpos 0.5 zpos 1.0 
+        parallel:
+            ypos 1.0 
+            linear 0.01 ypos 1.0 
+            linear 0.12 ypos 1.15 
+            linear 0.11 ypos 1.0 
+            linear 0.14 ypos 1.15 
+    with Pause(0.48)
+    show bg_townalley:
+        pos (0.5, 1.15) zpos 1.0 
+    window auto show
+
     show mswl myst_s_woman_scary_transition
     $LongNVLText(mysteryspacewoman.c, (
     '''\
 As your mind was racing with how to handle this situation, you turn too quickly to the left and trip over an overturned trash can. EFFECT: BOUNCE The metallic lid screeches as it rolls through the alley.
     '''
     ))
-    
+
     show mswl myst_s_woman_scary
     $LongNVLText(mysteryspacewoman.c, (
     '''\
