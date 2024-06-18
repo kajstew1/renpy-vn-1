@@ -57,7 +57,6 @@ init:
             alpha 1.0
             linear 10.0 alpha 0.0
   
-
     transform basic_fade_out:
         alpha 1.0
         linear 1.0 alpha 0.0
@@ -1851,7 +1850,7 @@ label path_town_fork:
     scene black
     show bg_hospital with dissolve
     #show commercialcris_talking with moveinright
-    show ccl cc_breathing
+    show ccl cc_breathing at center
 
 # (Effect: Fades from black to BG)
 # (Effect: Enters Commercial Cris (transition in))
@@ -1929,7 +1928,7 @@ You take the hint and follow him out of the hospital.
 
     scene black
     show bg_town with pushright
-    show commercialcris_talking at right
+    show ccl cc_breathing at center
 
 # (Effect: Transition from hospital to town BG
 # (Effect: Commercial Cris transitions in)
@@ -1973,22 +1972,39 @@ Your heart races as you realize that you can’t afford to fall in this crowd. T
     '''
     ))
 
-    show commercialcris_talking:
-        parallel:
-            #linear 1.0 xalign 1.0
-            easein 3.0 xalign 0.3
-        parallel:
-            #linear 1.0 yalign 1.0
-            linear 0.5 yalign 0.85
-        parallel:
-            linear 3.0 zoom .3
-        parallel: 
-            linear 3.0 alpha 0.3
+
         
 # (Effect: Show Commercial Cris in the distance)
     $LongNVLText(commercialcris.c, (
     '''\
-The alien mumbles an apparent irritated apology before scurrying off, leaving you disoriented. In the short scuffle, you almost lose track of Commercial Cris, who has yet to notice—or care—that you aren’t behind him anymore. 
+The alien mumbles an apparent irritated apology before scurrying off, leaving you disoriented. 
+    '''
+    ))
+
+    window auto hide
+    show ccl cc_breathing:
+        subpixel True zpos 0.0 rotate 0.0 
+        parallel:
+            blend 'normal' matrixcolor InvertMatrix(0.0)*ContrastMatrix(1.0)*SaturationMatrix(1.0)*BrightnessMatrix(0.0)*HueMatrix(0.0) 
+            linear 1.42 blend 'normal' matrixcolor InvertMatrix(0.0)*ContrastMatrix(1.0)*SaturationMatrix(1.25)*BrightnessMatrix(-0.85)*HueMatrix(1.0) 
+        parallel:
+            pos (0.5, 1.25) 
+            linear 1.44 pos (0.18, 1.2) 
+        parallel:
+            matrixtransform ScaleMatrix(1.0, 1.0, 1.0)*RotateMatrix(0.0, 0.0, 0.0)*OffsetMatrix(0.0, 0.0, 0.0) 
+            linear 1.43 matrixtransform ScaleMatrix(0.19, 0.1956643356643356, 1.0)*RotateMatrix(0.0, 0.0, 0.0)*OffsetMatrix(0.0, 0.0, 0.0) 
+        parallel:
+            additive 0.0 blur 0.0 
+            linear 0.01 additive 0.0 blur 0.0 
+    with Pause(1.54)
+    show ccl cc_breathing:
+        blend 'normal' pos (0.18, 1.2) matrixtransform ScaleMatrix(0.19, 0.1956643356643356, 1.0)*RotateMatrix(0.0, 0.0, 0.0)*OffsetMatrix(0.0, 0.0, 0.0) additive 0.0 blur 0.0 matrixcolor InvertMatrix(0.0)*ContrastMatrix(1.0)*SaturationMatrix(1.25)*BrightnessMatrix(-0.85)*HueMatrix(1.0) 
+    window auto show
+
+    
+    $LongNVLText(commercialcris.c, (
+    '''\
+In the short scuffle, you almost lose track of Commercial Cris, who has yet to notice—or care—that you aren’t behind him anymore.
     '''
     ))
 
@@ -2020,9 +2036,9 @@ Well if you want to lose your guide, now’s the time. To your right you see a b
 
 # Scene 3c1
 label path_town_alley:
-    scene black
-    show mswl myst_s_woman_breathing at left
-
+    scene bg_town
+    show bg_townalley with pushright
+    
     #show terrorlightz_talking at right
 
     #terrorlightz.c "Following a girl to a dark alley."
@@ -2032,6 +2048,8 @@ label path_town_alley:
 You wait until Commercial Cris’s silhouette disappears into the crowd before you slip into the empty alleyway. Much like the alleys on your home planet, it is mostly filled with discarded trash and a distinct smell of urine. 
     '''
     ))
+
+    show bg_townalley at my_walking with dissolve
 
 # (Effect - screen bouncing up and down slowly, walking...)
     $LongNVLText(commercialcris.c, (
@@ -2057,6 +2075,8 @@ While you could dodge the shady alien’s stares, you couldn’t ignore the incr
 After involuntarily holding your breath as your heart thunders against your chest, you finally exit the alleyway. 
     '''
     ))
+
+    show bg_townoutskirts at my_walking with dissolve
 
 # (Effect: Change scene: bg_town alley...)
     $LongNVLText(commercialcris.c, (
@@ -2359,6 +2379,8 @@ A soft voice cuts through the darkness.
 
 # (Effect: PAN UP FROM BOTTOM OF ALIEN TO TOP) 
     show mswl myst_s_woman_scary_happy
+    #option to make her darker: subpixel True matrixcolor InvertMatrix(0.0)*ContrastMatrix(1.0)*SaturationMatrix(1.0)*BrightnessMatrix(-0.5)*HueMatrix(1.0) 
+    
     $LongNVLText(mysteryspacewoman.c, (
     '''\
 You look up and notice the pretty alien hovering over you. Your eyes widen. When did she get so close to you? You didn’t hear her following you.
@@ -2372,6 +2394,7 @@ You reach up to take her outstretched arm, but pull away before you make contact
     ))
 
     show mswl myst_s_woman_scary:
+        subpixel True matrixcolor InvertMatrix(0.0)*ContrastMatrix(1.0)*SaturationMatrix(1.0)*BrightnessMatrix(-0.5)*HueMatrix(1.0) 
         subpixel True 
         xzoom 2.0 yzoom 2.0 
         parallel:
@@ -2384,7 +2407,7 @@ You reach up to take her outstretched arm, but pull away before you make contact
     with Pause(3.16)
     show mswl myst_s_woman_scary:
         pos (0.5, 2.75) zoom 1.75 
-
+    
   
     $LongNVLText(mysteryspacewoman.c, (
     '''\
