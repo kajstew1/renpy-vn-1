@@ -120,7 +120,7 @@ define char = Character('Me', image="charimage")
 image side charimage = Live2D("images/myst_s_woman_motions/myst_s_woman_motions.model3.json", loop=True)
 
 define sidenarrator = Character (None, image="narrator_img")
-image side narrator_img = Live2D("images/protagonist_motions/protagonist_motions.model3.json", loop=True, zoom=.14)
+image side narrator_img = Live2D("images/protagonist_motions/protagonist_motions.model3.json", loop=True, zoom=1.0)
 #image side narrator_img = Live2D("images/protagonist_motions/protagonist_motions.model3.json", loop=True, motions="protag_breathing", zoom=.1)
 
 #image side narrator_img = "side_protagonist_neutral"

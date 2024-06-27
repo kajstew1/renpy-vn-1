@@ -72,7 +72,8 @@ init:
 
 # The game starts here.
 label start:
-    
+    camera:
+        perspective True
     #scene black 
     #show drp_motions dr_p_breathing
 
@@ -1571,6 +1572,7 @@ label path_left_path_decision:
             linear 1.3 xalign 0.5
         parallel:
             linear 1.3 ycenter .5
+ 
 
 
 #(Effect - zoom in on left path)
@@ -1828,7 +1830,18 @@ Placing his empty hand into his pocket, he briskly walks out of your room. “We
     '''
     ))
 
-    show drp_casual_talking at exitright with dissolve
+    #show drp_casual_talking at exitright with dissolve
+#(EFFECT TODO:  Dr. Psilicon fades out, transition either fades him out to the BG or transition him out of frame)
+
+    window auto hide
+    show drpl _sustain blush:
+        subpixel True 
+        alpha 1.0 
+        linear 2.96 alpha 0.0 
+    with Pause(3.06)
+    show drpl _sustain blush:
+        alpha 0.0 
+    window auto show
 
     $LongNVLText(drpsilicon.c, (
     '''\
@@ -1836,9 +1849,12 @@ And just as he entered, he was gone. You let your head fall back onto your pillo
     '''
     ))
 
+
+
+
+
     $LongNVLText(drpsilicon.c, (
     '''\
-    (EFFECT TODO:  Dr. Psilicon fades out, transition either fades him out to the BG or transition him out of frame)
 You fall back asleep. You hope this was just a long nightmare. 
     '''
     ))
@@ -2037,7 +2053,7 @@ Well if you want to lose your guide, now’s the time. To your right you see a b
 # Scene 3c1
 label path_town_alley:
     scene bg_town
-    show bg_townalley with pushright
+    show bg_townalley with pushright 
     
     #show terrorlightz_talking at right
 
