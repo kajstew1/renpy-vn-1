@@ -2372,10 +2372,11 @@ You gulp and the hairs on the back of your neck perk up. This would be the perfe
         pos (0.5, 1.15) zpos 1.0 
     window auto show
 
+# EFFECT: BOUNCE 
     show mswl myst_s_woman_scary_transition
     $LongNVLText(mysteryspacewoman.c, (
     '''\
-As your mind was racing with how to handle this situation, you turn too quickly to the left and trip over an overturned trash can. EFFECT: BOUNCE The metallic lid screeches as it rolls through the alley.
+As your mind was racing with how to handle this situation, you turn too quickly to the left and trip over an overturned trash can. The metallic lid screeches as it rolls through the alley.
     '''
     ))
 
@@ -2425,9 +2426,9 @@ You reach up to take her outstretched arm, but pull away before you make contact
         pos (0.5, 2.75) zoom 1.75 
     
   
+  #(Effect: PAN IN CLOSER TO ALIEN’s FACE)
     $LongNVLText(mysteryspacewoman.c, (
     '''\
-(Effect: PAN IN CLOSER TO ALIEN’s FACE)
 Upon closer inspection of her face, you notice that her eyes, once delicate and gentle, are now cold and expressionless. Her mouth, wider than before, displays pointed, jagged teeth.
     '''
     ))
