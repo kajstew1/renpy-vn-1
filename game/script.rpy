@@ -1850,21 +1850,50 @@ label path_town_fork:
     scene black
     show bg_hospital with dissolve
     #show commercialcris_talking with moveinright
-    show ccl cc_breathing at center
+    
 
 # (Effect: Fades from black to BG)
 # (Effect: Enters Commercial Cris (transition in))
+   
+    show ccl cc_breathing at center with dissolve: 
+        subpixel True additive 0.0 matrixcolor InvertMatrix(0.0)*ContrastMatrix(1.5)*SaturationMatrix(1.75)*BrightnessMatrix(0.0)*HueMatrix(0.0) blend None
+
     $LongNVLText(commercialcris.c, (
     '''\
 About an hour passes until you finally meet your escort. At this point, you’ve gotten used to the unexpected, but even this was a bit much. 
     '''
     ))
 
+    window auto hide
+    show ccl cc_breathing:
+        subpixel True additive 0.0 matrixcolor InvertMatrix(0.0)*ContrastMatrix(1.5)*SaturationMatrix(1.75)*BrightnessMatrix(0.0)*HueMatrix(0.0) blend None
+        pos (0.5, 1.0) xzoom 1.0 yzoom 1.0 
+        linear 0.80 pos (0.5, 1.6) xzoom 1.75 yzoom 1.75 
+    with Pause(0.90)
+    show ccl cc_breathing:
+        pos (0.5, 1.6) xzoom 1.75 yzoom 1.75 
+    window auto show
+
+
     $LongNVLText(commercialcris.c, (
     '''\
 Above your escort’s shoulder sits a small, outdated TV, projecting an unimpressed expression on his grayscale face. Dressed to the nines, he wears an expensive and sharply tailored suit.  
     '''
     ))
+
+    window auto hide
+    show ccl cc_breathing:
+        subpixel True additive 0.0 matrixcolor InvertMatrix(0.0)*ContrastMatrix(1.5)*SaturationMatrix(1.75)*BrightnessMatrix(0.0)*HueMatrix(0.0) blend None 
+        parallel:
+            xpos 0.5 
+            linear 1.01 xpos 0.5 
+        parallel:
+            ypos 1.6 xzoom 1.75 yzoom 1.75 
+            linear 1.02 ypos 1.0 xzoom 1.0 yzoom 1.0  
+    with Pause(1.12)
+    show ccl cc_breathing:
+        pos (0.5, 1.0) xzoom 1.0 yzoom 1.0 
+    window auto show
 
     $LongNVLText(commercialcris.c, (
     '''\
@@ -1884,11 +1913,17 @@ Without thinking, you blurt out what was on your mind. “Are you a cyborg?”
     '''
     ))
 
+    show ccl cc_talking:
+        subpixel True additive 0.0 matrixcolor InvertMatrix(0.0)*ContrastMatrix(1.5)*SaturationMatrix(1.75)*BrightnessMatrix(0.0)*HueMatrix(0.0) blend None
+
     $LongNVLText(commercialcris.c, (
     '''\
 He looks at you with squinted eyes and a frown. “Lucky me. I got the comedian.” 
     '''
     ))
+
+    show ccl cc_breathing:
+        subpixel True additive 0.0 matrixcolor InvertMatrix(0.0)*ContrastMatrix(1.5)*SaturationMatrix(1.75)*BrightnessMatrix(0.0)*HueMatrix(0.0) blend None
 
     $LongNVLText(commercialcris.c, (
     '''\
@@ -1902,11 +1937,17 @@ After gathering your meager belongings, mostly made up of the torn up clothes th
     '''
     ))
 
+    show ccl cc_talking:
+        subpixel True additive 0.0 matrixcolor InvertMatrix(0.0)*ContrastMatrix(1.5)*SaturationMatrix(1.75)*BrightnessMatrix(0.0)*HueMatrix(0.0) blend None
+
     $LongNVLText(commercialcris.c, (
     '''\
 Clearing his throat, your escort motions toward himself. “Now that you’ve displayed your comedic talent, let us start with some introductions. My name is Commercial Cris. As the mayor of this town, I’d like to hearby welcome you to Aisthesis, Psilicon 5’s largest city.” 
     '''
     ))
+
+    show ccl cc_breathing:
+        subpixel True additive 0.0 matrixcolor InvertMatrix(0.0)*ContrastMatrix(1.5)*SaturationMatrix(1.75)*BrightnessMatrix(0.0)*HueMatrix(0.0) blend None
 
     $LongNVLText(commercialcris.c, (
     '''\
@@ -1914,11 +1955,17 @@ Clearing his throat, your escort motions toward himself. “Now that you’ve di
     '''
     ))
 
+    show ccl cc_talking:
+        subpixel True additive 0.0 matrixcolor InvertMatrix(0.0)*ContrastMatrix(1.5)*SaturationMatrix(1.75)*BrightnessMatrix(0.0)*HueMatrix(0.0) blend None
+
     $LongNVLText(commercialcris.c, (
     '''\
 “So I’ve heard. Now let’s get started on your tour. I only have a few hours to spare before my next meeting,” Commercial Cris says as he walks out the door, towards the hospital’s exit. 
     '''
     ))
+
+    show ccl cc_breathing:
+        subpixel True additive 0.0 matrixcolor InvertMatrix(0.0)*ContrastMatrix(1.5)*SaturationMatrix(1.75)*BrightnessMatrix(0.0)*HueMatrix(0.0) blend None
 
     $LongNVLText(commercialcris.c, (
     '''\
@@ -1928,7 +1975,8 @@ You take the hint and follow him out of the hospital.
 
     scene black
     show bg_town with pushright
-    show ccl cc_breathing at center
+    show ccl cc_breathing at center:
+        subpixel True additive 0.0 matrixcolor InvertMatrix(0.0)*ContrastMatrix(1.5)*SaturationMatrix(1.75)*BrightnessMatrix(0.0)*HueMatrix(0.0) blend None
 
 # (Effect: Transition from hospital to town BG
 # (Effect: Commercial Cris transitions in)
@@ -1940,21 +1988,61 @@ Upon opening the exit door, you are flooded with a flurry of noises. Jumbled voi
 
     $LongNVLText(commercialcris.c, (
     '''\
-Passing through the crowds with ease, Commercial Cris wastes no time to start his guided tour. “This town was built after the last war. Mainly functioning as a trading post approximately 100 “earth” years ago. Due to the proximity to an abundant amount of natural resources, Aisthesis thrived.” 
+Passing through the crowds with ease, Commercial Cris wastes no time to start his guided tour. 
     '''
     ))
 
+    show ccl cc_talking:
+        subpixel True additive 0.0 matrixcolor InvertMatrix(0.0)*ContrastMatrix(1.5)*SaturationMatrix(1.75)*BrightnessMatrix(0.0)*HueMatrix(0.0) blend None
+
     $LongNVLText(commercialcris.c, (
     '''\
-Even when a passing kiosk almost runs into him, Commercial Cris continues his tour without missing a step. “We have the best hospitals, schools, and transportation in all of Psilicon 5. Not to mention the alcohol!” Lifting his watch again to check the time, he says, “Since you’ve had quite the day, how about we grab ourselves a drink?” 
+“This town was built after the last war. Mainly functioning as a trading post approximately 100 “earth” years ago. Due to the proximity to an abundant amount of natural resources, Aisthesis thrived.” 
     '''
     ))
+    
+    show ccl cc_breathing:
+        subpixel True additive 0.0 matrixcolor InvertMatrix(0.0)*ContrastMatrix(1.5)*SaturationMatrix(1.75)*BrightnessMatrix(0.0)*HueMatrix(0.0) blend None
+    
+    $LongNVLText(commercialcris.c, (
+    '''\
+Even when a passing kiosk almost runs into him, Commercial Cris continues his tour without missing a step. 
+    '''
+    ))
+
+    show ccl cc_talking:
+        subpixel True additive 0.0 matrixcolor InvertMatrix(0.0)*ContrastMatrix(1.5)*SaturationMatrix(1.75)*BrightnessMatrix(0.0)*HueMatrix(0.0) blend None
+
+    $LongNVLText(commercialcris.c, (
+    '''\
+“We have the best hospitals, schools, and transportation in all of Psilicon 5. Not to mention the alcohol!” Lifting his watch again to check the time, he says, “Since you’ve had quite the day, how about we grab ourselves a drink?” 
+    '''
+    ))
+
+    show ccl cc_breathing:
+        subpixel True additive 0.0 matrixcolor InvertMatrix(0.0)*ContrastMatrix(1.5)*SaturationMatrix(1.75)*BrightnessMatrix(0.0)*HueMatrix(0.0) blend None
+
+
+    window auto hide
+    show bg_town:
+        subpixel True 
+        anchor (0.5, 1.0) xzoom 1.0 yzoom 1.0 
+        linear 1.57 anchor (0.6, 0.55) xzoom 1.85 yzoom 1.85 
+    show ccl cc_breathing:
+        subpixel True ypos 2.0 
+    with Pause(1.67)
+    show bg_town:
+        anchor (0.6, 0.55) xzoom 1.85 yzoom 1.85 
+    window auto show
+
 
     $LongNVLText(commercialcris.c, (
     '''\
 As much as you try to focus on Commercial Cris’s tour, you find it hard to concentrate when you are in such a densely packed crowd. Even more so when you look up to the tall, perfectly oddly-jagged shaped buildings. You had never seen such architecture before. You wonder how it was possible to build such a feat with such sharp, awkward angles. 
     '''
     ))
+
+
 
     $LongNVLText(commercialcris.c, (
     '''\
@@ -1963,7 +2051,9 @@ Distraction was dangerous in a city like this. You nearly fall to the ground aft
     ))
 
     show bg_town with vpunch
-
+    show bg_town with dissolve:
+        subpixel True 
+        anchor (0.5, 1.0) xzoom 1.0 yzoom 1.0 
 
 # (Effect - shake screen...)
     $LongNVLText(commercialcris.c, (
@@ -1971,8 +2061,6 @@ Distraction was dangerous in a city like this. You nearly fall to the ground aft
 Your heart races as you realize that you can’t afford to fall in this crowd. This city wouldn’t wait for you. You would most certainly get run over. 
     '''
     ))
-
-
         
 # (Effect: Show Commercial Cris in the distance)
     $LongNVLText(commercialcris.c, (
@@ -1983,22 +2071,22 @@ The alien mumbles an apparent irritated apology before scurrying off, leaving yo
 
     window auto hide
     show ccl cc_breathing:
-        subpixel True zpos 0.0 rotate 0.0 
+        subpixel True zpos 0.0 rotate 0.0
         parallel:
-            blend 'normal' matrixcolor InvertMatrix(0.0)*ContrastMatrix(1.0)*SaturationMatrix(1.0)*BrightnessMatrix(0.0)*HueMatrix(0.0) 
-            linear 1.42 blend 'normal' matrixcolor InvertMatrix(0.0)*ContrastMatrix(1.0)*SaturationMatrix(1.25)*BrightnessMatrix(-0.85)*HueMatrix(1.0) 
+            blend 'normal' matrixcolor InvertMatrix(0.0)*ContrastMatrix(1.0)*SaturationMatrix(1.0)*BrightnessMatrix(0.0)*HueMatrix(0.0)
+            linear 1.42 blend 'normal' matrixcolor InvertMatrix(0.0)*ContrastMatrix(1.0)*SaturationMatrix(1.25)*BrightnessMatrix(-0.85)*HueMatrix(1.0)
         parallel:
-            pos (0.5, 1.25) 
-            linear 1.44 pos (0.18, 1.2) 
+            pos (0.5, 1.25)
+            linear 1.44 pos (0.18, 1.2)
         parallel:
-            matrixtransform ScaleMatrix(1.0, 1.0, 1.0)*RotateMatrix(0.0, 0.0, 0.0)*OffsetMatrix(0.0, 0.0, 0.0) 
-            linear 1.43 matrixtransform ScaleMatrix(0.19, 0.1956643356643356, 1.0)*RotateMatrix(0.0, 0.0, 0.0)*OffsetMatrix(0.0, 0.0, 0.0) 
+            matrixtransform ScaleMatrix(1.0, 1.0, 1.0)*RotateMatrix(0.0, 0.0, 0.0)*OffsetMatrix(0.0, 0.0, 0.0)
+            linear 1.43 matrixtransform ScaleMatrix(0.19, 0.1956643356643356, 1.0)*RotateMatrix(0.0, 0.0, 0.0)*OffsetMatrix(0.0, 0.0, 0.0)
         parallel:
-            additive 0.0 blur 0.0 
-            linear 0.01 additive 0.0 blur 0.0 
+            additive 0.0 blur 0.0
+            linear 0.01 additive 0.0 blur 0.0
     with Pause(1.54)
     show ccl cc_breathing:
-        blend 'normal' pos (0.18, 1.2) matrixtransform ScaleMatrix(0.19, 0.1956643356643356, 1.0)*RotateMatrix(0.0, 0.0, 0.0)*OffsetMatrix(0.0, 0.0, 0.0) additive 0.0 blur 0.0 matrixcolor InvertMatrix(0.0)*ContrastMatrix(1.0)*SaturationMatrix(1.25)*BrightnessMatrix(-0.85)*HueMatrix(1.0) 
+        blend 'normal' pos (0.18, 1.2) matrixtransform ScaleMatrix(0.19, 0.1956643356643356, 1.0)*RotateMatrix(0.0, 0.0, 0.0)*OffsetMatrix(0.0, 0.0, 0.0) additive 0.0 blur 0.0 matrixcolor InvertMatrix(0.0)*ContrastMatrix(1.0)*SaturationMatrix(1.25)*BrightnessMatrix(-0.85)*HueMatrix(1.0)
     window auto show
 
     
