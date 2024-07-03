@@ -1,0 +1,26 @@
+{
+	"Version": 3,
+	"FileReferences": {
+		"Moc": "Alyssa Stewart Vtuber 5.moc3",
+		"Textures": [
+			"Alyssa Stewart Vtuber 5.1024/texture_00.png"
+		],
+		"Physics": "Alyssa Stewart Vtuber 5.physics3.json",
+		"DisplayInfo": "Alyssa Stewart Vtuber 5.cdi3.json"
+	},
+	"Groups": [
+		{
+			"Target": "Parameter",
+			"Name": "LipSync",
+			"Ids": []
+		},
+		{
+			"Target": "Parameter",
+			"Name": "EyeBlink",
+			"Ids": [
+				"ParamEyeLOpen",
+				"ParamEyeROpen"
+			]
+		}
+	]
+}
