@@ -1907,7 +1907,7 @@ Above your escort’s shoulder sits a small, outdated TV, projecting an unimpres
             ypos 1.6 xzoom 1.75 yzoom 1.75 
             linear 1.02 ypos 1.0 xzoom 1.0 yzoom 1.0  
     with Pause(1.12)
-    show ccl Look away smile angry talking:
+    show ccl cc_breathing:
         pos (0.5, 1.0) xzoom 1.0 yzoom 1.0 
     window auto show
 
@@ -1917,25 +1917,26 @@ You brows knit together in confusion…Is this how people dress on Psilicon 5? H
     '''
     ))
 
-    window auto hide
-    show ccl cc_lookaway_smile_angry_talking:
-        subpixel True additive 0.0 matrixcolor InvertMatrix(0.0)*ContrastMatrix(1.5)*SaturationMatrix(1.75)*BrightnessMatrix(0.0)*HueMatrix(0.0) blend None 
-        parallel:
-            xpos 0.5 
-            linear 1.01 xpos 0.5 
-        parallel:
-            ypos 1.6 xzoom 1.75 yzoom 1.75 
-            linear 1.02 ypos 1.0 xzoom 1.0 yzoom 1.0  
-    with Pause(1.12)
-    show ccl cc_lookaway_smile_angry_talking:
-        pos (0.5, 1.0) xzoom 1.0 yzoom 1.0 
-    window auto show
+    show ccl cc_breathing at center: 
+        subpixel True additive 0.0 matrixcolor InvertMatrix(0.0)*ContrastMatrix(1.5)*SaturationMatrix(1.75)*BrightnessMatrix(0.0)*HueMatrix(0.0) blend None
     
     $LongNVLText(commercialcris.c, (
     '''\
-Your escort flicks his wrist to look at his silver-plated watch impatiently. “Let’s get going, tourist. I don’t have all day.” 
+Your escort flicks his wrist to look at his silver-plated watch impatiently. 
     '''
     ))
+
+    show ccl cc_bored_talking: 
+        subpixel True additive 0.0 matrixcolor InvertMatrix(0.0)*ContrastMatrix(1.5)*SaturationMatrix(1.75)*BrightnessMatrix(0.0)*HueMatrix(0.0) blend None
+
+    $LongNVLText(commercialcris.c, (
+    '''\
+“Let’s get going, tourist. I don’t have all day.” 
+    '''
+    ))
+
+    show ccl cc_bored: 
+        subpixel True additive 0.0 matrixcolor InvertMatrix(0.0)*ContrastMatrix(1.5)*SaturationMatrix(1.75)*BrightnessMatrix(0.0)*HueMatrix(0.0) blend None
 
     $LongNVLText(commercialcris.c, (
     '''\
@@ -1943,16 +1944,25 @@ Without thinking, you blurt out what was on your mind. “Are you a cyborg?”
     '''
     ))
 
-    show ccl cc_talking:
+    show ccl cc_squint_frown_breathing:
         subpixel True additive 0.0 matrixcolor InvertMatrix(0.0)*ContrastMatrix(1.5)*SaturationMatrix(1.75)*BrightnessMatrix(0.0)*HueMatrix(0.0) blend None
 
     $LongNVLText(commercialcris.c, (
     '''\
-He looks at you with squinted eyes and a frown. “Lucky me. I got the comedian.” 
+He looks at you with squinted eyes and a frown. 
+    '''
+    ))
+   
+    show ccl cc_look_away_smile_angry_talking_stay:
+        subpixel True additive 0.0 matrixcolor InvertMatrix(0.0)*ContrastMatrix(1.5)*SaturationMatrix(1.75)*BrightnessMatrix(0.0)*HueMatrix(0.0) blend None
+
+    $LongNVLText(commercialcris.c, (
+    '''\
+“Lucky me. I got the comedian.” 
     '''
     ))
 
-    show ccl cc_breathing:
+    show ccl cc_look_away_smile_stay:
         subpixel True additive 0.0 matrixcolor InvertMatrix(0.0)*ContrastMatrix(1.5)*SaturationMatrix(1.75)*BrightnessMatrix(0.0)*HueMatrix(0.0) blend None
 
     $LongNVLText(commercialcris.c, (
@@ -1967,12 +1977,21 @@ After gathering your meager belongings, mostly made up of the torn up clothes th
     '''
     ))
 
-    show ccl cc_talking:
+    show ccl cc_bored:
         subpixel True additive 0.0 matrixcolor InvertMatrix(0.0)*ContrastMatrix(1.5)*SaturationMatrix(1.75)*BrightnessMatrix(0.0)*HueMatrix(0.0) blend None
 
     $LongNVLText(commercialcris.c, (
     '''\
-Clearing his throat, your escort motions toward himself. “Now that you’ve displayed your comedic talent, let us start with some introductions. My name is Commercial Cris. As the mayor of this town, I’d like to hearby welcome you to Aisthesis, Psilicon 5’s largest city.” 
+Clearing his throat, your escort motions toward himself. 
+    '''
+    ))
+
+    show ccl cc_bored_talking:
+        subpixel True additive 0.0 matrixcolor InvertMatrix(0.0)*ContrastMatrix(1.5)*SaturationMatrix(1.75)*BrightnessMatrix(0.0)*HueMatrix(0.0) blend None
+
+    $LongNVLText(commercialcris.c, (
+    '''\
+“Now that you’ve displayed your comedic talent, let us start with some introductions. My name is Commercial Cris. As the mayor of this town, I’d like to hearby welcome you to Aisthesis, Psilicon 5’s largest city.” 
     '''
     ))
 
@@ -1990,7 +2009,16 @@ Clearing his throat, your escort motions toward himself. “Now that you’ve di
 
     $LongNVLText(commercialcris.c, (
     '''\
-“So I’ve heard. Now let’s get started on your tour. I only have a few hours to spare before my next meeting,” Commercial Cris says as he walks out the door, towards the hospital’s exit. 
+“So I’ve heard. Now let’s get started on your tour. I only have a few hours to spare before my next meeting,” 
+    '''
+    ))
+
+    show ccl cc_breathing:
+        subpixel True additive 0.0 matrixcolor InvertMatrix(0.0)*ContrastMatrix(1.5)*SaturationMatrix(1.75)*BrightnessMatrix(0.0)*HueMatrix(0.0) blend None
+
+    $LongNVLText(commercialcris.c, (
+    '''\
+Commercial Cris says as he walks out the door, towards the hospital’s exit. 
     '''
     ))
 
