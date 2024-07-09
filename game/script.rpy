@@ -1907,7 +1907,7 @@ Above your escort’s shoulder sits a small, outdated TV, projecting an unimpres
             ypos 1.6 xzoom 1.75 yzoom 1.75 
             linear 1.02 ypos 1.0 xzoom 1.0 yzoom 1.0  
     with Pause(1.12)
-    show ccl cc_breathing:
+    show ccl Look away smile angry talking:
         pos (0.5, 1.0) xzoom 1.0 yzoom 1.0 
     window auto show
 
@@ -1917,6 +1917,20 @@ You brows knit together in confusion…Is this how people dress on Psilicon 5? H
     '''
     ))
 
+    window auto hide
+    show ccl cc_lookaway_smile_angry_talking:
+        subpixel True additive 0.0 matrixcolor InvertMatrix(0.0)*ContrastMatrix(1.5)*SaturationMatrix(1.75)*BrightnessMatrix(0.0)*HueMatrix(0.0) blend None 
+        parallel:
+            xpos 0.5 
+            linear 1.01 xpos 0.5 
+        parallel:
+            ypos 1.6 xzoom 1.75 yzoom 1.75 
+            linear 1.02 ypos 1.0 xzoom 1.0 yzoom 1.0  
+    with Pause(1.12)
+    show ccl cc_lookaway_smile_angry_talking:
+        pos (0.5, 1.0) xzoom 1.0 yzoom 1.0 
+    window auto show
+    
     $LongNVLText(commercialcris.c, (
     '''\
 Your escort flicks his wrist to look at his silver-plated watch impatiently. “Let’s get going, tourist. I don’t have all day.” 
