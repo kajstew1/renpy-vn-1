@@ -134,7 +134,7 @@ image ccl = MyLive2D("images/cc_motions", default_fade=0.0, top=0.0, base=1.0, h
 image mswl = MyLive2D("images/myst_s_woman_motions", default_fade=0.0, top=0.0, base=1.0, height=1.0, loop=True, fallback="mysteryspacewoman talking")
 image protl = MyLive2D("images/protagonist_motions", default_fade=0.0, top=0.0, base=1.0, height=1.0, loop=True, fallback="protagonist talking")
 image tll = MyLive2D("images/terrorlightz_motions", default_fade=0.0, top=0.0, base=1.0, height=1.0, loop=True, fallback="terrorlightz talking")
-image drpl = MyLive2D("images/Alyssa C1", default_fade=0.0, top=0.0, base=1.0, height=1.0, loop=True, fallback="drp casual talking")
+image drpl = MyLive2D("images/dr_p_motions", default_fade=0.0, top=0.0, base=1.0, height=1.0, loop=True, fallback="drp casual talking")
 
 
 define narrator = Character (None) #, what_slow_cps=0, what_font="fontfile_name.ttf")

@@ -1701,7 +1701,7 @@ label path_hospital:
     #show bg_hospital with Fade(3,3,3)
     show bg_hospital with in_eye
     #show drp_casual_talking at right
-    show drpl blush at right
+    show drpl drp_breathing at right
     #  sad angry
 
     $LongNVLText(drpsilicon.c, (
@@ -1758,6 +1758,9 @@ Under normal circumstances, you would be happy to see a doctor sporting a crisp 
     '''
     ))
 
+    show drpl drp_breathing:
+        subpixel True additive 0.0 matrixcolor InvertMatrix(0.0)*ContrastMatrix(1.5)*SaturationMatrix(1.75)*BrightnessMatrix(0.0)*HueMatrix(0.0) blend None
+    
     $LongNVLText(drpsilicon.c, (
     '''\
 The “doctor’s” skin was a sickly green, moss color. Taking up half of his face, in lieu of a typical head of hair and eyes, he had a vibrant red mushroom cap, dotted with yellow spots. 
@@ -1834,12 +1837,12 @@ Placing his empty hand into his pocket, he briskly walks out of your room. “We
 #(EFFECT TODO:  Dr. Psilicon fades out, transition either fades him out to the BG or transition him out of frame)
 
     window auto hide
-    show drpl _sustain blush:
+    show drpl _sustain drp_breathing:
         subpixel True 
         alpha 1.0 
         linear 2.96 alpha 0.0 
     with Pause(3.06)
-    show drpl _sustain blush:
+    show drpl _sustain drp_breathing:
         alpha 0.0 
     window auto show
 
@@ -2024,6 +2027,19 @@ Commercial Cris says as he walks out the door, towards the hospital’s exit.
 
     show ccl cc_breathing:
         subpixel True additive 0.0 matrixcolor InvertMatrix(0.0)*ContrastMatrix(1.5)*SaturationMatrix(1.75)*BrightnessMatrix(0.0)*HueMatrix(0.0) blend None
+
+    window auto hide
+    show ccl cc_breathing:
+        subpixel True ypos 1.0 zpos 0.0 
+        xpos 0.5 
+        linear 0.01 xpos 0.5 
+        linear 1.11 xpos 1.2 
+    with Pause(1.22)
+    show ccl cc_breathing:
+        pos (1.2, 1.0) 
+    window auto show
+
+
 
     $LongNVLText(commercialcris.c, (
     '''\
