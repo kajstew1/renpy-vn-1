@@ -1779,11 +1779,17 @@ Just when you thought you were out…
     '''
     ))
 
+    show drpl drp_neutral_talking:
+        subpixel True additive 0.0 matrixcolor InvertMatrix(0.0)*ContrastMatrix(1.5)*SaturationMatrix(1.75)*BrightnessMatrix(0.0)*HueMatrix(0.0) blend None
+
     $LongNVLText(drpsilicon.c, (
     '''\
 “You’re lucky to be alive, that’s for sure, kid,” the doctor said in a gruff, unemotional voice. 
     '''
     ))
+
+    show drpl drp_breathing:
+        subpixel True additive 0.0 matrixcolor InvertMatrix(0.0)*ContrastMatrix(1.5)*SaturationMatrix(1.75)*BrightnessMatrix(0.0)*HueMatrix(0.0) blend None
 
     $LongNVLText(drpsilicon.c, (
     '''\
@@ -1803,17 +1809,44 @@ Still groggy and dehydrated, your words came out strained. “Where am I?”
     '''
     ))
 
-    $LongNVLText(drpsilicon.c, (
-    '''\
-The doctor’s mouth tightened into a hard line. He is obviously displeased at your naivety. “Great. A case of convenient amnesia.”
-    '''
-    ))
+    show drpl drp_mad:
+        subpixel True additive 0.0 matrixcolor InvertMatrix(0.0)*ContrastMatrix(1.5)*SaturationMatrix(1.75)*BrightnessMatrix(0.0)*HueMatrix(0.0) blend None
 
     $LongNVLText(drpsilicon.c, (
     '''\
-He taps impatiently with his fingers onto his clipboard as he weighs his options. After a short pause, he sighs in an overly dramatic fashion. “You are in a hospital on the planet Psilicon 5. Due to your subpar piloting, you destroyed a nature preserve. I surely hope you have that ship insured or else you may find yourself in quite the conundrum.” 
+The doctor’s mouth tightened into a hard line. He is obviously displeased at your naivety. 
     '''
     ))
+
+    show drpl drp_mad_talking:
+        subpixel True additive 0.0 matrixcolor InvertMatrix(0.0)*ContrastMatrix(1.5)*SaturationMatrix(1.75)*BrightnessMatrix(0.0)*HueMatrix(0.0) blend None
+
+    $LongNVLText(drpsilicon.c, (
+    '''\
+“Great. A case of convenient amnesia.”
+    '''
+    ))
+
+    show drpl drp_mad_tranistion_back:
+        subpixel True additive 0.0 matrixcolor InvertMatrix(0.0)*ContrastMatrix(1.5)*SaturationMatrix(1.75)*BrightnessMatrix(0.0)*HueMatrix(0.0) blend None
+
+    $LongNVLText(drpsilicon.c, (
+    '''\
+He taps impatiently with his fingers onto his clipboard as he weighs his options. After a short pause, he sighs in an overly dramatic fashion. 
+    '''
+    ))
+
+    show drpl drp_scowling_talking:
+        subpixel True additive 0.0 matrixcolor InvertMatrix(0.0)*ContrastMatrix(1.5)*SaturationMatrix(1.75)*BrightnessMatrix(0.0)*HueMatrix(0.0) blend None
+
+    $LongNVLText(drpsilicon.c, (
+    '''\
+“You are in a hospital on the planet Psilicon 5. Due to your subpar piloting, you destroyed a nature preserve. I surely hope you have that ship insured or else you may find yourself in quite the conundrum.” 
+    '''
+    ))
+
+    show drpl drp_scowling:
+        subpixel True additive 0.0 matrixcolor InvertMatrix(0.0)*ContrastMatrix(1.5)*SaturationMatrix(1.75)*BrightnessMatrix(0.0)*HueMatrix(0.0) blend None
 
     $LongNVLText(drpsilicon.c, (
     '''\
@@ -1821,11 +1854,26 @@ Nature preserve? Insurance? What the hell is he talking about?
     '''
     ))
 
+    show drpl drp_breathing:
+        subpixel True additive 0.0 matrixcolor InvertMatrix(0.0)*ContrastMatrix(1.5)*SaturationMatrix(1.75)*BrightnessMatrix(0.0)*HueMatrix(0.0) blend None
+
     $LongNVLText(drpsilicon.c, (
     '''\
-With the conceited notion he gave you a sufficient debriefing on your situation, the alien doctor starts scribbling notes on his notepad. “Since you only had a case of mild dehydration, you are free to leave at any time. Don’t worry about payment yet, with your ship crashed–we know you’re not going anywhere.” 
+With the conceited notion he gave you a sufficient debriefing on your situation, the alien doctor starts scribbling notes on his notepad. 
     '''
     ))
+
+    show drpl drp_neutral_talking:
+        subpixel True additive 0.0 matrixcolor InvertMatrix(0.0)*ContrastMatrix(1.5)*SaturationMatrix(1.75)*BrightnessMatrix(0.0)*HueMatrix(0.0) blend None
+
+    $LongNVLText(drpsilicon.c, (
+    '''\
+“Since you only had a case of mild dehydration, you are free to leave at any time. Don’t worry about payment yet, with your ship crashed–we know you’re not going anywhere.” 
+    '''
+    ))
+
+    show drpl drp_breathing:
+        subpixel True additive 0.0 matrixcolor InvertMatrix(0.0)*ContrastMatrix(1.5)*SaturationMatrix(1.75)*BrightnessMatrix(0.0)*HueMatrix(0.0) blend None
 
     $LongNVLText(drpsilicon.c, (
     '''\
