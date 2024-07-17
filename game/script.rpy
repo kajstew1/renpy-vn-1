@@ -1701,7 +1701,7 @@ label path_hospital:
     #show bg_hospital with Fade(3,3,3)
     show bg_hospital with in_eye
     #show drp_casual_talking at right
-    show drpl drp_breathing at right
+    #show drpl drp_breathing at right
     #  sad angry
 
     $LongNVLText(drpsilicon.c, (
@@ -1758,7 +1758,7 @@ Under normal circumstances, you would be happy to see a doctor sporting a crisp 
     '''
     ))
 
-    show drpl drp_breathing:
+    show drpl drp_breathing at center with dissolve:
         subpixel True additive 0.0 matrixcolor InvertMatrix(0.0)*ContrastMatrix(1.5)*SaturationMatrix(1.75)*BrightnessMatrix(0.0)*HueMatrix(0.0) blend None
     
     $LongNVLText(drpsilicon.c, (
@@ -1877,7 +1877,16 @@ With the conceited notion he gave you a sufficient debriefing on your situation,
 
     $LongNVLText(drpsilicon.c, (
     '''\
-Placing his empty hand into his pocket, he briskly walks out of your room. “We have an escort assigned to you to get you acclimated to the town. He will be here shortly. Stay put for now.” 
+Placing his empty hand into his pocket, he briskly walks out of your room. 
+    '''
+    ))
+    
+    show drpl drp_neutral_talking:
+        subpixel True additive 0.0 matrixcolor InvertMatrix(0.0)*ContrastMatrix(1.5)*SaturationMatrix(1.75)*BrightnessMatrix(0.0)*HueMatrix(0.0) blend None
+
+    $LongNVLText(drpsilicon.c, (
+    '''\
+“We have an escort assigned to you to get you acclimated to the town. He will be here shortly. Stay put for now.” 
     '''
     ))
 
