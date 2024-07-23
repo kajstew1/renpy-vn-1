@@ -1761,11 +1761,45 @@ Under normal circumstances, you would be happy to see a doctor sporting a crisp 
     show drpl drp_breathing at center with dissolve:
         subpixel True additive 0.0 matrixcolor InvertMatrix(0.0)*ContrastMatrix(1.5)*SaturationMatrix(1.75)*BrightnessMatrix(0.0)*HueMatrix(0.0) blend None
     
+    
+    window auto hide
+    show drpl drp_breathing:
+        subpixel True xpos 0.5 
+        parallel:
+            ypos 1.0 
+            linear 0.01 ypos 1.0 
+            linear 1.08 ypos 1.5 
+        parallel:
+            xzoom 1.0 yzoom 1.0 
+            linear 1.08 xzoom 1.5 yzoom 1.5 
+    with Pause(1.19)
+    show drpl drp_breathing:
+        pos (0.5, 1.5) xzoom 1.5 yzoom 1.5 
+    window auto show
+
+
+
     $LongNVLText(drpsilicon.c, (
     '''\
 The “doctor’s” skin was a sickly green, moss color. Taking up half of his face, in lieu of a typical head of hair and eyes, he had a vibrant red mushroom cap, dotted with yellow spots. 
     '''
     ))
+
+
+    window auto hide
+    show drpl drp_breathing:
+        subpixel True xpos 0.5 
+        parallel:
+            ypos 1.5 
+            linear 0.98 ypos 1.0 
+        parallel:
+            xzoom 1.5 yzoom 1.5 
+            linear 0.96 xzoom 1.0 yzoom 1.0 
+    with Pause(1.08)
+    show drpl drp_breathing:
+        pos (0.5, 1.0) xzoom 1.0 yzoom 1.0 
+    window auto show
+
 
     $LongNVLText(drpsilicon.c, (
     '''\
@@ -1893,15 +1927,9 @@ Placing his empty hand into his pocket, he briskly walks out of your room.
     #show drp_casual_talking at exitright with dissolve
 #(EFFECT TODO:  Dr. Psilicon fades out, transition either fades him out to the BG or transition him out of frame)
 
-    window auto hide
-    show drpl _sustain drp_breathing:
-        subpixel True 
-        alpha 1.0 
-        linear 2.96 alpha 0.0 
-    with Pause(3.06)
-    show drpl _sustain drp_breathing:
-        alpha 0.0 
-    window auto show
+    pause 0.2
+    hide drpl drp_breathing with dissolve 
+    pause 0.3
 
     $LongNVLText(drpsilicon.c, (
     '''\
