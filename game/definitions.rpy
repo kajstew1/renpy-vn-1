@@ -113,11 +113,16 @@ default p_player_name_input = VariableInputValue("player_name", default=False)
 image drp_motions = MyLive2D("images/dr_p_motions", default_fade=0.0, loop=True, fallback="dr_p casual talking")
     
 
-##  Declare characters here
-#define config.layers = [ 'master', 'transient','screens','character', 'overlay' ] #make a whole new layer for the char- screw side image(i never quite get it anyway)!
-#define config.tag_layer = {'narrator_img':'character'}  #tag it so every cohan image is automatically place on the 'character' layer. Alternatively, you can use "onlayer" to manually put him in there every time
-#define config.menu_clear_layers = ['character'] # clear it so the char will disappear when enter game screen, otherwise he will awkwardly stay there
-  
+#make a whole new layer for the char- screw side image(i never quite get it anyway)!
+define config.layers = [ 'master', 'transient','screens','character', 'overlay' ] 
+
+#tag it so every cohan image is automatically place on the 'character' layer. 
+#Alternatively, you can use "onlayer" to manually put him in there every time
+define config.tag_layer = {'protl':'character'}  
+
+# clear it so the char will disappear when enter game screen, otherwise he will awkwardly stay there
+define config.menu_clear_layers = ['character'] 
+
 #define sidenarrator1 = Character(None, image="narrator_img")
 
 
@@ -132,7 +137,7 @@ image side narrator_img = MyLive2D("images/protagonist_motions/protagonist_motio
 
 image ccl = MyLive2D("images/cc_motions", default_fade=0.0, top=0.0, base=1.0, height=1.0, loop=True, fallback="commercialcris talking")
 image mswl = MyLive2D("images/myst_s_woman_motions", default_fade=0.0, top=0.0, base=1.0, height=1.0, loop=True, fallback="mysteryspacewoman talking")
-image protl = MyLive2D("images/protagonist_motions", default_fade=0.0, top=0.0, base=1.0, height=1.0, loop=True, fallback="protagonist talking")
+image protl = MyLive2D("images/protagonist_motions", default_fade=0.0, top=0.0, base=1.0, height=1.0, loop=True, fallback="protagonist breathing")
 image tll = MyLive2D("images/terrorlightz_motions", default_fade=0.0, top=0.0, base=1.0, height=1.0, loop=True, fallback="terrorlightz talking")
 image drpl = MyLive2D("images/dr_p_motions", default_fade=0.0, top=0.0, base=1.0, height=1.0, loop=True, fallback="drp casual talking")
 
