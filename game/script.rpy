@@ -1870,6 +1870,7 @@ He taps impatiently with his fingers onto his clipboard as he weighs his options
     '''
     ))
 
+
     show drpl drp_scowling_talking:
         subpixel True additive 0.0 matrixcolor InvertMatrix(0.0)*ContrastMatrix(1.5)*SaturationMatrix(1.75)*BrightnessMatrix(0.0)*HueMatrix(0.0) blend None
 
