@@ -1824,12 +1824,17 @@ Your vision begins to blur and your body feels immovable. Your face droops first
     '''
     ))
 
+    hide protl protag_breathing with dissolve 
+    pause 0.5 
+
     $LongNVLText(narrator, (
     '''\
 “All's well that ends well I suppose.”
     '''
     ))
     jump path_hospital
+   
+
 
 
 # Scene 3b
@@ -1841,11 +1846,15 @@ label path_hospital:
     #show drpl drp_breathing at right
     #  sad angry
 
+
     $LongNVLText(drpsilicon.c, (
     '''\
 Beep…Beep…Beep…
     '''
     ))
+
+    show protl protag_breathing with dissolve:
+        subpixel True pos (-0.17, 0.5)
 
     $LongNVLText(drpsilicon.c, (
     '''\
@@ -1859,17 +1868,35 @@ Through bleary eyes, memories of you collapsing in the desert flood your mind.
     '''
     ))
 
+    show protl protag_lookup_breathing_shocked with vpunch: 
+        subpixel True pos (-0.17, 0.5) 
+
     $LongNVLText(drpsilicon.c, (
     '''\
 You’re…you’re alive? 
     '''
     ))
 
+    show protl protag_lookup_breathing: 
+        subpixel True pos (-0.17, 0.5) 
+
     $LongNVLText(drpsilicon.c, (
     '''\
-As your focus sharpens, you take in your surroundings. To your right you see a heartbeat monitor. To your left you see a slew of medical machines laid out alongside you. Against the wall you see a big blue screen projecting writing that you don’t recognize. 
+As your focus sharpens, you take in your surroundings. 
     '''
     ))
+
+    show protl protag_lookup_leftright: 
+        subpixel True pos (-0.17, 0.5) 
+
+    $LongNVLText(drpsilicon.c, (     
+    '''\
+To your right you see a heartbeat monitor. To your left you see a slew of medical machines laid out alongside you. Against the wall you see a big blue screen projecting writing that you don’t recognize. 
+    '''
+    ))
+
+    show protl protag_scared_stay: 
+        subpixel True pos (-0.17, 0.5) 
 
     $LongNVLText(drpsilicon.c, (
     '''\
@@ -1889,11 +1916,17 @@ Not waiting for a response, a figure enters through the doorway.
     '''
     ))
 
+    show protl protag_lookup_breathing: 
+        subpixel True pos (-0.17, 0.5) 
+
     $LongNVLText(drpsilicon.c, (
     '''\
 Under normal circumstances, you would be happy to see a doctor sporting a crisp white lab coat and blue scrubs holding onto a clipboard chock full of patient notes…But this isn’t a normal circumstance. 
     '''
     ))
+    
+    show protl protag_lookup_breathing_shocked: 
+        subpixel True pos (-0.17, 0.5) 
 
     show drpl drp_breathing at center with dissolve:
         subpixel True additive 0.0 matrixcolor InvertMatrix(0.0)*ContrastMatrix(1.5)*SaturationMatrix(1.75)*BrightnessMatrix(0.0)*HueMatrix(0.0) blend None
@@ -1915,6 +1948,8 @@ Under normal circumstances, you would be happy to see a doctor sporting a crisp 
     window auto show
 
 
+    show protl protag_lookup_breathing_stay: 
+        subpixel True pos (-0.17, 0.5) 
 
     $LongNVLText(drpsilicon.c, (
     '''\
@@ -1937,6 +1972,9 @@ The “doctor’s” skin was a sickly green, moss color. Taking up half of his 
         pos (0.5, 1.0) xzoom 1.0 yzoom 1.0 
     window auto show
 
+
+    show protl protag_scared_stay:
+        subpixel True pos (-0.17, 0.5)  
 
     $LongNVLText(drpsilicon.c, (
     '''\
@@ -1962,11 +2000,17 @@ Just when you thought you were out…
     show drpl drp_breathing:
         subpixel True additive 0.0 matrixcolor InvertMatrix(0.0)*ContrastMatrix(1.5)*SaturationMatrix(1.75)*BrightnessMatrix(0.0)*HueMatrix(0.0) blend None
 
+    show protl protag_lookup_breathing:
+        subpixel True pos (-0.17, 0.5)  
+
     $LongNVLText(drpsilicon.c, (
     '''\
 You turn to respond to the “doctor”. You already feel awkward. You were never taught on how to communicate with a half-man, half-mushroom.  
     '''
     ))
+
+    show protl protag_lookup_breathing_stay:
+        subpixel True pos (-0.17, 0.5) 
 
     $LongNVLText(drpsilicon.c, (
     '''\
@@ -1976,9 +2020,21 @@ With the ability to make eye contact removed from the situation, you settle for 
 
     $LongNVLText(drpsilicon.c, (
     '''\
-Still groggy and dehydrated, your words came out strained. “Where am I?”
+Still groggy and dehydrated, your words came out strained. 
     '''
     ))
+
+    show protl protag_lookup_breathing_stay_talking:
+        subpixel True pos (-0.17, 0.5)  
+
+    $LongNVLText(drpsilicon.c, (
+    '''\
+“Where am I?”
+    '''
+    ))
+
+    show protl protag_lookup_breathing_stay:
+        subpixel True pos (-0.17, 0.5) 
 
     show drpl drp_mad:
         subpixel True additive 0.0 matrixcolor InvertMatrix(0.0)*ContrastMatrix(1.5)*SaturationMatrix(1.75)*BrightnessMatrix(0.0)*HueMatrix(0.0) blend None
@@ -2019,6 +2075,9 @@ He taps impatiently with his fingers onto his clipboard as he weighs his options
     show drpl drp_scowling:
         subpixel True additive 0.0 matrixcolor InvertMatrix(0.0)*ContrastMatrix(1.5)*SaturationMatrix(1.75)*BrightnessMatrix(0.0)*HueMatrix(0.0) blend None
 
+    show protl protag_mad_breathing:
+        subpixel True pos (-0.17, 0.5) 
+
     $LongNVLText(drpsilicon.c, (
     '''\
 Nature preserve? Insurance? What the hell is he talking about? 
@@ -2037,11 +2096,17 @@ With the conceited notion he gave you a sufficient debriefing on your situation,
     show drpl drp_neutral_talking:
         subpixel True additive 0.0 matrixcolor InvertMatrix(0.0)*ContrastMatrix(1.5)*SaturationMatrix(1.75)*BrightnessMatrix(0.0)*HueMatrix(0.0) blend None
 
+    show protl protag_lookup_breathing:
+        subpixel True pos (-0.17, 0.5) 
+
     $LongNVLText(drpsilicon.c, (
     '''\
 “Since you only had a case of mild dehydration, you are free to leave at any time. Don’t worry about payment yet, with your ship crashed–we know you’re not going anywhere.” 
     '''
     ))
+
+    show protl protag_lookup_breathing_stay:
+        subpixel True pos (-0.17, 0.5) 
 
     show drpl drp_breathing:
         subpixel True additive 0.0 matrixcolor InvertMatrix(0.0)*ContrastMatrix(1.5)*SaturationMatrix(1.75)*BrightnessMatrix(0.0)*HueMatrix(0.0) blend None
@@ -2068,6 +2133,8 @@ Placing his empty hand into his pocket, he briskly walks out of your room.
     hide drpl drp_breathing with dissolve 
     pause 0.3
 
+
+
     $LongNVLText(drpsilicon.c, (
     '''\
 And just as he entered, he was gone. You let your head fall back onto your pillow as you try desperately to make sense of what just happened. 
@@ -2076,7 +2143,9 @@ And just as he entered, he was gone. You let your head fall back onto your pillo
 
 
 
-
+    pause 0.2
+    hide protl protag_lookup_breathing with dissolve
+    pause 0.3
 
     $LongNVLText(drpsilicon.c, (
     '''\
