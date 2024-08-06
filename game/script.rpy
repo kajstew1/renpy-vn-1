@@ -1767,8 +1767,8 @@ label path_left_path:
     scene black
     show bg_leftpath with dissolve
     
-    show protl protag_breathing:
-        subpixel True pos (-0.2, 0.5)
+    show protl protag_mad_breathing: 
+        subpixel True pos (-0.17, 0.5) 
 
     $LongNVLText(narrator, (
     '''\
@@ -1776,11 +1776,17 @@ After walking a meter or two past the fork in the road, you breathe a sigh of re
     '''
     ))
 
+    show protl protag_mad_breathing: 
+        subpixel True pos (-0.17, 0.5) 
+
     $LongNVLText(narrator, (
     '''\
 Using the array of planets and suns above you as an anchoring point, you continue your journey, even when it feels as though it will never end. 
     '''
     ))
+
+    show protl protag_mad_talking: 
+        subpixel True pos (-0.17, 0.5) 
 
     $LongNVLText(narrator, (
     '''\
@@ -1788,11 +1794,17 @@ Using the array of planets and suns above you as an anchoring point, you continu
     '''
     ))
 
+    show protl protag_mad_breathing: 
+        subpixel True pos (-0.17, 0.5) 
+
     $LongNVLText(narrator, (
     '''\
 Every time you feel like you are making decent progress, the unchanging environment around you reminds you that you aren’t in control of this journey. With no map, no navigation equipment, you only had yourself to reassure you that you are indeed on your way to finding some sort of resources or help. If nothing else, you at least had enough mental fortitude to do that. 
     '''
     ))
+
+    show protl protag_lookup_leftright: 
+        subpixel True pos (-0.17, 0.5) 
 
     $LongNVLText(narrator, (
     '''\
@@ -1800,11 +1812,17 @@ To pass the time, your eyes scan the path for signs of footsteps–either friend
     '''
     ))
 
+    show protl protag_lookup_breathing_stay: 
+        subpixel True pos (-0.17, 0.5)
+
     $LongNVLText(narrator, (
     '''\
 Well your situation could be worse, you could be running away from some sort of monster, so there’s at least some sort of silver lining. 
     '''
     ))
+
+    show protl protag_mad_breathing: 
+        subpixel True pos (-0.17, 0.5)
 
     $LongNVLText(narrator, (
     '''\
@@ -1817,6 +1835,33 @@ After a few hours of exploring an endless desert path, you begin to feel weak. Y
 You feel the chill in the air as darkness descends upon the landscape. This day had felt neverending. You feel placated in the fact that the days here didn’t last forever. 
     '''
     ))
+
+    show protl protag_mad_breathing with hpunch: 
+        subpixel True pos (-0.17, 0.5)
+    
+    window auto hide
+    camera character:
+        subpixel True 
+        parallel:
+            alpha 1.0 
+            linear 2.67 alpha 1.0 
+        parallel:
+            blur 0.0 
+            linear 1.23 blur 1.0 
+            linear 1.44 blur 0.0 
+    show bg_leftpath:
+        subpixel True 
+        blur 0.0 
+        linear 0.66 blur 20.0 
+        linear 0.72 blur 0.0 
+        linear 0.75 blur 20.0 
+    with Pause(2.77)
+    camera character:
+        alpha 1.0 blur 0.0 
+    show bg_leftpath:
+        blur 20.0 
+    window auto show
+
 
     $LongNVLText(narrator, (
     '''\
@@ -1832,6 +1877,9 @@ Your vision begins to blur and your body feels immovable. Your face droops first
 “All's well that ends well I suppose.”
     '''
     ))
+    
+    hide bg_leftpath with dissolve
+    
     jump path_hospital
    
 
@@ -1841,6 +1889,7 @@ Your vision begins to blur and your body feels immovable. Your face droops first
 label path_hospital:
     scene black
     #show bg_hospital with Fade(3,3,3)
+    pause 0.5
     show bg_hospital with in_eye
     #show drp_casual_talking at right
     #show drpl drp_breathing at right
