@@ -641,30 +641,29 @@ You are at peace.
 #(Effect - zoom in to the right path)
 # Scene 2a
 label path_right_path:
-    #show bg_tavern with dissolve
     hide screen evt_choose_path
-    scene black
     play music "sounds/effects/SCENE_2a.mp3"
 
+    scene black
     show bg_fork with dissolve:
-        parallel:
-            #xpos 1.25 ypos 1.3 xanchor 0.5 yanchor 1.0 zoom 2.0
-            subpixel True
-            size (1920, 1080) crop (0, 0, 860, 600) # first tuple is the size of game screen, 
-                                                    # second is size of picture in pixels
-            easein 4.0 crop (860, 430, 860, 600)    # first float is time in seconds, 
-                                                    # tuples are coordinates of the upper left corner of a rectangle 
-                                                    # x: final pan right distance (screen is 1920 wide)
-                                                    # y, final pan down distance (screen is 1080 high)
-                                                    # width, height: size of the cropped rect, 
-                                                    # and the second tuple is the size of that rectangle
-            easeout 5.0 crop (860, 300, 860, 600)       # here we change the y coordinate over 8 seconds to pan the image up
-        parallel:
-            # take 10 seconds to zoom 1.5 
-            linear 10 zoom 1.5  
-        parallel:
-            # take 1.3 seconds to move right edge of the image against the right edge of the screen
-            linear 1.3 xalign 1.0
+        size (1920, 1080) 
+        # Starting point with tuple of (x, y, width, height)
+        crop (960, 0, 860, 600) 
+
+        # then move to the lower right center of the screen
+        # first float is time in seconds, 
+        # first tuple are coordinates of the upper left corner of a rectangle, 
+        # and the second tuple is the size of that rectangle
+        linear 4.0 crop (660, 300, 860, 600) 
+        
+        # then look to the left path
+        easein 4.0 crop (500, 300, 860, 600)  
+
+        # then look back to the right path
+        easeout 6.0 crop (960, 300, 860, 600)
+
+        # and then pan up
+        easeout 8.0 crop (960, 200, 860, 600) 
 
     show protl protag_breathing:
         subpixel True pos (-0.2, 0.5)
@@ -1659,30 +1658,27 @@ label ship_remember_1:
 
 # Scene 3
 label path_left_path_decision:
-    #show bg_tavern with dissolve
     hide screen evt_choose_path
     scene black
     show bg_fork with dissolve:
-        parallel:
-            #xpos 1.25 ypos 1.3 xanchor 0.5 yanchor 1.0 zoom 2.0
-            subpixel True
-            size (1920, 1080) crop (0, 0, 860, 600) # first tuple is the size of game screen, 
-                                                    # second is size of picture in pixels
-            easein 4.0 crop (0, 430, 860, 600)    # first float is time in seconds, 
-                                                    # tuples are coordinates of the upper left corner of a rectangle 
-                                                    # x: final pan right distance (screen is 1920 wide)
-                                                    # y, final pan down distance (screen is 1080 high)
-                                                    # width, height: size of the cropped rect, 
-                                                    # and the second tuple is the size of that rectangle
-            easeout 8.0 crop (50, 150, 860, 600)       # here we change the y coordinate over 8 seconds to pan the image up
-        parallel:
-            # take 10 seconds to zoom 1.5 
-            linear 10 zoom 1.5  
-        parallel:
-            # take 1.3 seconds to move left edge of the image against the left edge of the screen
-            linear 1.3 xalign 0.5
-        parallel:
-            linear 1.3 ycenter .5
+        size (1920, 1080) 
+        # Starting point with tuple of (x, y, width, height)
+        crop (0, 0, 860, 600)
+
+        # then move to the lower left center of the screen
+        # first float is time in seconds, 
+        # first tuple are coordinates of the upper left corner of a rectangle, 
+        # and the second tuple is the size of that rectangle
+        linear 4.0 crop (430, 300, 860, 600)
+        
+        # then look to the right path
+        easein 4.0 crop (600, 300, 860, 600) 
+
+        # then look back to the left path
+        easeout 6.0 crop (50, 300, 860, 600)
+
+        # and then pan up
+        easeout 8.0 crop (50, 100, 860, 600)
  
 
 
@@ -1693,7 +1689,7 @@ label path_left_path_decision:
 
     $LongNVLText(narrator, (
     '''\
-Your eyes land on the seemingly safer option. The two suns and neighboring planets were hung in the sky like ornaments on a Christmas tree, brightly lighting the path in front of you."
+Your eyes land on the seemingly safer option. The two suns and neighboring planets were hung in the sky like ornaments on a Christmas tree, brightly lighting the path in front of you.
     '''
     ))
 
