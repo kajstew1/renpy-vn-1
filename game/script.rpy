@@ -1808,7 +1808,7 @@ To pass the time, your eyes scan the path for signs of footsteps–either friend
     '''
     ))
 
-    show protl protag_lookup_breathing_stay: 
+    show protl protag_sigh: 
         subpixel True pos (-0.17, 0.5)
 
     $LongNVLText(narrator, (
@@ -2027,11 +2027,17 @@ You silently curse under your breath as you grip the sheets in front of you. You
     '''
     ))
 
+    show protl protag_sigh:
+        subpixel True pos (-0.17, 0.5) 
+
     $LongNVLText(drpsilicon.c, (
     '''\
 Just when you thought you were out…
     '''
     ))
+
+    show protl protag_mad_breathing:
+        subpixel True pos (-0.17, 0.5)
 
     show drpl drp_neutral_talking:
         subpixel True additive 0.0 matrixcolor InvertMatrix(0.0)*ContrastMatrix(1.5)*SaturationMatrix(1.75)*BrightnessMatrix(0.0)*HueMatrix(0.0) blend None
@@ -2177,7 +2183,6 @@ Placing his empty hand into his pocket, he briskly walks out of your room.
     pause 0.2
     hide drpl drp_breathing with dissolve 
     pause 0.3
-
 
 
     $LongNVLText(drpsilicon.c, (
