@@ -49,6 +49,7 @@ define out_eye_fast = ImageDissolve("images/eye.png", 1.0, reverse=True)
 define in_eye = ImageDissolve("images/eye.png", 6.0)
 define out_eye = ImageDissolve("images/eye.png", 6.0, reverse=True)
 
+
 image black:
     Solid("#000")
 image white:

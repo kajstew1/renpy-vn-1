@@ -100,6 +100,7 @@ screen say(who, what):
 
     window:
         id "window"
+        has vbox
 
         if who is not None:
 
@@ -107,8 +108,11 @@ screen say(who, what):
                 id "namebox"
                 style "namebox"
                 text who id "who"
+        else:
+            text " "
 
         text what id "what"
+        text " "
 
 
     ## If there's a side image, display it above the text. Do not display on the
@@ -136,7 +140,11 @@ style window:
     yalign gui.textbox_yalign
     ysize gui.textbox_height
 
-    background Image("gui/textbox.png", xalign=0.5, yalign=1.0)
+    yminimum gui.textbox_min
+
+    background Frame("gui/textbox.png", gui.textbox_borders)
+
+    #background Image("gui/textbox.png", xalign=0.5, yalign=1.0)
 
 style namebox:
     xpos gui.name_xpos
@@ -737,6 +745,26 @@ screen preferences():
     use game_menu(_("Preferences"), scroll="viewport"):
 
         vbox:
+            
+            vbox:
+                style_prefix "slider"
+                box_wrap True
+                xsize  400
+                spacing 5
+                label _("Text Size Scaling")
+
+                null height 10
+
+                bar value Preference("font size")
+
+                textbutton _("Reset"):
+                    action Preference("font size", 1.0)
+                                        
+                    
+                
+            null height (4 * gui.pref_spacing)  
+
+
 
             hbox:
                 box_wrap True
