@@ -1766,7 +1766,7 @@ label path_left_path:
     show protl protag_mad_breathing: 
         subpixel True pos (-0.17, 0.5) 
 
-    $LongNVLText(narrator, (
+    $LongNVLText(narrator_nvl, (
     '''\
 After walking a meter or two past the fork in the road, you breathe a sigh of relief. The dark spell the large moon had on you finally dissipated. You suddenly feel more yourself again.
     '''
@@ -1775,11 +1775,13 @@ After walking a meter or two past the fork in the road, you breathe a sigh of re
     show protl protag_mad_breathing: 
         subpixel True pos (-0.17, 0.5) 
 
-    $LongNVLText(narrator, (
+    $LongNVLText(narrator_nvl, (
     '''\
 Using the array of planets and suns above you as an anchoring point, you continue your journey, even when it feels as though it will never end. 
     '''
     ))
+
+    nvl clear
 
     show protl protag_mad_talking: 
         subpixel True pos (-0.17, 0.5) 
@@ -1883,13 +1885,22 @@ Your vision begins to blur and your body feels immovable. Your face droops first
 
 # Scene 3b
 label path_hospital:
-    scene black
+    scene black with Fade(.5,0,.5)
     #show bg_hospital with Fade(3,3,3)
-    pause 0.5
-    show bg_hospital with in_eye
+    #show bg_hospital with in_eye
     #show drp_casual_talking at right
     #show drpl drp_breathing at right
     #  sad angry
+
+
+    show bg_hospital with in_eye:
+        subpixel True 
+        blur 15.0 
+        easeout 8.00 blur 0.0 
+    with Pause(8.10)
+    show bg_hospital:
+        blur 0.0 
+
 
 
     $LongNVLText(drpsilicon.c, (
