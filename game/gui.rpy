@@ -95,7 +95,10 @@ define gui.game_menu_background = "gui/game_menu.png"
 ## time.
 
 ## The height of the textbox containing dialogue.
-define gui.textbox_height = 278
+#define gui.textbox_height = 278
+define gui.textbox_height=None #resize automatically
+define gui.textbox_borders=Borders(10, 10, 10, 10) #size of corners
+define gui.textbox_min=185 #minimum height
 
 ## The placement of the textbox vertically on the screen. 0.0 is the top, 0.5 is
 ## center, and 1.0 is the bottom.
@@ -129,7 +132,10 @@ define gui.namebox_tile = False
 ## number of pixels relative to the left or top side of the textbox, or 0.5 to
 ## center.
 define gui.dialogue_xpos = 402
-define gui.dialogue_ypos = 75
+
+#define gui.dialogue_ypos = 75
+define gui.dialogue_ypos=0
+
 
 ## The maximum width of dialogue text, in pixels.
 define gui.dialogue_width = 1116
@@ -339,7 +345,8 @@ define config.history_length = 250
 
 ## The height of a history screen entry, or None to make the height variable at
 ## the cost of performance.
-define gui.history_height = 210
+#define gui.history_height = 210
+define gui.history_height=None
 
 ## The position, width, and alignment of the label giving the name of the
 ## speaking character.
@@ -435,6 +442,7 @@ init python:
 
         ## Adjust the location of the textbox.
         gui.textbox_height = 360
+
         gui.name_xpos = 120
         gui.dialogue_xpos = 135
         gui.dialogue_width = 1650
