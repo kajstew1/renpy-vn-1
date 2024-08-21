@@ -991,11 +991,27 @@ Your long overdue sleep is over soon when you hear a deep, guttural voice pierce
     '''
     ))
 
+    show protl protag_lookup_breathing:
+        subpixel True pos (-0.2, 0.5)
+
+
     $LongNVLText(narrator, (
     '''\
 Your eyes jerk open. In front of you stands a figure that appears to be a…person? 
     '''
     ))
+    
+    window auto hide
+    show tll terrorlightz_breathing at center with dissolve:
+        subpixel True alpha 1.0 additive 0.0 
+        matrixcolor InvertMatrix(0.0)*ContrastMatrix(1.5)*SaturationMatrix(1.0)*BrightnessMatrix(0.0)*HueMatrix(0.0) 
+        linear 0.01 matrixcolor InvertMatrix(0.0)*ContrastMatrix(1.5)*SaturationMatrix(1.0)*BrightnessMatrix(0.0)*HueMatrix(0.0)  
+    window auto show
+
+
+    
+    show protl protag_lookup_breathing_shocked:
+        subpixel True pos (-0.2, 0.5)
 
     $LongNVLText(narrator, (
     '''\
@@ -1003,18 +1019,40 @@ Your eyes jerk open. In front of you stands a figure that appears to be a…pers
     '''
     ))
 
-    show tll terrorlightz_talking at right
+    show protl protag_lookup_breathing_stay:
+        subpixel True pos (-0.2, 0.5)
+
+
+    window auto hide
+    show tll terrorlightz_talking at center:
+        subpixel True alpha 1.0 additive 0.0 
+        matrixcolor InvertMatrix(0.0)*ContrastMatrix(1.5)*SaturationMatrix(1.0)*BrightnessMatrix(0.0)*HueMatrix(0.0) 
+        linear 0.01 matrixcolor InvertMatrix(0.0)*ContrastMatrix(1.5)*SaturationMatrix(1.0)*BrightnessMatrix(0.0)*HueMatrix(0.0)  
+    window auto show
     
 
     $LongNVLText(terrorlightz.c, (
     '''\
-“Now, now… Is that any way to talk to your gracious host?” You feel the vibrations from his voice coarse through your body. Unexplainably, the pale purple-skinned stranger stands before you, wearing a dark teal and amethyst colored pinstripe suit.
+“Now, now… Is that any way to talk to your gracious host?” 
+    '''
+    ))
+
+    window auto hide
+    show tll terrorlightz_breathing at center:
+        subpixel True alpha 1.0 additive 0.0 
+        matrixcolor InvertMatrix(0.0)*ContrastMatrix(1.5)*SaturationMatrix(1.0)*BrightnessMatrix(0.0)*HueMatrix(0.0) 
+        linear 0.01 matrixcolor InvertMatrix(0.0)*ContrastMatrix(1.5)*SaturationMatrix(1.0)*BrightnessMatrix(0.0)*HueMatrix(0.0)  
+    window auto show
+
+    $LongNVLText(terrorlightz.c, (
+    '''\
+You feel the vibrations from his voice coarse through your body. Unexplainably, the pale purple-skinned stranger stands before you, wearing a dark teal and amethyst colored pinstripe suit.
     '''
     ))
 
     $LongNVLText(terrorlightz.c, (
     '''\
-His glare produces a hypnotic effect that prevents you from moving your body. Meeting his gaze, you notice the complete lack of pupils. Instead you see an optical illusion. His eyes were made up of tight spirals, which move inexplicably in a circular fashion. To further punctuate his ominous presence, smoke continuously emanates out from the corners of his almond eyes. 
+His glare produces a hypnotic effect that prevents you from moving your body. Meeting his gaze, you see an optical illusion. His eyes move in an inexplicable, neverending ciruclar motion. To further punctuate his ominous presence, smoke continuously emanates out from the corners of his almond eyes. 
     '''
     ))
 
