@@ -972,16 +972,41 @@ You walk towards the open entryway and start your search for supplies while you 
 You are finally starting to feel better about your situation. You had shelter, a–mostly–clean wound, and some half rotting food to eat. As you drift off to sleep you believe that maybe your situation isn’t so bad afterall? 
     '''
     ))
+    #show bg_hut:
+    #    blur 0.0 
 
+    #window auto hide
+    show bg_hut:
+        subpixel True 
+        blur 0.0 
+        linear 2.0 blur 15.0 
+    with Pause(1.00)
+    show bg_hut:
+        blur 15.0 
+    #window auto show
+
+    scene black with out_eye
+
+    with Pause(1.5)
+    
     jump path_hut_meet_terrorlightz
 
 
 # Scene 2f
 label path_hut_meet_terrorlightz:
     scene black
-    show bg_insidehut with dissolve
+    #show bg_insidehut with dissolve
 
 # (EFFECT: Goes from a blank screen to a blinking effect? ) 
+
+    show bg_insidehut with in_eye:
+        subpixel True 
+        blur 15.0 
+        easeout 8.00 blur 0.0 
+    #with Pause(1)
+    #show bg_insidehut:
+    #    blur 0.0 
+
     show protl protag_breathing:
         subpixel True pos (-0.2, 0.5)
 
@@ -1822,22 +1847,29 @@ label path_left_path_decision:
     show bg_fork with dissolve:
         size (1920, 1080) 
         # Starting point with tuple of (x, y, width, height)
-        crop (0, 0, 860, 600)
+        crop (430, 430, 860, 600)
+        #center of x is 430
 
         # then move to the lower left center of the screen
         # first float is time in seconds, 
         # first tuple are coordinates of the upper left corner of a rectangle, 
         # and the second tuple is the size of that rectangle
-        linear 4.0 crop (430, 300, 860, 600)
-        
-        # then look to the right path
-        easein 4.0 crop (600, 300, 860, 600) 
+        # linear 4.0 crop (430, 300, 860, 600)
 
         # then look back to the left path
-        easeout 6.0 crop (50, 300, 860, 600)
+        easeout 2.0 crop (330, 430, 860, 600)
+
+        # then look to the right path
+        easein 3.0 crop (530, 430, 860, 600) 
+
+        # then look back to the left path
+        easeout 2.0 crop (330, 430, 860, 600)
+
+        # then look back to the left path
+        easeout 3.0 crop (50, 430, 860, 600)
 
         # and then pan up
-        easeout 8.0 crop (50, 100, 860, 600)
+        easeout 2.0 crop (50, 100, 860, 600)
  
 
 
@@ -1925,7 +1957,7 @@ label path_left_path:
     show protl protag_mad_breathing: 
         subpixel True pos (-0.17, 0.5) 
 
-    $LongNVLText(narrator_nvl, (
+    $LongNVLText(narrator, (
     '''\
 After walking a meter or two past the fork in the road, you breathe a sigh of relief. The dark spell the large moon had on you finally dissipated. You suddenly feel more yourself again.
     '''
@@ -1934,7 +1966,7 @@ After walking a meter or two past the fork in the road, you breathe a sigh of re
     show protl protag_mad_breathing: 
         subpixel True pos (-0.17, 0.5) 
 
-    $LongNVLText(narrator_nvl, (
+    $LongNVLText(narrator, (
     '''\
 Using the array of planets and suns above you as an anchoring point, you continue your journey, even when it feels as though it will never end. 
     '''
