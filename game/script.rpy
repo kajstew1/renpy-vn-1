@@ -1056,22 +1056,82 @@ His glare produces a hypnotic effect that prevents you from moving your body. Me
     '''
     ))
 
-    $LongNVLText(terrorlightz.c, (
-    '''\
-“I-I’m sorry, I didn’t know this space Fwas occupied!” You meekly squeak. How poignant that the first intelligent creature you’ve come across is a straight nightmare.
-    '''
-    ))
+    show protl protag_scared_talking:
+        subpixel True pos (-0.2, 0.5)
 
     $LongNVLText(terrorlightz.c, (
     '''\
-The ghastly alien cackles at your response. His sharp, pointed teeth glint in the light as he thrusts his head back. “See, now that’s better.” Returning his gaze to you, he gives you a half smirk. “Now that we are back to civility, I suppose introductions are in order.” 
+“I-I’m sorry, I didn’t know this space was occupied!” You meekly squeak. How poignant that the first intelligent creature you’ve come across is a straight nightmare.
     '''
     ))
 
+    show protl protag_scared_stay:
+        subpixel True pos (-0.2, 0.5)
+
+    window auto hide
+    show tll terrorlightz_laughing_talking at center:
+        subpixel True alpha 1.0 additive 0.0 
+        matrixcolor InvertMatrix(0.0)*ContrastMatrix(1.5)*SaturationMatrix(1.0)*BrightnessMatrix(0.0)*HueMatrix(0.0) 
+        linear 0.01 matrixcolor InvertMatrix(0.0)*ContrastMatrix(1.5)*SaturationMatrix(1.0)*BrightnessMatrix(0.0)*HueMatrix(0.0)  
+    window auto show
+
     $LongNVLText(terrorlightz.c, (
-    '''\In a bizarre turn of events, he gives you an overdramatic bow, his arms outstretched with a flourish. “It’s very nice to meet you, my name is Terrorlightz. I welcome you heartedly to my humble abode.” 
+    '''\
+The ghastly alien cackles at your response. His sharp, pointed teeth glint in the light as he thrusts his head back. “See, now that’s better.” Returning his gaze to you, he gives you a half smirk. 
     '''
     ))
+
+    show protl protag_lookup_breathing_stay:
+        subpixel True pos (-0.2, 0.5)
+
+    window auto hide
+    show tll terrorlightz_talking at center:
+        subpixel True alpha 1.0 additive 0.0 
+        matrixcolor InvertMatrix(0.0)*ContrastMatrix(1.5)*SaturationMatrix(1.0)*BrightnessMatrix(0.0)*HueMatrix(0.0) 
+        linear 0.01 matrixcolor InvertMatrix(0.0)*ContrastMatrix(1.5)*SaturationMatrix(1.0)*BrightnessMatrix(0.0)*HueMatrix(0.0)  
+    window auto show
+
+    $LongNVLText(terrorlightz.c, (
+    '''\
+“Now that we are back to civility, I suppose introductions are in order.” 
+    '''
+    ))
+
+    window auto hide
+    show tll terrorlightz_breathing at center:
+        subpixel True alpha 1.0 additive 0.0 
+        matrixcolor InvertMatrix(0.0)*ContrastMatrix(1.5)*SaturationMatrix(1.0)*BrightnessMatrix(0.0)*HueMatrix(0.0) 
+        linear 0.01 matrixcolor InvertMatrix(0.0)*ContrastMatrix(1.5)*SaturationMatrix(1.0)*BrightnessMatrix(0.0)*HueMatrix(0.0)  
+    window auto show
+
+    $LongNVLText(terrorlightz.c, (
+    '''\
+In a bizarre turn of events, he gives you an overdramatic bow, his arms outstretched with a flourish. 
+    '''
+    ))
+
+    window auto hide
+    show tll terrorlightz_talking at center:
+        subpixel True alpha 1.0 additive 0.0 
+        matrixcolor InvertMatrix(0.0)*ContrastMatrix(1.5)*SaturationMatrix(1.0)*BrightnessMatrix(0.0)*HueMatrix(0.0) 
+        linear 0.01 matrixcolor InvertMatrix(0.0)*ContrastMatrix(1.5)*SaturationMatrix(1.0)*BrightnessMatrix(0.0)*HueMatrix(0.0)  
+    window auto show
+
+    $LongNVLText(terrorlightz.c, (
+    '''\
+“It’s very nice to meet you, my name is Terrorlightz. I welcome you heartedly to my humble abode.” 
+    '''
+    ))
+
+    show protl protag_scared_stay:
+        subpixel True pos (-0.2, 0.5)
+
+    window auto hide
+    show tll terrorlightz_breathing at center:
+        subpixel True alpha 1.0 additive 0.0 
+        matrixcolor InvertMatrix(0.0)*ContrastMatrix(1.5)*SaturationMatrix(1.0)*BrightnessMatrix(0.0)*HueMatrix(0.0) 
+        linear 0.01 matrixcolor InvertMatrix(0.0)*ContrastMatrix(1.5)*SaturationMatrix(1.0)*BrightnessMatrix(0.0)*HueMatrix(0.0)  
+    window auto show
 
     $LongNVLText(terrorlightz.c, (
     '''\
@@ -1085,21 +1145,82 @@ Where in the world are you?
     '''
     ))
 
-    $LongNVLText(terrorlightz.c, (
-    '''\
-After resigning to your fate, you reluctantly return the favor. “My name is (MAIN CHARACTER NAME). As you can probably tell, I’m not from here.” You are careful with your words. You don’t trust this stranger. He was exceptionally unpredictable so you felt that the less you say, the better. 
-    '''
-    ))
+    show protl protag_lookup_breathing_stay:
+        subpixel True pos (-0.2, 0.5)
 
     $LongNVLText(terrorlightz.c, (
     '''\
-His eyes slit, his voice drawing out every word. “Oh my… So I’ve found myself a wounded alien? Now, this is interesting.”
+After resigning to your fate, you reluctantly return the favor. 
     '''
     ))
 
+    show protl protag_lookup_breathing_stay_talking:
+        subpixel True pos (-0.2, 0.5)
+
     $LongNVLText(terrorlightz.c, (
     '''\
-Before you could come up with a response, Terrorlightz offers you his hand. His eyes honed in on your torn and bloodied clothes. “Consider yourself lucky, alien. I have just the thing to fix you right up.” 
+“My name is (MAIN CHARACTER NAME). As you can probably tell, I’m not from here.” 
+    '''
+    ))
+
+    show protl protag_lookup_breathing_stay:
+        subpixel True pos (-0.2, 0.5)
+    
+    $LongNVLText(terrorlightz.c, (
+    '''\
+You are careful with your words. You don’t trust this stranger. He was exceptionally unpredictable so you felt that the less you say, the better. 
+    '''
+    ))
+
+    window auto hide
+    show tll terrorlightz_squinting at center:
+        subpixel True alpha 1.0 additive 0.0 
+        matrixcolor InvertMatrix(0.0)*ContrastMatrix(1.5)*SaturationMatrix(1.0)*BrightnessMatrix(0.0)*HueMatrix(0.0) 
+        linear 0.01 matrixcolor InvertMatrix(0.0)*ContrastMatrix(1.5)*SaturationMatrix(1.0)*BrightnessMatrix(0.0)*HueMatrix(0.0)  
+    window auto show
+
+    $LongNVLText(terrorlightz.c, (
+    '''\
+His eyes slit, his voice drawing out every word. 
+    '''
+    ))
+
+    window auto hide
+    show tll terrorlightz_squinting_talking at center:
+        subpixel True alpha 1.0 additive 0.0 
+        matrixcolor InvertMatrix(0.0)*ContrastMatrix(1.5)*SaturationMatrix(1.0)*BrightnessMatrix(0.0)*HueMatrix(0.0) 
+        linear 0.01 matrixcolor InvertMatrix(0.0)*ContrastMatrix(1.5)*SaturationMatrix(1.0)*BrightnessMatrix(0.0)*HueMatrix(0.0)  
+    window auto show
+
+    $LongNVLText(terrorlightz.c, (
+    '''\
+“Oh my… So I’ve found myself a wounded alien? Now, this is interesting.”
+    '''
+    ))
+
+    window auto hide
+    show tll terrorlightz_squinting at center:
+        subpixel True alpha 1.0 additive 0.0 
+        matrixcolor InvertMatrix(0.0)*ContrastMatrix(1.5)*SaturationMatrix(1.0)*BrightnessMatrix(0.0)*HueMatrix(0.0) 
+        linear 0.01 matrixcolor InvertMatrix(0.0)*ContrastMatrix(1.5)*SaturationMatrix(1.0)*BrightnessMatrix(0.0)*HueMatrix(0.0)  
+    window auto show
+
+    $LongNVLText(terrorlightz.c, (
+    '''\
+Before you could come up with a response, Terrorlightz offers you his hand. His eyes honed in on your torn and bloodied clothes. 
+    '''
+    ))
+
+    window auto hide
+    show tll terrorlightz_squinting_talking at center:
+        subpixel True alpha 1.0 additive 0.0 
+        matrixcolor InvertMatrix(0.0)*ContrastMatrix(1.5)*SaturationMatrix(1.0)*BrightnessMatrix(0.0)*HueMatrix(0.0) 
+        linear 0.01 matrixcolor InvertMatrix(0.0)*ContrastMatrix(1.5)*SaturationMatrix(1.0)*BrightnessMatrix(0.0)*HueMatrix(0.0)  
+    window auto show
+
+    $LongNVLText(terrorlightz.c, (
+    '''\
+“Consider yourself lucky, alien. I have just the thing to fix you right up.” 
     '''
     ))
 
