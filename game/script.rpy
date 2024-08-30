@@ -648,22 +648,22 @@ label path_right_path:
     show bg_fork with dissolve:
         size (1920, 1080) 
         # Starting point with tuple of (x, y, width, height)
-        crop (960, 0, 860, 600) 
+        crop (430, 430, 860, 600) 
 
         # then move to the lower right center of the screen
         # first float is time in seconds, 
         # first tuple are coordinates of the upper left corner of a rectangle, 
         # and the second tuple is the size of that rectangle
-        linear 4.0 crop (660, 300, 860, 600) 
+        linear 2.0 crop (660, 300, 860, 600) 
         
         # then look to the left path
-        easein 4.0 crop (500, 300, 860, 600)  
+        easein 3.0 crop (500, 300, 860, 600)  
 
         # then look back to the right path
-        easeout 6.0 crop (960, 300, 860, 600)
+        easeout 2.0 crop (960, 300, 860, 600)
 
         # and then pan up
-        easeout 8.0 crop (960, 200, 860, 600) 
+        easeout 2.0 crop (960, 200, 860, 600) 
 
     show protl protag_breathing:
         subpixel True pos (-0.2, 0.5)
