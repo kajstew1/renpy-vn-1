@@ -650,20 +650,24 @@ label path_right_path:
         # Starting point with tuple of (x, y, width, height)
         crop (430, 430, 860, 600) 
 
+        # Warpers: https://www.renpy.org/doc/html/transforms.html#warpers
+        #     https://easings.net/
         # then move to the lower right center of the screen
         # first float is time in seconds, 
         # first tuple are coordinates of the upper left corner of a rectangle, 
         # and the second tuple is the size of that rectangle
-        linear 2.0 crop (660, 300, 860, 600) 
+        crop (430, 430, 860, 600) 
+        pause 3.0
         
         # then look to the left path
-        easein 3.0 crop (500, 300, 860, 600)  
+        ease_quad 3.0 crop (200, 430, 860, 600)  
 
         # then look back to the right path
-        easeout 2.0 crop (960, 300, 860, 600)
+        ease_quad 6.0 crop (860, 430, 860, 600)
 
+        pause 2.0
         # and then pan up
-        easeout 2.0 crop (960, 200, 860, 600) 
+        ease_cubic 4.0 crop (960, 350, 860, 600) 
 
     show protl protag_breathing:
         subpixel True pos (-0.2, 0.5)
@@ -1847,30 +1851,28 @@ label path_left_path_decision:
     show bg_fork with dissolve:
         size (1920, 1080) 
         # Starting point with tuple of (x, y, width, height)
-        crop (430, 430, 860, 600)
-        #center of x is 430
+        crop (430, 430, 860, 600) 
 
-        # then move to the lower left center of the screen
+        # Warpers: https://www.renpy.org/doc/html/transforms.html#warpers
+        #     https://easings.net/
+
         # first float is time in seconds, 
         # first tuple are coordinates of the upper left corner of a rectangle, 
         # and the second tuple is the size of that rectangle
-        # linear 4.0 crop (430, 300, 860, 600)
-
-        # then look back to the left path
-        easeout 2.0 crop (330, 430, 860, 600)
+        # start in the center
+        crop (430, 430, 860, 600) 
+        pause 3.0
 
         # then look to the right path
-        easein 3.0 crop (530, 430, 860, 600) 
+        ease_quad 3.0 crop (600, 430, 860, 600)  
 
         # then look back to the left path
-        easeout 2.0 crop (330, 430, 860, 600)
+        ease_quad 6.0 crop (100, 430, 860, 600)
 
-        # then look back to the left path
-        easeout 3.0 crop (50, 430, 860, 600)
-
+        pause 2.0
         # and then pan up
-        easeout 2.0 crop (50, 100, 860, 600)
- 
+        ease_cubic 4.0 crop (0, 200, 860, 600) 
+
 
 
 #(Effect - zoom in on left path)
