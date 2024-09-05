@@ -978,6 +978,7 @@ You are finally starting to feel better about your situation. You had shelter, a
     ))
     #show bg_hut:
     #    blur 0.0 
+    hide protl protag_breathing  with dissolve
 
     #window auto hide
     show bg_hut:
