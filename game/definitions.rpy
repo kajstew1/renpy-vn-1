@@ -143,6 +143,7 @@ image drpl = MyLive2D("images/dr_p_motions", default_fade=0.0, top=0.0, base=1.0
 
 
 define narrator = Character ("[player_name]") #, what_slow_cps=0, what_font="fontfile_name.ttf")
+define narrator_none = Character (None)
 define narrator_nvl = Character (None, kind=nvl) #, what_slow_cps=0, what_font="fontfile_name.ttf")
 
 define drpsilicon =  Actor(Character("Dr. Psilicon", who_color="9EFB65", what_color="#8ac924"), "Dr. Psilicon")

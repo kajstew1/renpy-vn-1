@@ -1053,12 +1053,10 @@ Your eyes jerk open. In front of you stands a figure that appears to be a…pers
         subpixel True pos (-0.2, 0.5)
 
 
-    window auto hide
     show tll terrorlightz_talking at center:
         subpixel True alpha 1.0 additive 0.0 
         matrixcolor InvertMatrix(0.0)*ContrastMatrix(1.5)*SaturationMatrix(1.0)*BrightnessMatrix(0.0)*HueMatrix(0.0) 
         linear 0.01 matrixcolor InvertMatrix(0.0)*ContrastMatrix(1.5)*SaturationMatrix(1.0)*BrightnessMatrix(0.0)*HueMatrix(0.0)  
-    window auto show
     
 
     $LongNVLText(terrorlightz.c, (
@@ -1067,20 +1065,18 @@ Your eyes jerk open. In front of you stands a figure that appears to be a…pers
     '''
     ))
 
-    window auto hide
     show tll terrorlightz_breathing at center:
         subpixel True alpha 1.0 additive 0.0 
         matrixcolor InvertMatrix(0.0)*ContrastMatrix(1.5)*SaturationMatrix(1.0)*BrightnessMatrix(0.0)*HueMatrix(0.0) 
         linear 0.01 matrixcolor InvertMatrix(0.0)*ContrastMatrix(1.5)*SaturationMatrix(1.0)*BrightnessMatrix(0.0)*HueMatrix(0.0)  
-    window auto show
 
-    $LongNVLText(terrorlightz.c, (
+    $LongNVLText(narrator, (
     '''\
 You feel the vibrations from his voice coarse through your body. Unexplainably, the pale purple-skinned stranger stands before you, wearing a dark teal and amethyst colored pinstripe suit.
     '''
     ))
 
-    $LongNVLText(terrorlightz.c, (
+    $LongNVLText(narrator, (
     '''\
 His glare produces a hypnotic effect that prevents you from moving your body. Meeting his gaze, you see an optical illusion. His eyes move in an inexplicable, neverending ciruclar motion. To further punctuate his ominous presence, smoke continuously emanates out from the corners of his almond eyes. 
     '''
@@ -1089,7 +1085,7 @@ His glare produces a hypnotic effect that prevents you from moving your body. Me
     show protl protag_scared_talking:
         subpixel True pos (-0.2, 0.5)
 
-    $LongNVLText(terrorlightz.c, (
+    $LongNVLText(narrator, (
     '''\
 “I-I’m sorry, I didn’t know this space was occupied!” You meekly squeak. How poignant that the first intelligent creature you’ve come across is a straight nightmare.
     '''
@@ -1098,12 +1094,10 @@ His glare produces a hypnotic effect that prevents you from moving your body. Me
     show protl protag_scared_stay:
         subpixel True pos (-0.2, 0.5)
 
-    window auto hide
     show tll terrorlightz_laughing_talking at center:
         subpixel True alpha 1.0 additive 0.0 
         matrixcolor InvertMatrix(0.0)*ContrastMatrix(1.5)*SaturationMatrix(1.0)*BrightnessMatrix(0.0)*HueMatrix(0.0) 
         linear 0.01 matrixcolor InvertMatrix(0.0)*ContrastMatrix(1.5)*SaturationMatrix(1.0)*BrightnessMatrix(0.0)*HueMatrix(0.0)  
-    window auto show
 
     $LongNVLText(terrorlightz.c, (
     '''\
@@ -1114,12 +1108,10 @@ The ghastly alien cackles at your response. His sharp, pointed teeth glint in th
     show protl protag_lookup_breathing_stay:
         subpixel True pos (-0.2, 0.5)
 
-    window auto hide
     show tll terrorlightz_talking at center:
         subpixel True alpha 1.0 additive 0.0 
         matrixcolor InvertMatrix(0.0)*ContrastMatrix(1.5)*SaturationMatrix(1.0)*BrightnessMatrix(0.0)*HueMatrix(0.0) 
         linear 0.01 matrixcolor InvertMatrix(0.0)*ContrastMatrix(1.5)*SaturationMatrix(1.0)*BrightnessMatrix(0.0)*HueMatrix(0.0)  
-    window auto show
 
     $LongNVLText(terrorlightz.c, (
     '''\
@@ -1141,18 +1133,16 @@ The ghastly alien cackles at your response. His sharp, pointed teeth glint in th
         pos (0.5, 1.0) 
     window auto show
 
-    $LongNVLText(terrorlightz.c, (
+    $LongNVLText(narrator, (
     '''\
 In a bizarre turn of events, he gives you an overdramatic bow, his arms outstretched with a flourish. 
     '''
     ))
  
-    window auto hide
     show tll terrorlightz_talking at center:
         subpixel True alpha 1.0 additive 0.0 
         matrixcolor InvertMatrix(0.0)*ContrastMatrix(1.5)*SaturationMatrix(1.0)*BrightnessMatrix(0.0)*HueMatrix(0.0) 
         linear 0.01 matrixcolor InvertMatrix(0.0)*ContrastMatrix(1.5)*SaturationMatrix(1.0)*BrightnessMatrix(0.0)*HueMatrix(0.0)  
-    window auto show
 
 
     $LongNVLText(terrorlightz.c, (
@@ -1164,20 +1154,18 @@ In a bizarre turn of events, he gives you an overdramatic bow, his arms outstret
     show protl protag_scared_stay:
         subpixel True pos (-0.2, 0.5)
 
-    window auto hide
     show tll terrorlightz_breathing at center:
         subpixel True alpha 1.0 additive 0.0 
         matrixcolor InvertMatrix(0.0)*ContrastMatrix(1.5)*SaturationMatrix(1.0)*BrightnessMatrix(0.0)*HueMatrix(0.0) 
         linear 0.01 matrixcolor InvertMatrix(0.0)*ContrastMatrix(1.5)*SaturationMatrix(1.0)*BrightnessMatrix(0.0)*HueMatrix(0.0)  
-    window auto show
 
-    $LongNVLText(terrorlightz.c, (
+    $LongNVLText(narrator, (
     '''\
 You are speechless. You can’t fathom how this many contradictions can exist in a singular space. In front of you, stands a nightmarish creature wearing a three-piece suit who supposedly lives in this broken down shack. You can’t tell if you want to laugh or cry. 
     '''
     ))
 
-    $LongNVLText(terrorlightz.c, (
+    $LongNVLText(narrator, (
     '''\
 Where in the world are you? 
     '''
@@ -1186,7 +1174,7 @@ Where in the world are you?
     show protl protag_lookup_breathing_stay:
         subpixel True pos (-0.2, 0.5)
 
-    $LongNVLText(terrorlightz.c, (
+    $LongNVLText(narrator, (
     '''\
 After resigning to your fate, you reluctantly return the favor. 
     '''
@@ -1195,27 +1183,25 @@ After resigning to your fate, you reluctantly return the favor.
     show protl protag_lookup_breathing_stay_talking:
         subpixel True pos (-0.2, 0.5)
 
-    $LongNVLText(terrorlightz.c, (
+    $LongNVLText(narrator, (
     '''\
-“My name is (MAIN CHARACTER NAME). As you can probably tell, I’m not from here.” 
+“My name is [player_name]. As you can probably tell, I’m not from here.” 
     '''
     ))
 
     show protl protag_lookup_breathing_stay:
         subpixel True pos (-0.2, 0.5)
     
-    $LongNVLText(terrorlightz.c, (
+    $LongNVLText(narrator, (
     '''\
 You are careful with your words. You don’t trust this stranger. He was exceptionally unpredictable so you felt that the less you say, the better. 
     '''
     ))
 
-    window auto hide
-    show tll terrorlightz_squint at center:
+    show tll terrorlightz_breathing at center:
         subpixel True alpha 1.0 additive 0.0 
         matrixcolor InvertMatrix(0.0)*ContrastMatrix(1.5)*SaturationMatrix(1.0)*BrightnessMatrix(0.0)*HueMatrix(0.0) 
         linear 0.01 matrixcolor InvertMatrix(0.0)*ContrastMatrix(1.5)*SaturationMatrix(1.0)*BrightnessMatrix(0.0)*HueMatrix(0.0)  
-    window auto show
 
     $LongNVLText(terrorlightz.c, (
     '''\
@@ -1223,12 +1209,10 @@ His eyes slit, his voice drawing out every word.
     '''
     ))
 
-    window auto hide
     show tll terrorlightz_squinting_talking at center:
         subpixel True alpha 1.0 additive 0.0 
         matrixcolor InvertMatrix(0.0)*ContrastMatrix(1.5)*SaturationMatrix(1.0)*BrightnessMatrix(0.0)*HueMatrix(0.0) 
         linear 0.01 matrixcolor InvertMatrix(0.0)*ContrastMatrix(1.5)*SaturationMatrix(1.0)*BrightnessMatrix(0.0)*HueMatrix(0.0)  
-    window auto show
 
     $LongNVLText(terrorlightz.c, (
     '''\
@@ -1287,14 +1271,12 @@ Before you could come up with a response, Terrorlightz offers you his hand. His 
     show protl protag_sigh:
         subpixel True pos (-0.2, 0.5)
         
-    window auto hide
     show tll terrorlightz_breathing at center:
         subpixel True alpha 1.0 additive 0.0 
         matrixcolor InvertMatrix(0.0)*ContrastMatrix(1.5)*SaturationMatrix(1.0)*BrightnessMatrix(0.0)*HueMatrix(0.0) 
         linear 0.01 matrixcolor InvertMatrix(0.0)*ContrastMatrix(1.5)*SaturationMatrix(1.0)*BrightnessMatrix(0.0)*HueMatrix(0.0)  
-    window auto show
 
-    $LongNVLText(terrorlightz.c, (
+    $LongNVLText(narrator, (
     '''\
 You stare at his outstretched hand momentarily before you grasp ahold of it. You weakly lift yourself off of the worn, broken couch. 
     '''
@@ -1303,18 +1285,16 @@ You stare at his outstretched hand momentarily before you grasp ahold of it. You
     show protl protag_mad_breathing:
         subpixel True pos (-0.2, 0.5)
 
-    $LongNVLText(terrorlightz.c, (
+    $LongNVLText(narrator, (
     '''\
 The academy only taught you basic first aid and your half-assed attempt at putting your stomach back together isn’t going to cut it. You either slowly bleed out or take a chance that Terrorlightz doesn’t have ulterior motives. 
     '''
     ))
 
-    window auto hide
     show tll terrorlightz_squinting_talking at center:
         subpixel True alpha 1.0 additive 0.0 
         matrixcolor InvertMatrix(0.0)*ContrastMatrix(1.5)*SaturationMatrix(1.0)*BrightnessMatrix(0.0)*HueMatrix(0.0) 
         linear 0.01 matrixcolor InvertMatrix(0.0)*ContrastMatrix(1.5)*SaturationMatrix(1.0)*BrightnessMatrix(0.0)*HueMatrix(0.0)  
-    window auto show
 
     show protl protag_lookup_breathing_stay:
         subpixel True pos (-0.2, 0.5)
@@ -1325,13 +1305,10 @@ He almost reminds you of a shark when his sharpened, pointy teeth glint in the l
     '''
     ))
     
-    window auto hide
     show tll terrorlightz_breathing at center:
         subpixel True alpha 1.0 additive 0.0 
         matrixcolor InvertMatrix(0.0)*ContrastMatrix(1.5)*SaturationMatrix(1.0)*BrightnessMatrix(0.0)*HueMatrix(0.0) 
         linear 0.01 matrixcolor InvertMatrix(0.0)*ContrastMatrix(1.5)*SaturationMatrix(1.0)*BrightnessMatrix(0.0)*HueMatrix(0.0)  
-    window auto show
-
 
     window auto hide
     show tll terrorlightz_breathing:
@@ -1351,7 +1328,7 @@ He almost reminds you of a shark when his sharpened, pointy teeth glint in the l
 
 
 
-    $LongNVLText(terrorlightz.c, (
+    $LongNVLText(narrator_none, (
     '''\
 With a smooth flick of the wrist, Terrorlightz motions towards the door. Without waiting for any acknowledgement of your intention to follow him, he turns his back and exits the hut. 
     '''
@@ -1360,14 +1337,14 @@ With a smooth flick of the wrist, Terrorlightz motions towards the door. Without
 
     show protl protag_mad_breathing
 
-    $LongNVLText(terrorlightz.c, (
+    $LongNVLText(narrator, (
     '''\
 He can’t be serious can he? He actually wants to forage for mushrooms? 
     '''
     ))
 
 
-    $LongNVLText(terrorlightz.c, (
+    $LongNVLText(narrator, (
     '''\
 You hesitantly follow Terrorlightz outside of the hut. It goes against all of your instincts to trust this stranger, even more so to root around for unknown plants. But he hasn’t killed you yet and he’s had ample opportunities. That’s something, isn’t it? 
     '''
@@ -2327,7 +2304,7 @@ You silently curse under your breath as you grip the sheets in front of you. You
     show protl protag_sigh:
         subpixel True pos (-0.17, 0.5) 
 
-    $LongNVLText(drpsilicon.c, (
+    $LongNVLText(narrator, (
     '''\
 Just when you thought you were out…
     '''
