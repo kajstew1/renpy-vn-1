@@ -1209,7 +1209,7 @@ His eyes slit, his voice drawing out every word.
     '''
     ))
 
-    show tll terrorlightz_squinting_talking at center:
+    show tll terrorlightz_squint_talking at center:
         subpixel True alpha 1.0 additive 0.0 
         matrixcolor InvertMatrix(0.0)*ContrastMatrix(1.5)*SaturationMatrix(1.0)*BrightnessMatrix(0.0)*HueMatrix(0.0) 
         linear 0.01 matrixcolor InvertMatrix(0.0)*ContrastMatrix(1.5)*SaturationMatrix(1.0)*BrightnessMatrix(0.0)*HueMatrix(0.0)  
@@ -1222,42 +1222,40 @@ His eyes slit, his voice drawing out every word.
 
     
     window auto hide
-    show tll terrorlightz_squinting:
+    show tll terrorlightz_breathing:
         subpixel True alpha 1.0 additive 0.0 
         matrixcolor InvertMatrix(0.0)*ContrastMatrix(1.5)*SaturationMatrix(1.0)*BrightnessMatrix(0.0)*HueMatrix(0.0) 
         linear 0.01 matrixcolor InvertMatrix(0.0)*ContrastMatrix(1.5)*SaturationMatrix(1.0)*BrightnessMatrix(0.0)*HueMatrix(0.0)  
         ypos 1.0 xzoom 1.0 yzoom 1.0 
         linear 1.12 ypos 1.2 xzoom 1.3 yzoom 1.3 
     with Pause(1.22)
-    show tll terrorlightz_squinting:
+    show tll terrorlightz_breathing:
         ypos 1.2 xzoom 1.3 yzoom 1.3 
     window auto show
 
 
-    $LongNVLText(terrorlightz.c, (
+    $LongNVLText(narrator, (
     '''\
 Before you could come up with a response, Terrorlightz offers you his hand. His eyes honed in on your torn and bloodied clothes. 
     '''
     ))
 
     window auto hide
-    show tll terrorlightz_squinting:
+    show tll terrorlightz_breathing:
         subpixel True alpha 1.0 additive 0.0 
         matrixcolor InvertMatrix(0.0)*ContrastMatrix(1.5)*SaturationMatrix(1.0)*BrightnessMatrix(0.0)*HueMatrix(0.0) 
         linear 0.01 matrixcolor InvertMatrix(0.0)*ContrastMatrix(1.5)*SaturationMatrix(1.0)*BrightnessMatrix(0.0)*HueMatrix(0.0) 
         ypos 1.2 xzoom 1.3 yzoom 1.3 
         linear 1.16 ypos 1.0 xzoom 1.0 yzoom 1.0 
     with Pause(1.26)
-    show tll terrorlightz_squinting:
+    show tll terrorlightz_breathing:
         pos (0.5, 1.0) xzoom 1.0 yzoom 1.0 
     window auto show
 
-    window auto hide
-    show tll terrorlightz_squinting_talking at center:
+    show tll terrorlightz_talking at center:
         subpixel True alpha 1.0 additive 0.0 
         matrixcolor InvertMatrix(0.0)*ContrastMatrix(1.5)*SaturationMatrix(1.0)*BrightnessMatrix(0.0)*HueMatrix(0.0) 
         linear 0.01 matrixcolor InvertMatrix(0.0)*ContrastMatrix(1.5)*SaturationMatrix(1.0)*BrightnessMatrix(0.0)*HueMatrix(0.0)  
-    window auto show
 
     $LongNVLText(terrorlightz.c, (
     '''\
@@ -1291,10 +1289,11 @@ The academy only taught you basic first aid and your half-assed attempt at putti
     '''
     ))
 
-    show tll terrorlightz_squinting_talking at center:
+    show tll terrorlightz_squint_talking at center:
         subpixel True alpha 1.0 additive 0.0 
         matrixcolor InvertMatrix(0.0)*ContrastMatrix(1.5)*SaturationMatrix(1.0)*BrightnessMatrix(0.0)*HueMatrix(0.0) 
         linear 0.01 matrixcolor InvertMatrix(0.0)*ContrastMatrix(1.5)*SaturationMatrix(1.0)*BrightnessMatrix(0.0)*HueMatrix(0.0)  
+
 
     show protl protag_lookup_breathing_stay:
         subpixel True pos (-0.2, 0.5)
