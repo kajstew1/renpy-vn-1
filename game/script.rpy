@@ -1363,7 +1363,7 @@ label path_hut_forage:
 
 #    show tll terrorlightz_talking at right
 
-    show protl protag_breathing:
+    show protl protag_lookup_leftright:
         subpixel True pos (-0.2, 0.5)
 
     $LongNVLText(narrator, (
@@ -1372,17 +1372,26 @@ Leaving the confines of your temporary shelter reminds you that you are still on
     '''
     ))
 
+    show protl protag_scared_stay:
+        subpixel True pos (-0.2, 0.5)
+
     $LongNVLText(narrator, (
     '''\
 Stepping out of the hut, the sunlight was blinding. You are forced to squint and throw your hands up to shield your eyes. It must be the start of a new day as the two suns in the sky are much brighter than before. Either you are right and the days here last a long time or the shock from the crash dulled your senses. 
     '''
     ))
 
+    show protl protag_sigh:
+        subpixel True pos (-0.2, 0.5)
+
     $LongNVLText(narrator, (
     '''\
 You feel a sudden rush of homesickness. Will you ever be back home? You had craved space travel for so long and worked so hard to achieve it, but now it seems meaningless. 
     '''
     ))
+
+    show protl protag_mad_breathing:
+        subpixel True pos (-0.2, 0.5)
 
     $LongNVLText(narrator, (
     '''\
@@ -1395,6 +1404,9 @@ What was it all for? You would have never signed up if you knew you would end up
 I’m sure your crew is laughing at you from the afterlife. How the mighty captain has fallen. 
     '''
     ))
+
+    show protl protag_lookup_leftright:
+        subpixel True pos (-0.2, 0.5)
 
     $LongNVLText(narrator, (
     '''\
@@ -1414,11 +1426,32 @@ But at the same time, at least here you have shelter and some promise of food. Y
     '''
     ))
 
+    show protl protag_mad_breathing:
+        subpixel True pos (-0.2, 0.5)
+
     $LongNVLText(narrator, (
     '''\
 With resignation, you decide to stick with Terrorlightz. Better than starving. 
     '''
     ))
+
+    window auto hide
+    show bg_hut:
+        subpixel True yzoom 1.0 
+        parallel:
+            pos (0.5, 1.0) 
+            linear 1.95 pos (0.65, 1.75) 
+        parallel:
+            zpos 0.0 
+            linear 0.01 zpos 0.0 
+        parallel:
+            zoom 1.0 
+            linear 0.01 zoom 1.0 
+            linear 1.93 zoom 2.5 
+    with Pause(2.05)
+    show bg_hut:
+        pos (0.65, 1.75) zpos 0.0 zoom 2.5 
+    window auto show
 
     $LongNVLText(narrator, (
     '''\
@@ -1426,25 +1459,59 @@ You search south of the hut where a clump of tall trees swallow the nearby light
     '''
     ))
 
-    show tll terrorlightz_talking at right
 
-    $LongNVLText(terrorlightz.c, (
+    show tll terrorlightz_menacing at center:
+        subpixel True alpha 1.0 additive 0.0 
+        matrixcolor InvertMatrix(0.0)*ContrastMatrix(1.5)*SaturationMatrix(1.0)*BrightnessMatrix(0.0)*HueMatrix(0.0) 
+        linear 0.01 matrixcolor InvertMatrix(0.0)*ContrastMatrix(1.5)*SaturationMatrix(1.0)*BrightnessMatrix(0.0)*HueMatrix(0.0)  
+
+    $LongNVLText(narrator, (
     '''\
-You find Terrorlightz hunched over the base of a thick tree trunk. His dissatisfaction is clear even with his back towards you. His deep, baritone voice almost shakes the ground when he says, “You must know, alien, that it is impolite to make someone wait.” 
+You find Terrorlightz hunched over the base of a thick tree trunk. His dissatisfaction is clear even with his back towards you. 
     '''
     ))
 
+    show protl protag_lookup_breathing_stay:
+        subpixel True pos (-0.2, 0.5)
+
+    show tll terrorlightz_menacing_talking at center:
+        subpixel True alpha 1.0 additive 0.0 
+        matrixcolor InvertMatrix(0.0)*ContrastMatrix(1.5)*SaturationMatrix(1.0)*BrightnessMatrix(0.0)*HueMatrix(0.0) 
+        linear 0.01 matrixcolor InvertMatrix(0.0)*ContrastMatrix(1.5)*SaturationMatrix(1.0)*BrightnessMatrix(0.0)*HueMatrix(0.0)  
+
     $LongNVLText(terrorlightz.c, (
+    '''\
+His deep, baritone voice almost shakes the ground when he says, “You must know, alien, that it is impolite to make someone wait.” 
+    '''
+    ))
+
+    show tll terrorlightz_menacing at center:
+        subpixel True alpha 1.0 additive 0.0 
+        matrixcolor InvertMatrix(0.0)*ContrastMatrix(1.5)*SaturationMatrix(1.0)*BrightnessMatrix(0.0)*HueMatrix(0.0) 
+        linear 0.01 matrixcolor InvertMatrix(0.0)*ContrastMatrix(1.5)*SaturationMatrix(1.0)*BrightnessMatrix(0.0)*HueMatrix(0.0)  
+
+    $LongNVLText(narrator, (
     '''\
 You feel less terrified than you would’ve been thirty minutes ago, which surprises you. You suppose that giving into your fate helped to have lessened the blow.
     '''
     ))
+
+    show protl protag_lookup_breathing_stay_talking:
+        subpixel True pos (-0.2, 0.5)
 
     $LongNVLText(terrorlightz.c, (
     '''\
 “Sorry. You're tall and I can barely walk. Makes for an unfortunate combination.” 
     '''
     ))
+
+    show protl protag_lookup_breathing_stay:
+        subpixel True pos (-0.2, 0.5)
+
+    show tll terrorlightz_squint at center:
+        subpixel True alpha 1.0 additive 0.0 
+        matrixcolor InvertMatrix(0.0)*ContrastMatrix(1.5)*SaturationMatrix(1.0)*BrightnessMatrix(0.0)*HueMatrix(0.0) 
+        linear 0.01 matrixcolor InvertMatrix(0.0)*ContrastMatrix(1.5)*SaturationMatrix(1.0)*BrightnessMatrix(0.0)*HueMatrix(0.0)  
 
     $LongNVLText(terrorlightz.c, (
     '''\
