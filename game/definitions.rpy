@@ -221,7 +221,7 @@ init -50 python:
 
             if (len(printText) > 0): # Only print something if there is something to print
                 talker (printText)
-            
+                
                 if (currentPage < totalTextPages): # New page!
                     nvl_clear()
 
