@@ -444,6 +444,7 @@ screen main_menu():
     tag menu
 
     add gui.main_menu_background
+    add "drp_logo"
 
     ## This empty frame darkens the main menu.
     #frame:

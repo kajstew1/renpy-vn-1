@@ -59,6 +59,12 @@ image img_cockpit = im.Scale("backgrounds/bg_cockpit.jpg", 1920, 1080)
 
 image img_customization = im.Scale("backgrounds/bg_customization.jpg", 1920, 1080)
 
+#image drp_logo = im.Scale("Drpsilicon_logo.png", 1920, 1080)
+image drp_logo: 
+    xalign 0.5
+    yalign 0.1
+    im.Scale("Drpsilicon_logo.png", 960, 540)
+
 #choosescreen 
 image boychar:
     "boy.png" 
@@ -111,7 +117,7 @@ default p_player_name_input = VariableInputValue("player_name", default=False)
 
 
 image drp_motions = MyLive2D("images/dr_p_motions", default_fade=0.0, loop=True, fallback="dr_p casual talking")
-    
+
 
 #make a whole new layer for the char- screw side image(i never quite get it anyway)!
 define config.layers = [ 'master', 'transient','screens','character', 'overlay' ] 
