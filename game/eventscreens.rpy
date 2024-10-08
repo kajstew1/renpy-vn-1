@@ -1,4 +1,6 @@
 
+
+
 screen reset_paths():
     $ persistent.path_variables_set = False
     $ persistent.path_to_hut_taken = False
@@ -155,7 +157,6 @@ screen screen_customization_nav:
                     value VariableInputValue("player_name") # with this you save the input to a variable.
                 #action p_player_name_input.Toggle()
                 action SetVariable("player_name", player_name)
-
 
     imagebutton auto "cc_she_%s":
         focus_mask True  # in case any transparent pixels in image mask in the image box they are clickable

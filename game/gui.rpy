@@ -26,11 +26,13 @@ init python:
 define gui.accent_color = '#66cc00'
 
 ## The color used for a text button when it is neither selected nor hovered.
-define gui.idle_color = '#888888'
+#define gui.idle_color = '#888888'
+define gui.idle_color = '#FFFFFF'
 
 ## The small color is used for small text, which needs to be brighter/darker to
 ## achieve the same effect.
-define gui.idle_small_color = '#aaaaaa'
+#define gui.idle_small_color = '#aaaaaa'
+define gui.idle_small_color = '#ffffff'
 
 ## The color that is used for buttons and bars that are hovered.
 define gui.hover_color = '#a3e066'
@@ -61,7 +63,7 @@ define gui.text_font = "DejaVuSans.ttf"
 define gui.name_text_font = "DejaVuSans.ttf"
 
 ## The font used for out-of-game text.
-define gui.interface_text_font = "DejaVuSans.ttf"
+define gui.interface_text_font = "Wallpoet-Regular.ttf"
 
 ## The size of normal dialogue text.
 define gui.text_size = 33
@@ -97,7 +99,7 @@ define gui.game_menu_background = "gui/game_menu.png"
 ## The height of the textbox containing dialogue.
 #define gui.textbox_height = 278
 define gui.textbox_height=None #resize automatically
-define gui.textbox_borders=Borders(50, 10, 50, 10) #size of corners
+define gui.textbox_borders=Borders(50, 00, 50, 10) #size of corners
 define gui.textbox_min=185 #minimum height
 
 ## The placement of the textbox vertically on the screen. 0.0 is the top, 0.5 is
@@ -108,7 +110,7 @@ define gui.textbox_yalign = 1.0
 ## The placement of the speaking character's name, relative to the textbox.
 ## These can be a whole number of pixels from the left or top, or 0.5 to center.
 define gui.name_xpos = 360
-define gui.name_ypos = 0
+define gui.name_ypos = -25
 
 ## The horizontal alignment of the character's name. This can be 0.0 for left-
 ## aligned, 0.5 for centered, and 1.0 for right-aligned.
@@ -121,7 +123,7 @@ define gui.namebox_height = None
 
 ## The borders of the box containing the character's name, in left, top, right,
 ## bottom order.
-define gui.namebox_borders = Borders(30, 10, 30, 10)
+define gui.namebox_borders = Borders(30, 0, 30, 10)
 
 ## If True, the background of the namebox will be tiled, if False, the
 ## background of the namebox will be scaled.
@@ -134,7 +136,7 @@ define gui.namebox_tile = False
 define gui.dialogue_xpos = 402
 
 #define gui.dialogue_ypos = 75
-define gui.dialogue_ypos=20
+define gui.dialogue_ypos= 10
 
 
 ## The maximum width of dialogue text, in pixels.
