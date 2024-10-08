@@ -1499,7 +1499,7 @@ You feel less terrified than you would’ve been thirty minutes ago, which surpr
     show protl protag_lookup_breathing_stay_talking:
         subpixel True pos (-0.2, 0.5)
 
-    $LongNVLText(terrorlightz.c, (
+    $LongNVLText(narrator, (
     '''\
 “Sorry. You're tall and I can barely walk. Makes for an unfortunate combination.” 
     '''
@@ -1508,7 +1508,7 @@ You feel less terrified than you would’ve been thirty minutes ago, which surpr
     show protl protag_lookup_breathing_stay:
         subpixel True pos (-0.2, 0.5)
 
-    show tll terrorlightz_squint at center:
+    show tll terrorlightz_squint_stay at center:
         subpixel True alpha 1.0 additive 0.0 
         matrixcolor InvertMatrix(0.0)*ContrastMatrix(1.5)*SaturationMatrix(1.0)*BrightnessMatrix(0.0)*HueMatrix(0.0) 
         linear 0.01 matrixcolor InvertMatrix(0.0)*ContrastMatrix(1.5)*SaturationMatrix(1.0)*BrightnessMatrix(0.0)*HueMatrix(0.0)  
@@ -1519,11 +1519,37 @@ Ignoring your comment, Terrorlightz points to the ground in front of him. You ha
     '''
     ))
 
-    $LongNVLText(terrorlightz.c, (
+    show tll terrorlightz_squint_stay_up at center:
+        subpixel True alpha 1.0 additive 0.0 
+        matrixcolor InvertMatrix(0.0)*ContrastMatrix(1.5)*SaturationMatrix(1.0)*BrightnessMatrix(0.0)*HueMatrix(0.0) 
+        linear 0.01 matrixcolor InvertMatrix(0.0)*ContrastMatrix(1.5)*SaturationMatrix(1.0)*BrightnessMatrix(0.0)*HueMatrix(0.0)  
+
+    show protl protag_mad_breathing:
+        subpixel True pos (-0.2, 0.5)
+
+    $LongNVLText(narrator, (
     '''\
-You furrow your brow. It was a small mushroom–no larger than a tennis ball–with a wide red brim, covered in a neon pink moss. “What kind of mushroom is it?” 
+You furrow your brow. It was a small mushroom–no larger than a tennis ball–with a wide red brim, covered in a neon pink moss. 
     '''
     ))
+
+    show protl protag_mad_talking:
+        subpixel True pos (-0.2, 0.5)
+
+    $LongNVLText(narrator, (
+    '''\
+“What kind of mushroom is it?” 
+    '''
+    ))
+
+    show protl protag_mad_breathing:
+        subpixel True pos (-0.2, 0.5)
+
+    show tll terrorlightz_breathing at center:
+        subpixel True alpha 1.0 additive 0.0 
+        matrixcolor InvertMatrix(0.0)*ContrastMatrix(1.5)*SaturationMatrix(1.0)*BrightnessMatrix(0.0)*HueMatrix(0.0) 
+        linear 0.01 matrixcolor InvertMatrix(0.0)*ContrastMatrix(1.5)*SaturationMatrix(1.0)*BrightnessMatrix(0.0)*HueMatrix(0.0)  
+
 
     $LongNVLText(terrorlightz.c, (
     '''\
@@ -1531,11 +1557,16 @@ Back to his mischievous ways, Terrorlightz turns to face you wearing a devious g
     '''
     ))
 
-    $LongNVLText(terrorlightz.c, (
+    $LongNVLText(narrator, (
     '''\
 Yup, you aren’t totally desensitized yet. He is still terrifying. 
     '''
     ))
+
+    show tll terrorlightz_talking at center:
+        subpixel True alpha 1.0 additive 0.0 
+        matrixcolor InvertMatrix(0.0)*ContrastMatrix(1.5)*SaturationMatrix(1.0)*BrightnessMatrix(0.0)*HueMatrix(0.0) 
+        linear 0.01 matrixcolor InvertMatrix(0.0)*ContrastMatrix(1.5)*SaturationMatrix(1.0)*BrightnessMatrix(0.0)*HueMatrix(0.0)  
 
     $LongNVLText(terrorlightz.c, (
     '''\
