@@ -1513,7 +1513,7 @@ You feel less terrified than you would’ve been thirty minutes ago, which surpr
         matrixcolor InvertMatrix(0.0)*ContrastMatrix(1.5)*SaturationMatrix(1.0)*BrightnessMatrix(0.0)*HueMatrix(0.0) 
         linear 0.01 matrixcolor InvertMatrix(0.0)*ContrastMatrix(1.5)*SaturationMatrix(1.0)*BrightnessMatrix(0.0)*HueMatrix(0.0)  
 
-    $LongNVLText(terrorlightz.c, (
+    $LongNVLText(narrator_none, (
     '''\
 Ignoring your comment, Terrorlightz points to the ground in front of him. You had to move to stand next to him to see what he was pointing at. 
     '''
@@ -1527,7 +1527,7 @@ Ignoring your comment, Terrorlightz points to the ground in front of him. You ha
     show protl protag_mad_breathing:
         subpixel True pos (-0.2, 0.5)
 
-    $LongNVLText(narrator, (
+    $LongNVLText(narrator_none, (
     '''\
 You furrow your brow. It was a small mushroom–no larger than a tennis ball–with a wide red brim, covered in a neon pink moss. 
     '''
@@ -1557,7 +1557,10 @@ Back to his mischievous ways, Terrorlightz turns to face you wearing a devious g
     '''
     ))
 
-    $LongNVLText(narrator, (
+    show protl protag_lookup_breathing_stay:
+        subpixel True pos (-0.2, 0.5)
+
+    $LongNVLText(narrator_none, (
     '''\
 Yup, you aren’t totally desensitized yet. He is still terrifying. 
     '''
@@ -1574,11 +1577,27 @@ Yup, you aren’t totally desensitized yet. He is still terrifying.
     '''
     ))
 
-    $LongNVLText(terrorlightz.c, (
+    show tll terrorlightz_breathing at center:
+        subpixel True alpha 1.0 additive 0.0 
+        matrixcolor InvertMatrix(0.0)*ContrastMatrix(1.5)*SaturationMatrix(1.0)*BrightnessMatrix(0.0)*HueMatrix(0.0) 
+        linear 0.01 matrixcolor InvertMatrix(0.0)*ContrastMatrix(1.5)*SaturationMatrix(1.0)*BrightnessMatrix(0.0)*HueMatrix(0.0)  
+
+    show protl protag_lookup_breathing_stay_talking:
+        subpixel True pos (-0.2, 0.5)
+
+    $LongNVLText(narrator, (
     '''\
 “What do you mean, find what I’m looking for? I just want something to patch myself back together.” 
     '''
     ))
+
+    show tll terrorlightz_laughing_talking at center:
+        subpixel True alpha 1.0 additive 0.0 
+        matrixcolor InvertMatrix(0.0)*ContrastMatrix(1.5)*SaturationMatrix(1.0)*BrightnessMatrix(0.0)*HueMatrix(0.0) 
+        linear 0.01 matrixcolor InvertMatrix(0.0)*ContrastMatrix(1.5)*SaturationMatrix(1.0)*BrightnessMatrix(0.0)*HueMatrix(0.0)
+    
+    show protl protag_lookup_breathing_stay:
+        subpixel True pos (-0.2, 0.5)
 
     $LongNVLText(terrorlightz.c, (
     '''\
@@ -1586,42 +1605,99 @@ Terrorlightz cackles, plucking the fuzzy mushroom off the moist ground. He inspe
     '''
     ))
 
-    $LongNVLText(terrorlightz.c, (
+    show tll terrorlightz_breathing at center:
+        subpixel True alpha 1.0 additive 0.0 
+        matrixcolor InvertMatrix(0.0)*ContrastMatrix(1.5)*SaturationMatrix(1.0)*BrightnessMatrix(0.0)*HueMatrix(0.0) 
+        linear 0.01 matrixcolor InvertMatrix(0.0)*ContrastMatrix(1.5)*SaturationMatrix(1.0)*BrightnessMatrix(0.0)*HueMatrix(0.0)  
+
+    show protl protag_mad_breathing:
+        subpixel True pos (-0.2, 0.5)
+
+
+    $LongNVLText(narrator_none, (
     '''\
 You gulp. You definitely should have run when you had the chance. 
     '''
     ))
 
 
+    show protl protag_mad_breathing:
+        subpixel True pos (-0.2, 0.5)
+
     $LongNVLText(terrorlightz.c, (
     '''\
-Sweat beads your forehead as you contemplate your available options. “I appreciate the offer, but I think I’m okay,” you say, patting your stomach wound gently. “A few more nights rest and I’ll be good as new.” 
+Sweat beads your forehead as you contemplate your available options. 
     '''
     ))
 
+
+    show protl protag_talking:
+        subpixel True pos (-0.2, 0.5)
+
     $LongNVLText(terrorlightz.c, (
+    '''\
+“I appreciate the offer, but I think I’m okay,” you say, patting your stomach wound gently. “A few more nights rest and I’ll be good as new.” 
+    '''
+    ))
+
+    show protl protag_breathing:
+        subpixel True pos (-0.2, 0.5)
+
+    $LongNVLText(narrator_none, (
     '''\
 You give him your best used car salesman smile to add emphasis to your point. Is this all just a bluff? Yes. You reason that it would take at least a month to be back to full health. 
     '''
     ))
 
-    $LongNVLText(terrorlightz.c, (
+    $LongNVLText(narrator_none, (
     '''\
 But Terrorlightz didn’t need to know that.
     '''
     ))
+    
+    show protl protag_lookup_breathing_stay:
+        subpixel True pos (-0.2, 0.5)
 
-    $LongNVLText(terrorlightz.c, (
+    show tll terrorlightz_scary_stay at center:
+        subpixel True alpha 1.0 additive 0.0 
+        matrixcolor InvertMatrix(0.0)*ContrastMatrix(1.5)*SaturationMatrix(1.0)*BrightnessMatrix(0.0)*HueMatrix(0.0) 
+        linear 0.01 matrixcolor InvertMatrix(0.0)*ContrastMatrix(1.5)*SaturationMatrix(1.0)*BrightnessMatrix(0.0)*HueMatrix(0.0)  
+
+
+    $LongNVLText(narrator_none, (
     '''\
-You feel the hairs on your back raise when you meet his eyes. Behind the emptiness there was a hint of madness that wasn’t there before. The normally disconcerting smile crinkled into something more devious. “That’s funny, because I don’t recall giving you an option.” 
+You feel the hairs on your back raise when you meet his eyes. Behind the emptiness there was a hint of madness that wasn’t there before. The normally disconcerting smile crinkled into something more devious. 
     '''
     ))
 
+    show tll terrorlightz_scary_stay_talking at center:
+        subpixel True alpha 1.0 additive 0.0 
+        matrixcolor InvertMatrix(0.0)*ContrastMatrix(1.5)*SaturationMatrix(1.0)*BrightnessMatrix(0.0)*HueMatrix(0.0) 
+        linear 0.01 matrixcolor InvertMatrix(0.0)*ContrastMatrix(1.5)*SaturationMatrix(1.0)*BrightnessMatrix(0.0)*HueMatrix(0.0)  
+
+
     $LongNVLText(terrorlightz.c, (
+    '''\
+“That’s funny, because I don’t recall giving you an option.” 
+    '''
+    ))
+
+    show tll terrorlightz_scary_smile at center:
+        subpixel True alpha 1.0 additive 0.0 
+        matrixcolor InvertMatrix(0.0)*ContrastMatrix(1.5)*SaturationMatrix(1.0)*BrightnessMatrix(0.0)*HueMatrix(0.0) 
+        linear 0.01 matrixcolor InvertMatrix(0.0)*ContrastMatrix(1.5)*SaturationMatrix(1.0)*BrightnessMatrix(0.0)*HueMatrix(0.0)  
+
+
+    $LongNVLText(narrator_none, (
     '''\
 You start slowly walking backwards as Terrorlightz, much too easily, wipes the dirt off of his pants and moves to stand up. Your hands involuntarily reflex from an unclenched to clenched position as your mind races between fight or flight mode. 
     '''
     ))
+
+    show tll terrorlightz_scary_stay_talking at center:
+        subpixel True alpha 1.0 additive 0.0 
+        matrixcolor InvertMatrix(0.0)*ContrastMatrix(1.5)*SaturationMatrix(1.0)*BrightnessMatrix(0.0)*HueMatrix(0.0) 
+        linear 0.01 matrixcolor InvertMatrix(0.0)*ContrastMatrix(1.5)*SaturationMatrix(1.0)*BrightnessMatrix(0.0)*HueMatrix(0.0)  
 
     $LongNVLText(terrorlightz.c, (
     '''\
@@ -1629,65 +1705,95 @@ With a cackle Terrorlightz holds the mushroom in an open palm towards you. “No
     '''
     ))
 
-    $LongNVLText(terrorlightz.c, (
+    show tll terrorlightz_scary_smile at center:
+        subpixel True alpha 1.0 additive 0.0 
+        matrixcolor InvertMatrix(0.0)*ContrastMatrix(1.5)*SaturationMatrix(1.0)*BrightnessMatrix(0.0)*HueMatrix(0.0) 
+        linear 0.01 matrixcolor InvertMatrix(0.0)*ContrastMatrix(1.5)*SaturationMatrix(1.0)*BrightnessMatrix(0.0)*HueMatrix(0.0)  
+
+
+    $LongNVLText(narrator_none, (
     '''\
 Flight it is. You turn in the opposite direction, digging your heels into the muddy ground and take off into a sprint. 
     '''
     ))
 
-    $LongNVLText(terrorlightz.c, (
+    $LongNVLText(narrator_none, (
     '''\
 Why is this planet constantly trying to kill you? It would be nice to have one full day that wouldn’t require running for your life. 
     '''
     ))
 
-    $LongNVLText(terrorlightz.c, (
+    $LongNVLText(narrator_none, (
     '''\
 You feel lightheaded as you suck in air as quickly as you exhale. The humidity in the air feels thick in your lungs, making running a much harder endeavor. Mud spits onto your pants as you slide around the rotund trees, trying to distance yourself from the madman close onto your tail.
     '''
     ))
 
-    $LongNVLText(terrorlightz.c, (
+    $LongNVLText(narrator_none, (
     '''\
 You are already at a disadvantage since Terrorlightz knows the area much better than you do, but pray that the darkness from the tree canopy above you can increase your odds. 
     '''
     ))
 
-    $LongNVLText(terrorlightz.c, (
+    $LongNVLText(narrator_none, (
     '''\
 There was little to no noise in the forest save for the soft squelching sounds as you and your assailant’s feet hit the wet ground. 
     '''
     ))
 
-    $LongNVLText(terrorlightz.c, (
+    $LongNVLText(narrator_none, (
     '''\
 This feels worse than last night’s attack. Yesterday, you felt like you were the victim of a hungry animal. Today, it feels personal. 
     '''
     ))
 
-    $LongNVLText(terrorlightz.c, (
+    $LongNVLText(narrator_none, (
     '''\
 Your foot catches on a branch and you slide front first onto the ground. You taste mud as you grasp for a dry patch of ground for leverage, but you aren’t quick enough. Before you can process what was happening, you are being lifted off the ground by your shirt. 
     '''
     ))
 
-    $LongNVLText(terrorlightz.c, (
+    show tll terrorlightz_scary_stay_talking at center:
+        subpixel True alpha 1.0 additive 0.0 
+        matrixcolor InvertMatrix(0.0)*ContrastMatrix(1.5)*SaturationMatrix(1.0)*BrightnessMatrix(0.0)*HueMatrix(0.0) 
+        linear 0.01 matrixcolor InvertMatrix(0.0)*ContrastMatrix(1.5)*SaturationMatrix(1.0)*BrightnessMatrix(0.0)*HueMatrix(0.0)  
+
+
+    $LongNVLText(narrator_none, (
     '''\
 You struggle against Terrolightz’s fierce grip as he positions you to face him. “You are a difficult one, aren’t you?” You desperately cling onto Terrorlightz’s fierce grip, trying to release yourself, but his strength is inhuman. 
     '''
     ))
 
-    $LongNVLText(terrorlightz.c, (
+    show tll terrorlightz_scary_stay at center:
+        subpixel True alpha 1.0 additive 0.0 
+        matrixcolor InvertMatrix(0.0)*ContrastMatrix(1.5)*SaturationMatrix(1.0)*BrightnessMatrix(0.0)*HueMatrix(0.0) 
+        linear 0.01 matrixcolor InvertMatrix(0.0)*ContrastMatrix(1.5)*SaturationMatrix(1.0)*BrightnessMatrix(0.0)*HueMatrix(0.0)  
+
+
+    $LongNVLText(narrator_none, (
     '''\
 Using his available hand, Terrolightz reaches into his pocket to retrieve the mushroom and shows it to you. Somehow, despite the scuffle, it is still perfectly preserved. The pink moss covering the mushroom faintly glows among the intense shade. 
     '''
     ))
 
-    $LongNVLText(terrorlightz.c, (
+    show protl protag_lookup_breathing_shocked:
+        subpixel True pos (-0.2, 0.5)
+    
+    $LongNVLText(narrator_none, (
     '''\
 Your eyes grow wide when you realize that you don’t have a choice in this matter anymore. It’s dinner time. 
     '''
     ))
+
+    show protl protag_scared:
+        subpixel True pos (-0.2, 0.5)
+
+    show tll terrorlightz_laughing at center:
+        subpixel True alpha 1.0 additive 0.0 
+        matrixcolor InvertMatrix(0.0)*ContrastMatrix(1.5)*SaturationMatrix(1.0)*BrightnessMatrix(0.0)*HueMatrix(0.0) 
+        linear 0.01 matrixcolor InvertMatrix(0.0)*ContrastMatrix(1.5)*SaturationMatrix(1.0)*BrightnessMatrix(0.0)*HueMatrix(0.0)  
+
 
     $LongNVLText(terrorlightz.c, (
     '''\
@@ -1700,6 +1806,8 @@ With a final cackle, Terrorlightz shoves the mushroom into your mouth, holding i
 Then suddenly, Terrolightz, just as easily as he picked you up, drops you to the ground and walks away, leaving you muddy and gasping for air. 
     '''
     ))
+
+
 
     $LongNVLText(terrorlightz.c, (
     '''\
