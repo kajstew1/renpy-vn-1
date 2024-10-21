@@ -1705,11 +1705,6 @@ With a cackle Terrorlightz holds the mushroom in an open palm towards you. “No
     '''
     ))
 
-    show tll terrorlightz_scary_smile at center:
-        subpixel True alpha 1.0 additive 0.0 
-        matrixcolor InvertMatrix(0.0)*ContrastMatrix(1.5)*SaturationMatrix(1.0)*BrightnessMatrix(0.0)*HueMatrix(0.0) 
-        linear 0.01 matrixcolor InvertMatrix(0.0)*ContrastMatrix(1.5)*SaturationMatrix(1.0)*BrightnessMatrix(0.0)*HueMatrix(0.0)  
-
 
     $LongNVLText(narrator_none, (
     '''\
@@ -1717,11 +1712,95 @@ Flight it is. You turn in the opposite direction, digging your heels into the mu
     '''
     ))
 
+    show bg_hut:
+        subpixel True xpos 0.8 zoom 2.5 
+        ypos 1.75 
+        linear 0.19 ypos 2.0 
+        linear 0.19 ypos 1.75 
+        linear 0.21 ypos 2.0 
+        linear 0.20 ypos 1.75 
+        linear 0.21 ypos 2.0 
+        linear 0.18 ypos 1.75 
+        linear 0.20 ypos 2.0 
+        linear 0.22 ypos 1.75 
+        linear 0.19 ypos 2.0 
+        linear 0.22 ypos 1.75 
+        linear 0.21 ypos 2.0 
+        linear 0.21 ypos 1.75 
+        linear 0.23 ypos 2.0 
+        linear 0.25 ypos 1.75 
+        linear 0.24 ypos 2.0 
+        linear 0.26 ypos 1.75 
+    show tll terrorlightz_scary_stay:
+        subpixel True xzoom 1.0 yzoom 1.0 
+        zoom 1.0 matrixcolor InvertMatrix(0.0)*ContrastMatrix(1.5)*SaturationMatrix(1.0)*BrightnessMatrix(0.0)*HueMatrix(0.0) 
+        linear 3.09 zoom 0.5 matrixcolor InvertMatrix(0.0)*ContrastMatrix(1.5)*SaturationMatrix(1.0)*BrightnessMatrix(-0.5)*HueMatrix(0.0) 
+    with Pause(3.19)
+    show tll terrorlightz_scary_stay:
+        zoom 0.5 matrixcolor InvertMatrix(0.0)*ContrastMatrix(1.5)*SaturationMatrix(1.0)*BrightnessMatrix(-0.5)*HueMatrix(0.0) 
+    with Pause(3.19)
+    
+    with Pause(3.51)
+    camera:
+        zpos 0.0 
+    show bg_hut:
+        pos (0.8, 1.75) 
+
+    show tll terrorlightz_scary_stay:
+        subpixel True xzoom 1.0 yzoom 1.0 
+        zoom 1.0 matrixcolor InvertMatrix(0.0)*ContrastMatrix(1.5)*SaturationMatrix(1.0)*BrightnessMatrix(0.0)*HueMatrix(0.0) 
+        linear 3.09 zoom 0.5 matrixcolor InvertMatrix(0.0)*ContrastMatrix(1.5)*SaturationMatrix(1.0)*BrightnessMatrix(-0.5)*HueMatrix(0.0) 
+    with Pause(3.19)
+    show tll terrorlightz_scary_stay:
+        zoom 0.5 matrixcolor InvertMatrix(0.0)*ContrastMatrix(1.5)*SaturationMatrix(1.0)*BrightnessMatrix(-0.5)*HueMatrix(0.0) 
+    camera:
+        subpixel True 
+        zpos 0.0 
+        linear 0.65 zpos 0.0 
+    window auto show
+
+
+
+
     $LongNVLText(narrator_none, (
     '''\
 Why is this planet constantly trying to kill you? It would be nice to have one full day that wouldn’t require running for your life. 
     '''
     ))
+
+
+    window auto hide
+    camera:
+        subpixel True 
+        zpos 0.0 
+        linear 0.65 zpos 0.0 
+    show bg_hut:
+        subpixel True xpos 0.8 zoom 2.5 
+        ypos 1.75 
+        linear 0.19 ypos 2.0 
+        linear 0.19 ypos 1.75 
+        linear 0.21 ypos 2.0 
+        linear 0.20 ypos 1.75 
+        linear 0.21 ypos 2.0 
+        linear 0.18 ypos 1.75 
+        linear 0.20 ypos 2.0 
+        linear 0.22 ypos 1.75 
+        linear 0.19 ypos 2.0 
+        linear 0.22 ypos 1.75 
+        linear 0.21 ypos 2.0 
+        linear 0.21 ypos 1.75 
+        linear 0.23 ypos 2.0 
+        linear 0.25 ypos 1.75 
+        linear 0.24 ypos 2.0 
+        linear 0.26 ypos 1.75 
+    with Pause(3.51)
+    camera:
+        zpos 0.0 
+    show bg_hut:
+        pos (0.8, 1.75) 
+    window auto show
+
+
 
     $LongNVLText(narrator_none, (
     '''\
@@ -1747,11 +1826,44 @@ This feels worse than last night’s attack. Yesterday, you felt like you were t
     '''
     ))
 
+    window auto hide
+    show bg_hut with vpunch:
+        pos (0.65, 1.75) zpos 0.0 zoom 2.5 
+    window auto show
+    
     $LongNVLText(narrator_none, (
     '''\
-Your foot catches on a branch and you slide front first onto the ground. You taste mud as you grasp for a dry patch of ground for leverage, but you aren’t quick enough. Before you can process what was happening, you are being lifted off the ground by your shirt. 
+Your foot catches on a branch and you slide front first onto the ground. You taste mud as you grasp for a dry patch of ground for leverage, but you aren’t quick enough. 
     '''
     ))
+
+
+    window auto hide
+    show tll terrorlightz_scary_stay:
+        subpixel True pos (0.5, 1.0) xzoom 1.0 yzoom 1.0 
+        parallel:
+            blend 'normal' zoom 0.5 alpha 1.0 
+            linear 2.00 blend 'normal' zoom 1.0 alpha 1.0 
+        parallel:
+            matrixcolor InvertMatrix(0.0)*ContrastMatrix(1.5)*SaturationMatrix(1.0)*BrightnessMatrix(-0.5)*HueMatrix(0.0) 
+            linear 0.01 matrixcolor InvertMatrix(0.0)*ContrastMatrix(1.5)*SaturationMatrix(1.0)*BrightnessMatrix(-0.5)*HueMatrix(0.0) 
+            linear 1.99 matrixcolor InvertMatrix(0.0)*ContrastMatrix(1.5)*SaturationMatrix(1.0)*BrightnessMatrix(0.0)*HueMatrix(0.0) 
+    with Pause(2.10)
+    show tll terrorlightz_scary_stay:
+        blend 'normal' zoom 1.0 alpha 1.0 matrixcolor InvertMatrix(0.0)*ContrastMatrix(1.5)*SaturationMatrix(1.0)*BrightnessMatrix(0.0)*HueMatrix(0.0) 
+    window auto show
+
+    show protl protag_lookup_breathing_shocked:
+        subpixel True pos (-0.2, 0.5)
+
+    $LongNVLText(narrator_none, (
+    '''\
+Before you can process what was happening, you are being lifted off the ground by your shirt. 
+    '''
+    ))
+
+    show protl protag_scared_stay:
+        subpixel True pos (-0.2, 0.5)
 
     show tll terrorlightz_scary_stay_talking at center:
         subpixel True alpha 1.0 additive 0.0 
@@ -1777,7 +1889,7 @@ Using his available hand, Terrolightz reaches into his pocket to retrieve the mu
     '''
     ))
 
-    show protl protag_lookup_breathing_shocked:
+    show protl protag_scared_stay:
         subpixel True pos (-0.2, 0.5)
     
     $LongNVLText(narrator_none, (
@@ -1801,13 +1913,17 @@ With a final cackle, Terrorlightz shoves the mushroom into your mouth, holding i
     '''
     ))
 
+    show protl protag_scared with vpunch:
+        subpixel True pos (-0.2, 0.5)
+
     $LongNVLText(terrorlightz.c, (
     '''\
 Then suddenly, Terrolightz, just as easily as he picked you up, drops you to the ground and walks away, leaving you muddy and gasping for air. 
     '''
     ))
 
-
+    hide tll with dissolve
+    hide bg_hut with dissolve
 
     $LongNVLText(terrorlightz.c, (
     '''\
