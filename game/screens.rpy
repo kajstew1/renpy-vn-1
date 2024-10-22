@@ -137,6 +137,7 @@ style namebox_label is say_label
 style window:
     xalign 0.5
     xfill True
+    xanchor 0.5
     yanchor gui.textbox_yanchor  #added to control text box lower edge
     yalign gui.textbox_yalign
     ysize gui.textbox_height
@@ -146,8 +147,8 @@ style window:
     #background Image("gui/textbox.png", xalign=0.5, yalign=1.0)
     background ConditionSwitch(
             "preferences.font_size<=0.8", Image("gui/textbox_small.png"),
-            "preferences.font_size<=1.25", Image("gui/textbox_medium.png"),
-            "True", Image("gui/textbox_large.png")) 
+            "preferences.font_size<1.25", Image("gui/textbox_medium.png"),
+            "True", Image("gui/textbox_large.png"))
 
 style namebox:
     xpos gui.name_xpos
@@ -829,19 +830,40 @@ screen preferences():
                 spacing 5                    
                 style_prefix "radio"
                 #label _("Text Size Scaling")
-                label _("Text Size")
+                label _("Font Size")
 
-                textbutton "Small" action [Preference("font size", 0.8), gui.SetPreference("text_height", 185),
-                    gui.SetPreference("text_start", 400), gui.SetPreference("text_width", 950),
-                    gui.SetPreference("history_xpos", 170),gui.SetPreference("history_width", 740)]
+                textbutton "Small" action [Preference("font size", 0.8), gui.SetPreference("text_height", 85),
+                    gui.SetPreference("text_start", 380), gui.SetPreference("text_width", 1150),
+                    gui.SetPreference("history_xpos", 170),gui.SetPreference("history_width", 720)]
 
-                textbutton "Medium" action [Preference("font size", 1.0), gui.SetPreference("text_height", 180),
-                    gui.SetPreference("text_start", 402),gui.SetPreference("text_width", 1160),
+                textbutton "Medium" action [Preference("font size", 1.0), gui.SetPreference("text_height", 86),
+                    gui.SetPreference("text_start", 390),gui.SetPreference("text_width", 1160),
                     gui.SetPreference("history_xpos", 171),gui.SetPreference("history_width", 739)]
             
-                textbutton "Large" action [Preference("font size", 1.1), gui.SetPreference("text_height", 180),
-                    gui.SetPreference("text_start", 405),gui.SetPreference("text_width", 1166),
+                textbutton "Large" action [Preference("font size", 1.1), gui.SetPreference("text_height", 140),
+                    gui.SetPreference("text_start", 400),gui.SetPreference("text_width", 1166),
                     gui.SetPreference("history_xpos", 260),gui.SetPreference("history_width", 660)]
+                    
+                # textbutton "Small" action [Preference("font size", 0.8), 
+                #     gui.SetPreference("text_height", 186),
+                #     gui.SetPreference("text_start", 400), 
+                #     gui.SetPreference("text_width", 1160),
+                #     gui.SetPreference("history_xpos", 170),
+                #     gui.SetPreference("history_width", 740)]
+
+                # textbutton "Medium" action [Preference("font size", 1.0), 
+                #     gui.SetPreference("text_height", 190),
+                #     gui.SetPreference("text_start", 400),
+                #     gui.SetPreference("text_width", 1160),
+                #     gui.SetPreference("history_xpos", 171),
+                #     gui.SetPreference("history_width", 739)]
+            
+                # textbutton "Large" action [Preference("font size", 1.25), 
+                #     gui.SetPreference("text_height", 195),
+                #     gui.SetPreference("text_start", 400),
+                #     gui.SetPreference("text_width", 1166),
+                #     gui.SetPreference("history_xpos", 260),
+                #     gui.SetPreference("history_width", 660)]
                         
                 null height (4 * gui.pref_spacing)  
 
