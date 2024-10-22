@@ -137,14 +137,17 @@ style namebox_label is say_label
 style window:
     xalign 0.5
     xfill True
+    yanchor gui.textbox_yanchor  #added to control text box lower edge
     yalign gui.textbox_yalign
     ysize gui.textbox_height
 
-    yminimum gui.textbox_min
-
-    background Frame("gui/textbox.png", gui.textbox_borders)
-
+    #yminimum gui.textbox_min
+    #background Frame("gui/textbox.png", gui.textbox_borders)
     #background Image("gui/textbox.png", xalign=0.5, yalign=1.0)
+    background ConditionSwitch(
+            "preferences.font_size<=0.8", Image("gui/textbox_small.png"),
+            "preferences.font_size<=1.25", Image("gui/textbox_medium.png"),
+            "True", Image("gui/textbox_large.png")) 
 
 style namebox:
     xpos gui.name_xpos
@@ -807,24 +810,40 @@ screen preferences():
     use game_menu(_("Preferences"), scroll="viewport"):
 
         vbox:
-            
             vbox:
-                style_prefix "slider"
-                box_wrap True
-                xsize  400
-                spacing 5
-                label _("Text Size Scaling")
+                # text sizing options per https://lemmasoft.renai.us/forums/viewtopic.php?t=57217
+                # style_prefix "slider"
+                # box_wrap True
+                # xsize  400
+                # spacing 5
+                # label _("Text Size Scaling")
 
-                null height 10
+                # null height 10
 
-                bar value Preference("font size")
+                # bar value Preference("font size")
 
-                textbutton _("Reset"):
-                    action Preference("font size", 1.0)
-                                        
-                    
+                # textbutton _("Reset"):
+                #     action Preference("font size", 1.0)
                 
-            null height (4 * gui.pref_spacing)  
+                xsize  400
+                spacing 5                    
+                style_prefix "radio"
+                #label _("Text Size Scaling")
+                label _("Text Size")
+
+                textbutton "Small" action [Preference("font size", 0.8), gui.SetPreference("text_height", 185),
+                    gui.SetPreference("text_start", 400), gui.SetPreference("text_width", 950),
+                    gui.SetPreference("history_xpos", 170),gui.SetPreference("history_width", 740)]
+
+                textbutton "Medium" action [Preference("font size", 1.0), gui.SetPreference("text_height", 180),
+                    gui.SetPreference("text_start", 402),gui.SetPreference("text_width", 1160),
+                    gui.SetPreference("history_xpos", 171),gui.SetPreference("history_width", 739)]
+            
+                textbutton "Large" action [Preference("font size", 1.1), gui.SetPreference("text_height", 180),
+                    gui.SetPreference("text_start", 405),gui.SetPreference("text_width", 1166),
+                    gui.SetPreference("history_xpos", 260),gui.SetPreference("history_width", 660)]
+                        
+                null height (4 * gui.pref_spacing)  
 
 
 

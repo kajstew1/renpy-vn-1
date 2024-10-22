@@ -98,19 +98,25 @@ define gui.game_menu_background = "gui/game_menu.png"
 
 ## The height of the textbox containing dialogue.
 #define gui.textbox_height = 278
-define gui.textbox_height=None #resize automatically
-define gui.textbox_borders=Borders(50, 00, 50, 10) #size of corners
-define gui.textbox_min=185 #minimum height
+
+#text sizing with slider
+#define gui.textbox_height=None #resize automatically from https://lemmasoft.renai.us/forums/viewtopic.php?t=57217
+#define gui.textbox_borders=Borders(50, 00, 50, 10) #size of corners
+#define gui.textbox_min=185 #minimum height
+
+# text sizing with radio buttons from https://lemmasoft.renai.us/forums/viewtopic.php?t=57217
+define gui.textbox_height=gui.preference("text_height", 240) #the height of the text box image
 
 ## The placement of the textbox vertically on the screen. 0.0 is the top, 0.5 is
 ## center, and 1.0 is the bottom.
-define gui.textbox_yalign = 1.0
+define gui.textbox_yalign = .90
+define gui.textbox_yanchor = 1.0
 
 
 ## The placement of the speaking character's name, relative to the textbox.
 ## These can be a whole number of pixels from the left or top, or 0.5 to center.
 define gui.name_xpos = 360
-define gui.name_ypos = -25
+define gui.name_ypos = -10
 
 ## The horizontal alignment of the character's name. This can be 0.0 for left-
 ## aligned, 0.5 for centered, and 1.0 for right-aligned.
@@ -123,7 +129,7 @@ define gui.namebox_height = None
 
 ## The borders of the box containing the character's name, in left, top, right,
 ## bottom order.
-define gui.namebox_borders = Borders(30, 0, 30, 10)
+define gui.namebox_borders = Borders(30, 10, 30, 10)
 
 ## If True, the background of the namebox will be tiled, if False, the
 ## background of the namebox will be scaled.
@@ -133,14 +139,21 @@ define gui.namebox_tile = False
 ## The placement of dialogue relative to the textbox. These can be a whole
 ## number of pixels relative to the left or top side of the textbox, or 0.5 to
 ## center.
-define gui.dialogue_xpos = 402
+# text sizing with radio buttons from https://lemmasoft.renai.us/forums/viewtopic.php?t=57217
+#define gui.dialogue_xpos = 402
+define gui.dialogue_xpos=gui.preference("text_start", 502) #how far right into the textbox the dialogue starts
+
+## The maximum width of dialogue text, in pixels.
+# text sizing with radio buttons from https://lemmasoft.renai.us/forums/viewtopic.php?t=57217
+#define gui.dialogue_width = 1116
+define gui.dialogue_width=gui.preference("text_width", 1160) #how wide the dialogue is allowed to get
 
 #define gui.dialogue_ypos = 75
 define gui.dialogue_ypos= 10
 
 
-## The maximum width of dialogue text, in pixels.
-define gui.dialogue_width = 1116
+
+
 
 ## The horizontal alignment of the dialogue text. This can be 0.0 for left-
 ## aligned, 0.5 for centered, and 1.0 for right-aligned.
@@ -358,9 +371,15 @@ define gui.history_name_width = 233
 define gui.history_name_xalign = 1.0
 
 ## The position, width, and alignment of the dialogue text.
-define gui.history_text_xpos = 255
+# text sizing with radio buttons from https://lemmasoft.renai.us/forums/viewtopic.php?t=57217
+#define gui.history_text_xpos = 255
+define gui.history_text_xpos=gui.preference("history_xpos", 170) #where history dialogue starts
+
 define gui.history_text_ypos = 3
-define gui.history_text_width = 1110
+
+#define gui.history_text_width = 1110
+define gui.history_text_width=gui.preference("history_width", 740) #how wide history dialogue is
+
 define gui.history_text_xalign = 0.0
 
 
