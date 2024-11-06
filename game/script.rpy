@@ -85,6 +85,7 @@ label start:
     #with Pause(1)
     
     #return
+    $ persistent.is_new_game = False
     jump path_char_customization
     #jump path_choose_char
     #jump path_town_alley_again
@@ -277,15 +278,18 @@ label path_choose_pronoun:
 
 # not currently used
 label splashscreen2:
-    scene black
+    scene main_menu_background
+    show drp_logo
     
-    show drp_motions dr_p_breathing
-    #show mytext "What name would you like to use?"
-    $ player_name = renpy.input("What is your name?")
-    $ player_name = player_name.strip()
+    show screen main_menu
 
-    if player_name == "":
-        $ player_name="[player_name_default]"
+    #show drp_motions dr_p_breathing
+    #show mytext "What name would you like to use?"
+    # $ player_name = renpy.input("What is your name?")
+    # $ player_name = player_name.strip()
+
+    # if player_name == "":
+    #     $ player_name="[player_name_default]"
 
 
     # show mytext "So Start your journey now!"
