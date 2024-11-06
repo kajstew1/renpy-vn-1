@@ -4,7 +4,6 @@
 
 init offset = -1
 
-
 ################################################################################
 ## Styles
 ################################################################################
@@ -97,13 +96,37 @@ style frame:
 
 screen say(who, what):
     style_prefix "say"
+    default show_menutab = False
+    
+    #code for the slide out preferences
+    # showif show_menutab:
+    #     imagebutton xpos 1740 ypos 800 auto "gui/button/menutab_%s.png" action ToggleScreenVariable("show_menutab")
+    #     frame: 
+    #         background "gui/menutabbg.png"
+    #         xpos 1610
+    #         ypos 800
+    #         at popside
+    #         hbox:
+    #             spacing 15
+    #             vbox:
+    #                 spacing 15
+    #                 #imagebutton auto "gui/button/auto_%s.png" action Preference("auto-forward", "toggle") tooltip "Auto Advance" alt "Auto Forward"
+    #                 imagebutton auto "gui/button/menu_%s.png" action ShowMenu("preferences") tooltip "Menu" alt "Menu"
+    #             vbox:                
+    #                 #imagebutton auto "gui/log_%s.png" action ShowMenu("history") tooltip "History" alt "History"         
+    #                 null height 15
+    #                 showif persistent.times_beaten:
+    #                     imagebutton auto "gui/button/skip_%s.png" action Skip() tooltip "Skip Already-Seen Content" alt "Skip"
+                    
+    # else:
+    #     imagebutton xpos 1610 ypos 800 auto "gui/button/menutab_%s.png" action ToggleScreenVariable("show_menutab") keyboard_focus False
+
 
     window:
         id "window"
         has vbox
 
         if who is not None:
-
             window:
                 id "namebox"
                 style "namebox"
@@ -114,6 +137,9 @@ screen say(who, what):
         text what id "what"
         text " "
 
+    $ tooltip = GetTooltip()
+    if tooltip:
+        text "[tooltip]" italic True yalign 0.7 xalign .90
 
     ## If there's a side image, display it above the text. Do not display on the
     ## phone variant - there's no room.
@@ -135,7 +161,7 @@ style namebox_label is say_label
 
 
 style window:
-    xalign 0.5
+    xalign 0.53
     xfill True
     xanchor 0.5
     yanchor gui.textbox_yanchor  #added to control text box lower edge
@@ -289,6 +315,7 @@ screen quick_menu():
             textbutton _("Q.Save") action QuickSave()
             textbutton _("Q.Load") action QuickLoad()
             textbutton _("Prefs") action ShowMenu('preferences')
+            textbutton _("Quit") action Quit(confirm=not main_menu)
 
 
 ## This code ensures that the quick_menu screen is displayed in-game, whenever
@@ -330,7 +357,6 @@ screen navigation():
             yalign 1.0
             yoffset -50
             
-
             spacing gui.navigation_spacing
 
             if main_menu:
@@ -442,13 +468,14 @@ style hnavigation_button_text:
 ##
 ## https://www.renpy.org/doc/html/screen_special.html#main-menu
 
+
+
 screen main_menu():
 
     ## This ensures that any other menu screen is replaced.
     tag menu
 
-    add gui.main_menu_background
-    add "drp_logo"
+
 
     ## This empty frame darkens the main menu.
     #frame:
@@ -459,16 +486,60 @@ screen main_menu():
     ## contents of the main menu are in the navigation screen.
     use navigation
 
-    if gui.show_name:
+    # if not show_main:
+    #     add gui.main_menu_background
+    #     add "drp_logo"
+    #     #timer 40 action SetVariable('show_main', True)
+    #     hbox:
+    #         style_prefix "hnavigation"
+    #         #xpos gui.navigation_xpos
+    #         #yalign 0.5
+    #         xalign 0.5
+    #         yalign 1.0
+    #         yoffset -50
+    #         spacing 100 #gui.navigation_spacing
 
-        vbox:
-            style "main_menu_vbox"
+    #         # Start
+    #         # textbutton "Start":
+    #         #     xalign .5 
+    #         #     yalign .75 
+    #         #     action Start()
+    #         imagebutton auto "gui/button/start_%s.jpg":
+    #             xalign .5
+    #             yalign .75
+    #             focus_mask True  # in case any transparent pixels in image mask in the image box they are clickable
+    #             hovered SetVariable("screen_tooltip", "Start")
+    #             unhovered SetVariable("screen_tooltip", "")
+    #             action If ("start" in seen_labels, false=[Hide(None), None, Start()])
 
-            text "[config.name!t]":
-                style "main_menu_title"
+    #         # Main Menu
+    #         #textbutton "Main Menu":
+    #         # xalign .5 
+    #         # yalign .75 
+    #         # action [SetVariable('show_main', True), ShowMenu("main_menu")]
+    #         imagebutton auto "gui/button/main_%s.jpg":
+    #             xalign .5
+    #             yalign .75
+    #             focus_mask True  # in case any transparent pixels in image mask in the image box they are clickable
+    #             hovered SetVariable("screen_tooltip", "Main")
+    #             unhovered SetVariable("screen_tooltip", "")
+    #             action [SetVariable('show_main', True), ShowMenu("main_menu")]
+                
+    # else:
+    #     add gui.main_menu_background
+    #     add "drp_logo"
 
-            text "[config.version]":
-                style "main_menu_version"
+    #     use navigation()
+    #     if gui.show_name:
+
+    #         vbox:
+    #             style "main_menu_vbox"
+
+    #             text "[config.name!t]":
+    #                 style "main_menu_title"
+
+    #             text "[config.version]":
+    #                 style "main_menu_version"
 
 
 style main_menu_frame is empty
@@ -829,42 +900,21 @@ screen preferences():
                 xsize  400
                 spacing 5                    
                 style_prefix "radio"
-                #label _("Text Size Scaling")
-                label _("Font Size")
+                label _("Text Size")
+                #label _("Font Size")
 
-                textbutton "Small" action [Preference("font size", 0.8), gui.SetPreference("text_height", 85),
-                    gui.SetPreference("text_start", 380), gui.SetPreference("text_width", 1150),
+                textbutton "Small" action [Preference("font size", 0.8), gui.SetPreference("text_height", 60),
+                    gui.SetPreference("text_start", 370), gui.SetPreference("text_width", 1150),
                     gui.SetPreference("history_xpos", 170),gui.SetPreference("history_width", 720)]
 
-                textbutton "Medium" action [Preference("font size", 1.0), gui.SetPreference("text_height", 86),
-                    gui.SetPreference("text_start", 390),gui.SetPreference("text_width", 1160),
+                textbutton "Medium" action [Preference("font size", 1.0), gui.SetPreference("text_height", 130),
+                    gui.SetPreference("text_start", 360),gui.SetPreference("text_width", 1160),
                     gui.SetPreference("history_xpos", 171),gui.SetPreference("history_width", 739)]
             
-                textbutton "Large" action [Preference("font size", 1.1), gui.SetPreference("text_height", 140),
-                    gui.SetPreference("text_start", 400),gui.SetPreference("text_width", 1166),
+                textbutton "Large" action [Preference("font size", 1.25), gui.SetPreference("text_height", 160),
+                    gui.SetPreference("text_start", 350),gui.SetPreference("text_width", 1300),
                     gui.SetPreference("history_xpos", 260),gui.SetPreference("history_width", 660)]
                     
-                # textbutton "Small" action [Preference("font size", 0.8), 
-                #     gui.SetPreference("text_height", 186),
-                #     gui.SetPreference("text_start", 400), 
-                #     gui.SetPreference("text_width", 1160),
-                #     gui.SetPreference("history_xpos", 170),
-                #     gui.SetPreference("history_width", 740)]
-
-                # textbutton "Medium" action [Preference("font size", 1.0), 
-                #     gui.SetPreference("text_height", 190),
-                #     gui.SetPreference("text_start", 400),
-                #     gui.SetPreference("text_width", 1160),
-                #     gui.SetPreference("history_xpos", 171),
-                #     gui.SetPreference("history_width", 739)]
-            
-                # textbutton "Large" action [Preference("font size", 1.25), 
-                #     gui.SetPreference("text_height", 195),
-                #     gui.SetPreference("text_start", 400),
-                #     gui.SetPreference("text_width", 1166),
-                #     gui.SetPreference("history_xpos", 260),
-                #     gui.SetPreference("history_width", 660)]
-                        
                 null height (4 * gui.pref_spacing)  
 
 

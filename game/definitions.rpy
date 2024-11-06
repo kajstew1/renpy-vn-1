@@ -34,7 +34,90 @@ init python:
         else:
             return fallback
 
+init -100:
+
+    # to resize the main menu buttons
+    transform buttonZoom:
+        zoom .7
+
+    transform my_shake:
+        parallel:
+            easein 0.2 xoffset 0 yoffset 30
+            easeout 0.2 xoffset 0 yoffset -30
+            #linear 0.1 xoffset 0 yoffset 10
+            #linear 0.1 xoffset 0 yoffset -15
+            #linear 0.1 xoffset 0 yoffset 0
+            repeat 30
+        parallel:
+            linear 10 zoom 1.5
+
+    transform my_running:
+        parallel:
+            easein 0.2 xoffset 0 yoffset 30
+            easeout 0.2 xoffset 0 yoffset -30
+            #linear 0.1 xoffset 0 yoffset 10
+            #linear 0.1 xoffset 0 yoffset -15
+            #linear 0.1 xoffset 0 yoffset 0
+            repeat 30
+        parallel:
+            linear 10 zoom 1.5
+        parallel:
+            # take 1.3 seconds to move right edge of the image against the right edge of the screen
+            linear 1.3 xalign 0.9 yalign 0.9
+
+    transform my_bump:
+        easein 0.2 xoffset 0 yoffset 100
+        easeout 0.2 xoffset 0 yoffset -120
+        #linear 0.1 xoffset 0 yoffset 10
+        #linear 0.1 xoffset 0 yoffset -15
+        #linear 0.1 xoffset 0 yoffset 0
+        #repeat 10
+
+    transform my_walking:
+        parallel:
+            easein 0.4 xoffset 0 yoffset 30
+            easeout 0.4 xoffset 0 yoffset -30
+            #linear 0.1 xoffset 0 yoffset 10
+            #linear 0.1 xoffset 0 yoffset -15
+            #linear 0.1 xoffset 0 yoffset 0
+            repeat
+        parallel:
+            linear 10 zoom 1.5
+        #parallel:
+            #easein 4.0 crop (860, 430, 860, 600)
+
+    transform basic_fade:
+        on show:
+            alpha 0.0
+            linear 3.0 alpha 1.0
+        on hide:
+            alpha 1.0
+            linear 10.0 alpha 0.0
+  
+    transform basic_fade_out:
+        alpha 1.0
+        linear 1.0 alpha 0.0
+
+    transform basic_fade_in:
+        alpha 0.0
+        linear 1.0 alpha 1.0
+
+    transform exitright:
+        linear 3.0 xpos 1.5 xzoom -1.0
+
+ # Slide something in from the left, and slide it back to the left when it's hidden
+    transform popside:
+        # When it's shown, slide it right and fade it in.
+        on show:
+            xoffset -200.0  alpha 0.0 xzoom 0.1
+            linear 0.1 xoffset 0.0 alpha 1.0 xzoom 1.0
+
+        # When it's hidden, slide it left and fade it out.
+        on hide:
+            linear 0.1 xoffset -200.0 alpha 0.0 xzoom 0.1
+
 # variables
+default persistent.is_new_game = True
 default persistent.path_variables_set = False
 default persistent.path_to_hut_taken = False
 default persistent.path_to_town_taken = False
@@ -54,6 +137,9 @@ image black:
 image white:
     Solid("#FFF")
 
+
+image main_menu_background = "gui/main_menu.png"
+default show_main = False
 
 image img_cockpit = im.Scale("backgrounds/bg_cockpit.jpg", 1920, 1080)
 
