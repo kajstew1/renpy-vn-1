@@ -402,7 +402,6 @@ screen navigation():
             xpos gui.navigation_xpos
             yalign 0.5
             
-
             spacing gui.navigation_spacing
 
             if main_menu:

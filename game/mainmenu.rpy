@@ -61,15 +61,27 @@ init 1000:
 
                 #if main_menu: 
                 if not show_main:
-                    spacing 100
+                    #spacing 100
                     $ newest_game = renpy.newest_slot(regexp="[^_]")
 
                     if not persistent.is_new_game:
                         if renpy.can_load("quitsave"):
-                            textbutton _("Resume") action FileLoad("quitsave", slot=True) text_size 50
+                            #textbutton _("Resume") action FileLoad("quitsave", slot=True) text_size 50
+                            imagebutton auto "gui/button/resume_%s.jpg":
+                                focus_mask True  # in case any transparent pixels in image mask in the image box they are clickable
+                                # hovered SetVariable("screen_tooltip", "Resume")
+                                # unhovered SetVariable("screen_tooltip", "")
+                                at buttonZoom
+                                action FileLoad("quitsave", slot=True)
                         elif renpy.can_load(newest_game):
-                            textbutton _("Resume") action FileLoad(newest_game, slot=True) text_size 50
-                    
+                            #textbutton _("Resume") action FileLoad(newest_game, slot=True) text_size 50
+                            imagebutton auto "gui/button/resume_%s.jpg":
+                                focus_mask True  # in case any transparent pixels in image mask in the image box they are clickable
+                                # hovered SetVariable("screen_tooltip", "Resume")
+                                # unhovered SetVariable("screen_tooltip", "")
+                                at buttonZoom
+                                action FileLoad(newest_game, slot=True)
+
                     #textbutton _("Start") action Start()
                     # Start
                     # imagebutton auto "gui/button/start_%s.jpg":
@@ -79,18 +91,25 @@ init 1000:
                     #     at buttonZoom
                     #     action If ("start" in seen_labels, false=[Hide(None), None, Start()])
                     #textbutton _("New Game") action [SetVariable("persistent.is_new_game", False), Start()]  text_size 50
-                    textbutton _("New Game"):
-                        text_size 50
+                    # textbutton _("New Game"):
+                    #     text_size 50
+                    #     action Start()
+                    imagebutton auto "gui/button/start_%s.jpg":
+                        focus_mask True  # in case any transparent pixels in image mask in the image box they are clickable
+                        # hovered SetVariable("screen_tooltip", "Start")
+                        # unhovered SetVariable("screen_tooltip", "")
+                        at buttonZoom
                         action Start()
+
 
                     #textbutton _("Load") action ShowMenu("load")
                     # Load
                     imagebutton auto "gui/button/load_%s.jpg":
-                            focus_mask True  # in case any transparent pixels in image mask in the image box they are clickable
-                            # hovered SetVariable("screen_tooltip", "Load")
-                            # unhovered SetVariable("screen_tooltip", "")
-                            at buttonZoom
-                            action If ("load" in seen_labels, false=[Hide(None), None, ShowMenu("load")])
+                        focus_mask True  # in case any transparent pixels in image mask in the image box they are clickable
+                        # hovered SetVariable("screen_tooltip", "Load")
+                        # unhovered SetVariable("screen_tooltip", "")
+                        at buttonZoom
+                        action If ("load" in seen_labels, false=[Hide(None), None, ShowMenu("load")])
 
                 else:
 
@@ -140,10 +159,16 @@ init 1000:
                             # hovered SetVariable("screen_tooltip", "Quit")
                             # unhovered SetVariable("screen_tooltip", "")
                             at buttonZoom
-                            action If ("quit" in seen_labels, false=[Hide(None), None, Quit(confirm=not main_menu)])
-
-                    textbutton _("Return"):
-                        style "return_button"
+                            #action If ("quit" in seen_labels, false=[Hide(None), None, Quit(confirm=not main_menu)])
+                            action If ("quit" in seen_labels, false=Quit(confirm=not main_menu))
+                    # textbutton _("Return"):
+                    #     style "return_button"
+                    #     action [SetVariable('show_main', False), Return()]
+                    imagebutton auto "gui/button/return_%s.jpg":
+                        focus_mask True  # in case any transparent pixels in image mask in the image box they are clickable
+                        # hovered SetVariable("screen_tooltip", "Return")
+                        # unhovered SetVariable("screen_tooltip", "")
+                        at buttonZoom
                         action [SetVariable('show_main', False), Return()]
                 else:
                     # Main Menu
