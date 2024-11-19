@@ -1926,30 +1926,40 @@ Then suddenly, Terrolightz, just as easily as he picked you up, drops you to the
     '''
     ))
 
-window auto hide
+    hide tll with dissolve
+    hide bg_hut with dissolve
+    hide protl
+    
+    window auto hide
+    camera:
+        subpixel True zpos 0.0 
+        matrixcolor InvertMatrix(0.0)*ContrastMatrix(2.0)*SaturationMatrix(1.5)*BrightnessMatrix(0.0)*HueMatrix(0.0) 
     show bg_abstract1:
-        subpixel True xpos 0.5 zpos 0.0 xzoom 1.0 additive 0.0 matrixcolor InvertMatrix(0.0)*ContrastMatrix(2.0)*SaturationMatrix(1.5)*BrightnessMatrix(0.0)*HueMatrix(0.0) 
+        subpixel True 
         parallel:
-            ypos 1.0 
-            linear 3.01 ypos 1.25 
-            linear 3.34 ypos 1.0 
+            xpos 0 
+            linear 1.41 xpos 15 
+            linear 1.58 xpos 0 
+            linear 1.69 xpos 15 
+            linear 1.69 xpos 0 
         parallel:
-            zoom 1.5 
-            linear 0.88 zoom 1.5 
+            xzoom 1.0 yzoom 1.0 zoom 1.0 
+            linear 0.01 xzoom 1.0 yzoom 1.0 zoom 1.0 
         parallel:
             blur 2.0 
-            linear 0.71 blur 2.0 
-            linear 0.88 blur 15.0 
-            linear 0.81 blur 2.0 
-            linear 0.84 blur 1.0 
-            linear 0.77 blur 15.0 
-            linear 0.80 blur 2.0 
-            linear 0.85 blur 0.0 
-    with Pause(6.45)
+            linear 0.85 blur 2.0 
+            linear 0.46 blur 10.0 
+            linear 0.37 blur 2.0 
+            linear 1.63 blur 2.0 
+            linear 0.34 blur 15.0 
+            linear 0.33 blur 2.0 
+            linear 1.16 blur 2.0 
+            linear 0.38 blur 15.0 
+            linear 0.33 blur 2.0 
+    with Pause(6.47)
     show bg_abstract1:
-        pos (0.5, 1.0) zoom 1.5 blur 0.0 
+        xpos 0 xzoom 1.0 yzoom 1.0 zoom 1.0 blur 2.0 
     window auto show
-
 
     $LongNVLText(terrorlightz.c, (
     '''\
@@ -1957,7 +1967,43 @@ Your consciousness fades as you enter a dream state. Your vision fills with abst
     '''
     ))
 
+    window auto hide
+    camera:
+        subpixel True zpos 0.0 
+        matrixcolor InvertMatrix(0.0)*ContrastMatrix(2.0)*SaturationMatrix(1.5)*BrightnessMatrix(0.0)*HueMatrix(0.0) 
+    show bg_abstract1:
+        subpixel True 
+        parallel:
+            xpos 0 
+            linear 1.41 xpos 15 
+            linear 1.58 xpos 0 
+            linear 1.69 xpos 15 
+            linear 1.69 xpos 0 
+        parallel:
+            xzoom 1.0 yzoom 1.0 zoom 1.0 
+            linear 0.01 xzoom 1.0 yzoom 1.0 zoom 1.0 
+        parallel:
+            blur 2.0 
+            linear 0.85 blur 2.0 
+            linear 0.46 blur 10.0 
+            linear 0.37 blur 2.0 
+            linear 1.63 blur 2.0 
+            linear 0.34 blur 15.0 
+            linear 0.33 blur 2.0 
+            linear 1.16 blur 2.0 
+            linear 0.38 blur 15.0 
+            linear 0.33 blur 2.0 
+            repeat
+    with Pause(6.47)
+    show bg_abstract1:
+        xpos 0 xzoom 1.0 yzoom 1.0 zoom 1.0 blur 2.0 
+    window auto show
 
+    hide bg_abstract1 with dissolve
+    pause 0.5
+    show bg_abstract2 with dissolve
+    hide bg_abstract2 with dissolve
+    show bg_abstract1 with dissolve
 
 
     $LongNVLText(terrorlightz.c, (
@@ -1966,11 +2012,42 @@ Thoughts and feelings that aren’t your own come through all at once in diverse
     '''
     ))
 
+    hide bg_abstract1 with dissolve
+    pause 0.5
+    show bg_abstract2 with dissolve
+    hide bg_abstract2 with dissolve
+    show bg_abstract1 with dissolve
+    hide bg_abstract1 with dissolve
+    show bg_abstract2 with dissolve
+    hide bg_abstract2 with dissolve
+    show bg_abstract1 with dissolve
+    hide bg_abstract1 with dissolve
+
+    window auto hide
+    show bg_escapepod:
+        subpixel True alpha 1.0 
+        parallel:
+            blur 20.0 
+            linear 0.28 blur 12.0 
+            linear 0.27 blur 20.0 
+            linear 0.50 blur 10.0 
+            linear 1.01 blur 0.0 
+        parallel:
+            matrixcolor InvertMatrix(0.0)*ContrastMatrix(2.0)*SaturationMatrix(1.5)*BrightnessMatrix(0.0)*HueMatrix(0.0) 
+            linear 0.66 matrixcolor InvertMatrix(0.0)*ContrastMatrix(2.0)*SaturationMatrix(1.0)*BrightnessMatrix(0.0)*HueMatrix(0.0) 
+            linear 1.11 matrixcolor InvertMatrix(0.0)*ContrastMatrix(2.0)*SaturationMatrix(1.0)*BrightnessMatrix(0.0)*HueMatrix(0.0) 
+    with Pause(2.16)
+    show bg_escapepod:
+        blur 0.0 matrixcolor InvertMatrix(0.0)*ContrastMatrix(2.0)*SaturationMatrix(1.0)*BrightnessMatrix(0.0)*HueMatrix(0.0) 
+    window auto show
+
     $LongNVLText(terrorlightz.c, (
     '''\
 The geometric shapes start to shrink and organize themselves into what appears to be an image. After it takes shape, you recognize the image as a snapshot of a ship. 
     '''
     ))
+
+    
 
     $LongNVLText(terrorlightz.c, (
     '''\
