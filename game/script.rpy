@@ -1926,14 +1926,39 @@ Then suddenly, Terrolightz, just as easily as he picked you up, drops you to the
     '''
     ))
 
-    hide tll with dissolve
-    hide bg_hut with dissolve
+window auto hide
+    show bg_abstract1:
+        subpixel True xpos 0.5 zpos 0.0 xzoom 1.0 additive 0.0 matrixcolor InvertMatrix(0.0)*ContrastMatrix(2.0)*SaturationMatrix(1.5)*BrightnessMatrix(0.0)*HueMatrix(0.0) 
+        parallel:
+            ypos 1.0 
+            linear 3.01 ypos 1.25 
+            linear 3.34 ypos 1.0 
+        parallel:
+            zoom 1.5 
+            linear 0.88 zoom 1.5 
+        parallel:
+            blur 2.0 
+            linear 0.71 blur 2.0 
+            linear 0.88 blur 15.0 
+            linear 0.81 blur 2.0 
+            linear 0.84 blur 1.0 
+            linear 0.77 blur 15.0 
+            linear 0.80 blur 2.0 
+            linear 0.85 blur 0.0 
+    with Pause(6.45)
+    show bg_abstract1:
+        pos (0.5, 1.0) zoom 1.5 blur 0.0 
+    window auto show
+
 
     $LongNVLText(terrorlightz.c, (
     '''\
 Your consciousness fades as you enter a dream state. Your vision fills with abstract, colorful shapes that gently pulsate and come in and out of focus. You aren’t an individual anymore, you are part of a singularity. 
     '''
     ))
+
+
+
 
     $LongNVLText(terrorlightz.c, (
     '''\
