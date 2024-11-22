@@ -1895,7 +1895,8 @@ Using his available hand, Terrolightz reaches into his pocket to retrieve the mu
 
     show protl protag_scared_stay:
         subpixel True pos (-0.2, 0.5)
-    
+    window auto hide
+
     $LongNVLText(narrator_none, (
     '''\
 Your eyes grow wide when you realize that you don’t have a choice in this matter anymore. It’s dinner time. 
@@ -1905,11 +1906,12 @@ Your eyes grow wide when you realize that you don’t have a choice in this matt
     show protl protag_scared:
         subpixel True pos (-0.2, 0.5)
 
+    window auto show
     show tll terrorlightz_laughing at center:
         subpixel True alpha 1.0 additive 0.0 
         matrixcolor InvertMatrix(0.0)*ContrastMatrix(1.5)*SaturationMatrix(1.0)*BrightnessMatrix(0.0)*HueMatrix(0.0) 
         linear 0.01 matrixcolor InvertMatrix(0.0)*ContrastMatrix(1.5)*SaturationMatrix(1.0)*BrightnessMatrix(0.0)*HueMatrix(0.0)  
-
+    window auto hide
 
     $LongNVLText(terrorlightz.c, (
     '''\
@@ -1919,6 +1921,7 @@ With a final cackle, Terrorlightz shoves the mushroom into your mouth, holding i
 
     show protl protag_scared with vpunch:
         subpixel True pos (-0.2, 0.5)
+    window auto hide
 
     $LongNVLText(terrorlightz.c, (
     '''\
@@ -1934,32 +1937,9 @@ Then suddenly, Terrolightz, just as easily as he picked you up, drops you to the
     camera:
         subpixel True zpos 0.0 
         matrixcolor InvertMatrix(0.0)*ContrastMatrix(2.0)*SaturationMatrix(1.5)*BrightnessMatrix(0.0)*HueMatrix(0.0) 
-    show bg_abstract1:
-        subpixel True 
-        parallel:
-            xpos 0 
-            linear 1.41 xpos 15 
-            linear 1.58 xpos 0 
-            linear 1.69 xpos 15 
-            linear 1.69 xpos 0 
-        parallel:
-            xzoom 1.0 yzoom 1.0 zoom 1.0 
-            linear 0.01 xzoom 1.0 yzoom 1.0 zoom 1.0 
-        parallel:
-            blur 2.0 
-            linear 0.85 blur 2.0 
-            linear 0.46 blur 10.0 
-            linear 0.37 blur 2.0 
-            linear 1.63 blur 2.0 
-            linear 0.34 blur 15.0 
-            linear 0.33 blur 2.0 
-            linear 1.16 blur 2.0 
-            linear 0.38 blur 15.0 
-            linear 0.33 blur 2.0 
-    with Pause(6.47)
-    show bg_abstract1:
-        xpos 0 xzoom 1.0 yzoom 1.0 zoom 1.0 blur 2.0 
-    window auto show
+    scene black
+    show bg_abstract1 at abstract_scene
+    pause 5.0
 
     $LongNVLText(terrorlightz.c, (
     '''\
@@ -1971,39 +1951,27 @@ Your consciousness fades as you enter a dream state. Your vision fills with abst
     camera:
         subpixel True zpos 0.0 
         matrixcolor InvertMatrix(0.0)*ContrastMatrix(2.0)*SaturationMatrix(1.5)*BrightnessMatrix(0.0)*HueMatrix(0.0) 
-    show bg_abstract1:
-        subpixel True 
-        parallel:
-            xpos 0 
-            linear 1.41 xpos 15 
-            linear 1.58 xpos 0 
-            linear 1.69 xpos 15 
-            linear 1.69 xpos 0 
-        parallel:
-            xzoom 1.0 yzoom 1.0 zoom 1.0 
-            linear 0.01 xzoom 1.0 yzoom 1.0 zoom 1.0 
-        parallel:
-            blur 2.0 
-            linear 0.85 blur 2.0 
-            linear 0.46 blur 10.0 
-            linear 0.37 blur 2.0 
-            linear 1.63 blur 2.0 
-            linear 0.34 blur 15.0 
-            linear 0.33 blur 2.0 
-            linear 1.16 blur 2.0 
-            linear 0.38 blur 15.0 
-            linear 0.33 blur 2.0 
-            repeat
-    with Pause(6.47)
-    show bg_abstract1:
-        xpos 0 xzoom 1.0 yzoom 1.0 zoom 1.0 blur 2.0 
-    window auto show
+    scene black
+    show bg_abstract1 at abstract_scene
 
-    hide bg_abstract1 with dissolve
-    pause 0.5
+    #show bg_abstract1:
+        #xpos 0 xzoom 1.0 yzoom 1.0 zoom 1.0 blur 2.0 
+
+    scene black
+    show bg_abstract1 at abstract_scene
+    pause .5
     show bg_abstract2 with dissolve
+    pause .5
     hide bg_abstract2 with dissolve
-    show bg_abstract1 with dissolve
+    pause .5
+    scene black
+    show bg_abstract1 at abstract_scene
+    
+    #hide bg_abstract1 with dissolve
+    #pause 0.5
+    #show bg_abstract2 with dissolve
+    #hide bg_abstract2 with dissolve
+    #show bg_abstract1 with dissolve
 
 
     $LongNVLText(terrorlightz.c, (
@@ -2039,7 +2007,6 @@ Thoughts and feelings that aren’t your own come through all at once in diverse
     with Pause(2.16)
     show bg_escapepod:
         blur 0.0 matrixcolor InvertMatrix(0.0)*ContrastMatrix(2.0)*SaturationMatrix(1.0)*BrightnessMatrix(0.0)*HueMatrix(0.0) 
-    window auto show
 
     $LongNVLText(terrorlightz.c, (
     '''\

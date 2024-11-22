@@ -105,6 +105,31 @@ init -100:
     transform exitright:
         linear 3.0 xpos 1.5 xzoom -1.0
 
+    transform abstract_scene: 
+        subpixel True 
+        parallel:
+            xpos 0 
+            linear 1.41 xpos 15 
+            linear 1.58 xpos 0 
+            linear 1.69 xpos 15 
+            linear 1.69 xpos 0 
+        parallel:
+            xzoom 1.0 yzoom 1.0 zoom 1.0 
+            linear 0.01 xzoom 1.0 yzoom 1.0 zoom 1.0 
+        parallel:
+            blur 2.0 
+            linear 0.85 blur 2.0 
+            linear 0.46 blur 10.0 
+            linear 0.37 blur 2.0 
+            linear 1.63 blur 2.0 
+            linear 0.34 blur 15.0 
+            linear 0.33 blur 2.0 
+            linear 1.16 blur 2.0 
+            linear 0.38 blur 15.0 
+            linear 0.33 blur 2.0
+        repeat
+    #with Pause(6.47)
+
  # Slide something in from the left, and slide it back to the left when it's hidden
     transform popside:
         # When it's shown, slide it right and fade it in.
