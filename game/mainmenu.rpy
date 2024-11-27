@@ -197,7 +197,7 @@ init 1000:
                 
 
                 spacing gui.navigation_spacing
-
+                
                 if main_menu:
 
                     textbutton _("Start") action Start()
@@ -221,7 +221,7 @@ init 1000:
                 elif not main_menu:
 
                     #textbutton _("Main Menu") action MainMenu()
-                    textbutton _("Main Menu") action [SetVariable('show_main', True), ShowMenu("main_menu")]
+                    textbutton _("Main Menu") action [SetVariable('show_main', False), ShowMenu("main_menu")]
 
                 textbutton _("About") action ShowMenu("about")
 
