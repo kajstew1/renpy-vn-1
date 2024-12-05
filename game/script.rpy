@@ -786,6 +786,7 @@ You wish you had trained harder when you had the chance. You barely made the cut
     '''
     ))
 
+
     $LongNVLText(narrator, (
     '''\
 You curse your past self as you choke on your ragged breaths, involuntarily running in a zigzag pattern as you spare yourself a few glances behind you. With the lack of regular exercise, your feet threaten to trip on themselves at any moment as your hands desperately search for any sort of leverage point to pull yourself quicker to your destination. 
@@ -1913,7 +1914,7 @@ Your eyes grow wide when you realize that you don’t have a choice in this matt
         linear 0.01 matrixcolor InvertMatrix(0.0)*ContrastMatrix(1.5)*SaturationMatrix(1.0)*BrightnessMatrix(0.0)*HueMatrix(0.0)  
     window auto hide
 
-    $LongNVLText(terrorlightz.c, (
+    $LongNVLText(narrator_none, (
     '''\
 With a final cackle, Terrorlightz shoves the mushroom into your mouth, holding it closed until you finally swallow. 
     '''
@@ -1923,7 +1924,7 @@ With a final cackle, Terrorlightz shoves the mushroom into your mouth, holding i
         subpixel True pos (-0.2, 0.5)
     window auto hide
 
-    $LongNVLText(terrorlightz.c, (
+    $LongNVLText(narrator_none, (
     '''\
 Then suddenly, Terrolightz, just as easily as he picked you up, drops you to the ground and walks away, leaving you muddy and gasping for air. 
     '''
@@ -1941,7 +1942,7 @@ Then suddenly, Terrolightz, just as easily as he picked you up, drops you to the
     show bg_abstract1 at abstract_scene
     pause 5.0
 
-    $LongNVLText(terrorlightz.c, (
+    $LongNVLText(narrator_none, (
     '''\
 Your consciousness fades as you enter a dream state. Your vision fills with abstract, colorful shapes that gently pulsate and come in and out of focus. You aren’t an individual anymore, you are part of a singularity. 
     '''
@@ -1974,7 +1975,7 @@ Your consciousness fades as you enter a dream state. Your vision fills with abst
     #show bg_abstract1 with dissolve
 
 
-    $LongNVLText(terrorlightz.c, (
+    $LongNVLText(narrator_none, (
     '''\
 Thoughts and feelings that aren’t your own come through all at once in diverse pitch and tone. The senseless gibberish is impossible to describe, but you understand that it is trying to communicate with you. 
     '''
@@ -1991,8 +1992,10 @@ Thoughts and feelings that aren’t your own come through all at once in diverse
     show bg_abstract1 with dissolve
     hide bg_abstract1 with dissolve
 
+    scene black
+    
     window auto hide
-    show bg_escapepod:
+    show bg_newcockpit:
         subpixel True alpha 1.0 
         parallel:
             blur 20.0 
@@ -2005,48 +2008,92 @@ Thoughts and feelings that aren’t your own come through all at once in diverse
             linear 0.66 matrixcolor InvertMatrix(0.0)*ContrastMatrix(2.0)*SaturationMatrix(1.0)*BrightnessMatrix(0.0)*HueMatrix(0.0) 
             linear 1.11 matrixcolor InvertMatrix(0.0)*ContrastMatrix(2.0)*SaturationMatrix(1.0)*BrightnessMatrix(0.0)*HueMatrix(0.0) 
     with Pause(2.16)
-    show bg_escapepod:
+    show bg_newcockpit:
         blur 0.0 matrixcolor InvertMatrix(0.0)*ContrastMatrix(2.0)*SaturationMatrix(1.0)*BrightnessMatrix(0.0)*HueMatrix(0.0) 
 
-    $LongNVLText(terrorlightz.c, (
+    $LongNVLText(narrator_none, (
     '''\
 The geometric shapes start to shrink and organize themselves into what appears to be an image. After it takes shape, you recognize the image as a snapshot of a ship. 
     '''
     ))
 
-    
+    window auto hide
+    show bg_newcockpit:
+        subpixel True 
+        parallel:
+            alpha 1.0 
+            linear 0.01 alpha 1.0 
+        parallel:
+            matrixcolor InvertMatrix(0.0)*ContrastMatrix(2.0)*SaturationMatrix(1.0)*BrightnessMatrix(0.0)*HueMatrix(0.0) 
+            linear 0.01 matrixcolor InvertMatrix(0.0)*ContrastMatrix(2.0)*SaturationMatrix(1.0)*BrightnessMatrix(0.0)*HueMatrix(0.0) 
+            linear 1.95 matrixcolor InvertMatrix(0.0)*ContrastMatrix(0.65)*SaturationMatrix(0.5)*BrightnessMatrix(0.0)*HueMatrix(0.0) 
+    with Pause(2.06)
+    show bg_newcockpit:
+        alpha 1.0 matrixcolor InvertMatrix(0.0)*ContrastMatrix(0.65)*SaturationMatrix(0.5)*BrightnessMatrix(0.0)*HueMatrix(0.0) 
 
-    $LongNVLText(terrorlightz.c, (
+
+    $LongNVLText(narrator_none, (
     '''\
 Wait. Is that your ship? 
     '''
     ))
 
-    $LongNVLText(terrorlightz.c, (
+
+    window auto hide
+    show bg_newcockpit:
+        subpixel True 
+        xzoom 1.0 yzoom 1.0 zoom 1.0 
+        linear 1.25 xzoom 0.9 yzoom 0.9 zoom 1.2 
+    with Pause(1.35)
+    show bg_newcockpit:
+        xzoom 0.9 yzoom 0.9 zoom 1.2 
+
+
+    $LongNVLText(narrator_none, (
     '''\
 You focus closer in on the front console. On the captain's chair, you recognize the cheap, worn black leather with a sharp gash in the back and the rusty gear shifts positioned directly alongside it. After confirming the most familiar part of the ship, you inspect the rest of the vessel. 
     '''
     ))
 
-    $LongNVLText(terrorlightz.c, (
+    $LongNVLText(narrator_none, (
     '''\
 You can barely believe it. This is your ship!
     '''
     ))
 
-    $LongNVLText(terrorlightz.c, (
+    show bg_newcockpit with vpunch 
+    
+    window auto hide
+    show protl protag_breathing onlayer character:
+        subpixel True alpha 1.0 additive 0.0 blur 0.0 matrixcolor InvertMatrix(0.0)*ContrastMatrix(1.0)*SaturationMatrix(1.0)*BrightnessMatrix(-0.8)*HueMatrix(0.0) blend 'normal' 
+        subpixel True xpos .4 ypos 1 zoom 0.7 
+        subpixel True ypos 1 
+        xpos -0.35 
+        linear 0.82 xpos 0.4 
+        subpixel True xpos .4 ypos 1 zoom 0.7 
+    with Pause(0.92)
+    show protl protag_breathing onlayer character:
+        pos (0.4, 1) 
+
+    $LongNVLText(narrator_none, (
     '''\
 You startle when a figure passes through you and sits in the captain’s chair. Even more so when you realize it is you. 
     '''
     ))
 
-    $LongNVLText(terrorlightz.c, (
+
+    show protl protag_breathing onlayer character:
+        subpixel True alpha 1.0 additive 0.0 blur 0.0 matrixcolor InvertMatrix(0.0)*ContrastMatrix(1.0)*SaturationMatrix(1.0)*BrightnessMatrix(-0.8)*HueMatrix(0.0) blend 'normal' 
+        subpixel True xpos .4 ypos 1 zoom 0.7 
+
+
+    $LongNVLText(narrator_none, (
     '''\
 Was this some sort of a test? Memory? Dream? Parallel universe? You have no idea. 
     '''
     ))
 
-    $LongNVLText(terrorlightz.c, (
+    $LongNVLText(narrator_none, (
     '''\
 A disembodied voice snaps into existence. “Captain, we know it’s your birthday today, so the crew put together a little something for you.” 
     '''
