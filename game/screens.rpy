@@ -427,6 +427,8 @@ screen navigation():
             elif not main_menu:
 
                 textbutton _("Main Menu") action MainMenu()
+                #textbutton _("Main Menu") action [SetVariable('show_main', False), MainMenu()]
+                #textbutton _("Main Menu") action [SetVariable('show_main', False), ShowMenu("main_menu")]
 
             textbutton _("About") action ShowMenu("about")
 
@@ -911,7 +913,7 @@ screen preferences():
                     gui.SetPreference("history_xpos", 171),gui.SetPreference("history_width", 739)]
             
                 textbutton "Large" action [Preference("font size", 1.25), gui.SetPreference("text_height", 160),
-                    gui.SetPreference("text_start", 350),gui.SetPreference("text_width", 1300),
+                    gui.SetPreference("text_start", 350),gui.SetPreference("text_width", 1200),
                     gui.SetPreference("history_xpos", 260),gui.SetPreference("history_width", 660)]
                     
                 null height (4 * gui.pref_spacing)  
