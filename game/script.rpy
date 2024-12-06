@@ -2064,7 +2064,7 @@ You can barely believe it. This is your ship!
     show bg_newcockpit with vpunch 
     
     window auto hide
-    show protl protag_breathing onlayer character:
+    show protl protag_breathing onlayer transient:
         subpixel True alpha 1.0 additive 0.0 blur 0.0 matrixcolor InvertMatrix(0.0)*ContrastMatrix(1.0)*SaturationMatrix(1.0)*BrightnessMatrix(-0.8)*HueMatrix(0.0) blend 'normal' 
         subpixel True xpos .4 ypos 1 zoom 0.7 
         subpixel True ypos 1 
@@ -2072,8 +2072,9 @@ You can barely believe it. This is your ship!
         linear 0.82 xpos 0.4 
         subpixel True xpos .4 ypos 1 zoom 0.7 
     with Pause(0.92)
-    show protl protag_breathing onlayer character:
-        pos (0.4, 1) 
+    show protl protag_breathing onlayer transient:
+        subpixel True alpha 1.0 additive 0.0 blur 0.0 matrixcolor InvertMatrix(0.0)*ContrastMatrix(1.0)*SaturationMatrix(1.0)*BrightnessMatrix(-0.8)*HueMatrix(0.0) blend 'normal' 
+        subpixel True xpos .4 ypos 1 zoom 0.7 
 
     $LongNVLText(narrator_none, (
     '''\
@@ -2081,8 +2082,7 @@ You startle when a figure passes through you and sits in the captain’s chair. 
     '''
     ))
 
-
-    show protl protag_breathing onlayer character:
+    show protl protag_breathing onlayer transient:
         subpixel True alpha 1.0 additive 0.0 blur 0.0 matrixcolor InvertMatrix(0.0)*ContrastMatrix(1.0)*SaturationMatrix(1.0)*BrightnessMatrix(-0.8)*HueMatrix(0.0) blend 'normal' 
         subpixel True xpos .4 ypos 1 zoom 0.7 
 
