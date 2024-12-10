@@ -2061,6 +2061,7 @@ You can barely believe it. This is your ship!
     '''
     ))
 
+
     show bg_newcockpit with vpunch 
     
     window auto hide
@@ -2093,79 +2094,226 @@ Was this some sort of a test? Memory? Dream? Parallel universe? You have no idea
     '''
     ))
 
+    show protl protag_breathing onlayer transient:
+        subpixel True alpha 1.0 additive 0.0 blur 0.0 matrixcolor InvertMatrix(0.0)*ContrastMatrix(1.0)*SaturationMatrix(1.0)*BrightnessMatrix(-0.8)*HueMatrix(0.0) blend 'normal' 
+        subpixel True xpos .4 ypos 1 zoom 0.7
+
+    show protl protag_breathing onlayer character:
+        subpixel True alpha 1.0 additive 0.0 blur 0.0 matrixcolor InvertMatrix(0.0)*ContrastMatrix(2.0)*SaturationMatrix(1.0)*BrightnessMatrix(-0.8)*HueMatrix(0.0) blend 'normal' 
+        subpixel True xpos .1 ypos 1 zoom 0.7
+
+
     $LongNVLText(narrator_none, (
     '''\
 A disembodied voice snaps into existence. “Captain, we know it’s your birthday today, so the crew put together a little something for you.” 
     '''
     ))
 
-    $LongNVLText(terrorlightz.c, (
+    show protl protag_breathing onlayer transient:
+        subpixel True alpha 1.0 additive 0.0 blur 0.0 matrixcolor InvertMatrix(0.0)*ContrastMatrix(1.0)*SaturationMatrix(1.0)*BrightnessMatrix(-0.8)*HueMatrix(0.0) blend 'normal' 
+        subpixel True xpos .4 ypos 1 zoom 0.7
+
+    show protl protag_breathing onlayer character:
+        subpixel True alpha 1.0 additive 0.0 blur 0.0 matrixcolor InvertMatrix(0.0)*ContrastMatrix(2.0)*SaturationMatrix(1.0)*BrightnessMatrix(-0.8)*HueMatrix(0.0) blend 'normal' 
+        subpixel True xpos .1 ypos 1 zoom 0.7
+
+    $LongNVLText(narrator_none, (
     '''\
 Was that Jack? You couldn’t tell, you are still the only visible figure in the room. 
     '''
     ))
 
-    $LongNVLText(terrorlightz.c, (
+    show protl protag_breathing onlayer transient:
+        subpixel True alpha 1.0 additive 0.0 blur 0.0 matrixcolor InvertMatrix(0.0)*ContrastMatrix(1.0)*SaturationMatrix(1.0)*BrightnessMatrix(-0.8)*HueMatrix(0.0) blend 'normal' 
+        subpixel True xpos .4 ypos 1 zoom 0.7
+
+    show protl protag_breathing onlayer character:
+        subpixel True alpha 1.0 additive 0.0 blur 0.0 matrixcolor InvertMatrix(0.0)*ContrastMatrix(2.0)*SaturationMatrix(1.0)*BrightnessMatrix(-0.8)*HueMatrix(0.0) blend 'normal' 
+        subpixel True xpos .1 ypos 1 zoom 0.7
+
+    $LongNVLText(narrator_none, (
     '''\
 Your past self sat with hunched shoulders, looking in the opposite direction. In a monotone voice, you said, “Did you really?” 
     '''
     ))
 
-    $LongNVLText(terrorlightz.c, (
+    show protl protag_breathing onlayer transient:
+        subpixel True alpha 1.0 additive 0.0 blur 0.0 matrixcolor InvertMatrix(0.0)*ContrastMatrix(1.0)*SaturationMatrix(1.0)*BrightnessMatrix(-0.8)*HueMatrix(0.0) blend 'normal' 
+        subpixel True xpos .4 ypos 1 zoom 0.7
+
+    show protl protag_breathing onlayer character:
+        subpixel True alpha 1.0 additive 0.0 blur 0.0 matrixcolor InvertMatrix(0.0)*ContrastMatrix(2.0)*SaturationMatrix(1.0)*BrightnessMatrix(-0.8)*HueMatrix(0.0) blend 'normal' 
+        subpixel True xpos .1 ypos 1 zoom 0.7
+
+    $LongNVLText(narrator_none, (
     '''\
 Jack’s voice changed to a higher, more confident pitch. “Of course, you are our captain afterall.” 
     '''
     ))
 
-    $LongNVLText(terrorlightz.c, (
+    show protl protag_scared_stay onlayer transient:
+        subpixel True alpha 1.0 additive 0.0 blur 0.0 matrixcolor InvertMatrix(0.0)*ContrastMatrix(1.0)*SaturationMatrix(1.0)*BrightnessMatrix(-0.8)*HueMatrix(0.0) blend 'normal' 
+        subpixel True xpos .4 ypos 1 zoom 0.7
+
+    show protl protag_breathing onlayer character:
+        subpixel True alpha 1.0 additive 0.0 blur 0.0 matrixcolor InvertMatrix(0.0)*ContrastMatrix(2.0)*SaturationMatrix(1.0)*BrightnessMatrix(-0.8)*HueMatrix(0.0) blend 'normal' 
+        subpixel True xpos .1 ypos 1 zoom 0.7
+
+    $LongNVLText(narrator_none, (
     '''\
 Only you know the expression on your face. Self-deprecation. Your crew hated you, you knew that better than anyone. You believe that this must be yet another prank to undermine your authority. 
     '''
     ))
 
-    $LongNVLText(terrorlightz.c, (
+    show protl protag_scared_stay onlayer transient:
+        subpixel True alpha 1.0 additive 0.0 blur 0.0 matrixcolor InvertMatrix(0.0)*ContrastMatrix(1.0)*SaturationMatrix(1.0)*BrightnessMatrix(-0.8)*HueMatrix(0.0) blend 'normal' 
+        subpixel True xpos .4 ypos 1 zoom 0.7
+
+    show protl protag_breathing onlayer character:
+        subpixel True alpha 1.0 additive 0.0 blur 0.0 matrixcolor InvertMatrix(0.0)*ContrastMatrix(2.0)*SaturationMatrix(1.0)*BrightnessMatrix(-0.8)*HueMatrix(0.0) blend 'normal' 
+        subpixel True xpos .1 ypos 1 zoom 0.7
+
+    $LongNVLText(narrator_none, (
     '''\
 The pink wrapped package appears out of empty space in front of your past self. Even knowing what was coming, your past self still takes the half-hazardly packaged gift and opens it.
     '''
     ))
 
-    $LongNVLText(terrorlightz.c, (
+    show protl protag_scared_stay onlayer transient:
+        subpixel True alpha 1.0 additive 0.0 blur 0.0 matrixcolor InvertMatrix(0.0)*ContrastMatrix(1.0)*SaturationMatrix(1.0)*BrightnessMatrix(-0.8)*HueMatrix(0.0) blend 'normal' 
+        subpixel True xpos .4 ypos 1 zoom 0.7
+
+    show protl protag_breathing onlayer character:
+        subpixel True alpha 1.0 additive 0.0 blur 0.0 matrixcolor InvertMatrix(0.0)*ContrastMatrix(2.0)*SaturationMatrix(1.0)*BrightnessMatrix(-0.8)*HueMatrix(0.0) blend 'normal' 
+        subpixel True xpos .1 ypos 1 zoom 0.7
+
+    $LongNVLText(narrator_none, (
     '''\
 You come close to inspect the gift. Why can’t you remember what was inside? 
     '''
     ))
 
-    $LongNVLText(terrorlightz.c, (
+    show protl protag_scared_stay onlayer transient:
+        subpixel True alpha 1.0 additive 0.0 blur 0.0 matrixcolor InvertMatrix(0.0)*ContrastMatrix(1.0)*SaturationMatrix(1.0)*BrightnessMatrix(-0.8)*HueMatrix(0.0) blend 'normal' 
+        subpixel True xpos .4 ypos 1 zoom 0.7
+
+    show protl protag_breathing onlayer character:
+        subpixel True alpha 1.0 additive 0.0 blur 0.0 matrixcolor InvertMatrix(0.0)*ContrastMatrix(2.0)*SaturationMatrix(1.0)*BrightnessMatrix(-0.8)*HueMatrix(0.0) blend 'normal' 
+        subpixel True xpos .1 ypos 1 zoom 0.7
+
+    $LongNVLText(narrator_none, (
     '''\
-Inside the box and crinkled white tissue paper were two mushrooms. Both identical in size and shape with a white stem and neon red brim. Your past self takes out one of the mushrooms and inspects the white dots decorating the top. 
+Inside the box and crinkled white tissue paper were two mushrooms. Both identical in size and shape with a white stem and neon red brim. 
     '''
     ))
 
-    $LongNVLText(terrorlightz.c, (
+    show protl protag_scared_stay onlayer transient:
+        subpixel True alpha 1.0 additive 0.0 blur 0.0 matrixcolor InvertMatrix(0.0)*ContrastMatrix(1.0)*SaturationMatrix(1.0)*BrightnessMatrix(-0.8)*HueMatrix(0.0) blend 'normal' 
+        subpixel True xpos .4 ypos 1 zoom 0.7
+
+    show protl protag_breathing onlayer character:
+        subpixel True alpha 1.0 additive 0.0 blur 0.0 matrixcolor InvertMatrix(0.0)*ContrastMatrix(2.0)*SaturationMatrix(1.0)*BrightnessMatrix(-0.8)*HueMatrix(0.0) blend 'normal' 
+        subpixel True xpos .1 ypos 1 zoom 0.7
+
+    $LongNVLText(narrator_none, (
+    '''\
+Your past self takes out one of the mushrooms and inspects the white dots decorating the top. 
+    '''
+    ))
+
+    show protl protag_scared_stay onlayer transient:
+        subpixel True alpha 1.0 additive 0.0 blur 0.0 matrixcolor InvertMatrix(0.0)*ContrastMatrix(1.0)*SaturationMatrix(1.0)*BrightnessMatrix(-0.8)*HueMatrix(0.0) blend 'normal' 
+        subpixel True xpos .4 ypos 1 zoom 0.7
+
+    show protl protag_breathing onlayer character:
+        subpixel True alpha 1.0 additive 0.0 blur 0.0 matrixcolor InvertMatrix(0.0)*ContrastMatrix(2.0)*SaturationMatrix(1.0)*BrightnessMatrix(-0.8)*HueMatrix(0.0) blend 'normal' 
+        subpixel True xpos .1 ypos 1 zoom 0.7
+
+    $LongNVLText(narrator_none, (
     '''\
 Jack’s voice echoes the metallic walls as he laughs. “Now go ahead and take a bite, captain.” 
     '''
     ))
 
-    $LongNVLText(terrorlightz.c, (
+    show protl protag_sigh onlayer transient:
+        subpixel True alpha 1.0 additive 0.0 blur 0.0 matrixcolor InvertMatrix(0.0)*ContrastMatrix(1.0)*SaturationMatrix(1.0)*BrightnessMatrix(-0.8)*HueMatrix(0.0) blend 'normal' 
+        subpixel True xpos .4 ypos 1 zoom 0.7
+
+    show protl protag_breathing onlayer character:
+        subpixel True alpha 1.0 additive 0.0 blur 0.0 matrixcolor InvertMatrix(0.0)*ContrastMatrix(2.0)*SaturationMatrix(1.0)*BrightnessMatrix(-0.8)*HueMatrix(0.0) blend 'normal' 
+        subpixel True xpos .1 ypos 1 zoom 0.7
+
+    $LongNVLText(narrator_none, (
     '''\
-Your past self’s shoulders droop even farther in on themselves as your grip tightens onto the mushroom. You see rage in your eyes as well as sadness. The sad captain whispers softly, “If you think you’ll make a laughing stock of me, you are wrong, Jack.” 
+Your past self’s shoulders droop even farther in on themselves as your grip tightens onto the mushroom. You see rage in your eyes as well as sadness. 
     '''
     ))
 
-    $LongNVLText(terrorlightz.c, (
+    show protl protag_mad_talking onlayer transient:
+        subpixel True alpha 1.0 additive 0.0 blur 0.0 matrixcolor InvertMatrix(0.0)*ContrastMatrix(1.0)*SaturationMatrix(1.0)*BrightnessMatrix(-0.8)*HueMatrix(0.0) blend 'normal' 
+        subpixel True xpos .4 ypos 1 zoom 0.7
+
+    show protl protag_breathing onlayer character:
+        subpixel True alpha 1.0 additive 0.0 blur 0.0 matrixcolor InvertMatrix(0.0)*ContrastMatrix(2.0)*SaturationMatrix(1.0)*BrightnessMatrix(-0.8)*HueMatrix(0.0) blend 'normal' 
+        subpixel True xpos .1 ypos 1 zoom 0.7
+
+    $LongNVLText(narrator_none, (
+    '''\
+The sad captain whispers softly, “If you think you’ll make a laughing stock of me, you are wrong, Jack.” 
+    '''
+    ))
+
+    show protl protag_talking onlayer transient:
+        subpixel True alpha 1.0 additive 0.0 blur 0.0 matrixcolor InvertMatrix(0.0)*ContrastMatrix(1.0)*SaturationMatrix(1.0)*BrightnessMatrix(-0.8)*HueMatrix(0.0) blend 'normal' 
+        subpixel True xpos .4 ypos 1 zoom 0.7
+
+    show protl protag_breathing onlayer character:
+        subpixel True alpha 1.0 additive 0.0 blur 0.0 matrixcolor InvertMatrix(0.0)*ContrastMatrix(2.0)*SaturationMatrix(1.0)*BrightnessMatrix(-0.8)*HueMatrix(0.0) blend 'normal' 
+        subpixel True xpos .1 ypos 1 zoom 0.7
+
+    $LongNVLText(narrator_none, (
     '''\
 With a clenched fist, your past self quickly stands up from the captain’s chair and addresses the empty audience, “What a kind gift! How lucky I am to have such a wonderful crew.” 
     '''
     ))
 
-    $LongNVLText(terrorlightz.c, (
+    show protl protag_breathing onlayer transient:
+        subpixel True alpha 1.0 additive 0.0 blur 0.0 matrixcolor InvertMatrix(0.0)*ContrastMatrix(1.0)*SaturationMatrix(1.0)*BrightnessMatrix(-0.8)*HueMatrix(0.0) blend 'normal' 
+        subpixel True xpos .4 ypos 1 zoom 0.7
+
+    show protl protag_breathing onlayer character:
+        subpixel True alpha 1.0 additive 0.0 blur 0.0 matrixcolor InvertMatrix(0.0)*ContrastMatrix(2.0)*SaturationMatrix(1.0)*BrightnessMatrix(-0.8)*HueMatrix(0.0) blend 'normal' 
+        subpixel True xpos .1 ypos 1 zoom 0.7
+
+    $LongNVLText(narrator_none, (
     '''\
-You gulp as you watch the familiar silhouette take the crushed mushroom and gobble it up with feigned joy. “Quite delicious, thank you.” 
+You gulp as you watch the familiar silhouette take the crushed mushroom and gobble it up with feigned joy. 
     '''
     ))
 
-    $LongNVLText(terrorlightz.c, (
+    show protl protag_talking onlayer transient:
+        subpixel True alpha 1.0 additive 0.0 blur 0.0 matrixcolor InvertMatrix(0.0)*ContrastMatrix(1.0)*SaturationMatrix(1.0)*BrightnessMatrix(-0.8)*HueMatrix(0.0) blend 'normal' 
+        subpixel True xpos .4 ypos 1 zoom 0.7
+
+    show protl protag_breathing onlayer character:
+        subpixel True alpha 1.0 additive 0.0 blur 0.0 matrixcolor InvertMatrix(0.0)*ContrastMatrix(2.0)*SaturationMatrix(1.0)*BrightnessMatrix(-0.8)*HueMatrix(0.0) blend 'normal' 
+        subpixel True xpos .1 ypos 1 zoom 0.7
+
+    $LongNVLText(narrator_none, (
+    '''\
+“Quite delicious, thank you.” 
+    '''
+    ))
+
+    show protl protag_breathing onlayer transient:
+        subpixel True alpha 1.0 additive 0.0 blur 0.0 matrixcolor InvertMatrix(0.0)*ContrastMatrix(1.0)*SaturationMatrix(1.0)*BrightnessMatrix(-0.8)*HueMatrix(0.0) blend 'normal' 
+        subpixel True xpos .4 ypos 1 zoom 0.7
+
+    show protl protag_breathing onlayer character:
+        subpixel True alpha 1.0 additive 0.0 blur 0.0 matrixcolor InvertMatrix(0.0)*ContrastMatrix(2.0)*SaturationMatrix(1.0)*BrightnessMatrix(-0.8)*HueMatrix(0.0) blend 'normal' 
+        subpixel True xpos .1 ypos 1 zoom 0.7
+
+    $LongNVLText(narrator_none, (
     '''\
 Your past self dramatically falls onto the floor, unconscious. The disembodied voices of your crew are cheering and high fiving each other. “Finally, we are free! Remember the story boys, the ship was due to crash on an unexplored planet and our courageous captain volunteered to stay behind so we could live.” 
     '''
