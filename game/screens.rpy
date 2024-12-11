@@ -904,15 +904,15 @@ screen preferences():
                 label _("Text Size")
                 #label _("Font Size")
 
-                textbutton "Small" action [Preference("font size", 0.8), gui.SetPreference("text_height", 60),
+                textbutton "Small" action [Preference("font size", 0.8), gui.SetPreference("text_height", 80),
                     gui.SetPreference("text_start", 370), gui.SetPreference("text_width", 1150),
                     gui.SetPreference("history_xpos", 170),gui.SetPreference("history_width", 720)]
 
-                textbutton "Medium" action [Preference("font size", 1.0), gui.SetPreference("text_height", 130),
+                textbutton "Medium" action [Preference("font size", 1.0), gui.SetPreference("text_height", 150),
                     gui.SetPreference("text_start", 360),gui.SetPreference("text_width", 1160),
                     gui.SetPreference("history_xpos", 171),gui.SetPreference("history_width", 739)]
             
-                textbutton "Large" action [Preference("font size", 1.25), gui.SetPreference("text_height", 160),
+                textbutton "Large" action [Preference("font size", 1.25), gui.SetPreference("text_height", 180),
                     gui.SetPreference("text_start", 350),gui.SetPreference("text_width", 1200),
                     gui.SetPreference("history_xpos", 260),gui.SetPreference("history_width", 660)]
                     
