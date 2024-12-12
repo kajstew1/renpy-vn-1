@@ -150,8 +150,8 @@ define gui.dialogue_xpos=gui.preference("text_start", 400) #how far right into t
 define gui.dialogue_width=gui.preference("text_width", 1160) #how wide the dialogue is allowed to get
 
 #define gui.dialogue_ypos = 75
-define gui.dialogue_ypos= 25
-#define gui.dialogue_ypos=gui.preference("dialogue_ypos", -5) #position of the dialogue in text box
+define gui.dialogue_ypos= 0
+#define gui.dialogue_ypos=gui.preference("dialogue_ypos", 0) #position of the dialogue in text box
 
 
 

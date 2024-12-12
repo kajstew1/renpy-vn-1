@@ -132,7 +132,11 @@ screen say(who, what):
                 style "namebox"
                 text who id "who"
         else:
-            text " "
+            # Attempting to locate the namebox so it doesn't vary.  the style puts the namebox off screen
+            window:
+                id "namebox"
+                style "namebox_none"
+                text " "
 
         text what id "what"
         text " "
@@ -181,6 +185,17 @@ style namebox:
     xanchor gui.name_xalign
     xsize gui.namebox_width
     ypos gui.name_ypos
+    ysize gui.namebox_height
+
+    background Frame("gui/namebox.png", gui.namebox_borders, tile=gui.namebox_tile, xalign=gui.name_xalign)
+    padding gui.namebox_borders.padding
+
+
+style namebox_none:
+    xpos gui.name_xpos
+    xanchor gui.name_xalign
+    xsize gui.namebox_width
+    ypos gui.name_ypos + 500
     ysize gui.namebox_height
 
     background Frame("gui/namebox.png", gui.namebox_borders, tile=gui.namebox_tile, xalign=gui.name_xalign)
