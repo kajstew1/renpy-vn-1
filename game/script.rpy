@@ -1314,7 +1314,7 @@ He almost reminds you of a shark when his sharpened, pointy teeth glint in the l
         matrixcolor InvertMatrix(0.0)*ContrastMatrix(1.5)*SaturationMatrix(1.0)*BrightnessMatrix(0.0)*HueMatrix(0.0) 
         linear 0.01 matrixcolor InvertMatrix(0.0)*ContrastMatrix(1.5)*SaturationMatrix(1.0)*BrightnessMatrix(0.0)*HueMatrix(0.0)  
 
-    window auto hide
+    #window auto hide
     show tll terrorlightz_breathing:
         subpixel True xzoom 1.0 yzoom 1.0 
         matrixcolor InvertMatrix(0.0)*ContrastMatrix(1.5)*SaturationMatrix(1.0)*BrightnessMatrix(0.0)*HueMatrix(0.0) 
@@ -1328,7 +1328,7 @@ He almost reminds you of a shark when his sharpened, pointy teeth glint in the l
     with Pause(1.16)
     show tll terrorlightz_breathing:
         pos (0.97, 0.81) zoom 0.2 alpha 1.0 matrixcolor InvertMatrix(0.0)*ContrastMatrix(1.0478181468665897)*SaturationMatrix(1.0)*BrightnessMatrix(-0.75)*HueMatrix(0.0) 
-    window auto show
+    #window auto show
 
 
 
@@ -1774,7 +1774,7 @@ Why is this planet constantly trying to kill you? It would be nice to have one f
     ))
 
 
-    window auto hide
+    #window auto hide
     camera:
         subpixel True 
         zpos 0.0 
@@ -1803,7 +1803,7 @@ Why is this planet constantly trying to kill you? It would be nice to have one f
         zpos 0.0 
     show bg_hut:
         pos (0.8, 1.75) 
-    window auto show
+    #window auto show
 
 
 
@@ -1843,7 +1843,7 @@ Your foot catches on a branch and you slide front first onto the ground. You tas
     ))
 
 
-    window auto hide
+    #window auto hide
     show tll terrorlightz_scary_stay:
         subpixel True pos (0.5, 1.0) xzoom 1.0 yzoom 1.0 
         parallel:
@@ -1856,7 +1856,7 @@ Your foot catches on a branch and you slide front first onto the ground. You tas
     with Pause(2.10)
     show tll terrorlightz_scary_stay:
         blend 'normal' zoom 1.0 alpha 1.0 matrixcolor InvertMatrix(0.0)*ContrastMatrix(1.5)*SaturationMatrix(1.0)*BrightnessMatrix(0.0)*HueMatrix(0.0) 
-    window auto show
+    #window auto show
 
     show protl protag_lookup_breathing_shocked:
         subpixel True pos (-0.2, 0.5)
