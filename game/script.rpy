@@ -1926,7 +1926,7 @@ With a final cackle, Terrorlightz shoves the mushroom into your mouth, holding i
 
     $LongNVLText(narrator_none, (
     '''\
-Then suddenly, Terrolightz, just as easily as he picked you up, drops you to the ground and walks away, leaving you muddy and gasping for air. 
+Then suddenly, Terrorlightz, just as easily as he picked you up, drops you to the ground and walks away, leaving you muddy and gasping for air. 
     '''
     ))
 
@@ -2309,15 +2309,31 @@ You gulp as you watch the familiar silhouette take the crushed mushroom and gobb
         subpixel True alpha 1.0 additive 0.0 blur 0.0 matrixcolor InvertMatrix(0.0)*ContrastMatrix(1.0)*SaturationMatrix(1.0)*BrightnessMatrix(-0.8)*HueMatrix(0.0) blend 'normal' 
         subpixel True xpos .4 ypos 1 zoom 0.7
 
-    show protl protag_breathing onlayer character:
+    hide protl protag_breathing with vpunch
+
+    show protl protag_lookup_breathing onlayer character:
         subpixel True alpha 1.0 additive 0.0 blur 0.0 matrixcolor InvertMatrix(0.0)*ContrastMatrix(2.0)*SaturationMatrix(1.0)*BrightnessMatrix(-0.8)*HueMatrix(0.0) blend 'normal' 
         subpixel True xpos .1 ypos 1 zoom 0.7
 
     $LongNVLText(narrator_none, (
     '''\
-Your past self dramatically falls onto the floor, unconscious. The disembodied voices of your crew are cheering and high fiving each other. “Finally, we are free! Remember the story boys, the ship was due to crash on an unexplored planet and our courageous captain volunteered to stay behind so we could live.” 
+Your past self dramatically falls onto the floor, unconscious. The disembodied voices of your crew are cheering and high fiving each other. 
     '''
     ))
+
+    show protl protag_lookup_breathing_stay_talking onlayer character:
+        subpixel True alpha 1.0 additive 0.0 blur 0.0 matrixcolor InvertMatrix(0.0)*ContrastMatrix(2.0)*SaturationMatrix(1.0)*BrightnessMatrix(-0.8)*HueMatrix(0.0) blend 'normal' 
+        subpixel True xpos .1 ypos 1 zoom 0.7
+
+    $LongNVLText(narrator_none, (
+    '''\
+“Finally, we are free! Remember the story boys, the ship was due to crash on an unexplored planet and our courageous captain volunteered to stay behind so we could live.” 
+    '''
+    ))
+
+    hide bg_cockpit with dissolve
+
+    scene black with dissolve
 
     $LongNVLText(terrorlightz.c, (
     '''\
@@ -2325,19 +2341,46 @@ The scene changes and all the colors disappear, leaving nothing but pure darknes
     '''
     ))
 
-    $LongNVLText(terrorlightz.c, (
+    show protl protag_lookup_breathing_shocked onlayer transient:
+        subpixel True pos (-0.2, 0.5)
+
+    $LongNVLText(narrator_none, (
     '''\
 Abruptly, you feel yourself being pulled back to your body and you wake up with a start, gasping for air. 
     '''
     ))
 
-    $LongNVLText(terrorlightz.c, (
+    show protl protag_mad_breathing onlayer transient:
+        subpixel True pos (-0.2, 0.5)
+
+    $LongNVLText(narrator_none, (
     '''\
-You ignore the violent shaking of your legs as you pull yourself up. You snarl, “Those sons of bitches! I won’t let them get away with this.” You violently clutch onto the passing trees as you start running through the thick mud. You have to get back to your ship. There has to be some way to fix this. 
+You ignore the violent shaking of your legs as you pull yourself up. 
     '''
     ))
 
-    $LongNVLText(terrorlightz.c, (
+    show protl protag_mad_talking onlayer transient:
+        subpixel True pos (-0.2, 0.5)
+
+    $LongNVLText(narrator, (
+    '''\
+You snarl, “Those sons of bitches! I won’t let them get away with this.” You violently clutch onto the passing trees as you start running through the thick mud. You have to get back to your ship. 
+    '''
+    ))
+
+    show protl protag_mad_breathing onlayer transient:
+        subpixel True pos (-0.2, 0.5)
+
+    $LongNVLText(narrator, (
+    '''\
+There has to be some way to fix this. 
+    '''
+    ))
+
+    show protl protag_mad_breathing onlayer transient:
+        subpixel True pos (-0.2, 0.5)
+
+    $LongNVLText(narrator_none, (
     '''\
 In your blind rage, you don’t even notice that your stomach wound has healed. 
     '''
