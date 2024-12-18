@@ -94,6 +94,11 @@ style frame:
 ##
 ## https://www.renpy.org/doc/html/screen_special.html#say
 
+# Controls position of the textbos (dialogue) associated namebox (char name)
+#  window: ... ConditionSwitch sets textbox image from the Preferences text size
+#  define gui.dialogue_ypos= 10  positions dialogue start within textbox
+#  define gui.name_ypos = 0 positions namebox relative to textbox
+# define gui.textbox_yalign = .8 positions both textbox and namebox in the window
 screen say(who, what):
     style_prefix "say"
     default show_menutab = False

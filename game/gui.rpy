@@ -110,14 +110,14 @@ define gui.textbox_height=gui.preference("text_height", 186) #the height of the 
 
 ## The placement of the textbox vertically on the screen. 0.0 is the top, 0.5 is
 ## center, and 1.0 is the bottom.
-define gui.textbox_yalign = .85
+define gui.textbox_yalign = .8
 define gui.textbox_yanchor = 1.0
 
 
 ## The placement of the speaking character's name, relative to the textbox.
 ## These can be a whole number of pixels from the left or top, or 0.5 to center.
 define gui.name_xpos = 360
-define gui.name_ypos = -20
+define gui.name_ypos = 0
 
 ## The horizontal alignment of the character's name. This can be 0.0 for left-
 ## aligned, 0.5 for centered, and 1.0 for right-aligned.
@@ -150,7 +150,7 @@ define gui.dialogue_xpos=gui.preference("text_start", 400) #how far right into t
 define gui.dialogue_width=gui.preference("text_width", 1160) #how wide the dialogue is allowed to get
 
 #define gui.dialogue_ypos = 75
-define gui.dialogue_ypos= 0
+define gui.dialogue_ypos= 10
 #define gui.dialogue_ypos=gui.preference("dialogue_ypos", 0) #position of the dialogue in text box
 
 
