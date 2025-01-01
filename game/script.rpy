@@ -49,6 +49,19 @@ init:
         #parallel:
             #easein 4.0 crop (860, 430, 860, 600)
 
+    transform slow_walking:
+        parallel:
+            easein 0.7 xoffset 0 yoffset 30
+            easeout 0.7 xoffset 0 yoffset -30
+            #linear 0.1 xoffset 0 yoffset 10
+            #linear 0.1 xoffset 0 yoffset -15
+            #linear 0.1 xoffset 0 yoffset 0
+            repeat
+        parallel:
+            linear 10 zoom 1.5
+        #parallel:
+            #easein 4.0 crop (860, 430, 860, 600)
+
     transform basic_fade:
         on show:
             alpha 0.0
@@ -2335,6 +2348,9 @@ Your past self dramatically falls onto the floor, unconscious. The disembodied v
 
     scene black with dissolve
 
+    hide protl protag_lookup_breathing onlayer character
+
+
     $LongNVLText(terrorlightz.c, (
     '''\
 The scene changes and all the colors disappear, leaving nothing but pure darkness behind. 
@@ -2395,77 +2411,102 @@ label ship_remember:
 #    show bg_hut with dissolve
 
     scene black
-    show bg_insidecave at basic_fade with dissolve 
+    show bg_insidecave at basic_fade, my_walking with dissolve:
+        subpixel True matrixcolor InvertMatrix(0.0)*ContrastMatrix(1.0)*SaturationMatrix(1.5)*BrightnessMatrix(0.17)*HueMatrix(0.0) 
+
+
 #, my_shake 
 
-    pause 20
-    show protl protag_breathing:
+    pause 5
+
+    show protl protag_mad_breathing onlayer transient:
         subpixel True pos (-0.2, 0.5)
 
-    $LongNVLText(narrator, (
+    $LongNVLText(narrator_none, (
     '''\
 Nothing but regret and resentment fill your mind as you clumsily stumble your way through the swamp and into the dark cave."
     '''
     ))
 
 # (Effect: Shows running (fading and out) from bg_hut to bg_insidecave(In Work))
-    $LongNVLText(narrator, (
+    
+    show protl protag_mad_breathing onlayer transient:
+        subpixel True pos (-0.2, 0.5)
+
+    $LongNVLText(narrator_none, (
     '''\
-"Even though it was only yesterday that you first entered the cave, you feel none of the terror or fear you felt before."
+Even though it was only yesterday that you first entered the cave, you feel none of the terror or fear you felt before.
     '''
     ))
 
     scene black
-    show bg_crashsite at basic_fade, my_shake with dissolve
+    show bg_crashsite at basic_fade, my_walking with dissolve
 
 
 # (Shows running (fading and out) from bg_insidecave to bg_crashedsite)
-    show protl protag_breathing:
+    show protl protag_mad_breathing:
         subpixel True pos (-0.2, 0.5)
 
-    $LongNVLText(narrator, (
+    $LongNVLText(narrator_none, (
     '''\
 No matter what obstacle comes your way now, you are willing to face it. The only thing that matters is getting to your ship and righting the wrong against you."
     '''
     ))
 
-    $LongNVLText(narrator, (
+    $LongNVLText(narrator_none, (
     '''\
 After a matter of hours, you are exhausted and dehydrated. Your sore limbs fight against you, but you press on. 
     '''
     ))
 
-    $LongNVLText(narrator, (
+    $LongNVLText(narrator_none, (
     '''\
 In the distance you see the remnants of what was left of your ship. Your mangled body screams as you sprint to close the distance. 
     '''
     ))
 
-    $LongNVLText(narrator, (
+    $LongNVLText(narrator_none, (
     '''\
 Black smoke still emanates from the ship’s exhaust as you approach the destruction. The contaminated air makes it more difficult to breathe than it should. 
     '''
     ))
 
-    $LongNVLText(narrator, (
+    show bg_crashsite at slow_walking with vpunch
+
+    $LongNVLText(narrator_none, (
     '''\
 Your heart thunders against your chest as you scramble to climb the fallen, broken pieces of the crew cabin. 
     '''
     ))
+    
 
-    $LongNVLText(narrator, (
+    $LongNVLText(narrator_none, (
     '''\
-It takes you a while, but you manage to make progress on your climb. Your tired body almost gives out in the last stretch, but you use the handle from the blown out emergency exit door as leverage to pull yourself inside the ship. 
+It takes you a while, but you manage to make progress on your climb. 
+    '''
+    ))
+    
+    show bg_crashsite at slow_walking with vpunch
+
+    $LongNVLText(narrator_none, (
+    '''\
+Your tired body almost gives out in the last stretch, but you use the handle from the blown out emergency exit door as leverage to pull yourself inside the ship. 
     '''
     ))
 
-    $LongNVLText(narrator, (
+    scene black
+    show bg_cockpit at basic_fade:
+        subpixel True matrixcolor InvertMatrix(0.0)*ContrastMatrix(1.0)*SaturationMatrix(1.3)*BrightnessMatrix(0.1)*HueMatrix(0.0) 
+
+
+
+    $LongNVLText(narrator_none, (
     '''\
 Yesterday, you were so wounded and discombobulated that you weren’t able to process the damage. Now, you could finally understand the level of destruction the crash did to the ship. 
     '''
     ))
 
-    $LongNVLText(narrator, (
+    $LongNVLText(narrator_none, (
     '''\
 While most of the ship was in a desperate state of disrepair, your cockpit took the brunt of the damage. 
     '''
@@ -2495,11 +2536,22 @@ You are pretty sure all of the consoles are busted, but you still try for hours 
     '''
     ))
 
+    show protl protag_sigh:
+        subpixel True pos (-0.2, 0.5)
+
     $LongNVLText(narrator, (
     '''\
 All you get is silence. 
     '''
     ))
+
+    show protl protag_mad_breathing:
+        subpixel True pos (-0.2, 0.5)
+
+    scene black
+    show bg_escapepod with dissolve:
+        subpixel True matrixcolor InvertMatrix(0.0)*ContrastMatrix(1.0)*SaturationMatrix(1.0)*BrightnessMatrix(0.1)*HueMatrix(0.0) 
+
 
     $LongNVLText(narrator, (
     '''\
@@ -2519,6 +2571,9 @@ The level of resignation you feel as you approach the empty escape pod unit is u
     '''
     ))
 
+    show protl protag_mad_breathing with vpunch:
+        subpixel True pos (-0.2, 0.5)
+
     $LongNVLText(narrator, (
     '''\
 You drop to your knees. Your tattered clothes gently sway in the wind through the gaps in the walls.
@@ -2530,6 +2585,8 @@ You drop to your knees. Your tattered clothes gently sway in the wind through th
 That’s it. You are stuck on a godforsaken planet with only a useless ship to your name. 
     '''
     ))
+    scene black
+    hide bg_escapepod with dissolve
     jump game_over
 
 
