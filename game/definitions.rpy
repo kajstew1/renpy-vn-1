@@ -215,8 +215,9 @@ default screen_tooltip = ""
 # are = arelist[pronoun]
 
 
-
-
+# added to prevent the flashing of the narrator namebox/textbox during pause transitions
+# https://lemmasoft.renai.us/forums/viewtopic.php?t=46790
+default preferences.show_empty_window = False
 
 # Declare characters used by this game. The color argument colorizes the
 # name of the character.
