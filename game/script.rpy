@@ -49,6 +49,19 @@ init:
         #parallel:
             #easein 4.0 crop (860, 430, 860, 600)
 
+    transform str_walking:
+        parallel:
+            easein 0.6 xoffset 0 yoffset 30
+            easeout 0.6 xoffset 0 yoffset -30
+            #linear 0.1 xoffset 0 yoffset 15
+            #linear 0.1 xoffset 0 yoffset -20
+            #linear 0.1 xoffset 0 yoffset 0
+            repeat
+        parallel:
+            linear 10 zoom 1.15
+        #parallel:
+            #easein 4.0 crop (860, 430, 860, 600)
+
     transform slow_walking:
         parallel:
             easein 0.7 xoffset 0 yoffset 30
@@ -550,28 +563,56 @@ label crash_fork_menu:
 # Scene 4a
 label path_give_up:
 
-    show protl protag_breathing:
+    show protl protag_lookup_breathing_stay:
         subpixel True pos (-0.2, 0.5)
 
-    $LongNVLText(narrator, (
+    $LongNVLText(narrator_none, (
     '''\
 You stare at the fork in the road. With zero insight into the landscape and the perilous nature of the planet, you are facing a severe disadvantage.
     '''
     ))
 
-    $LongNVLText(narrator, (
+    show protl protag_lookup_leftright:
+        subpixel True pos (-0.2, 0.5)
+
+    $LongNVLText(narrator_none, (
     '''\
-Are your options really only to choose between a right or a left? You don’t think so. You still had a ship. Sure it is partially on fire and almost entirely destroyed, but better the devil you know than the devil you don't, right? 
+Are your options really only to choose between a right or a left? You don’t think so. You still had a ship. 
     '''
     ))
 
-    $LongNVLText(narrator, (
+    show protl protag_lookup_breathing_stay:
+        subpixel True pos (-0.2, 0.5)
+
+    $LongNVLText(narrator_none, (
     '''\
-Feeling safer already treading the beaten path–albeit a long one–you make the half’s day journey back to your ship. Your wound is probably infected from all of the sweat and dirt you’ve collected today, but the blood clotted so it is a far less messy affair. 
+Sure it is partially on fire and almost entirely destroyed, but better the devil you know than the devil you don't, right? 
     '''
     ))
 
-    $LongNVLText(narrator, (
+    show protl protag_lookup_breathing_stay:
+        subpixel True pos (-0.2, 0.5)
+
+    scene black 
+    show bg_fork at str_walking
+
+    $LongNVLText(narrator_none, (
+    '''\
+Feeling safer already treading the beaten path–albeit a long one–you make the half’s day journey back to your ship. 
+    '''
+    ))
+
+
+    $LongNVLText(narrator_none, (
+    '''\
+Your wound is probably infected from all of the sweat and dirt you’ve collected today, but the blood clotted so it is a far less messy affair. 
+    '''
+    ))
+
+    show protl protag_sigh:
+        subpixel True pos (-0.2, 0.5)
+
+    $LongNVLText(narrator_none, (
     '''\
 Breathing hard, clutching onto your ripped stomach, you feel weaker with every step you make. Though miraculously, you make it back to your ship. 
     '''
@@ -579,28 +620,39 @@ Breathing hard, clutching onto your ripped stomach, you feel weaker with every s
 
 # Change BG to -> bg_crashsite
     scene black
-    show bg_crashsite with dissolve
+    show bg_crashsite at str_walking with dissolve 
 
-    show protl protag_breathing:
+    show protl protag_mad_breathing:
         subpixel True pos (-0.2, 0.5)
 
-    $LongNVLText(narrator, (
+    $LongNVLText(narrator_none, (
     '''\
 You are in far worse shape than when you first made the journey, but at least you are back.
     '''
     ))
 
-    $LongNVLText(narrator, (
+    show bg_crashsite at slow_walking with dissolve 
+
+    $LongNVLText(narrator_none, (
     '''\
-With the last of your remaining strength, you climb up towards the cockpit. You nearly fall multiple times after losing your foothold–resulting in re-opening your stomach wound–but you somehow make it back to your cockpit. 
+With the last of your remaining strength, you climb up towards the cockpit. 
+    '''
+    ))
+
+    show protl protag_mad_breathing:
+        subpixel True pos (-0.2, 0.5)
+
+    $LongNVLText(narrator_none, (
+    '''\
+You nearly fall multiple times after losing your foothold–resulting in re-opening your stomach wound–but you somehow make it back to your cockpit. 
     '''
     ))
 
 # Change BG to -> bg_cockpit
     scene black
-    show bg_cockpit with dissolve
+    show bg_newcockpit with vpunch
 
-    show protl protag_breathing:
+    show protl protag_mad_breathing:
         subpixel True pos (-0.2, 0.5)
 
     $LongNVLText(narrator, (
@@ -609,11 +661,17 @@ Sweating profusely, you crawl into your tattered cockpit chair, the only notable
     '''
     ))
 
+    show protl protag_sigh:
+        subpixel True pos (-0.2, 0.5)
+
     $LongNVLText(narrator, (
     '''\
 You sigh as you lean back into the worn leather seat. 
     '''
     ))
+
+    show protl protag_breathing:
+        subpixel True pos (-0.2, 0.5)
 
     $LongNVLText(narrator, (
     '''\
@@ -639,6 +697,9 @@ The soft hum from the static of your broken flight instruments lulls you into a 
     '''
     ))
 
+    scene black
+    hide bg_newcockpit with dissolve
+
     $LongNVLText(narrator, (
     '''\
 With your clothes ripped, your hair disheveled, and night descending, you stare into the shattered windshield and slowly fade into a deep sleep. You never wake up. 
@@ -650,8 +711,9 @@ With your clothes ripped, your hair disheveled, and night descending, you stare 
 You are at peace. 
     '''
     ))
+
+    jump game_over
 # GAME OVER–BAD ENDING 2
-    return
 
 
 
