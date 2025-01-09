@@ -7,6 +7,7 @@ init python:
 
     seen_labels = Set([])
 
+    # not currently used
     def _shake_function(trans, st, at, dt=.5, dist=64):
         #dt is duration timebase, dist is maximum shake distance in pixel
         if st <= dt: 
@@ -16,7 +17,7 @@ init python:
         else:
             return None
            
-
+    # not currently used
     def eyewarp(x):
         return x**1.33
 
@@ -28,6 +29,7 @@ init python:
     #eyeopen = ImageDissolve("bg_crashsite", 1.5, 100)
     #eyeclose = ImageDissolve("backgrounds/eyeopen.png", 1.5, 100, reverse=True)
 
+    # used to define Live2D images
     def MyLive2D(*args, fallback=Placeholder(text="no live2d"), **kwargs):
         if renpy.has_live2d():
             return Live2D(*args, **kwargs)
@@ -36,7 +38,7 @@ init python:
 
 init -100:
 
-    # to resize the main menu buttons
+    # used to resize the main menu buttons
     transform buttonZoom:
         zoom .7
 
@@ -77,6 +79,32 @@ init -100:
         parallel:
             easein 0.4 xoffset 0 yoffset 30
             easeout 0.4 xoffset 0 yoffset -30
+            #linear 0.1 xoffset 0 yoffset 10
+            #linear 0.1 xoffset 0 yoffset -15
+            #linear 0.1 xoffset 0 yoffset 0
+            repeat
+        parallel:
+            linear 10 zoom 1.5
+        #parallel:
+            #easein 4.0 crop (860, 430, 860, 600)
+
+    transform str_walking:
+        parallel:
+            easein 0.6 xoffset 0 yoffset 30
+            easeout 0.6 xoffset 0 yoffset -30
+            #linear 0.1 xoffset 0 yoffset 15
+            #linear 0.1 xoffset 0 yoffset -20
+            #linear 0.1 xoffset 0 yoffset 0
+            repeat
+        parallel:
+            linear 10 zoom 1.15
+        #parallel:
+            #easein 4.0 crop (860, 430, 860, 600)
+
+    transform slow_walking:
+        parallel:
+            easein 0.7 xoffset 0 yoffset 30
+            easeout 0.7 xoffset 0 yoffset -30
             #linear 0.1 xoffset 0 yoffset 10
             #linear 0.1 xoffset 0 yoffset -15
             #linear 0.1 xoffset 0 yoffset 0
@@ -130,16 +158,7 @@ init -100:
         repeat
     #with Pause(6.47)
 
- # Slide something in from the left, and slide it back to the left when it's hidden
-    transform popside:
-        # When it's shown, slide it right and fade it in.
-        on show:
-            xoffset -200.0  alpha 0.0 xzoom 0.1
-            linear 0.1 xoffset 0.0 alpha 1.0 xzoom 1.0
 
-        # When it's hidden, slide it left and fade it out.
-        on hide:
-            linear 0.1 xoffset -200.0 alpha 0.0 xzoom 0.1
 
 # variables
 default persistent.is_new_game = True
@@ -205,37 +224,28 @@ default pronoun3 = "their"
 default be = "are"
 default screen_tooltip = ""
 
-#selectedpronouns = pronounlist[pronoun]
-# they = theylist[pronoun]
-# them = themlist[pronoun]
-# their = theirlist[pronoun]
-# theirs = theirslist[pronoun]
-# s = slist[pronoun]
-# es = eslist[pronoun]
-# are = arelist[pronoun]
-
-
+# Important fixes for issues seen
 # added to prevent the flashing of the narrator namebox/textbox during pause transitions
 # https://lemmasoft.renai.us/forums/viewtopic.php?t=46790
 default preferences.show_empty_window = False
 
+
 # Declare characters used by this game. The color argument colorizes the
 # name of the character.
 
-default player_name_default = "Space Traveler"
+default player_name_default = "Charlie"
 define player = Character("[player_name]")
 default player_name = player_name_default
 default p_player_name_input = VariableInputValue("player_name", default=False)
 
 
-image drp_motions = MyLive2D("images/dr_p_motions", default_fade=0.0, loop=True, fallback="dr_p casual talking")
 
-
-#make a whole new layer for the char- screw side image(i never quite get it anyway)!
+##### Set layers for the side character
+#make a whole new layer for the char for the side character.
 define config.layers = [ 'master', 'transient','screens','character', 'overlay' ] 
 
-#tag it so every cohan image is automatically place on the 'character' layer. 
-#Alternatively, you can use "onlayer" to manually put him in there every time
+#tag it so every protl image is automatically place on the 'character' layer. 
+#  to place behind the dialogue window
 define config.tag_layer = {'protl':'character'}  
 
 # clear it so the char will disappear when enter game screen, otherwise he will awkwardly stay there
@@ -243,16 +253,15 @@ define config.menu_clear_layers = ['character']
 
 #define sidenarrator1 = Character(None, image="narrator_img")
 
-
 define char = Character('Me', image="charimage")
 image side charimage = MyLive2D("images/myst_s_woman_motions/myst_s_woman_motions.model3.json", loop=True, fallback="mysteryspacewoman talking")
 
 define sidenarrator = Character (None, image="narrator_img")
 image side narrator_img = MyLive2D("images/protagonist_motions/protagonist_motions.model3.json", loop=True, zoom=1.0, fallback="side_protagonist_neutral")
 #image side narrator_img = Live2D("images/protagonist_motions/protagonist_motions.model3.json", loop=True, motions="protag_breathing", zoom=.1)
-
 #image side narrator_img = "side_protagonist_neutral"
 
+image drp_motions = MyLive2D("images/dr_p_motions", default_fade=0.0, loop=True, fallback="dr_p casual talking")
 image ccl = MyLive2D("images/cc_motions", default_fade=0.0, top=0.0, base=1.0, height=1.0, loop=True, fallback="commercialcris talking")
 image mswl = MyLive2D("images/myst_s_woman_motions", default_fade=0.0, top=0.0, base=1.0, height=1.0, loop=True, fallback="mysteryspacewoman talking")
 image protl = MyLive2D("images/protagonist_motions", default_fade=0.0, top=0.0, base=1.0, height=1.0, loop=True, fallback="protagonist breathing")
@@ -264,13 +273,8 @@ define narrator_none = Character (None)
 define narrator_nvl = Character (None, kind=nvl) #, what_slow_cps=0, what_font="fontfile_name.ttf")
 
 define drpsilicon =  Actor(Character("Dr. Psilicon", who_color="9EFB65", what_color="#8ac924"), "Dr. Psilicon")
-
-#define gnome = Actor(Character("Gnome", who_color="#c00606"), "Gnome")
-
 define terrorlightz = Actor(Character("Terrorlightz", color="#E26EFF"), "Terrorlightz")
-
 define commercialcris = Actor(Character("Commercial Cris", color="#D5D5D5"), "Commercial Cris")
-
 define mysteryspacewoman = Actor(Character("Mystery Space Woman", color="#FCA4C5"), "Mystery Space Woman")
 
 

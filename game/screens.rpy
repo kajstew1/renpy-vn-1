@@ -314,6 +314,7 @@ style choice_button_text is default:
 ## The quick menu is displayed in-game to provide easy access to the out-of-game
 ## menus.
 
+# See quickmenu.rpy which overrides this due to the "init -1000:" line
 screen quick_menu():
 
     ## Ensure this appears on top of other screens.
