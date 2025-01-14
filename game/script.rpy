@@ -3722,33 +3722,69 @@ You scream for the last time as the terrifying alien licks its lips and dives in
 
 # Scene 3c5
 label path_tavern:
-    scene bg_tavern with dissolve
+    
+    show ccl cc_breathing:
+        blend 'normal' pos (0.18, 1.2) matrixtransform ScaleMatrix(0.19, 0.1956643356643356, 1.0)*RotateMatrix(0.0, 0.0, 0.0)*OffsetMatrix(0.0, 0.0, 0.0) additive 0.0 blur 0.0 matrixcolor InvertMatrix(0.0)*ContrastMatrix(1.0)*SaturationMatrix(1.25)*BrightnessMatrix(-0.85)*HueMatrix(1.0)
 
-    show commercialcris_neutral at right
-
-    $LongNVLText(commercialcris.c, (
+    $LongNVLText(narrator_none, (
     '''\
 You decide to stick with your guide. You are far away from home afterall. Where would you go? 
     '''
     ))
 
-    $LongNVLText(commercialcris.c, (
+    show bg_town at slow_walking
+
+    show ccl cc_breathing:
+        subpixel True 
+        pos (0.18, 1.2) zoom 1.0 
+        linear 2.32 pos (0.36, 1.55) zoom 1.9
+    with Pause(2.42)
+    show ccl cc_breathing:
+        pos (0.36, 1.55) zoom 1.9 
+
+    show ccl cc_breathing with dissolve:
+        subpixel True additive 0.0 matrixcolor InvertMatrix(0.0)*ContrastMatrix(1.5)*SaturationMatrix(1.75)*BrightnessMatrix(0.0)*HueMatrix(0.0) blend None
+
+
+    $LongNVLText(narrator_none, (
     '''\
 The sidewalk is positively packed with people, making it difficult to catch up, but after some polite pushing, you are able to close the distance. 
     '''
     ))
 
-    $LongNVLText(commercialcris.c, (
+   
+    $LongNVLText(narrator_none, (
     '''\
-Attempting to hide your exhaustion from your escort, you slow your breaths to a normal pace. Your body is still recovering from your hospital trip. Heat stroke, dehydration, and a crash landing will do that to a person. But with the way your escort hadn’t even spared you a glance since you left the hospital, he didn’t seem to care. 
+Attempting to hide your exhaustion from your escort, you slow your breaths to a normal pace. 
+    '''
+    )) 
+
+      
+
+    $LongNVLText(narrator_none, (
+    '''\
+Your body is still recovering from your hospital trip. Heat stroke, dehydration, and a crash landing will do that to a person.
+    '''
+    )) 
+
+    $LongNVLText(narrator_none, (
+    '''\
+But with the way your escort hadn’t even spared you a glance since you left the hospital, he didn’t seem to care. 
     '''
     ))
 
-    $LongNVLText(commercialcris.c, (
+    $LongNVLText(narrator_none, (
     '''\
 Typical. 
     '''
     ))
+
+    scene black
+    show bg_tavern with dissolve
+
+
+    show protl protag_lookup_breathing:
+        subpixel True pos (-0.17, 0.5) 
 
     $LongNVLText(commercialcris.c, (
     '''\
@@ -3756,19 +3792,66 @@ You felt a little lighter when the tavern came into view. Jovial mummers flood y
     '''
     ))
 
-    $LongNVLText(commercialcris.c, (
+    show protl protag_lookup_leftright:
+        subpixel True pos (-0.17, 0.5) 
+
+    show bg_tavern:
+        subpixel True 
+        parallel:
+            xpos 0.5 
+            linear 1.33 xpos 0.6 
+            linear 0.15 xpos 0.6 
+            linear 1.34 xpos 0.4 
+        parallel:
+            ypos 1.0 
+            linear 2.82 ypos 1.0 
+        parallel:
+            zoom 1.0 
+            linear 0.01 zoom 1.0 
+            linear 1.32 zoom 1.5 
+    with Pause(2.92)
+    show bg_tavern:
+        pos (0.4, 1.0) zoom 1.5 
+
+
+    $LongNVLText(narrator_none, (
     '''\
 Without a door to separate the outside from the inside, it is easy to spot the alien patrons sitting at the bar enjoying their drinks. 
     '''
     ))
 
-    $LongNVLText(commercialcris.c, (
+    show protl protag_lookup_breathing_stay:
+        subpixel True pos (-0.17, 0.5) 
+
+    show bg_tavern:
+        subpixel True 
+        xpos 0.4 zoom 1.5 
+        linear 1.43 xpos 0.5 zoom 1.0 
+    with Pause(1.53)
+    show bg_tavern:
+        xpos 0.5 zoom 1.0 
+
+    show ccl cc_bored at center with dissolve:
+        subpixel True additive 0.0 matrixcolor InvertMatrix(0.0)*ContrastMatrix(1.5)*SaturationMatrix(1.75)*BrightnessMatrix(0.0)*HueMatrix(0.0) blend None
+
+    $LongNVLText(narrator_none, (
     '''\
-Holding onto the metal trim lining the doorway, Commercial Cris finally turns around to face you. The tv screen displays a clearly disingenuous, engineered grin on his face. With a flourish, he motions inside. “After you, tourist.” 
+Holding onto the metal trim lining the doorway, Commercial Cris finally turns around to face you. 
     '''
     ))
 
+    show ccl cc_bored_talking at center with dissolve:
+        subpixel True additive 0.0 matrixcolor InvertMatrix(0.0)*ContrastMatrix(1.5)*SaturationMatrix(1.75)*BrightnessMatrix(0.0)*HueMatrix(0.0) blend None
+
     $LongNVLText(commercialcris.c, (
+    '''\
+The tv screen displays a clearly disingenuous, engineered grin on his face. With a flourish, he motions inside. “After you, tourist.” 
+    '''
+    ))
+    
+    hide ccl cc_bored with dissolve
+
+    $LongNVLText(narrator_none, (
     '''\
 Eager to get away from the crowds, you walk into the tavern. You guess this is a good time as any to survey your surroundings. 
     '''
