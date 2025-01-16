@@ -6,12 +6,9 @@ label start:
     camera:
         perspective True
     #scene black 
-    #show drp_motions dr_p_breathing
-
     #with Pause(1)
     #show mytext "Dr. Psilicon Presents......" with dissolve
     #with Pause(2)
-
     #hide mytext with dissolve
     #with Pause(1)
     
@@ -25,16 +22,8 @@ label start:
 
 label path_char_customization:
     scene black 
-    #show img_customization
 
-    
-#    if player_name == "":
-#        $ player_name = player_name_default #here you type a name, that will be used, if the player types nothing
-
-#    show screen showName
     call screen screen_customization_nav
-#    hide screen showName
-
 #    jump path_choose_char  # in unusedcode.rpy
 
 
@@ -75,47 +64,32 @@ label set_customization_they_vars:
     
 
 
-# Scene 1
+# Scene 1 Introduce Live2D protagonist side character (protl) and narrator character (narrator) with name from the screen_customization_nav in namebox  
 label path_crash_site:
-    
-    # Display a message and show an alert box when a button is clicked
-    # jump splashscreen2
     scene black
     $ screen_tooltip = ""
 
-#    with Pause(1)
-#    show mytext "[player_name], you find yourself waking up on a crash ship."
-#    with Pause(2)
-  
-#    hide mytext with dissolve
-#    with Pause(1)
-
-    #show bg_crashsite with dissolve
     scene black
     show bg_crashsite with dissolve
     play music "sounds/effects/SCENE_1_crash_beeps_alarms.mp3"
 
-
-    #narration = new Character(.....)
-    #Array and multiple lines only used for readability. They have no effect on the text printed.
-   
     #"Person Enters World, wake up on crash ship?"
     show protl protag_breathing:
         subpixel True pos (-0.2, 0.5)
 
-    $LongNVLText(narrator, (
+    $LongNVLText(narrator_none, (
     '''\
 Smoke billows out of the crashed spacecraft. You, the sole survivor, wake up in a haze. Your blurry eyes, disoriented from the sharp impact, try to make sense of the destruction in front of you.
     '''
     ))
 
-    $LongNVLText(narrator, (
+    $LongNVLText(narrator_none, (
     '''\
 Debris is scattered across the broken grass turf, like a distorted kaleidoscope. 
     '''
     ))
 
-    $LongNVLText(narrator, (
+    $LongNVLText(narrator_none, (
     '''\
 Your breathing is staggered as you move to stand, clutching onto your wounded stomach. Blood pools out from inside your dark jumpsuit. 
     '''
@@ -127,44 +101,44 @@ Your breathing is staggered as you move to stand, clutching onto your wounded st
     '''
     ))
 
-    $LongNVLText(narrator, (
+    $LongNVLText(narrator_none, (
     '''\
 The ship was supposed to have been indestructible. No one had been chasing you. The sensors were all clear. So what did the ship hit? And what were the odds that the generator would have been the target of the impact? None of this made sense. 
     '''
     ))
 
     
-    $LongNVLText(narrator, (
+    $LongNVLText(narrator_none, (
     '''\
 An involuntary coughing fit brought about from the dark smoke around you made you come back to your senses. You look at your hand and are horrified to see tiny droplets of blood sprinkled all over your palm.  
     '''
     ))
 
-    $LongNVLText(narrator, (
+    $LongNVLText(narrator_none, (
     '''\
 I can make sense of this later. I need to focus on surviving. 
     '''
     ))
 
-    $LongNVLText(narrator, (
+    $LongNVLText(narrator_none, (
     '''\
 Your movements were painfully slow, but you were able to maneuver around the wrecked ship to the ground below. The grass was a welcome change in texture, soft and inviting unlike the harsh and distorted floor of the ship. 
     '''
     ))
 
-    $LongNVLText(narrator, (
+    $LongNVLText(narrator_none, (
     '''\
 You had no idea where you crash landed. As the captain you had to make a quick decision when the ship had been hit, either take your chance on the neighboring moon or divert towards the nearest planet. It had seemed at the time that a planet would have more resources and potentially a civilization available, but after reviewing the landscape, you weren’t sure. 
     '''
     ))
 
-    $LongNVLText(narrator, (
+    $LongNVLText(narrator_none, (
     '''\
 While there was a blue sky and green grass, that’s where the comparisons ended between your home planet and the environment surrounding you. In the far distance welcomed a skyline of blooming mushrooms. Using your best estimation, they had to have been as tall and thick as the redwoods you had been accustomed to seeing when you were a child. 
     '''
     ))
 
-    $LongNVLText(narrator, (
+    $LongNVLText(narrator_none, (
     '''\
 Neon-colored flying dinosaur-looking creatures dotted the sky above. As they circled the crash site, they let out a screech. You recoiled, holding your hands protectively against your ears. 
     '''
@@ -176,19 +150,19 @@ Neon-colored flying dinosaur-looking creatures dotted the sky above. As they cir
     '''
     ))
 
-    $LongNVLText(narrator, (
+    $LongNVLText(narrator_none, (
     '''\
 Your heart starts to race when you realized that you were well and truly alone in this treacherous landscape. The small crew that had opted to not use the escape pods and stayed with you had all lost oxygen and died before the ship entered the planet’s atmosphere. 
     '''
     ))
 
-    $LongNVLText(narrator, (
+    $LongNVLText(narrator_none, (
     '''\
 You truly didn’t know where to start. The communication system on the ship had shorted and broke before you could alert the nearest space station and you knew no one on this planet. 
     '''
     ))
 
-    $LongNVLText(narrator, (
+    $LongNVLText(narrator_none, (
     '''\
 With no food, no water, and only the clothes on your back, you look towards the two blistering suns in the horizon. 
     '''
@@ -202,31 +176,31 @@ You had trekked up the worn, uneven path in front of you. It was disconcerting a
     '''
     ))
 
-    $LongNVLText(narrator, (
+    $LongNVLText(narrator_none, (
     '''\
 You wonder what kinds of lifeforms live on this planet. This had been your first time in this galaxy–and of course it had ended terribly. You had just wanted to be a space explorer like those you had grown to admire, but like most dreams, it was not what it appeared. 
     '''
     ))
 
-    $LongNVLText(narrator, (
+    $LongNVLText(narrator_none, (
     '''\
 Crew that didn’t respect your authority, food that sprouted mold, and hygienic conditions that left little to be desired. 
     '''
     ))
 
-    $LongNVLText(narrator, (
+    $LongNVLText(narrator_none, (
     '''\
 You sighed. It just seemed like your luck had gone from bad to worse. You don’t feel like you are that bad of a person. So why do you always get the shortest straw? 
     '''
     ))
 
-    $LongNVLText(narrator, (
+    $LongNVLText(narrator_none, (
     '''\
 Guess that would be your next shower thought when you found running water. 
     '''
     ))
 
-    $LongNVLText(narrator, (
+    $LongNVLText(narrator_none, (
     '''\
 You are exhausted from your half a day journey through the unending fields of green. You clutch onto your wounded stomach, while the bleeding had blessedly stopped, you still felt a tremendous amount of pain. If you didn’t get help by tomorrow, you feared you may meet your demise on a deserted planet. Your corpse feeding the humongous alien creatures that skulked around you in the distance. 
     '''
@@ -238,13 +212,12 @@ You are exhausted from your half a day journey through the unending fields of gr
     '''
     ))
 
-    $LongNVLText(narrator, (
+    $LongNVLText(narrator_none, (
     '''\
 After another half an hour, you came across a change in scenery.
     '''
     ))
 
-    #stop sound
     stop music fadeout 3.0
     
     jump crash_fork
@@ -253,38 +226,39 @@ After another half an hour, you came across a change in scenery.
 
 
 # Scene 2
+# Fork in the road shown leading up to the screen_crash_fork_nav which gives the ability to test features before continuing 
 label crash_fork:
     scene black
     show bg_fork with dissolve
     play music "sounds/effects/SCENE_2.mp3"
     
-    # terrorlightz.c "Which way do you want to go?"
-    #show screen evt_choose_path
-
     show protl protag_breathing:
         subpixel True pos (-0.2, 0.5)
 
-    $LongNVLText(narrator, (
+    $LongNVLText(narrator_none, (
     '''\
 What once was a temperate, lush, green landscape, turned into a dry, sandy, mountainous desert. Even worse, the singular path you had been following diverged into two. You gulp.
     '''
     ))
 
-    $LongNVLText(narrator, (
+    $LongNVLText(narrator_none, (
     '''\
 You had a feeling that there was a right or wrong answer to your choice from here. You had better choose the right one or fear the repercussions.
     '''
     ))
-    $LongNVLText(narrator, (
+    $LongNVLText(narrator_none, (
     '''\
 You decide to take a look around before you make your decision.
     '''
     ))
 
+    # upon completion of the screen_crash_fork_nav will jump to crash_fork_menu
     call screen screen_crash_fork_nav
 
 
 
+
+# Still part of Scene 2. Time to decide which path to take
 label crash_fork_menu:
     $config.menu_include_disabled = False
     menu: 
@@ -303,11 +277,15 @@ label crash_fork_menu:
             jump path_right_path
         "No thank you!": 
             jump path_give_up
-    
-    
     return
 
-# Scene 4a
+
+
+
+
+
+# Scene 4/4a
+# Return to the spaceship and restart or quit
 label path_give_up:
 
     show protl protag_lookup_breathing_stay:
@@ -402,7 +380,7 @@ You nearly fall multiple times after losing your foothold–resulting in re-open
     show protl protag_mad_breathing:
         subpixel True pos (-0.2, 0.5)
 
-    $LongNVLText(narrator, (
+    $LongNVLText(narrator_none, (
     '''\
 Sweating profusely, you crawl into your tattered cockpit chair, the only notable item in the entire room.
     '''
@@ -411,7 +389,7 @@ Sweating profusely, you crawl into your tattered cockpit chair, the only notable
     show protl protag_sigh:
         subpixel True pos (-0.2, 0.5)
 
-    $LongNVLText(narrator, (
+    $LongNVLText(narrator_none, (
     '''\
 You sigh as you lean back into the worn leather seat. 
     '''
@@ -420,25 +398,25 @@ You sigh as you lean back into the worn leather seat.
     show protl protag_breathing:
         subpixel True pos (-0.2, 0.5)
 
-    $LongNVLText(narrator, (
+    $LongNVLText(narrator_none, (
     '''\
 You feel safe. 
     '''
     ))
 
-    $LongNVLText(narrator, (
+    $LongNVLText(narrator_none, (
     '''\
 Quiet. 
     '''
     ))
 
-    $LongNVLText(narrator, (
+    $LongNVLText(narrator_none, (
     '''\
 Alone.
     '''
     ))
 
-    $LongNVLText(narrator, (
+    $LongNVLText(narrator_none, (
     '''\
 The soft hum from the static of your broken flight instruments lulls you into a state of calm. 
     '''
@@ -447,13 +425,13 @@ The soft hum from the static of your broken flight instruments lulls you into a 
     scene black
     hide bg_newcockpit with dissolve
 
-    $LongNVLText(narrator, (
+    $LongNVLText(narrator_none, (
     '''\
 With your clothes ripped, your hair disheveled, and night descending, you stare into the shattered windshield and slowly fade into a deep sleep. You never wake up. 
     '''
     ))
 
-    $LongNVLText(narrator, (
+    $LongNVLText(narrator_none, (
     '''\
 You are at peace. 
     '''
@@ -461,6 +439,8 @@ You are at peace.
 
     jump game_over
 # GAME OVER–BAD ENDING 2
+
+
 
 
 
@@ -498,21 +478,20 @@ label path_right_path:
     show protl protag_breathing:
         subpixel True pos (-0.2, 0.5)
 
-    $LongNVLText(narrator, (
+    $LongNVLText(narrator_none, (
     '''\
 You stood transfixed at the shadowed silhouette of the strange moon behind the cover of the sharp mountain peaks. You feel it calling to you, moving your feet faster than your mind could keep up.
     '''
     ))
 
-    # show bg_fork with dissolve:
-        
-
-    $LongNVLText(narrator, (
+    $LongNVLText(narrator_none, (
     '''\
 Without much of a voluntary choice, you make your way down the sandy, gravel path. 
     '''
     ))
     jump path_right_path_1
+
+
 
 
 # Scene 2b
@@ -526,19 +505,19 @@ label path_right_path_1:
     show protl protag_breathing:
         subpixel True pos (-0.2, 0.5)
 
-    $LongNVLText(narrator, (
+    $LongNVLText(narrator_none, (
     '''\
 Hairs prickle your back as you embrace the dark landscape. Something was following you. 
     '''
     ))
 
-    $LongNVLText(narrator, (
+    $LongNVLText(narrator_none, (
     '''\
 You are not a soldier. You aren’t a survivalist. You are a wounded captain without a weapon or a ship. If something was following you, you are more than likely dead. 
     '''
     ))
 
-    $LongNVLText(narrator, (
+    $LongNVLText(narrator_none, (
     '''\
 You feel a cold sweat forming at your brow as you force your feet to move forward. Against all of your base instincts, you don’t look behind you. If you looked, you would accept the fear that threatened to spill out of your insides. 
     '''
@@ -569,13 +548,13 @@ You feel a cold sweat forming at your brow as you force your feet to move forwar
     '''
     ))
 
-    $LongNVLText(narrator, (
+    $LongNVLText(narrator_none, (
     '''\
 Over the thunderous beat of your heart, you hear soft footsteps coming towards you. Whatever was following you was doing so very slowly and very calmly. It must be a big, confident creature. You still have time. You could use it to your advantage that they want to play with their food. 
     '''
     ))
 
-    $LongNVLText(narrator, (
+    $LongNVLText(narrator_none, (
     '''\
 About 10 meters ahead of you, you see that the jagged mountains converge, creating what could only be described as a small tunnel. If you were to make it through the narrow gap before the creature catches up to you, you could possibly delay your imminent death.
     '''
@@ -590,7 +569,7 @@ About 10 meters ahead of you, you see that the jagged mountains converge, creati
     show protl protag_breathing:
         subpixel True pos (-0.2, 0.5)
 
-    $LongNVLText(narrator, (
+    $LongNVLText(narrator_none, (
     '''\
 You clutch onto your wounded stomach with a small prayer that your thrown together plan wouldn’t reopen the cut and begin your mad dash to the ominous tunnel.
     '''
@@ -602,20 +581,20 @@ You clutch onto your wounded stomach with a small prayer that your thrown togeth
     show protl protag_breathing:
         subpixel True pos (-0.2, 0.5)
 
-    $LongNVLText(narrator, (
+    $LongNVLText(narrator_none, (
     '''\
 You wish you had trained harder when you had the chance. You barely made the cutoff for the academy with your running scores. Not for lack of talent, but for a lack of effort.
     '''
     ))
 
 
-    $LongNVLText(narrator, (
+    $LongNVLText(narrator_none, (
     '''\
 You curse your past self as you choke on your ragged breaths, involuntarily running in a zigzag pattern as you spare yourself a few glances behind you. With the lack of regular exercise, your feet threaten to trip on themselves at any moment as your hands desperately search for any sort of leverage point to pull yourself quicker to your destination. 
     '''
     ))
 
-    $LongNVLText(narrator, (
+    $LongNVLText(narrator_none, (
     '''\
 The air behind you begins to get warmer as you realize you are losing this race. 
     '''
@@ -627,25 +606,25 @@ The air behind you begins to get warmer as you realize you are losing this race.
     '''
     ))
 
-    $LongNVLText(narrator, (
+    $LongNVLText(narrator_none, (
     '''\
 You feel a presence looming over you with every step now. Matching you step by step. You aren’t going to make it, it’s faster. 
     '''
     ))
 
-    $LongNVLText(narrator, (
+    $LongNVLText(narrator_none, (
     '''\
 You scan the area in a desperate attempt to come up with another strategy, you could almost hold onto the entrance to the tunnel now. You had to do something. 
     '''
     ))
 
-    $LongNVLText(narrator, (
+    $LongNVLText(narrator_none, (
     '''\
 You sharply turn left and then double back. Claws scraped against the mountain rock. You didn’t look back, you just threw your body into the tunnel’s entrance. 
     '''
     ))
 
-    $LongNVLText(narrator, (
+    $LongNVLText(narrator_none, (
     '''\
 You hear screams coming outside of the narrow gap. You made it. You were safe! You could barely believe it. 
     '''
@@ -658,7 +637,7 @@ You hear screams coming outside of the narrow gap. You made it. You were safe! Y
     ))
 
     jump path_cave
-    #jump hut_meet_terrorlightz
+
 
 
 
@@ -669,32 +648,29 @@ label path_cave:
     scene black
     show  bg_insidecave with dissolve
 
-    #show terrorlightz_talking at right
-    
-    #terrorlightz.c "Some text meeting terrorlightz."
-
     show protl protag_breathing:
         subpixel True pos (-0.2, 0.5)
 
-    $LongNVLText(narrator, (
+    $LongNVLText(narrator_none, (
     '''\
-After taking a few minutes to properly settle your heartbeat, you blindly make your way down the pitch black tunnel. You use the only tool available to you to navigate–your sense of touch."
+After taking a few minutes to properly settle your heartbeat, you blindly make your way down the pitch black tunnel. You use the only tool available to you to navigate–your sense of touch.
     '''
     ))
 
-    $LongNVLText(narrator, (
+    $LongNVLText(narrator_none, (
     '''\
 You feel your way forward with your hands, taking much longer than you had the patience for. Out of the oven, into the fire they say. 
     '''
     ))
 
-    $LongNVLText(narrator, (
+    $LongNVLText(narrator_none, (
     '''\
 It had taken a half an hour of blind exploration until you found a light source to follow. You barely believe it when you realize that the light might actually lead you to somewhere safe. 
     '''
     ))
 
     jump path_cave_light
+
 
 
 # Scene 2d
@@ -705,13 +681,13 @@ label path_cave_light:
     show protl protag_breathing:
         subpixel True pos (-0.2, 0.5)
 
-    $LongNVLText(narrator, (
+    $LongNVLText(narrator_none, (
     '''\
-You examine the exit of the tunnel. You see grass and weeds dotting the ground in a pleasant array, a warm welcome from the horrific desert landscape you had just escaped from."
+You examine the exit of the tunnel. You see grass and weeds dotting the ground in a pleasant array, a warm welcome from the horrific desert landscape you had just escaped from.
     '''
     ))
 
-    $LongNVLText(narrator, (
+    $LongNVLText(narrator_none, (
     '''\
 Not surprisingly, your wound had opened back up from your harrowing escape. You really hope that you find some sort of town or civilization soon, but even if you couldn’t find help, you feel secure that you had enough excitement for one day. 
 It couldn’t get worse, could it? 
@@ -731,44 +707,44 @@ label path_hut:
     show protl protag_breathing:
         subpixel True pos (-0.2, 0.5)
 
-    $LongNVLText(narrator, (
+    $LongNVLText(narrator_none, (
     '''\
 You weakly limp towards the greenery in front of you. You find it to be a blessed respite from the dark, cold cavernous tunnel you had just escaped from.
     '''
     ))
 
-    $LongNVLText(narrator, (
+    $LongNVLText(narrator_none, (
     '''\
 
 If your hands weren’t currently occupied by holding together your open stomach, you would’ve pinched yourself. 
     '''
     ))
 
-    $LongNVLText(narrator, (
+    $LongNVLText(narrator_none, (
     '''\
 You take in the pleasant view as the soft rays of daylight descend across the grass and shallow water. 
     '''
     ))
 
-    $LongNVLText(narrator, (
+    $LongNVLText(narrator_none, (
     '''\
 You glance at your reflection in the water beneath you, fighting every urge to drink from it. You may not be a survivalist by trade, but you certainly know the dangers of consuming still water–whether it be from an alien planet or not.  
     '''
     ))
 
-    $LongNVLText(narrator, (
+    $LongNVLText(narrator_none, (
     '''\
 Drawing your eyes away from the shallow water, you peer towards the central mass in front of you. You aren’t sure if it is from the blood loss or pure exhaustion, but you almost mistook the small hut for a meaningless pile of branches and moss. You rub your eyes with your free hand, fearing it as a mirage. 
     '''
     ))
 
-    $LongNVLText(narrator, (
+    $LongNVLText(narrator_none, (
     '''\
 You follow the narrow path towards the hut with trepidation–unsure if the worst case scenario is it being occupied or unoccupied. From the outside, you peer through the window covered by a holey, dirty red curtain, looking for any signs of movement. 
     '''
     ))
 
-    $LongNVLText(narrator, (
+    $LongNVLText(narrator_none, (
     '''\
 Once you feel certain that no one is inside, you slowly and carefully pull the curtain aside to get a better look. 
     '''
@@ -780,25 +756,25 @@ Once you feel certain that no one is inside, you slowly and carefully pull the c
     '''
     ))
 
-    $LongNVLText(narrator, (
+    $LongNVLText(narrator_none, (
     '''\
 Curiously, the only place left–for the most part–untouched by the destruction was the dining room table, located noticeably in the center of the shelter. Whoever last used this hut had obviously used it for a singular activity. 
     '''
     ))
 
-    $LongNVLText(narrator, (
+    $LongNVLText(narrator_none, (
     '''\
 Shelter was shelter though. At least you wouldn’t be sleeping outside tonight. 
     '''
     ))
 
-    $LongNVLText(narrator, (
+    $LongNVLText(narrator_none, (
     '''\
 You walk towards the open entryway and start your search for supplies while you still have some energy left. Luckily, you are able to find some scraps of worn cloth in one of the junk piles, which you use to tend to your stomach wound. 
     '''
     ))
 
-    $LongNVLText(narrator, (
+    $LongNVLText(narrator_none, (
     '''\
 You are finally starting to feel better about your situation. You had shelter, a–mostly–clean wound, and some half rotting food to eat. As you drift off to sleep you believe that maybe your situation isn’t so bad afterall? 
     '''
@@ -807,7 +783,6 @@ You are finally starting to feel better about your situation. You had shelter, a
     #    blur 0.0 
     hide protl protag_breathing  with dissolve
 
-    #window auto hide
     show bg_hut:
         subpixel True 
         blur 0.0 
@@ -815,34 +790,30 @@ You are finally starting to feel better about your situation. You had shelter, a
     with Pause(1.00)
     show bg_hut:
         blur 15.0 
-    #window auto show
 
+    # out_eye transition in definitions.rpy
     scene black with out_eye
-
     with Pause(1.5)
     
     jump path_hut_meet_terrorlightz
 
 
-# Scene 2f
+# Scene 2f 
+# introduce terrorlightz character (terrorlightz)
 label path_hut_meet_terrorlightz:
     scene black
     #show bg_insidehut with dissolve
 
-# (EFFECT: Goes from a blank screen to a blinking effect? ) 
-
+    # in_eye transition in definitions.rpy 
     show bg_insidehut with in_eye:
         subpixel True 
         blur 15.0 
         easeout 8.00 blur 0.0 
-    #with Pause(1)
-    #show bg_insidehut:
-    #    blur 0.0 
 
     show protl protag_breathing:
         subpixel True pos (-0.2, 0.5)
 
-    $LongNVLText(narrator, (
+    $LongNVLText(terrorlightz.c, (
     '''\
 Your long overdue sleep is over soon when you hear a deep, guttural voice pierce your ears.“My, my, my. What is this?”"
     '''
@@ -852,7 +823,7 @@ Your long overdue sleep is over soon when you hear a deep, guttural voice pierce
         subpixel True pos (-0.2, 0.5)
 
 
-    $LongNVLText(narrator, (
+    $LongNVLText(narrator_none, (
     '''\
 Your eyes jerk open. In front of you stands a figure that appears to be a…person? 
     '''
@@ -897,13 +868,13 @@ Your eyes jerk open. In front of you stands a figure that appears to be a…pers
         matrixcolor InvertMatrix(0.0)*ContrastMatrix(1.5)*SaturationMatrix(1.0)*BrightnessMatrix(0.0)*HueMatrix(0.0) 
         linear 0.01 matrixcolor InvertMatrix(0.0)*ContrastMatrix(1.5)*SaturationMatrix(1.0)*BrightnessMatrix(0.0)*HueMatrix(0.0)  
 
-    $LongNVLText(narrator, (
+    $LongNVLText(narrator_none, (
     '''\
 You feel the vibrations from his voice coarse through your body. Unexplainably, the pale purple-skinned stranger stands before you, wearing a dark teal and amethyst colored pinstripe suit.
     '''
     ))
 
-    $LongNVLText(narrator, (
+    $LongNVLText(narrator_none, (
     '''\
 His glare produces a hypnotic effect that prevents you from moving your body. Meeting his gaze, you see an optical illusion. His eyes move in an inexplicable, neverending ciruclar motion. To further punctuate his ominous presence, smoke continuously emanates out from the corners of his almond eyes. 
     '''
@@ -960,7 +931,7 @@ The ghastly alien cackles at your response. His sharp, pointed teeth glint in th
         pos (0.5, 1.0) 
     window auto show
 
-    $LongNVLText(narrator, (
+    $LongNVLText(narrator_none, (
     '''\
 In a bizarre turn of events, he gives you an overdramatic bow, his arms outstretched with a flourish. 
     '''
@@ -986,13 +957,13 @@ In a bizarre turn of events, he gives you an overdramatic bow, his arms outstret
         matrixcolor InvertMatrix(0.0)*ContrastMatrix(1.5)*SaturationMatrix(1.0)*BrightnessMatrix(0.0)*HueMatrix(0.0) 
         linear 0.01 matrixcolor InvertMatrix(0.0)*ContrastMatrix(1.5)*SaturationMatrix(1.0)*BrightnessMatrix(0.0)*HueMatrix(0.0)  
 
-    $LongNVLText(narrator, (
+    $LongNVLText(narrator_none, (
     '''\
 You are speechless. You can’t fathom how this many contradictions can exist in a singular space. In front of you, stands a nightmarish creature wearing a three-piece suit who supposedly lives in this broken down shack. You can’t tell if you want to laugh or cry. 
     '''
     ))
 
-    $LongNVLText(narrator, (
+    $LongNVLText(narrator_none, (
     '''\
 Where in the world are you? 
     '''
@@ -1001,7 +972,7 @@ Where in the world are you?
     show protl protag_lookup_breathing_stay:
         subpixel True pos (-0.2, 0.5)
 
-    $LongNVLText(narrator, (
+    $LongNVLText(narrator_none, (
     '''\
 After resigning to your fate, you reluctantly return the favor. 
     '''
@@ -1019,7 +990,7 @@ After resigning to your fate, you reluctantly return the favor.
     show protl protag_lookup_breathing_stay:
         subpixel True pos (-0.2, 0.5)
     
-    $LongNVLText(narrator, (
+    $LongNVLText(narrator_none, (
     '''\
 You are careful with your words. You don’t trust this stranger. He was exceptionally unpredictable so you felt that the less you say, the better. 
     '''
@@ -1061,7 +1032,7 @@ His eyes slit, his voice drawing out every word.
     window auto show
 
 
-    $LongNVLText(narrator, (
+    $LongNVLText(narrator_none, (
     '''\
 Before you could come up with a response, Terrorlightz offers you his hand. His eyes honed in on your torn and bloodied clothes. 
     '''
@@ -1101,7 +1072,7 @@ Before you could come up with a response, Terrorlightz offers you his hand. His 
         matrixcolor InvertMatrix(0.0)*ContrastMatrix(1.5)*SaturationMatrix(1.0)*BrightnessMatrix(0.0)*HueMatrix(0.0) 
         linear 0.01 matrixcolor InvertMatrix(0.0)*ContrastMatrix(1.5)*SaturationMatrix(1.0)*BrightnessMatrix(0.0)*HueMatrix(0.0)  
 
-    $LongNVLText(narrator, (
+    $LongNVLText(narrator_none, (
     '''\
 You stare at his outstretched hand momentarily before you grasp ahold of it. You weakly lift yourself off of the worn, broken couch. 
     '''
@@ -1110,7 +1081,7 @@ You stare at his outstretched hand momentarily before you grasp ahold of it. You
     show protl protag_mad_breathing:
         subpixel True pos (-0.2, 0.5)
 
-    $LongNVLText(narrator, (
+    $LongNVLText(narrator_none, (
     '''\
 The academy only taught you basic first aid and your half-assed attempt at putting your stomach back together isn’t going to cut it. You either slowly bleed out or take a chance that Terrorlightz doesn’t have ulterior motives. 
     '''
@@ -1163,14 +1134,14 @@ With a smooth flick of the wrist, Terrorlightz motions towards the door. Without
 
     show protl protag_mad_breathing
 
-    $LongNVLText(narrator, (
+    $LongNVLText(narrator_none, (
     '''\
 He can’t be serious can he? He actually wants to forage for mushrooms? 
     '''
     ))
 
 
-    $LongNVLText(narrator, (
+    $LongNVLText(narrator_none, (
     '''\
 You hesitantly follow Terrorlightz outside of the hut. It goes against all of your instincts to trust this stranger, even more so to root around for unknown plants. But he hasn’t killed you yet and he’s had ample opportunities. That’s something, isn’t it? 
     '''
@@ -1183,6 +1154,10 @@ You hesitantly follow Terrorlightz outside of the hut. It goes against all of yo
     jump path_hut_forage 
 
 
+
+
+
+
 # Scene 2g
 label path_hut_forage:
     scene black
@@ -1193,7 +1168,7 @@ label path_hut_forage:
     show protl protag_lookup_leftright:
         subpixel True pos (-0.2, 0.5)
 
-    $LongNVLText(narrator, (
+    $LongNVLText(narrator_none, (
     '''\
 Leaving the confines of your temporary shelter reminds you that you are still on an alien, unfamiliar planet. It felt much too easy to forget where you are–even with Terrorlightz’s jarring presence.
     '''
@@ -1202,7 +1177,7 @@ Leaving the confines of your temporary shelter reminds you that you are still on
     show protl protag_scared_stay:
         subpixel True pos (-0.2, 0.5)
 
-    $LongNVLText(narrator, (
+    $LongNVLText(narrator_none, (
     '''\
 Stepping out of the hut, the sunlight was blinding. You are forced to squint and throw your hands up to shield your eyes. It must be the start of a new day as the two suns in the sky are much brighter than before. Either you are right and the days here last a long time or the shock from the crash dulled your senses. 
     '''
@@ -1211,7 +1186,7 @@ Stepping out of the hut, the sunlight was blinding. You are forced to squint and
     show protl protag_sigh:
         subpixel True pos (-0.2, 0.5)
 
-    $LongNVLText(narrator, (
+    $LongNVLText(narrator_none, (
     '''\
 You feel a sudden rush of homesickness. Will you ever be back home? You had craved space travel for so long and worked so hard to achieve it, but now it seems meaningless. 
     '''
@@ -1220,13 +1195,13 @@ You feel a sudden rush of homesickness. Will you ever be back home? You had crav
     show protl protag_mad_breathing:
         subpixel True pos (-0.2, 0.5)
 
-    $LongNVLText(narrator, (
+    $LongNVLText(narrator_none, (
     '''\
 What was it all for? You would have never signed up if you knew you would end up alone, crash landed on a bizarre planet, foraging for–most likely poisonous–mushrooms with an absolute utter madman? 
     '''
     ))
 
-    $LongNVLText(narrator, (
+    $LongNVLText(narrator_none, (
     '''\
 I’m sure your crew is laughing at you from the afterlife. How the mighty captain has fallen. 
     '''
@@ -1235,19 +1210,19 @@ I’m sure your crew is laughing at you from the afterlife. How the mighty capta
     show protl protag_lookup_leftright:
         subpixel True pos (-0.2, 0.5)
 
-    $LongNVLText(narrator, (
+    $LongNVLText(narrator_none, (
     '''\
 Once your eyes finally adjust to the light, you scan the area, Terrorlightz is nowhere in sight. You were only a few steps behind him leaving the hut. Where could he have gone? 
     '''
     ))
 
-    $LongNVLText(narrator, (
+    $LongNVLText(narrator_none, (
     '''\
 You feel a sudden urge to run. To where, you aren’t sure, but once you find Terrorlightz, you are pretty positive you won’t have that option again. 
     '''
     ))
 
-    $LongNVLText(narrator, (
+    $LongNVLText(narrator_none, (
     '''\
 But at the same time, at least here you have shelter and some promise of food. You barely survived on your own, so it seems foolish to give into your instincts now. 
     '''
@@ -1256,7 +1231,7 @@ But at the same time, at least here you have shelter and some promise of food. Y
     show protl protag_mad_breathing:
         subpixel True pos (-0.2, 0.5)
 
-    $LongNVLText(narrator, (
+    $LongNVLText(narrator_none, (
     '''\
 With resignation, you decide to stick with Terrorlightz. Better than starving. 
     '''
@@ -1280,7 +1255,7 @@ With resignation, you decide to stick with Terrorlightz. Better than starving.
         pos (0.65, 1.75) zpos 0.0 zoom 2.5 
     window auto show
 
-    $LongNVLText(narrator, (
+    $LongNVLText(narrator_none, (
     '''\
 You search south of the hut where a clump of tall trees swallow the nearby light, blanketing the floor in almost near darkness. If mushrooms grow similarly here as they did in your home planet, this is most likely where they would grow.
     '''
@@ -1292,7 +1267,7 @@ You search south of the hut where a clump of tall trees swallow the nearby light
         matrixcolor InvertMatrix(0.0)*ContrastMatrix(1.5)*SaturationMatrix(1.0)*BrightnessMatrix(0.0)*HueMatrix(0.0) 
         linear 0.01 matrixcolor InvertMatrix(0.0)*ContrastMatrix(1.5)*SaturationMatrix(1.0)*BrightnessMatrix(0.0)*HueMatrix(0.0)  
 
-    $LongNVLText(narrator, (
+    $LongNVLText(narrator_none, (
     '''\
 You find Terrorlightz hunched over the base of a thick tree trunk. His dissatisfaction is clear even with his back towards you. 
     '''
@@ -1317,7 +1292,7 @@ His deep, baritone voice almost shakes the ground when he says, “You must know
         matrixcolor InvertMatrix(0.0)*ContrastMatrix(1.5)*SaturationMatrix(1.0)*BrightnessMatrix(0.0)*HueMatrix(0.0) 
         linear 0.01 matrixcolor InvertMatrix(0.0)*ContrastMatrix(1.5)*SaturationMatrix(1.0)*BrightnessMatrix(0.0)*HueMatrix(0.0)  
 
-    $LongNVLText(narrator, (
+    $LongNVLText(narrator_none, (
     '''\
 You feel less terrified than you would’ve been thirty minutes ago, which surprises you. You suppose that giving into your fate helped to have lessened the blow.
     '''
@@ -1461,7 +1436,7 @@ Sweat beads your forehead as you contemplate your available options.
     show protl protag_talking:
         subpixel True pos (-0.2, 0.5)
 
-    $LongNVLText(terrorlightz.c, (
+    $LongNVLText(narrator_none, (
     '''\
 “I appreciate the offer, but I think I’m okay,” you say, patting your stomach wound gently. “A few more nights rest and I’ll be good as new.” 
     '''
@@ -1698,7 +1673,7 @@ Before you can process what was happening, you are being lifted off the ground b
         linear 0.01 matrixcolor InvertMatrix(0.0)*ContrastMatrix(1.5)*SaturationMatrix(1.0)*BrightnessMatrix(0.0)*HueMatrix(0.0)  
 
 
-    $LongNVLText(narrator_none, (
+    $LongNVLText(terrorlightz.c, (
     '''\
 You struggle against Terrolightz’s fierce grip as he positions you to face him. “You are a difficult one, aren’t you?” You desperately cling onto Terrorlightz’s fierce grip, trying to release yourself, but his strength is inhuman. 
     '''
@@ -1736,7 +1711,7 @@ Your eyes grow wide when you realize that you don’t have a choice in this matt
         linear 0.01 matrixcolor InvertMatrix(0.0)*ContrastMatrix(1.5)*SaturationMatrix(1.0)*BrightnessMatrix(0.0)*HueMatrix(0.0)  
     window auto hide
 
-    $LongNVLText(narrator_none, (
+    $LongNVLText(terrorlightz.c, (
     '''\
 With a final cackle, Terrorlightz shoves the mushroom into your mouth, holding it closed until you finally swallow. 
     '''
@@ -1953,7 +1928,7 @@ Was that Jack? You couldn’t tell, you are still the only visible figure in the
         subpixel True alpha 1.0 additive 0.0 blur 0.0 matrixcolor InvertMatrix(0.0)*ContrastMatrix(2.0)*SaturationMatrix(1.0)*BrightnessMatrix(-0.8)*HueMatrix(0.0) blend 'normal' 
         subpixel True xpos .1 ypos 1 zoom 0.7
 
-    $LongNVLText(narrator_none, (
+    $LongNVLText(narrator, (
     '''\
 Your past self sat with hunched shoulders, looking in the opposite direction. In a monotone voice, you said, “Did you really?” 
     '''
@@ -1969,7 +1944,7 @@ Your past self sat with hunched shoulders, looking in the opposite direction. In
 
     $LongNVLText(narrator_none, (
     '''\
-Jack’s voice changed to a higher, more confident pitch. “Of course, you are our captain afterall.” 
+Jack’s voice changed to a higher, more confident pitch. “Of course, you are our captain after all.” 
     '''
     ))
 
@@ -2079,7 +2054,7 @@ Your past self’s shoulders droop even farther in on themselves as your grip ti
         subpixel True alpha 1.0 additive 0.0 blur 0.0 matrixcolor InvertMatrix(0.0)*ContrastMatrix(2.0)*SaturationMatrix(1.0)*BrightnessMatrix(-0.8)*HueMatrix(0.0) blend 'normal' 
         subpixel True xpos .1 ypos 1 zoom 0.7
 
-    $LongNVLText(narrator_none, (
+    $LongNVLText(narrator, (
     '''\
 The sad captain whispers softly, “If you think you’ll make a laughing stock of me, you are wrong, Jack.” 
     '''
@@ -2121,7 +2096,7 @@ You gulp as you watch the familiar silhouette take the crushed mushroom and gobb
         subpixel True alpha 1.0 additive 0.0 blur 0.0 matrixcolor InvertMatrix(0.0)*ContrastMatrix(2.0)*SaturationMatrix(1.0)*BrightnessMatrix(-0.8)*HueMatrix(0.0) blend 'normal' 
         subpixel True xpos .1 ypos 1 zoom 0.7
 
-    $LongNVLText(narrator_none, (
+    $LongNVLText(narrator, (
     '''\
 “Quite delicious, thank you.” 
     '''
@@ -2160,7 +2135,7 @@ Your past self dramatically falls onto the floor, unconscious. The disembodied v
     hide protl protag_lookup_breathing onlayer character
 
 
-    $LongNVLText(terrorlightz.c, (
+    $LongNVLText(narrator_none, (
     '''\
 The scene changes and all the colors disappear, leaving nothing but pure darkness behind. 
     '''
@@ -2196,7 +2171,7 @@ You snarl, “Those sons of bitches! I won’t let them get away with this.” Y
     show protl protag_mad_breathing onlayer transient:
         subpixel True pos (-0.2, 0.5)
 
-    $LongNVLText(narrator, (
+    $LongNVLText(narrator_none, (
     '''\
 There has to be some way to fix this. 
     '''
@@ -2212,6 +2187,9 @@ In your blind rage, you don’t even notice that your stomach wound has healed.
     ))
 
     jump ship_remember
+
+
+
 
 
 # Scene 2h
@@ -2233,7 +2211,7 @@ label ship_remember:
 
     $LongNVLText(narrator_none, (
     '''\
-Nothing but regret and resentment fill your mind as you clumsily stumble your way through the swamp and into the dark cave."
+Nothing but regret and resentment fill your mind as you clumsily stumble your way through the swamp and into the dark cave.
     '''
     ))
 
@@ -2321,25 +2299,25 @@ While most of the ship was in a desperate state of disrepair, your cockpit took 
     '''
     ))
 
-    $LongNVLText(narrator, (
+    $LongNVLText(narrator_none, (
     '''\
 The ceiling had caved in, light pouring in from the gaps. You snickered solemnly to yourself, at least the light made it easier to navigate around the ship.
     '''
     ))
 
-    $LongNVLText(narrator, (
+    $LongNVLText(narrator_none, (
     '''\
 The windshield had shattered, spraying glass all throughout the cabin. 
     '''
     ))
 
-    $LongNVLText(narrator, (
+    $LongNVLText(narrator_none, (
     '''\
 To your right, you see what was left of your captain’s chair, only scattered pieces of black leather and wheels remain. In front of you, you see your warped and melted flight instruments. 
     '''
     ))
 
-    $LongNVLText(narrator, (
+    $LongNVLText(narrator_none, (
     '''\
 You are pretty sure all of the consoles are busted, but you still try for hours to get the communication console back up and running. 
     '''
@@ -2348,7 +2326,7 @@ You are pretty sure all of the consoles are busted, but you still try for hours 
     show protl protag_sigh:
         subpixel True pos (-0.2, 0.5)
 
-    $LongNVLText(narrator, (
+    $LongNVLText(narrator_none, (
     '''\
 All you get is silence. 
     '''
@@ -2362,19 +2340,19 @@ All you get is silence.
         subpixel True matrixcolor InvertMatrix(0.0)*ContrastMatrix(1.0)*SaturationMatrix(1.0)*BrightnessMatrix(0.1)*HueMatrix(0.0) 
 
 
-    $LongNVLText(narrator, (
+    $LongNVLText(narrator_none, (
     '''\
 In pure desperation, you maneuver yourself to the back of the ship. 
     '''
     ))
 
-    $LongNVLText(narrator, (
+    $LongNVLText(narrator_none, (
     '''\
 The crew wouldn’t be so inhumane that they would leave you without an escape pod. I mean, they hated you, but they wouldn’t be that cruel… would they? 
     '''
     ))
 
-    $LongNVLText(narrator, (
+    $LongNVLText(narrator_none, (
     '''\
 The level of resignation you feel as you approach the empty escape pod unit is unparalleled to anything you have felt before. 
     '''
@@ -2383,13 +2361,13 @@ The level of resignation you feel as you approach the empty escape pod unit is u
     show protl protag_mad_breathing with vpunch:
         subpixel True pos (-0.2, 0.5)
 
-    $LongNVLText(narrator, (
+    $LongNVLText(narrator_none, (
     '''\
 You drop to your knees. Your tattered clothes gently sway in the wind through the gaps in the walls.
     '''
     ))
 
-    $LongNVLText(narrator, (
+    $LongNVLText(narrator_none, (
     '''\
 That’s it. You are stuck on a godforsaken planet with only a useless ship to your name. 
     '''
@@ -2444,11 +2422,10 @@ label path_left_path_decision:
 
 
 #(Effect - zoom in on left path)
-
     show protl protag_breathing:
         subpixel True pos (-0.2, 0.5)
 
-    $LongNVLText(narrator, (
+    $LongNVLText(narrator_none, (
     '''\
 Your eyes land on the seemingly safer option. The two suns and neighboring planets were hung in the sky like ornaments on a Christmas tree, brightly lighting the path in front of you.
     '''
@@ -2468,18 +2445,17 @@ Your eyes land on the seemingly safer option. The two suns and neighboring plane
     #                                             # and the second tuple is the size of that rectangle
     #     #easeout 5.0 crop (0, 300, 860, 600)       # here we change the y coordinate over 8 seconds to pan the image up
 
-# (Effect - zoom in on right path (In Work))
-
+# (Effect - zoom in on right path)
     show protl protag_breathing:
         subpixel True pos (-0.2, 0.5)
 
-    $LongNVLText(narrator, (
+    $LongNVLText(narrator_none, (
     '''\
 The right path scared you. It called to you like a siren in turbulent waters, inviting you in with a sweet song."
     '''
     ))
 
-    $LongNVLText(narrator, (
+    $LongNVLText(narrator_none, (
     '''\
 You try to stand your ground in fear of being pulled into the imposing moon’s imaginary gravitational pull. 
     '''
@@ -2504,13 +2480,13 @@ You try to stand your ground in fear of being pulled into the imposing moon’s 
     show protl protag_breathing:
         subpixel True pos (-0.2, 0.5)
 
-    $LongNVLText(narrator, (
+    $LongNVLText(narrator_none, (
     '''\
 Gritting your teeth, you tear your attention away from the dark path. Nothing good ever comes from embracing your inhibitions and dismissing your gut instincts." 
     '''
     ))
 
-    $LongNVLText(narrator, (
+    $LongNVLText(narrator_none, (
     '''\
 With more effort than you thought was necessary, you force your feet to move towards the left path. 
     '''
@@ -2527,7 +2503,7 @@ label path_left_path:
     show protl protag_mad_breathing: 
         subpixel True pos (-0.17, 0.5) 
 
-    $LongNVLText(narrator, (
+    $LongNVLText(narrator_none, (
     '''\
 After walking a meter or two past the fork in the road, you breathe a sigh of relief. The dark spell the large moon had on you finally dissipated. You suddenly feel more yourself again.
     '''
@@ -2536,13 +2512,13 @@ After walking a meter or two past the fork in the road, you breathe a sigh of re
     show protl protag_mad_breathing: 
         subpixel True pos (-0.17, 0.5) 
 
-    $LongNVLText(narrator, (
+    $LongNVLText(narrator_none, (
     '''\
 Using the array of planets and suns above you as an anchoring point, you continue your journey, even when it feels as though it will never end. 
     '''
     ))
 
-    nvl clear
+    #nvl clear
 
     show protl protag_mad_talking: 
         subpixel True pos (-0.17, 0.5) 
@@ -2556,7 +2532,7 @@ Using the array of planets and suns above you as an anchoring point, you continu
     show protl protag_mad_breathing: 
         subpixel True pos (-0.17, 0.5) 
 
-    $LongNVLText(narrator, (
+    $LongNVLText(narrator_none, (
     '''\
 Every time you feel like you are making decent progress, the unchanging environment around you reminds you that you aren’t in control of this journey. With no map, no navigation equipment, you only had yourself to reassure you that you are indeed on your way to finding some sort of resources or help. If nothing else, you at least had enough mental fortitude to do that. 
     '''
@@ -2565,7 +2541,7 @@ Every time you feel like you are making decent progress, the unchanging environm
     show protl protag_lookup_leftright: 
         subpixel True pos (-0.17, 0.5) 
 
-    $LongNVLText(narrator, (
+    $LongNVLText(narrator_none, (
     '''\
 To pass the time, your eyes scan the path for signs of footsteps–either friendly or unfriendly. Disconcertingly, you find neither. The wind hasn’t been that strong, so if someone had passed within the last 24 hours, you should be able to identify at least some remindents or indentations in the sand. But sadly, there was nothing. 
     '''
@@ -2574,7 +2550,7 @@ To pass the time, your eyes scan the path for signs of footsteps–either friend
     show protl protag_sigh: 
         subpixel True pos (-0.17, 0.5)
 
-    $LongNVLText(narrator, (
+    $LongNVLText(narrator_none, (
     '''\
 Well your situation could be worse, you could be running away from some sort of monster, so there’s at least some sort of silver lining. 
     '''
@@ -2583,13 +2559,13 @@ Well your situation could be worse, you could be running away from some sort of 
     show protl protag_mad_breathing: 
         subpixel True pos (-0.17, 0.5)
 
-    $LongNVLText(narrator, (
+    $LongNVLText(narrator_none, (
     '''\
 After a few hours of exploring an endless desert path, you begin to feel weak. Your coughing fits–once rare–are now almost nonstop. In a way to deter the incoming madness from your frail constitution, you start to connect the blood spatters running across your palm for some sort of comfort. 
     '''
     ))
 
-    $LongNVLText(narrator, (
+    $LongNVLText(narrator_none, (
     '''\
 You feel the chill in the air as darkness descends upon the landscape. This day had felt neverending. You feel placated in the fact that the days here didn’t last forever. 
     '''
@@ -2622,7 +2598,7 @@ You feel the chill in the air as darkness descends upon the landscape. This day 
     window auto show
 
 
-    $LongNVLText(narrator, (
+    $LongNVLText(narrator_none, (
     '''\
 Your vision begins to blur and your body feels immovable. Your face droops first, before your eyelids follow in suit. Soon you find yourself collapsed on the ground, surrounded by nothing but the night sky. Before you lose consciousness, you see in your periphery, the imposing moon that had taunted you earlier today. 
     '''
@@ -2631,7 +2607,7 @@ Your vision begins to blur and your body feels immovable. Your face droops first
     hide protl protag_breathing with dissolve 
     pause 0.5 
 
-    $LongNVLText(narrator, (
+    $LongNVLText(narrator_none, (
     '''\
 “All's well that ends well I suppose.”
     '''
@@ -2664,7 +2640,7 @@ label path_hospital:
 
 
 
-    $LongNVLText(drpsilicon.c, (
+    $LongNVLText(narrator_none, (
     '''\
 Beep…Beep…Beep…
     '''
@@ -2673,13 +2649,13 @@ Beep…Beep…Beep…
     show protl protag_breathing with dissolve:
         subpixel True pos (-0.17, 0.5)
 
-    $LongNVLText(drpsilicon.c, (
+    $LongNVLText(narrator_none, (
     '''\
 A soft, rhythmic hum wakes you from your deep sleep. 
     '''
     ))
 
-    $LongNVLText(drpsilicon.c, (
+    $LongNVLText(narrator_none, (
     '''\
 Through bleary eyes, memories of you collapsing in the desert flood your mind. 
     '''
@@ -2688,7 +2664,7 @@ Through bleary eyes, memories of you collapsing in the desert flood your mind.
     show protl protag_lookup_breathing_shocked with vpunch: 
         subpixel True pos (-0.17, 0.5) 
 
-    $LongNVLText(drpsilicon.c, (
+    $LongNVLText(narrator_none, (
     '''\
 You’re…you’re alive? 
     '''
@@ -2697,7 +2673,7 @@ You’re…you’re alive?
     show protl protag_lookup_breathing: 
         subpixel True pos (-0.17, 0.5) 
 
-    $LongNVLText(drpsilicon.c, (
+    $LongNVLText(narrator_none, (
     '''\
 As your focus sharpens, you take in your surroundings. 
     '''
@@ -2706,7 +2682,7 @@ As your focus sharpens, you take in your surroundings.
     show protl protag_lookup_leftright: 
         subpixel True pos (-0.17, 0.5) 
 
-    $LongNVLText(drpsilicon.c, (     
+    $LongNVLText(narrator_none, (     
     '''\
 To your right you see a heartbeat monitor. To your left you see a slew of medical machines laid out alongside you. Against the wall you see a big blue screen projecting writing that you don’t recognize. 
     '''
@@ -2715,19 +2691,19 @@ To your right you see a heartbeat monitor. To your left you see a slew of medica
     show protl protag_scared_stay: 
         subpixel True pos (-0.17, 0.5) 
 
-    $LongNVLText(drpsilicon.c, (
+    $LongNVLText(narrator_none, (
     '''\
 Crash landing on Psilicon 5, your perilous journey through the desert. Was that all a dream? Are you home? 
     '''
     ))
 
-    $LongNVLText(drpsilicon.c, (
+    $LongNVLText(narrator_none, (
     '''\
 Before you let optimism take over you, you hear a gentle knock on the door. 
     '''
     ))
 
-    $LongNVLText(drpsilicon.c, (
+    $LongNVLText(narrator_none, (
     '''\
 Not waiting for a response, a figure enters through the doorway.
     '''
@@ -2736,7 +2712,7 @@ Not waiting for a response, a figure enters through the doorway.
     show protl protag_lookup_breathing: 
         subpixel True pos (-0.17, 0.5) 
 
-    $LongNVLText(drpsilicon.c, (
+    $LongNVLText(narrator_none, (
     '''\
 Under normal circumstances, you would be happy to see a doctor sporting a crisp white lab coat and blue scrubs holding onto a clipboard chock full of patient notes…But this isn’t a normal circumstance. 
     '''
@@ -2749,7 +2725,6 @@ Under normal circumstances, you would be happy to see a doctor sporting a crisp 
         subpixel True additive 0.0 matrixcolor InvertMatrix(0.0)*ContrastMatrix(1.5)*SaturationMatrix(1.75)*BrightnessMatrix(0.0)*HueMatrix(0.0) blend None
     
     
-    window auto hide
     show drpl drp_breathing:
         subpixel True xpos 0.5 
         parallel:
@@ -2762,20 +2737,18 @@ Under normal circumstances, you would be happy to see a doctor sporting a crisp 
     with Pause(1.19)
     show drpl drp_breathing:
         pos (0.5, 1.5) xzoom 1.5 yzoom 1.5 
-    window auto show
 
 
     show protl protag_lookup_breathing_stay: 
         subpixel True pos (-0.17, 0.5) 
 
-    $LongNVLText(drpsilicon.c, (
+    $LongNVLText(narrator_none, (
     '''\
 The “doctor’s” skin was a sickly green, moss color. Taking up half of his face, in lieu of a typical head of hair and eyes, he had a vibrant red mushroom cap, dotted with yellow spots. 
     '''
     ))
 
 
-    window auto hide
     show drpl drp_breathing:
         subpixel True xpos 0.5 
         parallel:
@@ -2787,13 +2760,12 @@ The “doctor’s” skin was a sickly green, moss color. Taking up half of his 
     with Pause(1.08)
     show drpl drp_breathing:
         pos (0.5, 1.0) xzoom 1.0 yzoom 1.0 
-    window auto show
 
 
     show protl protag_scared_stay:
         subpixel True pos (-0.17, 0.5)  
 
-    $LongNVLText(drpsilicon.c, (
+    $LongNVLText(narrator_none, (
     '''\
 You silently curse under your breath as you grip the sheets in front of you. Your knuckles turning white, trying to contain your strange cocktail of emotions–fear, rage, sadness–from bursting out. 
     '''
@@ -2802,7 +2774,7 @@ You silently curse under your breath as you grip the sheets in front of you. You
     show protl protag_sigh:
         subpixel True pos (-0.17, 0.5) 
 
-    $LongNVLText(narrator, (
+    $LongNVLText(narrator_none, (
     '''\
 Just when you thought you were out…
     '''
@@ -2826,7 +2798,7 @@ Just when you thought you were out…
     show protl protag_lookup_breathing:
         subpixel True pos (-0.17, 0.5)  
 
-    $LongNVLText(drpsilicon.c, (
+    $LongNVLText(narrator_none, (
     '''\
 You turn to respond to the “doctor”. You already feel awkward. You were never taught on how to communicate with a half-man, half-mushroom.  
     '''
@@ -2835,13 +2807,13 @@ You turn to respond to the “doctor”. You already feel awkward. You were neve
     show protl protag_lookup_breathing_stay:
         subpixel True pos (-0.17, 0.5) 
 
-    $LongNVLText(drpsilicon.c, (
+    $LongNVLText(narrator_none, (
     '''\
 With the ability to make eye contact removed from the situation, you settle for focusing on the more human, bottom half of his face. 
     '''
     ))
 
-    $LongNVLText(drpsilicon.c, (
+    $LongNVLText(narrator_none, (
     '''\
 Still groggy and dehydrated, your words came out strained. 
     '''
@@ -2850,7 +2822,7 @@ Still groggy and dehydrated, your words came out strained.
     show protl protag_lookup_breathing_stay_talking:
         subpixel True pos (-0.17, 0.5)  
 
-    $LongNVLText(drpsilicon.c, (
+    $LongNVLText(narrator, (
     '''\
 “Where am I?”
     '''
@@ -2862,7 +2834,7 @@ Still groggy and dehydrated, your words came out strained.
     show drpl drp_mad:
         subpixel True additive 0.0 matrixcolor InvertMatrix(0.0)*ContrastMatrix(1.5)*SaturationMatrix(1.75)*BrightnessMatrix(0.0)*HueMatrix(0.0) blend None
 
-    $LongNVLText(drpsilicon.c, (
+    $LongNVLText(narrator_none, (
     '''\
 The doctor’s mouth tightened into a hard line. He is obviously displeased at your naivety. 
     '''
@@ -2880,7 +2852,7 @@ The doctor’s mouth tightened into a hard line. He is obviously displeased at y
     show drpl drp_mad_tranistion_back:
         subpixel True additive 0.0 matrixcolor InvertMatrix(0.0)*ContrastMatrix(1.5)*SaturationMatrix(1.75)*BrightnessMatrix(0.0)*HueMatrix(0.0) blend None
 
-    $LongNVLText(drpsilicon.c, (
+    $LongNVLText(narrator_none, (
     '''\
 He taps impatiently with his fingers onto his clipboard as he weighs his options. After a short pause, he sighs in an overly dramatic fashion. 
     '''
@@ -2901,7 +2873,7 @@ He taps impatiently with his fingers onto his clipboard as he weighs his options
     show protl protag_mad_breathing:
         subpixel True pos (-0.17, 0.5) 
 
-    $LongNVLText(drpsilicon.c, (
+    $LongNVLText(narrator_none, (
     '''\
 Nature preserve? Insurance? What the hell is he talking about? 
     '''
@@ -2910,7 +2882,7 @@ Nature preserve? Insurance? What the hell is he talking about?
     show drpl drp_breathing:
         subpixel True additive 0.0 matrixcolor InvertMatrix(0.0)*ContrastMatrix(1.5)*SaturationMatrix(1.75)*BrightnessMatrix(0.0)*HueMatrix(0.0) blend None
 
-    $LongNVLText(drpsilicon.c, (
+    $LongNVLText(narrator_none, (
     '''\
 With the conceited notion he gave you a sufficient debriefing on your situation, the alien doctor starts scribbling notes on his notepad. 
     '''
@@ -2934,7 +2906,7 @@ With the conceited notion he gave you a sufficient debriefing on your situation,
     show drpl drp_breathing:
         subpixel True additive 0.0 matrixcolor InvertMatrix(0.0)*ContrastMatrix(1.5)*SaturationMatrix(1.75)*BrightnessMatrix(0.0)*HueMatrix(0.0) blend None
 
-    $LongNVLText(drpsilicon.c, (
+    $LongNVLText(narrator_none, (
     '''\
 Placing his empty hand into his pocket, he briskly walks out of your room. 
     '''
@@ -2957,19 +2929,17 @@ Placing his empty hand into his pocket, he briskly walks out of your room.
     pause 0.3
 
 
-    $LongNVLText(drpsilicon.c, (
+    $LongNVLText(narrator_none, (
     '''\
 And just as he entered, he was gone. You let your head fall back onto your pillow as you try desperately to make sense of what just happened. 
     '''
     ))
 
-
-
     pause 0.2
     hide protl protag_lookup_breathing with dissolve
     pause 0.3
 
-    $LongNVLText(drpsilicon.c, (
+    $LongNVLText(narrator_none, (
     '''\
 You fall back asleep. You hope this was just a long nightmare. 
     '''
@@ -2993,7 +2963,7 @@ label path_town_fork:
     show ccl cc_breathing at center with dissolve: 
         subpixel True additive 0.0 matrixcolor InvertMatrix(0.0)*ContrastMatrix(1.5)*SaturationMatrix(1.75)*BrightnessMatrix(0.0)*HueMatrix(0.0) blend None
 
-    $LongNVLText(commercialcris.c, (
+    $LongNVLText(narrator_none, (
     '''\
 About an hour passes until you finally meet your escort. At this point, you’ve gotten used to the unexpected, but even this was a bit much. 
     '''
@@ -3010,7 +2980,7 @@ About an hour passes until you finally meet your escort. At this point, you’ve
     window auto show
 
 
-    $LongNVLText(commercialcris.c, (
+    $LongNVLText(narrator_none, (
     '''\
 Above your escort’s shoulder sits a small, outdated TV, projecting an unimpressed expression on his grayscale face. Dressed to the nines, he wears an expensive and sharply tailored suit.  
     '''
@@ -3030,7 +3000,7 @@ Above your escort’s shoulder sits a small, outdated TV, projecting an unimpres
         pos (0.5, 1.0) xzoom 1.0 yzoom 1.0 
     window auto show
 
-    $LongNVLText(commercialcris.c, (
+    $LongNVLText(narrator_none, (
     '''\
 You brows knit together in confusion…Is this how people dress on Psilicon 5? He can’t possibly have a working retro-style TV for a head, can he? 
     '''
@@ -3039,7 +3009,7 @@ You brows knit together in confusion…Is this how people dress on Psilicon 5? H
     show ccl cc_breathing at center: 
         subpixel True additive 0.0 matrixcolor InvertMatrix(0.0)*ContrastMatrix(1.5)*SaturationMatrix(1.75)*BrightnessMatrix(0.0)*HueMatrix(0.0) blend None
     
-    $LongNVLText(commercialcris.c, (
+    $LongNVLText(narrator_none, (
     '''\
 Your escort flicks his wrist to look at his silver-plated watch impatiently. 
     '''
@@ -3057,7 +3027,7 @@ Your escort flicks his wrist to look at his silver-plated watch impatiently.
     show ccl cc_bored: 
         subpixel True additive 0.0 matrixcolor InvertMatrix(0.0)*ContrastMatrix(1.5)*SaturationMatrix(1.75)*BrightnessMatrix(0.0)*HueMatrix(0.0) blend None
 
-    $LongNVLText(commercialcris.c, (
+    $LongNVLText(narrator, (
     '''\
 Without thinking, you blurt out what was on your mind. “Are you a cyborg?” 
     '''
@@ -3066,7 +3036,7 @@ Without thinking, you blurt out what was on your mind. “Are you a cyborg?”
     show ccl cc_squint_frown_breathing:
         subpixel True additive 0.0 matrixcolor InvertMatrix(0.0)*ContrastMatrix(1.5)*SaturationMatrix(1.75)*BrightnessMatrix(0.0)*HueMatrix(0.0) blend None
 
-    $LongNVLText(commercialcris.c, (
+    $LongNVLText(narrator_none, (
     '''\
 He looks at you with squinted eyes and a frown. 
     '''
@@ -3084,13 +3054,13 @@ He looks at you with squinted eyes and a frown.
     show ccl cc_look_away_smile_stay:
         subpixel True additive 0.0 matrixcolor InvertMatrix(0.0)*ContrastMatrix(1.5)*SaturationMatrix(1.75)*BrightnessMatrix(0.0)*HueMatrix(0.0) blend None
 
-    $LongNVLText(commercialcris.c, (
+    $LongNVLText(narrator_none, (
     '''\
 To hide your embarrassment, you focus your attention on grabbing your things from the hospital bed. Pissing off your only hope of navigating the city. Great first impression. 
     '''
     ))
 
-    $LongNVLText(commercialcris.c, (
+    $LongNVLText(narrator_none, (
     '''\
 After gathering your meager belongings, mostly made up of the torn up clothes that you wore yesterday, you shuffle in awkward silence towards your escort. 
     '''
@@ -3099,7 +3069,7 @@ After gathering your meager belongings, mostly made up of the torn up clothes th
     show ccl cc_bored:
         subpixel True additive 0.0 matrixcolor InvertMatrix(0.0)*ContrastMatrix(1.5)*SaturationMatrix(1.75)*BrightnessMatrix(0.0)*HueMatrix(0.0) blend None
 
-    $LongNVLText(commercialcris.c, (
+    $LongNVLText(narrator_none, (
     '''\
 Clearing his throat, your escort motions toward himself. 
     '''
@@ -3117,7 +3087,7 @@ Clearing his throat, your escort motions toward himself.
     show ccl cc_breathing:
         subpixel True additive 0.0 matrixcolor InvertMatrix(0.0)*ContrastMatrix(1.5)*SaturationMatrix(1.75)*BrightnessMatrix(0.0)*HueMatrix(0.0) blend None
 
-    $LongNVLText(commercialcris.c, (
+    $LongNVLText(narrator, (
     '''\
 “Nice to meet you.” You hoist your folded-up belongings underneath your armpit and outstretch your free hand for a handshake. When you are met with just a confused stare, you proceed to return your hand to your side. “My name is [player_name] and as you’ve probably heard, my ship crash landed on this planet.” 
     '''
@@ -3135,7 +3105,7 @@ Clearing his throat, your escort motions toward himself.
     show ccl cc_breathing:
         subpixel True additive 0.0 matrixcolor InvertMatrix(0.0)*ContrastMatrix(1.5)*SaturationMatrix(1.75)*BrightnessMatrix(0.0)*HueMatrix(0.0) blend None
 
-    $LongNVLText(commercialcris.c, (
+    $LongNVLText(narrator_none, (
     '''\
 Commercial Cris says as he walks out the door, towards the hospital’s exit. 
     '''
@@ -3157,7 +3127,7 @@ Commercial Cris says as he walks out the door, towards the hospital’s exit.
 
 
 
-    $LongNVLText(commercialcris.c, (
+    $LongNVLText(narrator_none, (
     '''\
 You take the hint and follow him out of the hospital. 
     '''
@@ -3170,13 +3140,13 @@ You take the hint and follow him out of the hospital.
 
 # (Effect: Transition from hospital to town BG
 # (Effect: Commercial Cris transitions in)
-    $LongNVLText(commercialcris.c, (
+    $LongNVLText(narrator_none, (
     '''\
 Upon opening the exit door, you are flooded with a flurry of noises. Jumbled voices speaking in an unfamiliar language, screeching of wheels from kiosks holding a variety of items, clattering of metal from the construction workers fixing the roads. It all felt so familiar yet so different. 
     '''
     ))
 
-    $LongNVLText(commercialcris.c, (
+    $LongNVLText(narrator_none, (
     '''\
 Passing through the crowds with ease, Commercial Cris wastes no time to start his guided tour. 
     '''
@@ -3194,7 +3164,7 @@ Passing through the crowds with ease, Commercial Cris wastes no time to start hi
     show ccl cc_breathing:
         subpixel True additive 0.0 matrixcolor InvertMatrix(0.0)*ContrastMatrix(1.5)*SaturationMatrix(1.75)*BrightnessMatrix(0.0)*HueMatrix(0.0) blend None
     
-    $LongNVLText(commercialcris.c, (
+    $LongNVLText(narrator_none, (
     '''\
 Even when a passing kiosk almost runs into him, Commercial Cris continues his tour without missing a step. 
     '''
@@ -3226,7 +3196,7 @@ Even when a passing kiosk almost runs into him, Commercial Cris continues his to
     window auto show
 
 
-    $LongNVLText(commercialcris.c, (
+    $LongNVLText(narrator_none, (
     '''\
 As much as you try to focus on Commercial Cris’s tour, you find it hard to concentrate when you are in such a densely packed crowd. Even more so when you look up to the tall, perfectly oddly-jagged shaped buildings. You had never seen such architecture before. You wonder how it was possible to build such a feat with such sharp, awkward angles. 
     '''
@@ -3234,7 +3204,7 @@ As much as you try to focus on Commercial Cris’s tour, you find it hard to con
 
 
 
-    $LongNVLText(commercialcris.c, (
+    $LongNVLText(narrator_none, (
     '''\
 Distraction was dangerous in a city like this. You nearly fall to the ground after a passing alien crashes into your shoulder. 
     '''
@@ -3246,14 +3216,14 @@ Distraction was dangerous in a city like this. You nearly fall to the ground aft
         anchor (0.5, 1.0) xzoom 1.0 yzoom 1.0 
 
 # (Effect - shake screen...)
-    $LongNVLText(commercialcris.c, (
+    $LongNVLText(narrator_none, (
     '''\
 Your heart races as you realize that you can’t afford to fall in this crowd. This city wouldn’t wait for you. You would most certainly get run over. 
     '''
     ))
         
 # (Effect: Show Commercial Cris in the distance)
-    $LongNVLText(commercialcris.c, (
+    $LongNVLText(narrator_none, (
     '''\
 The alien mumbles an apparent irritated apology before scurrying off, leaving you disoriented. 
     '''
@@ -3280,13 +3250,13 @@ The alien mumbles an apparent irritated apology before scurrying off, leaving yo
     window auto show
 
     
-    $LongNVLText(commercialcris.c, (
+    $LongNVLText(narrator_none, (
     '''\
 In the short scuffle, you almost lose track of Commercial Cris, who has yet to notice—or care—that you aren’t behind him anymore.
     '''
     ))
 
-    $LongNVLText(commercialcris.c, (
+    $LongNVLText(narrator_none, (
     '''\
 Well if you want to lose your guide, now’s the time. To your right you see a blissfully empty alley you can escape to. 
     '''
@@ -3321,7 +3291,7 @@ label path_town_alley:
 
     #terrorlightz.c "Following a girl to a dark alley."
 
-    $LongNVLText(commercialcris.c, (
+    $LongNVLText(narrator_none, (
     '''\
 You wait until Commercial Cris’s silhouette disappears into the crowd before you slip into the empty alleyway. Much like the alleys on your home planet, it is mostly filled with discarded trash and a distinct smell of urine. 
     '''
@@ -3330,25 +3300,25 @@ You wait until Commercial Cris’s silhouette disappears into the crowd before y
     show bg_townalley at my_walking with dissolve
 
 # (Effect - screen bouncing up and down slowly, walking...)
-    $LongNVLText(commercialcris.c, (
+    $LongNVLText(narrator_none, (
     '''\
 As you pass by the first round of unused trash cans, you notice a few shady looking aliens leaning onto the walls. The phrase “try not to stand out” runs through your mind as you quickly put your hands in your pockets and briskly walk with a fake air of confidence. 
     '''
     ))
 
-    $LongNVLText(commercialcris.c, (
+    $LongNVLText(narrator_none, (
     '''\
 While you could dodge the shady alien’s stares, you couldn’t ignore the increasing sense of dread you feel as the hairs on your neck perk up. 
     '''
     ))
 
-    $LongNVLText(commercialcris.c, (
+    $LongNVLText(narrator_none, (
     '''\
 “It’s fine. I’m fine, just feeling a bit paranoid,” You say to yourself quietly. Just yesterday you were wandering an empty desert. Today, you are trying to dodge suspicious looking aliens. If this is any indicator how your week is going to go, you aren’t sure how long you are going to keep a hold of your sanity. 
     '''
     ))
 
-    $LongNVLText(commercialcris.c, (
+    $LongNVLText(narrator_none, (
     '''\
 After involuntarily holding your breath as your heart thunders against your chest, you finally exit the alleyway. 
     '''
@@ -3357,43 +3327,43 @@ After involuntarily holding your breath as your heart thunders against your ches
     show bg_townoutskirts at my_walking with dissolve
 
 # (Effect: Change scene: bg_town alley...)
-    $LongNVLText(commercialcris.c, (
+    $LongNVLText(narrator_none, (
     '''\
 Considering the bustling streets you left behind, you could only assume that you are now in the outskirts of the city. 
     '''
     ))
 
-    $LongNVLText(commercialcris.c, (
+    $LongNVLText(narrator_none, (
     '''\
 If you had thought the alleyway was empty, the outskirts are completely barren in comparison. 
     '''
     ))
 
-    $LongNVLText(commercialcris.c, (
+    $LongNVLText(narrator_none, (
     '''\
 The silence is eerie as you make your way through the town. The difference in atmosphere was so starkly different, you almost want to turn and run back to the main strip. The fear of the unknown is man’s greatest fear after all. 
     '''
     ))
 
-    $LongNVLText(commercialcris.c, (
+    $LongNVLText(narrator_none, (
     '''\
 But you resist the feeling and press on. The soft smack of your shoes hitting the synthetic cobblestone makes you hyper aware of your surroundings.
     '''
     ))
 
-    $LongNVLText(commercialcris.c, (
+    $LongNVLText(narrator_none, (
     '''\
 Passing through empty fluorescent lit buildings, you wonder why there isn’t anyone else around. Is it a dangerous area? That doesn’t seem right. 
     '''
     ))
 
-    $LongNVLText(commercialcris.c, (
+    $LongNVLText(narrator_none, (
     '''\
 Is it deserted? More likely, but why would they waste resources on keeping the buildings lit? 
     '''
     ))
 
-    $LongNVLText(commercialcris.c, (
+    $LongNVLText(narrator_none, (
     '''\
 You are so focused on making sense of your situation that you almost miss a trail of pink fabric peeking out from the corner of the next building. 
     '''
@@ -3404,13 +3374,13 @@ You are so focused on making sense of your situation that you almost miss a trai
 
 
 # (Effect: Stop walking animation, look towards right side...)
-    $LongNVLText(commercialcris.c, (
+    $LongNVLText(narrator_none, (
     '''\
 You slow your pace and lean towards the corner. While the other side of the building is dark, you are able to trace the pink fabric to a silhouette of a person wearing a large dress.
     '''
     ))
 
-    $LongNVLText(commercialcris.c, (
+    $LongNVLText(narrator_none, (
     '''\
 You gulp. Another alien. Now will this be a friend or foe? 
     '''
@@ -3432,7 +3402,7 @@ label path_town_outskirts:
     show mswl myst_s_woman_breathing at center
 
 
-    $LongNVLText(mysteryspacewoman.c, (
+    $LongNVLText(narrator_none, (
     '''\
 You hesitantly approach the alien on the other side of the dark corner. 
     '''
@@ -3440,19 +3410,19 @@ You hesitantly approach the alien on the other side of the dark corner.
 
     show bg_townalley with dissolve
 
-    $LongNVLText(mysteryspacewoman.c, (
+    $LongNVLText(narrator_none, (
     '''\
 You knit your eyebrows together as you take in the strange…beautiful alien? 
     '''
     ))
 
-    $LongNVLText(mysteryspacewoman.c, (
+    $LongNVLText(narrator_none, (
     '''\
 Enveloped in a billowing, pastel pink-colored tulle dress, there stands a fragile-looking, turquoise-skinned alien. A soft trail of pink smoke, matching the color of dress, emanates off of her.  
     '''
     ))
 
-    $LongNVLText(mysteryspacewoman.c, (
+    $LongNVLText(narrator_none, (
     '''\
 She takes a few moments to examine you. After she is satisfied, she smirks at you as though she expected you to follow her. 
     '''
@@ -3466,13 +3436,13 @@ Her face–composed of soft, feminine features–produces an empathetic smile. A
     ))
 
     show mswl myst_s_woman_breathing
-    $LongNVLText(mysteryspacewoman.c, (
+    $LongNVLText(narrator_none, (
     '''\
 You let out a sigh of relief. Finally, a lucky break. You feel calmer already. 
     '''
     ))
 
-    $LongNVLText(mysteryspacewoman.c, (
+    $LongNVLText(narrator, (
     '''\
 Smiling back awkwardly, you say, “You could say that. I’m new here and got separated from my escort.” It feels more like a half-truth, but she didn’t need to know that. 
     '''
@@ -3486,7 +3456,7 @@ Her eyes widen slightly as she brings her slender hand towards her mouth. “Oh 
     ))
 
     show mswl myst_s_woman_breathing
-    $LongNVLText(mysteryspacewoman.c, (
+    $LongNVLText(narrator, (
     '''\
 Feigning embarrassment, you look downward, clutching the back of your neck. “Yeah it was pretty busy downtown and I got a bit distracted by all of the sights.”
     '''
@@ -3500,7 +3470,7 @@ She cocked her head and frowned disapprovingly. “I can understand that, but do
     ))
 
     show mswl myst_s_woman_breathing
-    $LongNVLText(mysteryspacewoman.c, (
+    $LongNVLText(narrator, (
     '''\
 You could believe that. An elegant alien like her walking by herself down the wrong street would make her a bigger target than even you–and you aren’t even from this planet. “I’m sorry to hear that. Considering the dangers, you could say I’ve been pretty fortunate.” 
     '''
@@ -3514,13 +3484,13 @@ You could believe that. An elegant alien like her walking by herself down the wr
     ))
 
     show mswl myst_s_woman_breathing
-    $LongNVLText(mysteryspacewoman.c, (
+    $LongNVLText(narrator_none, (
     '''\
 Where are you going? Do they have an immigration center here for unfortunate, lost off-world captains? 
     '''
     ))
 
-    $LongNVLText(mysteryspacewoman.c, (
+    $LongNVLText(narrator, (
     '''\
 After a few moments of pondering, you make up your mind. “The nearest ship station,” Maybe you could hitch a ride on the next spaceship heading towards your galaxy. You had valuable navigation skills so you could feasibly trade your services for a ride. 
     '''
@@ -3535,7 +3505,7 @@ She giggles. “I knew you weren’t from here.” She cups her face with her pa
 
 #(Effect - mysterious space woman bounces up and down for a few seconds.)
     show mswl myst_s_woman_breathing 
-    $LongNVLText(mysteryspacewoman.c, (
+    $LongNVLText(narrator_none, (
     '''\
 A minute goes by and you start doubting your odds. You start debating if you should ditch the pretty alien and try your luck exploring the city by yourself, but before you open your mouth to speak, she claps her hands excitedly and points toward the narrow alley in front of you. 
     '''
@@ -3549,7 +3519,7 @@ A minute goes by and you start doubting your odds. You start debating if you sho
     ))
     
     show mswl myst_s_woman_breathing
-    $LongNVLText(mysteryspacewoman.c, (
+    $LongNVLText(narrator_none, (
     '''\
 You take her hand and she leads you into the alley.
     '''
@@ -3569,18 +3539,18 @@ label path_town_alley_again:
     show mswl myst_s_woman_breathing
 
 # (Effect: WALKING ANIMATION)
-    $LongNVLText(mysteryspacewoman.c, (
+    $LongNVLText(narrator_none, (
     '''\
 After 30 minutes of seemingly aimless turns through endless rows of alleyways, you start to feel anxious. Every turn you take is the same as the last last. Dark and decrepit. While your guide is ever-confident, never once double-backed or hesitating, you still can’t comprehend that this endless maze of alleys would lead anywhere.    '''
     ))
 
-    $LongNVLText(mysteryspacewoman.c, (
+    $LongNVLText(narrator_none, (
     '''\
 Is she lost? You hope not. She’s your only hope to get off of this god-forsaken planet. 
     '''
     ))
 
-    $LongNVLText(mysteryspacewoman.c, (
+    $LongNVLText(narrator, (
     '''\
 You clear your throat as you make another sharp turn. Finally, she lets go of your hand. Unsurprisingly, it looks just as uninviting as the last. “Um, are you sure we are going in the right direction?” 
     '''
@@ -3597,13 +3567,13 @@ You hear her giggle softly next to you. “Yes, of course, sweetie. You have to 
     ))
 
     show mswl myst_s_woman_breathing
-    $LongNVLText(mysteryspacewoman.c, (
+    $LongNVLText(narrator_none, (
     '''\
 Trust her? How could you when you only met her an hour ago? Even worse, it is dark out. You lost the little amount of light you had left. Without daylight, you are completely and utterly helpless. 
     '''
     ))
 
-    $LongNVLText(mysteryspacewoman.c, (
+    $LongNVLText(narrator_none, (
     '''\
 It doesn’t seem like your guide is as knowledgeable as you once hoped so you start your own investigation. Though it’s hard to make out in the dark, you feel your way around using the cracked brick-lined walls as your guide. It only takes a minute or two of feeling around, but you start to grow more anxious when you collide with the wall on the other side of the alley. Your assumptions are correct–this alley is a dead end.  
     '''
@@ -3611,7 +3581,7 @@ It doesn’t seem like your guide is as knowledgeable as you once hoped so you s
 
 #point and click
 
-    $LongNVLText(mysteryspacewoman.c, (
+    $LongNVLText(narrator_none, (
     '''\
 You gulp and the hairs on the back of your neck perk up. This would be the perfect opportunity for someone to rob you. You shake your head and dismiss the thought. There is no way she is a criminal! 
     '''
@@ -3636,14 +3606,14 @@ You gulp and the hairs on the back of your neck perk up. This would be the perfe
 
 # EFFECT: BOUNCE 
     show mswl myst_s_woman_scary_transition
-    $LongNVLText(mysteryspacewoman.c, (
+    $LongNVLText(narrator_none, (
     '''\
 As your mind was racing with how to handle this situation, you turn too quickly to the left and trip over an overturned trash can. The metallic lid screeches as it rolls through the alley.
     '''
     ))
 
     show mswl myst_s_woman_scary
-    $LongNVLText(mysteryspacewoman.c, (
+    $LongNVLText(narrator_none, (
     '''\
 A soft voice cuts through the darkness. 
 '''
@@ -3660,13 +3630,13 @@ A soft voice cuts through the darkness.
     show mswl myst_s_woman_scary_happy
     #option to make her darker: subpixel True matrixcolor InvertMatrix(0.0)*ContrastMatrix(1.0)*SaturationMatrix(1.0)*BrightnessMatrix(-0.5)*HueMatrix(1.0) 
     
-    $LongNVLText(mysteryspacewoman.c, (
+    $LongNVLText(narrator_none, (
     '''\
 You look up and notice the pretty alien hovering over you. Your eyes widen. When did she get so close to you? You didn’t hear her following you.
     '''
     ))
 
-    $LongNVLText(mysteryspacewoman.c, (
+    $LongNVLText(narrator_none, (
     '''\
 You reach up to take her outstretched arm, but pull away before you make contact. Something is very, very wrong. 
     '''
@@ -3689,14 +3659,14 @@ You reach up to take her outstretched arm, but pull away before you make contact
     
   
   #(Effect: PAN IN CLOSER TO ALIEN’s FACE)
-    $LongNVLText(mysteryspacewoman.c, (
+    $LongNVLText(narrator_none, (
     '''\
 Upon closer inspection of her face, you notice that her eyes, once delicate and gentle, are now cold and expressionless. Her mouth, wider than before, displays pointed, jagged teeth.
     '''
     ))
 
     show mswl myst_s_woman_scary
-    $LongNVLText(mysteryspacewoman.c, (
+    $LongNVLText(narrator_none, (
     '''\
 The pink, elegant clothes she once wore melted away, revealing a horrifying wolf-like alien. Her voice, in a deeper pitch, mocks you. 
     '''
@@ -3710,7 +3680,7 @@ The pink, elegant clothes she once wore melted away, revealing a horrifying wolf
     ))
 
     show mswl myst_s_woman_scary_happy
-    $LongNVLText(mysteryspacewoman.c, (
+    $LongNVLText(narrator_none, (
     '''\
 You scream for the last time as the terrifying alien licks its lips and dives into you. 
     '''
@@ -3786,7 +3756,7 @@ Typical.
     show protl protag_lookup_breathing:
         subpixel True pos (-0.17, 0.5) 
 
-    $LongNVLText(commercialcris.c, (
+    $LongNVLText(narrator_none, (
     '''\
 You felt a little lighter when the tavern came into view. Jovial mummers flood your ears as you approach the threshold. 
     '''
@@ -3930,13 +3900,13 @@ label path_tavern_drink:
 
     show commercialcris_talking at right
 
-    $LongNVLText(narrator, (
+    $LongNVLText(narrator_none, (
     '''\
 You believe you have gotten a sufficient lay of the land. With a bit less hesitation you move deeper inside of the tavern, Commercial Cris following closely behind.
     '''
     ))
 
-    $LongNVLText(commercialcris.c, (
+    $LongNVLText(narrator_none, (
     '''\
 Past the larger heater, you spy an empty table. You scoot the chair out and take a seat. You watch as Commercial Cris takes the seat directly across from you, his smile unwavering. 
     '''
@@ -3948,13 +3918,13 @@ Past the larger heater, you spy an empty table. You scoot the chair out and take
     '''
     ))
 
-    $LongNVLText(commercialcris.c, (
+    $LongNVLText(narrator, (
     '''\
 You raise your eyebrow. You highly doubt that you could find a drink here that would resemble anything that you are familiar with so you just shrug. “I’ll have what you're having.” 
     '''
     ))
 
-    $LongNVLText(commercialcris.c, (
+    $LongNVLText(narrator_none, (
     '''\
 Eyeing your escort, you grit your teeth, quickly regretting your decision. Anything a tv-human hybrid could drink, probably isn’t good for you. 
     '''
@@ -3966,7 +3936,7 @@ Assuming your thoughts, Commercial Cris chuckled. “Right.”
     '''
     ))
 
-    $LongNVLText(commercialcris.c, (
+    $LongNVLText(narrator_none, (
     '''\
 A green, scaly-faced alien approaches the table with a tablet device in hand. With a voice sounding like it was trapped underwater, she asks, eyeing Commercial Cris, “To what do we owe your presence, your majesty?” 
     '''
@@ -3978,13 +3948,13 @@ Commercial Cris leans back onto his chair, hands laying lightly on his stomach. 
     '''
     ))
 
-    $LongNVLText(commercialcris.c, (
+    $LongNVLText(narrator_none, (
     '''\
 The waiter’s beady, yellow eyes opened in surprise and looked towards you. After looking you up and down, she was obviously unimpressed. “Aye, pilot, did you get your license yesterday? You left quite the mess. It was all over the news.” 
     '''
     ))
 
-    $LongNVLText(commercialcris.c, (
+    $LongNVLText(narrator_none, (
     '''\
 Your nostrils flared and you clench your fist underneath the table. What an ignorant thing to say?! You hardly had much of a choice where you could land after the impact. 
     '''
@@ -3996,25 +3966,25 @@ Sensing the rising tension, Commercial Cris clears his throat to take back the a
     '''
     ))
 
-    $LongNVLText(commercialcris.c, (
+    $LongNVLText(narrator_none, (
     '''\
 With a few practiced motions, the waitress places the order on the tablet and leaves the table. 
     '''
     ))
 
-    $LongNVLText(commercialcris.c, (
+    $LongNVLText(narrator_none, (
     '''\
 You didn’t realize that you had been holding your breath until you unclench your fist and take a deep breath. 
     '''
     ))
 
-    $LongNVLText(commercialcris.c, (
+    $LongNVLText(narrator_none, (
     '''\
 So what if this planet doesn’t know the truth? If you play your cards right, you’ll be on the next ship and then none of this will matter. 
     '''
     ))
 
-    $LongNVLText(commercialcris.c, (
+    $LongNVLText(narrator, (
     '''\
 You turn your focus back on Commercial Cris, who is looking around the tavern with a bored expression. You decide to be blunt and to the point. After that display of rudeness, you think it’s only fair to be candid. “Do you have an inter-galaxy space station here?” 
     '''
@@ -4026,19 +3996,19 @@ With a raised eyebrow and sour expression, Commercial Cris responds, “Yes of c
     '''
     ))
 
-    $LongNVLText(commercialcris.c, (
+    $LongNVLText(narrator_none, (
     '''\
 You feel your heart beat faster. Finally, some progress! 
     '''
     ))
 
-    $LongNVLText(commercialcris.c, (
+    $LongNVLText(narrator_none, (
     '''\
 Time to play the good samaritan here. This is your way out! 
     '''
     ))
 
-    $LongNVLText(commercialcris.c, (
+    $LongNVLText(narrator_none, (
     '''\
 You smile and open your mouth to respond, but before you can get any words out you hear glass breaking, loud cursing, and a scuffle.  Effect: Shake screen
     '''
@@ -4049,13 +4019,13 @@ You smile and open your mouth to respond, but before you can get any words out y
     show bg_insidetavern with dissolve
     show commercialcris_talking at right
 
-    $LongNVLText(narrator, (
+    $LongNVLText(narrator_none, (
     '''\
 You turn your head towards the loud noise. Across the tavern, you see three crouching silhouettes tumbling across the floor. 
     '''
     ))
 
-    $LongNVLText(commercialcris.c, (
+    $LongNVLText(narrator_none, (
     '''\
 Nervously, you look towards your guide who seems utterly amused by this new development. 
     '''
@@ -4067,7 +4037,7 @@ With one hand on the table balancing the tv screen, he motions with his free han
     '''
     ))
 
-    $LongNVLText(commercialcris.c, (
+    $LongNVLText(narrator_none, (
     '''\
 You take that as permission to break away from your awkward conversation and examine the scene. You scoot your chair back and approach the growing crowd encircling the fight.
     '''
@@ -4077,13 +4047,13 @@ You take that as permission to break away from your awkward conversation and exa
     scene black
     show bg_tavernbartender with dissolve
 
-    $LongNVLText(commercialcris.c, (
+    $LongNVLText(narrator_none, (
     '''\
 Throughout your short tour of the city you’ve noticed that most of the creatures on Psilicon 5 are taller than you. 
     '''
     ))
 
-    $LongNVLText(commercialcris.c, (
+    $LongNVLText(narrator_none, (
     '''\
 You try to stand on an empty chair to get a better view, but soon learn that it is ineffective. Instead, you squirm your way through the crowd until you finally get a better look. 
     '''
@@ -4093,37 +4063,37 @@ You try to stand on an empty chair to get a better view, but soon learn that it 
     scene black
     show bg_tavernfight with dissolve
 
-    $LongNVLText(commercialcris.c, (
+    $LongNVLText(narrator_none, (
     '''\
 In between the excited screeches of the crowd you hear what you could only assume are curses by the two fighting creatures.
     '''
     ))
 
-    $LongNVLText(commercialcris.c, (
+    $LongNVLText(narrator_none, (
     '''\
 You have never seen anything like it before. A single “rat-like” alien sits, clutching onto the table, bracing for a fight. A larger, more imposing alien stands in front of the small alien snarling. Their onlooking table mates, a human and a green, bald-headed alien try without success to break up the fight.
     '''
     ))
 
-    $LongNVLText(commercialcris.c, (
+    $LongNVLText(narrator_none, (
     '''\
 Before anyone could process the scene before them, glasses full of alcohol are thrown back and forth into the crowd. Broken bottles are scattered across the already dirty, uneven wood floor, making the situation more precarious than before. The crowd, disinterested or desensitized to the danger, continues to cheer on the fight.
     '''
     ))
 
-    $LongNVLText(commercialcris.c, (
+    $LongNVLText(narrator_none, (
     '''\
 You question whether you should stay to watch the scuffle ensue, but before you can make a conscious decision, the human is thrown by the lion-headed alien into the crowd, right in front of your feet. In the heat of the moment, the human claws at your pant legs, trying to get up. 
     '''
     ))
 
-    $LongNVLText(commercialcris.c, (
+    $LongNVLText(narrator_none, (
     '''\
 Right. Time to go. 
     '''
     ))
 
-    $LongNVLText(commercialcris.c, (
+    $LongNVLText(narrator_none, (
     '''\
 Afraid that you are going to become an unwilling participant in this situation, you scurry back to your table. 
     '''
@@ -4133,13 +4103,13 @@ Afraid that you are going to become an unwilling participant in this situation, 
     scene black
     show bg_insidetavern with dissolve
 
-    $LongNVLText(commercialcris.c, (
+    $LongNVLText(narrator_none, (
     '''\
 After sitting back into your seat–which you find far more comfortable than before–you notice there is a pint of mysterious liquid in front of you. The waitress must have dropped off while you were away. 
     '''
     ))
 
-    $LongNVLText(commercialcris.c, (
+    $LongNVLText(narrator_none, (
     '''\
 You could really use a drink now. To hell with the consequences. With shaky hands, you take a sip. 
     '''
@@ -4151,13 +4121,13 @@ Commercial Cris, all the more amused with your discomfort, smirks at you. “The
     '''
     ))
 
-    $LongNVLText(commercialcris.c, (
+    $LongNVLText(narrator_none, (
     '''\
 Harmless fight he calls it. You nearly got hit in the face by an airborne glass bottle and run over by an over-excited crowd. On your home planet you may have witnessed a fight or two, but those mainly consisted of verbal-screaming matches. Physical fights were considered neanderthal tactics. So yeah, this is hardly “harmless” to you. 
     '''
     ))
 
-    $LongNVLText(commercialcris.c, (
+    $LongNVLText(narrator_none, (
     '''\
 Ignoring the onslaught of Commercial Cris’s snide comments, you dose your discomfort in your drink. It tastes putrid, slimy, bitter, but blissfully alcoholic. After a few large gulps, you start to feel more relaxed. 
     '''
@@ -4169,13 +4139,13 @@ Getting the hint that you aren’t going to react to his comments anymore, Comme
     '''
     ))
 
-    $LongNVLText(commercialcris.c, (
+    $LongNVLText(narrator_none, (
     '''\
 Challenge accepted. With an air of feigned confidence, you chug the rest of your drink. 
     '''
     ))
 
-    $LongNVLText(commercialcris.c, (
+    $LongNVLText(narrator_none, (
     '''\
 Aisthesis here you come.
     '''
@@ -4191,37 +4161,37 @@ label path_town_walk:
 
     show commercialcris_talking at right
 
-    $LongNVLText(narrator, (
+    $LongNVLText(narrator_none, (
     '''\
 Silently, Commercial Cris eyes you, tapping his watch with finality. With one last gulp of your drink, you get up. If your tavern experience told you anything, it is that this place is full of surprises. Now though, you are a tad tipsy—which makes this misadventure immeasurably less terrifying and much more exciting. 
     '''
     ))
 
-    $LongNVLText(commercialcris.c, (
+    $LongNVLText(narrator_none, (
     '''\
 With far less grace than before, you clumsily scoot your chair out and stand up, Commercial Cris already waiting at the door. 
     '''
     ))
 
-    $LongNVLText(commercialcris.c, (
+    $LongNVLText(narrator_none, (
     '''\
 Your head spins faintly as you walk out of the tavern—almost in a straight line.
     '''
     ))
 
-    $LongNVLText(commercialcris.c, (
+    $LongNVLText(narrator_none, (
     '''\
 Commercial Cris’s tour is about as good as his company at the tavern, short, brief, and a tad impatient. 
     '''
     ))
 
-    $LongNVLText(commercialcris.c, (
+    $LongNVLText(narrator_none, (
     '''\
 The biggest thing that stood out to you about the town is the architecture. The buildings were tall, but with jagged, pointy roofs. To match the structure, the windows are retrofitted in broken, kaleidoscope patterns. 
     '''
     ))
 
-    $LongNVLText(commercialcris.c, (
+    $LongNVLText(narrator_none, (
     '''\
 Did windows serve a different purpose here? You couldn’t imagine that it is possible to see a clear image outside of them. Weird..but kind of cool at the same time. 
     '''
@@ -4229,19 +4199,19 @@ Did windows serve a different purpose here? You couldn’t imagine that it is po
 
 # (EDIT for Alyssa Made change to BG_TOWN and BG_TAVERNFIGHT (highlighted in yellow))
 
-    $LongNVLText(commercialcris.c, (
+    $LongNVLText(narrator_none, (
     '''\
 After only about 20 minutes, your “tour” of the town ended. He drops you off at exactly where you started, at the hospital. With a noncommittal grin and short wave he mentions he is late to a meeting and quickly scampers away. 
     '''
     ))
 
-    $LongNVLText(commercialcris.c, (
+    $LongNVLText(narrator_none, (
     '''\
 Being much drunker than you were this morning, you find his desertion less infuriating. Your only regret is that you didn’t get the chance to ask about the intergalactic space station. Maybe you could ask one of the nurses?  
     '''
     ))
 
-    $LongNVLText(commercialcris.c, (
+    $LongNVLText(narrator_none, (
     '''\
 With a sigh and zero options, you open the door and enter the hospital. Leaning back into your hospital bed you feel like you haven’t accomplished much today.  
     '''
