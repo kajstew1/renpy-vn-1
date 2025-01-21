@@ -73,6 +73,7 @@ screen evt_choose_town_path:
             margin (0,0,10,0)
             text "Choose a path."
 
+# not used at this time
 screen showName:
     style_prefix "showName"
     frame: #now we want to do vbox to make the input below the textbox
@@ -93,7 +94,14 @@ screen showName:
         #            linear 2 alpha 1.0 #now you add how it's changed (I used linear but here are all: https://www.renpy.org/doc/html/atl.html#warpers) then the time of the animation and then to what it is changed
 
 
+style showName_text:
+    size 30
+    color "#F44336"
 
+
+
+
+# used in screen_customization_nav to change the name of the narrator
 screen enterName:
     style_prefix "enterName"
     frame: #now we want to do vbox to make the input below the textbox
@@ -110,10 +118,17 @@ screen enterName:
             pixel_width(500) # this to not allow too long name
             value VariableInputValue("player_name") # with this you save the input to a variable.
 
-
-
+# style for the input text area of screen_customization_nav
+style enterName_input:
+    size 30
+    color "000000"
+    hover_color "#7836f4"
+    bold True
+    
+ 
 
 # renpy.call_screen
+# Initial screen that sets the user name and pronouns before Scene 1
 screen screen_customization_nav:
     add "bg_customization"
     modal True  # prevents from interacting with assets under or below it
@@ -162,8 +177,6 @@ screen screen_customization_nav:
         focus_mask True  # in case any transparent pixels in image mask in the image box they are clickable
         hovered SetVariable("screen_tooltip", "She/Her")
         unhovered SetVariable("screen_tooltip", "")
-        #action ToggleVariable("she_selected", True, False)
-        #action [ToggleVariable("she_selected", True, False), SelectedIf(she_selected), If ("cc_she" in seen_labels, false=[Hide(None), None, Jump("set_customization_she_vars")])]
         action [SetVariable ("pronoun1_selected", "she"), SelectedIf(pronoun1_selected =="she"), If ("cc_she" in seen_labels, false=[Hide(None), None, Call("set_customization_she_vars")])]
  
 
@@ -171,19 +184,13 @@ screen screen_customization_nav:
         focus_mask True  # in case any transparent pixels in image mask in the image box they are clickable
         hovered SetVariable("screen_tooltip", "He/Him")
         unhovered SetVariable("screen_tooltip", "")
-        #action [ToggleVariable("he_selected", True, False), SelectedIf(he_selected),If ("cc_he" in seen_labels, false=[Hide(None), None, Jump("set_customization_he_vars")])]
         action [SetVariable ("pronoun1_selected", "she"), SelectedIf(pronoun1_selected =="he"), If ("cc_he" in seen_labels, false=[Hide(None), None, Call("set_customization_he_vars")])]
-        #action ToggleVariable("he_selected", True, False)
-        #action [If ("cc_she" in seen_labels, false=[Hide(None), None, Call("set_customization_he_vars")], SelectedIf(he_selected))]
 
     imagebutton auto "cc_they_%s":
         focus_mask True  # in case any transparent pixels in image mask in the image box they are clickable
         hovered SetVariable("screen_tooltip", "They/Them")
         unhovered SetVariable("screen_tooltip", "")
-        #action [ToggleVariable("they_selected", True, False), SelectedIf(they_selected),If ("cc_they" in seen_labels, false=[Hide(None), None, Jump("set_customization_they_vars")])]
         action [SetVariable ("pronoun1_selected", "she"), SelectedIf(pronoun1_selected =="they"), If ("cc_they" in seen_labels, false=[Hide(None), None, Call("set_customization_they_vars")])]
-        #action ToggleVariable("they_selected", True, False)
-        #action [If ("cc_they" in seen_labels, false=[Hide(None), None, Call("set_customization_she_vars")], SelectedIf(they_selected))]
 
     imagebutton auto "cc_confirm_%s":
         focus_mask True  # in case any transparent pixels in image mask in the image box they are clickable
@@ -198,31 +205,14 @@ screen screen_customization_nav:
 #        yalign 0.1
 #        textbutton "Continue" action Jump("path_crash_site")
     
-    #imagebutton auto "cc_name_%s":
-    #    focus_mask True  # in case any transparent pixels in image mask in the image box they are clickable
-    #    hovered SetVariable("screen_tooltip", "name")
-    #    unhovered SetVariable("screen_tooltip", "")
-    #    action If ("cc_name" in seen_labels, false=[Hide(None), None, Jump("set_customization_name_vars")])
- 
     
 
-style enterName_input:
-    size 30
-    color "000000"
-    hover_color "#7836f4"
-    bold True
-    
-    
-
-style showName_text:
-    size 30
-    color "#F44336"
 
 
+# Clickable icon area at the fork at Scene 2 before making path decision
 screen screen_crash_fork_nav:
     add "bg_fork"
     modal True  # prevents from interacting with assets under or below it
-#    add screen showName
 
     hbox:
         xalign 0.5
@@ -243,8 +233,6 @@ screen screen_crash_fork_nav:
         hovered SetVariable("screen_tooltip", "To your left, you spot an iridescent colored moon surrounded by four small planets. You aren’t sure why, but you feel a sense of warmth when you look at them.")
         unhovered SetVariable("screen_tooltip", "")
         action If ("cc_name" in seen_labels, false=[Hide(None), None, Jump("set_customization_name_vars")])
-
-
 
     imagebutton auto "left_path_%s":
         focus_mask True  # in case any transparent pixels in image mask in the image box they are clickable
@@ -271,6 +259,12 @@ screen screen_crash_fork_nav:
         yalign 0.1
         xanchor 0.5
         textbutton "Click to continue after checking the area" action Jump("crash_fork_menu")
+
+
+
+
+
+
 
 screen tavern_nav:
     add "bg_tavern"

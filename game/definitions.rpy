@@ -53,6 +53,8 @@ init -100:
         parallel:
             linear 10 zoom 1.5
 
+
+    # called from Scene 2b while taking the right path
     transform my_running:
         parallel:
             easein 0.2 xoffset 0 yoffset 30
@@ -75,6 +77,7 @@ init -100:
         #linear 0.1 xoffset 0 yoffset 0
         #repeat 10
 
+    # Called from Scene 2h
     transform my_walking:
         parallel:
             easein 0.4 xoffset 0 yoffset 30
@@ -88,6 +91,9 @@ init -100:
         #parallel:
             #easein 4.0 crop (860, 430, 860, 600)
 
+
+
+    # called from Scene 4 while returning to the spaceship
     transform str_walking:
         parallel:
             easein 0.6 xoffset 0 yoffset 30
@@ -101,6 +107,7 @@ init -100:
         #parallel:
             #easein 4.0 crop (860, 430, 860, 600)
 
+    # called from Scene 4 while returning to the spaceship and Scene 2h
     transform slow_walking:
         parallel:
             easein 0.7 xoffset 0 yoffset 30
@@ -114,6 +121,7 @@ init -100:
         #parallel:
             #easein 4.0 crop (860, 430, 860, 600)
 
+    # called from Scene 2h
     transform basic_fade:
         on show:
             alpha 0.0
@@ -133,6 +141,8 @@ init -100:
     transform exitright:
         linear 3.0 xpos 1.5 xzoom -1.0
 
+    
+    # called from Scene 2g
     transform abstract_scene: 
         subpixel True 
         parallel:
@@ -171,6 +181,8 @@ default persistent.path_to_tavern_taken = False
 # to disable chosen paths
 define config.menu_include_disabled = True
 
+
+# Transitions between Scenes 2e/2f 3a/3b (closing and opening eye)
 define in_eye_fast = ImageDissolve("images/eye.png", 1.0)
 define out_eye_fast = ImageDissolve("images/eye.png", 1.0, reverse=True)
 define in_eye = ImageDissolve("images/eye.png", 6.0)
@@ -239,9 +251,9 @@ default player_name = player_name_default
 default p_player_name_input = VariableInputValue("player_name", default=False)
 
 
-
-##### Set layers for the side character
-#make a whole new layer for the char for the side character.
+# Set up for the Live2D protagonist side character (protl)
+#   Set layers for the protl side character so stays behind dialogue
+#     make a whole new layer for the char for the side character.
 define config.layers = [ 'master', 'transient','screens','character', 'overlay' ] 
 
 #tag it so every protl image is automatically place on the 'character' layer. 
@@ -251,7 +263,44 @@ define config.tag_layer = {'protl':'character'}
 # clear it so the char will disappear when enter game screen, otherwise he will awkwardly stay there
 define config.menu_clear_layers = ['character'] 
 
-#define sidenarrator1 = Character(None, image="narrator_img")
+image protl = MyLive2D("images/protagonist_motions", default_fade=0.0, top=0.0, base=1.0, height=1.0, loop=True, fallback="protagonist breathing")
+
+
+
+
+define narrator = Character ("[player_name]") #, what_slow_cps=0, what_font="fontfile_name.ttf")
+define narrator_none = Character (None)  #  # called from Scene 2g
+define narrator_nvl = Character (None, kind=nvl) #, what_slow_cps=0, what_font="fontfile_name.ttf")
+
+
+#introduced in Scene 2f
+define terrorlightz = Actor(Character("Terrorlightz", color="#E26EFF"), "Terrorlightz")
+
+image tll = MyLive2D("images/terrorlightz_motions", default_fade=0.0, top=0.0, base=1.0, height=1.0, loop=True, fallback="terrorlightz talking")
+
+
+
+#introduced in Scene 3b seems to be the protl side character
+define drpsilicon =  Actor(Character("Dr. Psilicon", who_color="9EFB65", what_color="#8ac924"), "Dr. Psilicon")
+
+image drp_motions = MyLive2D("images/dr_p_motions", default_fade=0.0, loop=True, fallback="dr_p casual talking")
+image drpl = MyLive2D("images/dr_p_motions", default_fade=0.0, top=0.0, base=1.0, height=1.0, loop=True, fallback="drp casual talking")
+
+
+# introduced in Scene 3c
+define commercialcris = Actor(Character("Commercial Cris", color="#D5D5D5"), "Commercial Cris")
+
+image ccl = MyLive2D("images/cc_motions", default_fade=0.0, top=0.0, base=1.0, height=1.0, loop=True, fallback="commercialcris talking")
+
+
+
+# introduced in Scene 3c2
+define mysteryspacewoman = Actor(Character("Mystery Space Woman", color="#FCA4C5"), "Mystery Space Woman")
+
+image mswl = MyLive2D("images/myst_s_woman_motions", default_fade=0.0, top=0.0, base=1.0, height=1.0, loop=True, fallback="mysteryspacewoman talking")
+
+
+
 
 define char = Character('Me', image="charimage")
 image side charimage = MyLive2D("images/myst_s_woman_motions/myst_s_woman_motions.model3.json", loop=True, fallback="mysteryspacewoman talking")
@@ -261,21 +310,13 @@ image side narrator_img = MyLive2D("images/protagonist_motions/protagonist_motio
 #image side narrator_img = Live2D("images/protagonist_motions/protagonist_motions.model3.json", loop=True, motions="protag_breathing", zoom=.1)
 #image side narrator_img = "side_protagonist_neutral"
 
-image drp_motions = MyLive2D("images/dr_p_motions", default_fade=0.0, loop=True, fallback="dr_p casual talking")
-image ccl = MyLive2D("images/cc_motions", default_fade=0.0, top=0.0, base=1.0, height=1.0, loop=True, fallback="commercialcris talking")
-image mswl = MyLive2D("images/myst_s_woman_motions", default_fade=0.0, top=0.0, base=1.0, height=1.0, loop=True, fallback="mysteryspacewoman talking")
-image protl = MyLive2D("images/protagonist_motions", default_fade=0.0, top=0.0, base=1.0, height=1.0, loop=True, fallback="protagonist breathing")
-image tll = MyLive2D("images/terrorlightz_motions", default_fade=0.0, top=0.0, base=1.0, height=1.0, loop=True, fallback="terrorlightz talking")
-image drpl = MyLive2D("images/dr_p_motions", default_fade=0.0, top=0.0, base=1.0, height=1.0, loop=True, fallback="drp casual talking")
 
-define narrator = Character ("[player_name]") #, what_slow_cps=0, what_font="fontfile_name.ttf")
-define narrator_none = Character (None)
-define narrator_nvl = Character (None, kind=nvl) #, what_slow_cps=0, what_font="fontfile_name.ttf")
 
-define drpsilicon =  Actor(Character("Dr. Psilicon", who_color="9EFB65", what_color="#8ac924"), "Dr. Psilicon")
-define terrorlightz = Actor(Character("Terrorlightz", color="#E26EFF"), "Terrorlightz")
-define commercialcris = Actor(Character("Commercial Cris", color="#D5D5D5"), "Commercial Cris")
-define mysteryspacewoman = Actor(Character("Mystery Space Woman", color="#FCA4C5"), "Mystery Space Woman")
+
+
+
+
+
 
 
 # backgrounds 
