@@ -3835,7 +3835,7 @@ Eager to get away from the crowds, you walk into the tavern. You guess this is a
 label path_tavern_nav:
     scene bg_tavern with dissolve
 
-    $LongNVLText(narrator, (
+    $LongNVLText(narrator_none, (
     '''\
 Explore the area by selecting an item. 
 {w=3}{nw} 
@@ -3853,7 +3853,7 @@ Explore the area by selecting an item.
 label path_tavern_bin:
     $ seen_labels.add("tavern_bin")
 
-    $LongNVLText(narrator, (
+    $LongNVLText(narrator_none, (
     '''\
 Sitting idly outside sits a trash bin. You find some comfort in seeing that even on an alien planet, they have the same strategy to dispose of trash. 
     '''
@@ -3863,7 +3863,7 @@ Sitting idly outside sits a trash bin. You find some comfort in seeing that even
 label path_tavern_heater:
     $ seen_labels.add("tavern_heater")
 
-    $LongNVLText(narrator, (
+    $LongNVLText(narrator_none, (
     '''\
 Centrally placed in the tavern is a giant heater. Ornately decorated in carvings and hanging trinkets, it looms over the tavern’s patrons. You wonder how something that large emitting so much heat hadn’t burned the place down. Maybe it had? 
     '''
@@ -3873,7 +3873,7 @@ Centrally placed in the tavern is a giant heater. Ornately decorated in carvings
 label path_tavern_patron:
     $ seen_labels.add("tavern_patron")
 
-    $LongNVLText(narrator, (
+    $LongNVLText(narrator_none, (
     '''\
 You notice the aliens sitting at the bar. Though you don’t understand their language, the crashing of their pint glasses and laughter made it apparent they are having a good time. 
     '''
@@ -3883,7 +3883,7 @@ You notice the aliens sitting at the bar. Though you don’t understand their la
 label path_tavern_sign:
     $ seen_labels.add("tavern_sign")
 
-    $LongNVLText(narrator, (
+    $LongNVLText(narrator_none, (
     '''\
 Outside of the tavern hangs a single sign in an unfamiliar language. This must mark the name of the establishment. 
     '''
@@ -3907,7 +3907,6 @@ You believe you have gotten a sufficient lay of the land. With a bit less hesita
     '''
     ))
 
-<<<<<<< HEAD
     show ccl cc_breathing with dissolve:
         subpixel True 
         ypos 1.0 
@@ -3918,8 +3917,6 @@ You believe you have gotten a sufficient lay of the land. With a bit less hesita
         ypos 1.0 
         subpixel True additive 0.0 matrixcolor InvertMatrix(0.0)*ContrastMatrix(1.5)*SaturationMatrix(1.75)*BrightnessMatrix(0.0)*HueMatrix(0.0) blend None
 
-=======
->>>>>>> a817b21e8b489886203dbfd58bf30474ef455617
     $LongNVLText(narrator_none, (
     '''\
 Past the larger heater, you spy an empty table. You scoot the chair out and take a seat. You watch as Commercial Cris takes the seat directly across from you, his smile unwavering. 
@@ -3931,30 +3928,25 @@ Past the larger heater, you spy an empty table. You scoot the chair out and take
 
 
 
-    $LongNVLText(narrator_none, (
+    $LongNVLText(commercialcris.c, (
     '''\
 “So, tourist. What’s your poison?” Commercial Cris asks, raising a hand to hail a passing waiter.
     '''
     ))
 
-<<<<<<< HEAD
     show ccl cc_breathing:
         subpixel True additive 0.0 matrixcolor InvertMatrix(0.0)*ContrastMatrix(1.5)*SaturationMatrix(1.75)*BrightnessMatrix(0.0)*HueMatrix(0.0) blend None
 
     $LongNVLText(narrator_none, (
-=======
-    $LongNVLText(narrator, (
->>>>>>> a817b21e8b489886203dbfd58bf30474ef455617
     '''\
 You raise your eyebrow. You highly doubt that you could find a drink here that would resemble anything that you are familiar with so you just shrug. 
     '''
     ))
 
-<<<<<<< HEAD
     show protl protag_lookup_breathing_stay_talking:
         subpixel True pos (-0.17, 0.5) 
 
-    $LongNVLText(commercialcris.c, (
+    $LongNVLText(narrator, (
     '''\
 “I’ll have what you're having.” 
     '''
@@ -3963,10 +3955,7 @@ You raise your eyebrow. You highly doubt that you could find a drink here that w
     show protl protag_mad_breathing:
         subpixel True pos (-0.17, 0.5) 
 
-    $LongNVLText(commercialcris.c, (
-=======
     $LongNVLText(narrator_none, (
->>>>>>> a817b21e8b489886203dbfd58bf30474ef455617
     '''\
 Eyeing your escort, you grit your teeth, quickly regretting your decision. Anything a tv-human hybrid could drink, probably isn’t good for you. 
     '''
@@ -3984,7 +3973,6 @@ Assuming your thoughts, Commercial Cris chuckled. “Right.”
     '''
     ))
 
-<<<<<<< HEAD
     show ccl cc_breathing:
         subpixel True additive 0.0 matrixcolor InvertMatrix(0.0)*ContrastMatrix(1.5)*SaturationMatrix(1.75)*BrightnessMatrix(0.0)*HueMatrix(0.0) blend None
 
@@ -3996,7 +3984,7 @@ A green, scaly-faced alien approaches the table with a tablet device in hand.
 
 
 
-    $LongNVLText(narrator_none, (
+    $LongNVLText(belvania, (
     '''\
 With a voice sounding like it was trapped underwater, she asks, eyeing Commercial Cris, “To what do we owe your presence, your majesty?” 
     '''
@@ -4016,9 +4004,6 @@ Commercial Cris leans back onto his chair, hands laying lightly on his stomach.
 
 
     $LongNVLText(commercialcris.c, (
-=======
-    $LongNVLText(narrator_none, (
->>>>>>> a817b21e8b489886203dbfd58bf30474ef455617
     '''\
 “Oh Belvania, you are a riot.” Tipping his large, rectangular head towards me, he says, “We have a special guest today."
     '''
@@ -4030,20 +4015,17 @@ Commercial Cris leans back onto his chair, hands laying lightly on his stomach.
     '''
     ))
 
-<<<<<<< HEAD
     show ccl cc_breathing:
         subpixel True additive 0.0 matrixcolor InvertMatrix(0.0)*ContrastMatrix(1.5)*SaturationMatrix(1.75)*BrightnessMatrix(0.0)*HueMatrix(0.0) blend None
 
 
-=======
->>>>>>> a817b21e8b489886203dbfd58bf30474ef455617
     $LongNVLText(narrator_none, (
     '''\
 The waiter’s beady, yellow eyes opened in surprise and looked towards you. After looking you up and down, she was obviously unimpressed. 
     '''
     ))
 
-    $LongNVLText(narrator_none, (
+    $LongNVLText(belvania, (
     '''\
 “Aye, pilot, did you get your license yesterday? You left quite the mess. It was all over the news.” 
     '''
@@ -4058,7 +4040,6 @@ Your nostrils flare and you clench your fist underneath the table. What an ignor
     '''
     ))
 
-<<<<<<< HEAD
     show protl protag_scared_stay :
         subpixel True pos (-0.17, 0.5) 
 
@@ -4080,40 +4061,30 @@ Sensing the rising tension, Commercial Cris clears his throat to take back the a
     show ccl cc_breathing:
         subpixel True additive 0.0 matrixcolor InvertMatrix(0.0)*ContrastMatrix(1.5)*SaturationMatrix(1.75)*BrightnessMatrix(0.0)*HueMatrix(0.0) blend None
 
-    $LongNVLText(commercialcris.c, (
-=======
     $LongNVLText(narrator_none, (
->>>>>>> a817b21e8b489886203dbfd58bf30474ef455617
     '''\
 With a few practiced motions, the waitress places the order on the tablet and leaves the table. 
     '''
     ))
 
-<<<<<<< HEAD
     show protl protag_sigh:
         subpixel True pos (-0.17, 0.5) 
 
-=======
->>>>>>> a817b21e8b489886203dbfd58bf30474ef455617
     $LongNVLText(narrator_none, (
     '''\
 You didn’t realize that you had been holding your breath until you unclench your fist and take a deep breath. 
     '''
     ))
 
-<<<<<<< HEAD
     show protl protag_mad_breathing:
         subpixel True pos (-0.17, 0.5) 
 
-=======
->>>>>>> a817b21e8b489886203dbfd58bf30474ef455617
     $LongNVLText(narrator_none, (
     '''\
 So what if this planet doesn’t know the truth? If you play your cards right, you’ll be on the next ship and then none of this will matter. 
     '''
     ))
 
-<<<<<<< HEAD
     show protl protag_lookup_breathing:
         subpixel True pos (-0.17, 0.5) 
 
@@ -4121,9 +4092,6 @@ So what if this planet doesn’t know the truth? If you play your cards right, y
         subpixel True additive 0.0 matrixcolor InvertMatrix(0.0)*ContrastMatrix(1.5)*SaturationMatrix(1.75)*BrightnessMatrix(0.0)*HueMatrix(0.0) blend None
 
     $LongNVLText(narrator_none, (
-=======
-    $LongNVLText(narrator, (
->>>>>>> a817b21e8b489886203dbfd58bf30474ef455617
     '''\
 You turn your focus back on Commercial Cris, who is looking around the tavern with a bored expression. 
     '''
@@ -4159,12 +4127,9 @@ With a raised eyebrow and sour expression, Commercial Cris responds, “Yes of c
     '''
     ))
 
-<<<<<<< HEAD
     show ccl cc_breathing:
         subpixel True additive 0.0 matrixcolor InvertMatrix(0.0)*ContrastMatrix(1.5)*SaturationMatrix(1.75)*BrightnessMatrix(0.0)*HueMatrix(0.0) blend None
 
-=======
->>>>>>> a817b21e8b489886203dbfd58bf30474ef455617
     $LongNVLText(narrator_none, (
     '''\
 You feel your heart beat faster. Finally, some progress! 
@@ -4177,12 +4142,9 @@ Time to play the good samaritan here. This is your way out!
     '''
     ))
 
-<<<<<<< HEAD
     show protl protag_breathing with vpunch:
         subpixel True pos (-0.17, 0.5) 
 
-=======
->>>>>>> a817b21e8b489886203dbfd58bf30474ef455617
     $LongNVLText(narrator_none, (
     '''\
 You smile and open your mouth to respond, but before you can get any words out you hear glass breaking, loud cursing, and a scuffle. 

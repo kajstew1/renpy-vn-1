@@ -288,7 +288,7 @@ image drpl = MyLive2D("images/dr_p_motions", default_fade=0.0, top=0.0, base=1.0
 
 
 # introduced in Scene 3c
-define commercialcris = Actor(Character("Commercial Cris", color="#D5D5D5"), "Commercial Cris")
+define commercialcris = Actor(Character("Commercial Cris", color="#8ac924"), "Commercial Cris")
 
 image ccl = MyLive2D("images/cc_motions", default_fade=0.0, top=0.0, base=1.0, height=1.0, loop=True, fallback="commercialcris talking")
 
@@ -311,7 +311,7 @@ image side narrator_img = MyLive2D("images/protagonist_motions/protagonist_motio
 #image side narrator_img = "side_protagonist_neutral"
 
 
-
+define belvania = Character("")
 
 
 
