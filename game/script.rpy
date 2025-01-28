@@ -4154,7 +4154,21 @@ You smile and open your mouth to respond, but before you can get any words out y
 
     scene black
     show bg_insidetavern with dissolve
-    show commercialcris_talking at right
+
+    show protl protag_lookup_breathing:
+        subpixel True pos (-0.17, 0.5) 
+    
+    show ccl cc_breathing at center:
+        subpixel True additive 0.0 matrixcolor InvertMatrix(0.0)*ContrastMatrix(1.5)*SaturationMatrix(1.75)*BrightnessMatrix(0.0)*HueMatrix(0.0) blend None
+   
+    $LongNVLText(narrator_none, (
+    '''\
+You turn your head towards the loud noise. Across the tavern, you see three crouching silhouettes tumbling across the floor. 
+    '''
+    ))
+
+    show protl protag_lookup_breathing_stay:
+        subpixel True pos (-0.17, 0.5) 
 
     $LongNVLText(narrator_none, (
     '''\
@@ -4162,17 +4176,35 @@ You turn your head towards the loud noise. Across the tavern, you see three crou
     '''
     ))
 
+    show ccl cc_amused_smug_breathing:
+            subpixel True additive 0.0 matrixcolor InvertMatrix(0.0)*ContrastMatrix(1.5)*SaturationMatrix(1.75)*BrightnessMatrix(0.0)*HueMatrix(0.0) blend None
+
     $LongNVLText(narrator_none, (
     '''\
 Nervously, you look towards your guide who seems utterly amused by this new development. 
     '''
     ))
 
+    show ccl cc_amused_smug_breathing:
+            subpixel True additive 0.0 matrixcolor InvertMatrix(0.0)*ContrastMatrix(1.5)*SaturationMatrix(1.75)*BrightnessMatrix(0.0)*HueMatrix(0.0) blend None
+
     $LongNVLText(commercialcris.c, (
     '''\
-With one hand on the table balancing the tv screen, he motions with his free hand towards the noise, “Lucky you, tourist. You get a show with your drink. We can call it an introduction to the culture of Aisthesis.”
+With one hand on the table balancing the tv screen, he motions with his free hand towards the noise. 
+    '''
+    )) 
+
+    show ccl cc_amused_smug_talking:
+            subpixel True additive 0.0 matrixcolor InvertMatrix(0.0)*ContrastMatrix(1.5)*SaturationMatrix(1.75)*BrightnessMatrix(0.0)*HueMatrix(0.0) blend None
+
+    $LongNVLText(commercialcris.c, (
+    '''\
+“Lucky you, tourist. You get a show with your drink. We can call it an introduction to the culture of Aisthesis.”
     '''
     ))
+
+    show ccl cc_amused_smug_breathing:
+            subpixel True additive 0.0 matrixcolor InvertMatrix(0.0)*ContrastMatrix(1.5)*SaturationMatrix(1.75)*BrightnessMatrix(0.0)*HueMatrix(0.0) blend None
 
     $LongNVLText(narrator_none, (
     '''\
