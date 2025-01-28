@@ -1,6 +1,5 @@
 # The script of the game goes in this file.
 
-
 # The game starts here.
 label start:
     camera:
@@ -3748,10 +3747,9 @@ But with the way your escort hadn’t even spared you a glance since you left th
 Typical. 
     '''
     ))
-
+  
     scene black
     show bg_tavern with dissolve
-
 
     show protl protag_lookup_breathing:
         subpixel True pos (-0.17, 0.5) 
@@ -3833,6 +3831,7 @@ Eager to get away from the crowds, you walk into the tavern. You guess this is a
 
 # Scene 3c5a
 label path_tavern_nav:
+    hide protl
     scene bg_tavern with dissolve
 
     $LongNVLText(narrator_none, (
@@ -3897,6 +3896,9 @@ Outside of the tavern hangs a single sign in an unfamiliar language. This must m
 label path_tavern_drink:
     scene black
     show bg_tavernbartender with dissolve
+    
+    show protl protag_lookup_breathing:
+        subpixel True pos (-0.17, 0.5) 
 
     show ccl cc_breathing at center with dissolve:
         subpixel True additive 0.0 matrixcolor InvertMatrix(0.0)*ContrastMatrix(1.5)*SaturationMatrix(1.75)*BrightnessMatrix(0.0)*HueMatrix(0.0) blend None
