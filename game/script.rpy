@@ -4224,6 +4224,16 @@ Throughout your short tour of the city you’ve noticed that most of the creatur
     '''
     ))
 
+    show protl protag_lookup_breathing_stay onlayer character:
+        subpixel True 
+        ypos 0.5 
+        linear 0.82 ypos 0.4 
+        linear 0.18 ypos 0.4 
+        linear 0.54 ypos 0.5 
+    with Pause(1.64)
+    show protl protag_lookup_breathing_stay onlayer character:
+        ypos 0.5 
+
     $LongNVLText(narrator_none, (
     '''\
 You try to stand on an empty chair to get a better view, but soon learn that it is ineffective. Instead, you squirm your way through the crowd until you finally get a better look. 
@@ -4234,11 +4244,34 @@ You try to stand on an empty chair to get a better view, but soon learn that it 
     scene black
     show bg_tavernfight with dissolve
 
+    show protl protag_lookup_breathing_stay:
+        subpixel True pos (-0.17, 0.5) 
+
     $LongNVLText(narrator_none, (
     '''\
 In between the excited screeches of the crowd you hear what you could only assume are curses by the two fighting creatures.
     '''
     ))
+
+    window auto hide
+    show bg_tavernfight:
+        subpixel True 
+        parallel:
+            xpos 0.5 
+            linear 1.28 xpos 0.7 
+            linear 0.13 xpos 0.7 
+            linear 1.09 xpos 0.3 
+            linear 0.14 xpos 0.3 
+            linear 0.89 xpos 0.5 
+        parallel:
+            zoom 1.0 
+            linear 1.28 zoom 1.5 
+            linear 1.22 zoom 1.5 
+            linear 1.02 zoom 1.0 
+    with Pause(3.63)
+    show bg_tavernfight:
+        xpos 0.5 zoom 1.0 
+    window auto show
 
     $LongNVLText(narrator_none, (
     '''\
@@ -4246,15 +4279,57 @@ You have never seen anything like it before. A single “rat-like” alien sits,
     '''
     ))
 
+    scene black
+    show bg_tavernfight with vpunch
+
     $LongNVLText(narrator_none, (
     '''\
-Before anyone could process the scene before them, glasses full of alcohol are thrown back and forth into the crowd. Broken bottles are scattered across the already dirty, uneven wood floor, making the situation more precarious than before. The crowd, disinterested or desensitized to the danger, continues to cheer on the fight.
+Before anyone could process the scene before them, glasses full of alcohol are thrown back and forth into the crowd. 
+    '''
+    ))
+
+    scene black
+    show bg_tavernfight with vpunch
+
+    $LongNVLText(narrator_none, (
+    '''\
+Broken bottles are scattered across the already dirty, uneven wood floor, making the situation more precarious than before. 
     '''
     ))
 
     $LongNVLText(narrator_none, (
     '''\
-You question whether you should stay to watch the scuffle ensue, but before you can make a conscious decision, the human is thrown by the lion-headed alien into the crowd, right in front of your feet. In the heat of the moment, the human claws at your pant legs, trying to get up. 
+The crowd, disinterested or desensitized to the danger, continues to cheer on the fight.
+    '''
+    ))
+
+    show protl protag_scared_stay:
+        subpixel True pos (-0.17, 0.5) 
+
+    $LongNVLText(narrator_none, (
+    '''\
+You question whether you should stay to watch the scuffle ensue. 
+    '''
+    )) 
+    
+    scene black
+    show bg_tavernfight with vpunch
+
+    show protl protag_lookup_breathing_shocked:
+        subpixel True pos (-0.17, 0.5) 
+
+    $LongNVLText(narrator_none, (
+    '''\
+Before you can make a conscious decision, the human is thrown by the lion-headed alien into the crowd, right in front of your feet. 
+    '''
+    ))
+
+    show protl protag_lookup_breathing_stay:
+        subpixel True pos (-0.17, 0.5) 
+
+    $LongNVLText(narrator_none, (
+    '''\
+In the heat of the moment, the human claws at your pant legs, trying to get up. 
     '''
     ))
 
