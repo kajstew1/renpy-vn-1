@@ -2720,6 +2720,8 @@ Under normal circumstances, you would be happy to see a doctor sporting a crisp 
     show protl protag_lookup_breathing_shocked: 
         subpixel True pos (-0.17, 0.5) 
 
+    show screen evt_drp_intr_txtbox
+
     show drpl drp_breathing at center with dissolve:
         subpixel True additive 0.0 matrixcolor InvertMatrix(0.0)*ContrastMatrix(1.5)*SaturationMatrix(1.75)*BrightnessMatrix(0.0)*HueMatrix(0.0) blend None
     
@@ -2741,11 +2743,12 @@ Under normal circumstances, you would be happy to see a doctor sporting a crisp 
     show protl protag_lookup_breathing_stay: 
         subpixel True pos (-0.17, 0.5) 
 
-    $LongNVLText(narrator_none, (
-    '''\
-The “doctor’s” skin was a sickly green, moss color. Taking up half of his face, in lieu of a typical head of hair and eyes, he had a vibrant red mushroom cap, dotted with yellow spots. 
-    '''
-    ))
+
+#     $LongNVLText(narrator_none, (
+#     '''\
+# The “doctor’s” skin was a sickly green, moss color. Taking up half of his face, in lieu of a typical head of hair and eyes, he had a vibrant red mushroom cap, dotted with yellow spots. 
+#     '''
+#     ))
 
 
     show drpl drp_breathing:
@@ -2770,6 +2773,8 @@ You silently curse under your breath as you grip the sheets in front of you. You
     '''
     ))
 
+    hide screen evt_drp_intr_txtbox
+    
     show protl protag_sigh:
         subpixel True pos (-0.17, 0.5) 
 

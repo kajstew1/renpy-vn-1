@@ -28,6 +28,21 @@ screen evt_choose_char_txtbox:
             text "Choose your character."
 
 
+screen evt_drp_intr_txtbox:
+    hbox:
+        xalign 0.9
+        yalign 0.1
+        xsize 600 
+        yminimum 400
+        frame:
+            background "#706969"
+            xalign 0.5
+            yalign 0.5
+            padding (50,50)
+            margin (0,0,10,0)
+            text "The “doctor’s” skin was a sickly green, moss color. Taking up half of his face, in lieu of a typical head of hair and eyes, he had a vibrant red mushroom cap, dotted with yellow spots."
+
+
 screen evt_choose_char_images: 
     hbox: 
         xalign 0.5 
