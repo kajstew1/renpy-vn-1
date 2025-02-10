@@ -2720,8 +2720,6 @@ Under normal circumstances, you would be happy to see a doctor sporting a crisp 
     show protl protag_lookup_breathing_shocked: 
         subpixel True pos (-0.17, 0.5) 
 
-    show screen evt_drp_intr_txtbox
-
     show drpl drp_breathing at center with dissolve:
         subpixel True additive 0.0 matrixcolor InvertMatrix(0.0)*ContrastMatrix(1.5)*SaturationMatrix(1.75)*BrightnessMatrix(0.0)*HueMatrix(0.0) blend None
     
@@ -2743,12 +2741,11 @@ Under normal circumstances, you would be happy to see a doctor sporting a crisp 
     show protl protag_lookup_breathing_stay: 
         subpixel True pos (-0.17, 0.5) 
 
-
-#     $LongNVLText(narrator_none, (
-#     '''\
-# The “doctor’s” skin was a sickly green, moss color. Taking up half of his face, in lieu of a typical head of hair and eyes, he had a vibrant red mushroom cap, dotted with yellow spots. 
-#     '''
-#     ))
+    $LongNVLText(narrator_none, (
+    '''\
+The “doctor’s” skin was a sickly green, moss color. Taking up half of his face, in lieu of a typical head of hair and eyes, he had a vibrant red mushroom cap, dotted with yellow spots. 
+    '''
+    ))
 
 
     show drpl drp_breathing:
@@ -2773,8 +2770,6 @@ You silently curse under your breath as you grip the sheets in front of you. You
     '''
     ))
 
-    hide screen evt_drp_intr_txtbox
-    
     show protl protag_sigh:
         subpixel True pos (-0.17, 0.5) 
 
@@ -4354,9 +4349,24 @@ Afraid that you are going to become an unwilling participant in this situation, 
     scene black
     show bg_insidetavern with dissolve
 
+    show protl protag_sigh:
+        subpixel True pos (-0.17, 0.5) 
+
+    show ccl cc_breathing at center with dissolve:
+        subpixel True additive 0.0 matrixcolor InvertMatrix(0.0)*ContrastMatrix(1.5)*SaturationMatrix(1.75)*BrightnessMatrix(0.0)*HueMatrix(0.0) blend None
+
     $LongNVLText(narrator_none, (
     '''\
-After sitting back into your seat–which you find far more comfortable than before–you notice there is a pint of mysterious liquid in front of you. The waitress must have dropped off while you were away. 
+After sitting back into your seat–which you find far more comfortable than before–you notice there is a pint of mysterious liquid in front of you. 
+    '''
+    ))
+    
+    show protl protag_mad_breathing:
+        subpixel True pos (-0.17, 0.5) 
+
+    $LongNVLText(narrator_none, (
+    '''\
+The waitress must have dropped off while you were away. 
     '''
     ))
 
@@ -4365,30 +4375,96 @@ After sitting back into your seat–which you find far more comfortable than bef
 You could really use a drink now. To hell with the consequences. With shaky hands, you take a sip. 
     '''
     ))
+    
+    show protl protag_lookup_breathing:
+        subpixel True pos (-0.17, 0.5) 
 
+    show ccl cc_amused_smug_breathing at center with dissolve:
+        subpixel True additive 0.0 matrixcolor InvertMatrix(0.0)*ContrastMatrix(1.5)*SaturationMatrix(1.75)*BrightnessMatrix(0.0)*HueMatrix(0.0) blend None
+
+
+    $LongNVLText(narrator_none, (
+    '''\
+Commercial Cris, all the more amused with your discomfort, smirks at you. 
+    '''
+    ))
+    
+    show protl protag_lookup_breathing_stay:
+        subpixel True pos (-0.17, 0.5) 
+
+    show ccl cc_amused_smug_talking at center with dissolve:
+        subpixel True additive 0.0 matrixcolor InvertMatrix(0.0)*ContrastMatrix(1.5)*SaturationMatrix(1.75)*BrightnessMatrix(0.0)*HueMatrix(0.0) blend None
     $LongNVLText(commercialcris.c, (
     '''\
-Commercial Cris, all the more amused with your discomfort, smirks at you. “The roof is still intact so I would say you’ve just witnessed a pretty harmless fight.”
+“The roof is still intact so I would say you’ve just witnessed a pretty harmless fight.”
+    '''
+    ))
+
+    show protl protag_mad_breathing:
+        subpixel True pos (-0.17, 0.5) 
+
+    show ccl cc_breathing at center with dissolve:
+        subpixel True additive 0.0 matrixcolor InvertMatrix(0.0)*ContrastMatrix(1.5)*SaturationMatrix(1.75)*BrightnessMatrix(0.0)*HueMatrix(0.0) blend None
+   
+    $LongNVLText(narrator_none, (
+    '''\
+Harmless fight he calls it. You nearly got hit in the face by an airborne glass bottle and run over by an over-excited crowd. 
     '''
     ))
 
     $LongNVLText(narrator_none, (
     '''\
-Harmless fight he calls it. You nearly got hit in the face by an airborne glass bottle and run over by an over-excited crowd. On your home planet you may have witnessed a fight or two, but those mainly consisted of verbal-screaming matches. Physical fights were considered neanderthal tactics. So yeah, this is hardly “harmless” to you. 
+On your home planet you may have witnessed a fight or two, but those mainly consisted of verbal-screaming matches. Physical fights were considered neanderthal tactics. 
     '''
     ))
 
     $LongNVLText(narrator_none, (
     '''\
-Ignoring the onslaught of Commercial Cris’s snide comments, you dose your discomfort in your drink. It tastes putrid, slimy, bitter, but blissfully alcoholic. After a few large gulps, you start to feel more relaxed. 
+So yeah, this is hardly “harmless” to you. 
     '''
     ))
 
-    $LongNVLText(commercialcris.c, (
+    show protl protag_lookup_breathing:
+        subpixel True pos (-0.17, 0.5) 
+
+    $LongNVLText(narrator_none, (
     '''\
-Getting the hint that you aren’t going to react to his comments anymore, Commercial Cris frowns at you, glancing down at his watch impatiently. “Alright then, we are playing the quiet game. That’s alright. You have five minutes to finish your drink. I have more to show you and not enough time to do it.” 
+Ignoring the onslaught of Commercial Cris’s snide comments, you dose your discomfort in your drink. It tastes putrid, slimy, bitter, but blissfully alcoholic. 
     '''
     ))
+  
+    show protl protag_lookup_breathing_stay:
+        subpixel True pos (-0.17, 0.5) 
+
+    $LongNVLText(narrator_none, (
+    '''\
+After a few large gulps, you start to feel more relaxed. 
+    '''
+    ))
+  
+    show ccl cc_bored at center with dissolve:
+        subpixel True additive 0.0 matrixcolor InvertMatrix(0.0)*ContrastMatrix(1.5)*SaturationMatrix(1.75)*BrightnessMatrix(0.0)*HueMatrix(0.0) blend None
+
+    $LongNVLText(narrator_none, (
+    '''\
+Getting the hint that you aren’t going to react to his comments anymore, Commercial Cris frowns at you, glancing down at his watch impatiently. 
+    '''
+    ))
+
+    show ccl cc_bored_talking at center with dissolve:
+        subpixel True additive 0.0 matrixcolor InvertMatrix(0.0)*ContrastMatrix(1.5)*SaturationMatrix(1.75)*BrightnessMatrix(0.0)*HueMatrix(0.0) blend None
+
+    $LongNVLText(commercialcris.c, (
+    '''\
+“Alright then, we are playing the quiet game. That’s alright. You have five minutes to finish your drink. I have more to show you and not enough time to do it.” 
+    '''
+    ))
+
+    show ccl cc_bored at center with dissolve:
+        subpixel True additive 0.0 matrixcolor InvertMatrix(0.0)*ContrastMatrix(1.5)*SaturationMatrix(1.75)*BrightnessMatrix(0.0)*HueMatrix(0.0) blend None
+
+    show protl protag_mad_breathing:
+        subpixel True pos (-0.17, 0.5) 
 
     $LongNVLText(narrator_none, (
     '''\
