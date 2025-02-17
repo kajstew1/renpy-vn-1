@@ -340,7 +340,9 @@ image commercialcris neutral = "cc_neutral.png"
 image commercialcris talking = "cc_talking.png"
 
 
-
+image growl = "Effects/growl.png"
+image roar = "Effects/roar.png"
+image smash = "Effects/smash.png"
 
 
 image mytext = ParameterizedText(style="something")
