@@ -3909,26 +3909,25 @@ You believe you have gotten a sufficient lay of the land. With a bit less hesita
     '''
     ))
 
-    show ccl cc_breathing with dissolve:
-        subpixel True 
-        ypos 1.0 
-        linear 0.65 ypos 0.9 
-        linear 0.38 ypos 1.0 
-    with Pause(1.13)
     show ccl cc_breathing:
-        ypos 1.0 
-        subpixel True additive 0.0 matrixcolor InvertMatrix(0.0)*ContrastMatrix(1.5)*SaturationMatrix(1.75)*BrightnessMatrix(0.0)*HueMatrix(0.0) blend None
+        parallel:
+            subpixel True 
+            ypos 1.0 
+            linear 0.65 ypos 0.9 
+            linear 0.38 ypos 1.0 
+        parallel:
+            additive 0.0 
+            matrixcolor InvertMatrix(0.0)*ContrastMatrix(1.5)*SaturationMatrix(1.75)*BrightnessMatrix(0.0)*HueMatrix(0.0) 
+            blend None
 
     $LongNVLText(narrator_none, (
     '''\
 Past the larger heater, you spy an empty table. You scoot the chair out and take a seat. You watch as Commercial Cris takes the seat directly across from you, his smile unwavering. 
     '''
-    ))
-
+    )) 
+    
     show ccl cc_talking:
         subpixel True additive 0.0 matrixcolor InvertMatrix(0.0)*ContrastMatrix(1.5)*SaturationMatrix(1.75)*BrightnessMatrix(0.0)*HueMatrix(0.0) blend None
-
-
 
     $LongNVLText(commercialcris.c, (
     '''\
