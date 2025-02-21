@@ -61,8 +61,6 @@ label set_customization_they_vars:
     #"pronoun: [pronoun1]: [pronouns]"
     jump path_char_customization
     
-
-
 # Scene 1 Introduce Live2D protagonist side character (protl) and narrator character (narrator) with name from the screen_customization_nav in namebox  
 label path_crash_site:
     scene black
@@ -4251,6 +4249,33 @@ You try to stand on an empty chair to get a better view, but soon learn that it 
 In between the excited screeches of the crowd you hear what you could only assume are curses by the two fighting creatures.
     '''
     ))
+
+    # Still testing this part
+    show growl:
+        zoom 1.5
+        xalign 0.3
+        yalign 0.7
+    pause 1.0
+    hide growl
+
+    pause 1.0
+    show roar:
+        zoom 1.5
+        xalign 0.5
+        yalign 0.2
+    pause 1.0
+    hide roar
+
+    pause 1.0
+    show smash:
+        zoom 1.5
+        xalign 0.7
+        yalign 0.5
+    pause 1.0
+    hide smash
+    pause 1.0
+    
+
 
     window auto hide
     show bg_tavernfight:

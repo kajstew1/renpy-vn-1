@@ -1,6 +1,5 @@
 
-
-
+# Define the screen
 screen reset_paths():
     $ persistent.path_variables_set = False
     $ persistent.path_to_hut_taken = False
