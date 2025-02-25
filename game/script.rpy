@@ -4507,16 +4507,40 @@ Aisthesis here you come.
 
 # Scene 3c7
 label path_town_walk:
-    scene black
-    show bg_town with dissolve
+    
+    show ccl cc_breathing at center with dissolve:
+        subpixel True additive 0.0 matrixcolor InvertMatrix(0.0)*ContrastMatrix(1.5)*SaturationMatrix(1.75)*BrightnessMatrix(0.0)*HueMatrix(0.0) blend None
 
-    show commercialcris_talking at right
+
+    show protl protag_lookup_breathing_stay:
+        subpixel True pos (-0.17, 0.5) 
 
     $LongNVLText(narrator_none, (
     '''\
-Silently, Commercial Cris eyes you, tapping his watch with finality. With one last gulp of your drink, you get up. If your tavern experience told you anything, it is that this place is full of surprises. Now though, you are a tad tipsy—which makes this misadventure immeasurably less terrifying and much more exciting. 
+Silently, Commercial Cris eyes you, tapping his watch with finality. With only a few sips left, you take the last gulp of your drink. 
     '''
     ))
+
+
+    $LongNVLText(narrator_none, (
+    '''\
+If your tavern experience told you anything, it is that this place is full of surprises. 
+    '''
+    ))
+
+
+    $LongNVLText(narrator_none, (
+    '''\
+Now though, you are a tad tipsy—which makes this misadventure immeasurably less terrifying and much more exciting. 
+    '''
+    ))
+    
+    show protl protag_lookup_breathing_stay onlayer character:
+        subpixel True 
+        ypos 0.5 
+        linear 1.11 ypos 0.4 
+        linear 0.32 ypos 0.4 
+        linear 0.49 ypos 0.5
 
     $LongNVLText(narrator_none, (
     '''\
@@ -4524,11 +4548,24 @@ With far less grace than before, you clumsily scoot your chair out and stand up,
     '''
     ))
 
+    show protl protag_lookup_breathing_stay onlayer character:
+        subpixel True 
+        xpos -0.17
+        linear 0.20 xpos -0.17
+        linear 0.57 xpos -0.19 
+        linear 0.54 xpos -0.19
+        linear 0.57 xpos -0.15
+        linear 0.42 xpos -0.15 
+        linear 0.42 xpos -0.17
+
     $LongNVLText(narrator_none, (
     '''\
 Your head spins faintly as you walk out of the tavern—almost in a straight line.
     '''
     ))
+
+    scene black
+    show bg_town with dissolve
 
     $LongNVLText(narrator_none, (
     '''\
@@ -4538,7 +4575,32 @@ Commercial Cris’s tour is about as good as his company at the tavern, short, b
 
     $LongNVLText(narrator_none, (
     '''\
-The biggest thing that stood out to you about the town is the architecture. The buildings were tall, but with jagged, pointy roofs. To match the structure, the windows are retrofitted in broken, kaleidoscope patterns. 
+The biggest thing that stood out to you about the town is the architecture. 
+    '''
+    ))
+
+    show bg_town:
+        subpixel True 
+        parallel:
+            xpos 0.5 
+            linear 1.31 xpos 0.5 
+            linear 0.17 xpos 0.5 
+            linear 0.80 xpos 0.6 
+        parallel:
+            ypos 1.0 
+            linear 1.31 ypos 1.3 
+            linear 0.17 ypos 1.3 
+        parallel:
+            zoom 1.0 
+            linear 1.31 zoom 1.3 
+    with Pause(2.38)
+    show bg_town:
+        pos (0.6, 1.3) zoom 1.3 
+
+
+    $LongNVLText(narrator_none, (
+    '''\
+The buildings were tall, but with jagged, pointy roofs. To match the structure, the windows are retrofitted in broken, kaleidoscope patterns. 
     '''
     ))
 
@@ -4550,17 +4612,62 @@ Did windows serve a different purpose here? You couldn’t imagine that it is po
 
 # (EDIT for Alyssa Made change to BG_TOWN and BG_TAVERNFIGHT (highlighted in yellow))
 
-    $LongNVLText(narrator_none, (
-    '''\
-After only about 20 minutes, your “tour” of the town ended. He drops you off at exactly where you started, at the hospital. With a noncommittal grin and short wave he mentions he is late to a meeting and quickly scampers away. 
-    '''
-    ))
+    show bg_town:
+        subpixel True 
+        parallel:
+            pos (0.6, 1.3) 
+            linear 1.23 pos (0.5, 1.0) 
+        parallel:
+            zoom 1.3 
+            linear 1.24 zoom 1.0 
+    with Pause(1.34)
+    show bg_town:
+        pos (0.5, 1.0) zoom 1.0 
 
     $LongNVLText(narrator_none, (
     '''\
-Being much drunker than you were this morning, you find his desertion less infuriating. Your only regret is that you didn’t get the chance to ask about the intergalactic space station. Maybe you could ask one of the nurses?  
+After only about 20 minutes, your “tour” of the town ended. He drops you off at exactly where you started, at the hospital. 
     '''
     ))
+
+    show ccl cc_amused_smug_breathing at center with dissolve:
+        subpixel True additive 0.0 matrixcolor InvertMatrix(0.0)*ContrastMatrix(1.5)*SaturationMatrix(1.75)*BrightnessMatrix(0.0)*HueMatrix(0.0) blend None
+
+
+    $LongNVLText(narrator_none, (
+    '''\
+With a noncommittal grin and short wave he mentions he is late to a meeting and quickly scampers away. 
+    '''
+    ))
+
+    hide ccl cc_amused_smug_breathing with dissolve
+
+
+    show protl protag_lookup_breathing_stay onlayer character:
+        subpixel True 
+        xpos -0.17
+        linear 0.20 xpos -0.17
+        linear 0.57 xpos -0.19 
+        linear 0.54 xpos -0.19
+        linear 0.57 xpos -0.15
+        linear 0.42 xpos -0.15 
+        linear 0.42 xpos -0.17
+
+    $LongNVLText(narrator_none, (
+    '''\
+Being much drunker than you were this morning, you find his desertion less infuriating. 
+    '''
+    ))
+
+
+    $LongNVLText(narrator_none, (
+    '''\
+Your only regret is that you didn’t get the chance to ask about the intergalactic space station. Maybe you could ask one of the nurses?  
+    '''
+    ))
+
+    scene black 
+    show bg_hospital with dissolve
 
     $LongNVLText(narrator_none, (
     '''\
@@ -4570,7 +4677,7 @@ With a sigh and zero options, you open the door and enter the hospital. Leaning 
 
 # GAME OVER–Neutral Ending
 
-    return
+    jump game_over
 
 
 
