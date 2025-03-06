@@ -67,12 +67,28 @@ label path_crash_site:
     $ screen_tooltip = ""
 
     scene black
-    show bg_crashsite with dissolve
+    #show bg_crashsite with dissolve
     play music "sounds/effects/SCENE_1_crash_beeps_alarms.mp3"
 
     #"Person Enters World, wake up on crash ship?"
-    show protl protag_breathing:
+
+    show protl protag_mad_breathing with dissolve:
         subpixel True pos (-0.2, 0.5)
+
+    show bg_crashsite:
+        subpixel True 
+        blur 15.0
+        parallel:
+            xoffset 0 yoffset 0
+            ease 0.15 xoffset 10 yoffset 8
+            ease 0.15 xoffset -10 yoffset -8
+            ease 0.15 xoffset 8 yoffset 6
+            ease 0.15 xoffset -8 yoffset -6
+            ease 0.15 xoffset 0 yoffset 0
+        repeat
+        parallel:
+            blur 15.0
+
 
     $LongNVLText(narrator_none, (
     '''\
@@ -92,15 +108,33 @@ Your breathing is staggered as you move to stand, clutching onto your wounded st
     '''
     ))
 
+    show protl protag_mad_talkingR:
+        subpixel True pos (-0.2, 0.5)
+
     $LongNVLText(narrator, (
     '''\
-“W-where am I?” You ask in a whimper, stumbling out of the wreckage that once was your ship. Your memories were far and few between as your brain hadn’t made sense out of the situation yet. 
+“W-where am I?” You ask in a whimper, stumbling out of the wreckage that once was your ship. 
+    '''
+    ))
+
+    show protl protag_mad_breathing:
+        subpixel True pos (-0.2, 0.5)
+
+    $LongNVLText(narrator, (
+    '''\
+Your memories were far and few between as your brain hadn’t made sense out of the situation yet. 
     '''
     ))
 
     $LongNVLText(narrator_none, (
     '''\
-The ship was supposed to have been indestructible. No one had been chasing you. The sensors were all clear. So what did the ship hit? And what were the odds that the generator would have been the target of the impact? None of this made sense. 
+The ship was supposed to have been indestructible. No one had been chasing you. The sensors were all clear. So what did the ship hit? 
+    '''
+    ))
+
+    $LongNVLText(narrator_none, (
+    '''\
+And what were the odds that the generator would have been the target of the impact? None of this made sense. 
     '''
     ))
 
