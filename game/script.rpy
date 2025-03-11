@@ -75,7 +75,7 @@ label path_crash_site:
     show protl protag_mad_breathing with dissolve:
         subpixel True pos (-0.2, 0.5)
 
-    show bg_crashsite:
+    show bg_escapepod:
         subpixel True 
         blur 15.0
         parallel:
@@ -108,7 +108,7 @@ Your breathing is staggered as you move to stand, clutching onto your wounded st
     '''
     ))
 
-    show protl protag_mad_talkingR:
+    show protl protag_mad_talking:
         subpixel True pos (-0.2, 0.5)
 
     $LongNVLText(narrator, (
@@ -117,7 +117,7 @@ Your breathing is staggered as you move to stand, clutching onto your wounded st
     '''
     ))
 
-    show protl protag_mad_breathing:
+    show protl protag_scared:
         subpixel True pos (-0.2, 0.5)
 
     $LongNVLText(narrator, (
@@ -126,11 +126,17 @@ Your memories were far and few between as your brain hadn’t made sense out of 
     '''
     ))
 
+    show protl protag_lookup_breathing:
+        subpixel True pos (-0.2, 0.5)
+
     $LongNVLText(narrator_none, (
     '''\
 The ship was supposed to have been indestructible. No one had been chasing you. The sensors were all clear. So what did the ship hit? 
     '''
     ))
+
+    show protl protag_lookup_breathing_stay:
+        subpixel True pos (-0.2, 0.5)
 
     $LongNVLText(narrator_none, (
     '''\
@@ -138,36 +144,109 @@ And what were the odds that the generator would have been the target of the impa
     '''
     ))
 
+    show protl protag_scared_stay:
+        subpixel True 
+        parallel:
+            xpos -0.2 
+            linear 0.27 xpos -0.2 
+            linear 0.13 xpos -0.22 
+            linear 0.19 xpos -0.2 
+            linear 0.17 xpos -0.21 
+            linear 0.17 xpos -0.2 
+        parallel:
+            ypos 0.5 
+            linear 0.41 ypos 0.5 
+            linear 0.18 ypos 0.55 
+            linear 0.18 ypos 0.5 
+            linear 0.16 ypos 0.55 
+            linear 0.16 ypos 0.5 
+    with Pause(1.19)
+    show protl protag_scared_stay:
+        pos (-0.2, 0.5) 
     
     $LongNVLText(narrator_none, (
     '''\
-An involuntary coughing fit brought about from the dark smoke around you made you come back to your senses. You look at your hand and are horrified to see tiny droplets of blood sprinkled all over your palm.  
+An involuntary coughing fit brought about from the dark smoke around you made you come back to your senses. 
+    '''
+    ))
+
+    show protl protag_lookup_breathing_shocked:
+        pos (-0.2, 0.5) 
+
+    $LongNVLText(narrator_none, (
+    '''\
+You look at your hand and are horrified to see tiny droplets of blood sprinkled all over your palm.  
+    '''
+    ))
+
+    show protl protag_lookup_breathing_stay:
+        pos (-0.2, 0.5) 
+
+    $LongNVLText(narrator_none, (
+    '''\
+You can make sense of this later. You need to focus on surviving. 
     '''
     ))
 
     $LongNVLText(narrator_none, (
     '''\
-I can make sense of this later. I need to focus on surviving. 
+Your movements were painfully slow, but you were able to maneuver around the wrecked ship to the ground below. 
+    '''
+    ))
+
+    scene black
+    show bg_crashsite with dissolve
+
+    $LongNVLText(narrator_none, (
+    '''\
+The grass was a welcome change in texture, soft and inviting unlike the harsh and distorted floor of the ship. 
+    '''
+    ))
+
+    show protl protag_lookup_leftright:
+        pos (-0.2, 0.5) 
+
+    $LongNVLText(narrator_none, (
+    '''\
+You had no idea where you crash landed. 
     '''
     ))
 
     $LongNVLText(narrator_none, (
     '''\
-Your movements were painfully slow, but you were able to maneuver around the wrecked ship to the ground below. The grass was a welcome change in texture, soft and inviting unlike the harsh and distorted floor of the ship. 
+As the captain you had to make a quick decision when the ship had been hit, either take your chance on the neighboring moon or divert towards the nearest planet. 
+    '''
+    ))
+
+    show protl protag_lookup_breathing_stay:
+        pos (-0.2, 0.5) 
+
+    $LongNVLText(narrator_none, (
+    '''\
+It had seemed at the time that a planet would have more resources and potentially a civilization available, but after reviewing the landscape, you weren’t sure. 
     '''
     ))
 
     $LongNVLText(narrator_none, (
     '''\
-You had no idea where you crash landed. As the captain you had to make a quick decision when the ship had been hit, either take your chance on the neighboring moon or divert towards the nearest planet. It had seemed at the time that a planet would have more resources and potentially a civilization available, but after reviewing the landscape, you weren’t sure. 
+While there was a blue sky and green grass, that’s where the comparisons ended between your home planet and the environment surrounding you. 
     '''
     ))
 
     $LongNVLText(narrator_none, (
     '''\
-While there was a blue sky and green grass, that’s where the comparisons ended between your home planet and the environment surrounding you. In the far distance welcomed a skyline of blooming mushrooms. Using your best estimation, they had to have been as tall and thick as the redwoods you had been accustomed to seeing when you were a child. 
+In the far distance welcomed a skyline of blooming mushrooms. 
     '''
     ))
+
+    $LongNVLText(narrator_none, (
+    '''\
+Using your best estimation, they had to have been as tall and thick as the redwoods you had been accustomed to seeing when you were a child. 
+    '''
+    ))
+
+    show protl protag_scared:
+        pos (-0.2, 0.5) 
 
     $LongNVLText(narrator_none, (
     '''\
@@ -175,21 +254,39 @@ Neon-colored flying dinosaur-looking creatures dotted the sky above. As they cir
     '''
     ))
 
+    show protl protag_scared_talking:
+        pos (-0.2, 0.5) 
+
     $LongNVLText(narrator, (
     '''\
 “Mushrooms as trees? Flying dinosaurs? Where am I?” 
     '''
     ))
 
+    show protl protag_scared_stay:
+        pos (-0.2, 0.5) 
+
     $LongNVLText(narrator_none, (
     '''\
-Your heart starts to race when you realized that you were well and truly alone in this treacherous landscape. The small crew that had opted to not use the escape pods and stayed with you had all lost oxygen and died before the ship entered the planet’s atmosphere. 
+Your heart starts to race when you realized that you were well and truly alone in this treacherous landscape. 
     '''
     ))
 
     $LongNVLText(narrator_none, (
     '''\
-You truly didn’t know where to start. The communication system on the ship had shorted and broke before you could alert the nearest space station and you knew no one on this planet. 
+The small crew that had opted to not use the escape pods and stayed with you had all lost oxygen and died before the ship entered the planet’s atmosphere. 
+    '''
+    ))
+
+    $LongNVLText(narrator_none, (
+    '''\
+You truly didn’t know where to start. 
+    '''
+    ))
+
+    $LongNVLText(narrator_none, (
+    '''\
+The communication system on the ship had shorted and broke before you could alert the nearest space station and you knew no one on this planet. 
     '''
     ))
 
