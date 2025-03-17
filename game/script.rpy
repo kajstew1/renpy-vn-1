@@ -296,19 +296,51 @@ With no food, no water, and only the clothes on your back, you look towards the 
     '''
     ))
 
+    show protl protag_scared_talking:
+        pos (-0.2, 0.5) 
+
     $LongNVLText(narrator, (
     '''\
 “Guess I’ll do this the old fashion way. Pick a direction and start walking.” 
-—                                                            
-You had trekked up the worn, uneven path in front of you. It was disconcerting as it appeared as though it hadn’t been used in half of a century. But seeming as though you had no other option, you continued onward, desperately hoping for a sign of civilization or at least another living being. 
+    '''
+    ))
+
+    scene black
+    show bg_crashsite at my_float
+
+    show protl protag_scared_stay:
+        pos (-0.2, 0.5) 
+
+    $LongNVLText(narrator, (
+    '''\
+You had trekked up the worn, uneven path in front of you. It was disconcerting as it appeared as though it hadn’t been used in half of a century. 
+    '''
+    ))
+
+
+    $LongNVLText(narrator, (
+    '''\
+But seeming as though you had no other option, you continued onward, desperately hoping for a sign of civilization or at least another living being. 
+    '''
+    ))
+
+    show protl protag_lookup_breathing_stay:
+        pos (-0.2, 0.5) 
+
+    $LongNVLText(narrator_none, (
+    '''\
+You wonder what kinds of lifeforms live on this planet. This had been your first time in this galaxy–and of course it had ended terribly. 
     '''
     ))
 
     $LongNVLText(narrator_none, (
     '''\
-You wonder what kinds of lifeforms live on this planet. This had been your first time in this galaxy–and of course it had ended terribly. You had just wanted to be a space explorer like those you had grown to admire, but like most dreams, it was not what it appeared. 
+You had just wanted to be a space explorer like those you had grown to admire, but like most dreams, it was not what it appeared. 
     '''
     ))
+
+    show protl protag_mad_breathing:
+        pos (-0.2, 0.5) 
 
     $LongNVLText(narrator_none, (
     '''\
@@ -316,11 +348,17 @@ Crew that didn’t respect your authority, food that sprouted mold, and hygienic
     '''
     ))
 
+    show protl protag_sigh:
+        pos (-0.2, 0.5) 
+
     $LongNVLText(narrator_none, (
     '''\
 You sighed. It just seemed like your luck had gone from bad to worse. You don’t feel like you are that bad of a person. So why do you always get the shortest straw? 
     '''
     ))
+
+    show protl protag_mad_breathing:
+        pos (-0.2, 0.5) 
 
     $LongNVLText(narrator_none, (
     '''\
@@ -330,15 +368,40 @@ Guess that would be your next shower thought when you found running water.
 
     $LongNVLText(narrator_none, (
     '''\
-You are exhausted from your half a day journey through the unending fields of green. You clutch onto your wounded stomach, while the bleeding had blessedly stopped, you still felt a tremendous amount of pain. If you didn’t get help by tomorrow, you feared you may meet your demise on a deserted planet. Your corpse feeding the humongous alien creatures that skulked around you in the distance. 
+You are exhausted from your half a day journey through the unending fields of green. 
     '''
     ))
+
+    $LongNVLText(narrator_none, (
+    '''\
+You clutch onto your wounded stomach, while the bleeding had blessedly stopped, you still felt a tremendous amount of pain. 
+    '''
+    ))
+
+
+    $LongNVLText(narrator_none, (
+    '''\
+If you didn’t get help by tomorrow, you feared you may meet your demise on a deserted planet. 
+    '''
+    ))
+
+    $LongNVLText(narrator_none, (
+    '''\
+Your corpse feeding the humongous alien creatures that skulked around you in the distance. 
+    '''
+    ))
+
+    show protl protag_mad_talking:
+        pos (-0.2, 0.5) 
 
     $LongNVLText(narrator, (
     '''\
 “I refuse to be animal food, on my home planet or here!” You say with finality. You grit your teeth and continue onward. 
     '''
     ))
+
+    show protl protag_mad_breathing:
+        pos (-0.2, 0.5) 
 
     $LongNVLText(narrator_none, (
     '''\

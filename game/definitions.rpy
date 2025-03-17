@@ -91,7 +91,13 @@ init -100:
         #parallel:
             #easein 4.0 crop (860, 430, 860, 600)
 
-
+    transform my_float:
+        parallel:
+            yoffset 0
+            ease .7 yoffset -15  # Move up 10 pixels over 1.5 seconds
+            ease .7 yoffset 0    # Move back down over 1.5 seconds
+            repeat               # Loop the animation
+               
 
     # called from Scene 4 while returning to the spaceship
     transform str_walking:
