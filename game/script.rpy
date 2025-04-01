@@ -196,12 +196,14 @@ Your movements were painfully slow, but you were able to maneuver around the wre
 
     scene black
     show bg_crashsite with dissolve
+    show smoke_effect 
 
     $LongNVLText(narrator_none, (
     '''\
 The grass was a welcome change in texture, soft and inviting unlike the harsh and distorted floor of the ship. 
     '''
     ))
+
 
     show protl protag_lookup_leftright:
         pos (-0.2, 0.5) 
@@ -423,12 +425,21 @@ label crash_fork:
     show bg_fork with dissolve
     play music "sounds/effects/SCENE_2.mp3"
     
-    show protl protag_breathing:
+    show protl protag_lookup_leftright:
         subpixel True pos (-0.2, 0.5)
 
     $LongNVLText(narrator_none, (
     '''\
-What once was a temperate, lush, green landscape, turned into a dry, sandy, mountainous desert. Even worse, the singular path you had been following diverged into two. You gulp.
+What once was a temperate, lush, green landscape, turned into a dry, sandy, mountainous desert. 
+    '''
+    ))
+
+    show protl protag_lookup_breathing_stay:
+        subpixel True pos (-0.2, 0.5)
+
+    $LongNVLText(narrator_none, (
+    '''\
+Even worse, the singular path you had been following diverged into two. You gulp.
     '''
     ))
 
@@ -640,38 +651,27 @@ You are at peace.
 label path_right_path:
     hide screen evt_choose_path
     play music "sounds/effects/SCENE_2a.mp3"
-
-    scene black
-    show bg_fork with dissolve:
-        size (1920, 1080) 
-        # Starting point with tuple of (x, y, width, height)
-        crop (430, 430, 860, 600) 
-
-        # Warpers: https://www.renpy.org/doc/html/transforms.html#warpers
-        #     https://easings.net/
-        # then move to the lower right center of the screen
-        # first float is time in seconds, 
-        # first tuple are coordinates of the upper left corner of a rectangle, 
-        # and the second tuple is the size of that rectangle
-        crop (430, 430, 860, 600) 
-        pause 3.0
-        
-        # then look to the left path
-        ease_quad 3.0 crop (200, 430, 860, 600)  
-
-        # then look back to the right path
-        ease_quad 6.0 crop (860, 430, 860, 600)
-
-        pause 2.0
-        # and then pan up
-        ease_cubic 4.0 crop (960, 350, 860, 600) 
-
-    show protl protag_breathing:
+  
+    show bg_fork:
+        subpixel True xzoom 1.0 yzoom 1.0 
+        pos (0.5, 1.0) zpos 0.0 zoom 1.01 
+        linear 1.31 pos (0.3, 1.5) zpos 0.0 zoom 1.5 
+    with Pause(1.41)
+    show bg_fork:
+        pos (0.3, 1.5) zpos 0.0 zoom 1.5 
+   
+    show protl protag_lookup_breathing_stay:
         subpixel True pos (-0.2, 0.5)
 
     $LongNVLText(narrator_none, (
     '''\
-You stood transfixed at the shadowed silhouette of the strange moon behind the cover of the sharp mountain peaks. You feel it calling to you, moving your feet faster than your mind could keep up.
+You stood transfixed at the shadowed silhouette of the strange moon behind the cover of the sharp mountain peaks. 
+    '''
+    ))
+    
+    $LongNVLText(narrator_none, (
+    '''\
+You feel it calling to you, moving your feet faster than your mind could keep up.
     '''
     ))
 

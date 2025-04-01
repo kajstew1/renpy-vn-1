@@ -42,6 +42,39 @@ init -100:
     transform buttonZoom:
         zoom .7
 
+    transform smoke_drift:
+        alpha 0.0
+        parallel:
+            ease 2.0 alpha 0.3
+            ease 2.0 alpha 0.0
+        parallel:
+            ypos 0.5
+            linear 4.0 ypos 0.0
+        parallel:
+            xpos 0.5
+            ease 4.0 xpos 0.48 + 0.04 * renpy.random.random()
+
+    #image smoke_particle:
+        # Create a circular shape using Transform
+        # Transform("images/smoke_particle.png", size=(20, 20))
+        # Make it semi-transparent gray
+        # matrixcolor ColorizeMatrix("#808080", "#808080")
+        # alpha 0.3
+        # Add some blur for softness
+        # blur 3.0
+
+    image smoke_effect:
+        Fixed(
+            SnowBlossom("images/smoke_particle.png", 
+                count=15,        # Number of particles
+                border=-400,       # Border around the screen
+                xspeed=(-2, 2),  # Horizontal drift speed range
+                yspeed=(-30, -20), # Upward speed range
+                start=0,         # Start immediately
+                horizontal=False, # Vertical movement
+            )
+        )
+    
     transform my_shake:
         parallel:
             easein 0.2 xoffset 0 yoffset 30
