@@ -63,18 +63,44 @@ init -100:
         # Add some blur for softness
         # blur 3.0
 
-    image smoke_effect:
+    image smoke_effect1:
         Fixed(
             SnowBlossom("images/smoke_particle.png", 
                 count=15,        # Number of particles
-                border=-400,       # Border around the screen
-                xspeed=(-2, 2),  # Horizontal drift speed range
+                border=350,       # Border around the screen
+                xspeed=(-2, 20),  # Horizontal drift speed range
                 yspeed=(-30, -20), # Upward speed range
                 start=0,         # Start immediately
                 horizontal=False, # Vertical movement
             )
         )
-    
+
+    image smoke_effect2:
+        Fixed(
+            SnowBlossom("images/smoke_particle.png", 
+                count=12,        # Number of particles
+                border=350,       # Border around the screen
+                xspeed=(-20, 2),  # Horizontal drift speed range
+                yspeed=(-20, -20), # Upward speed range
+                start=20,         # Start immediately
+                horizontal=False, # Vertical movement
+            )
+        )
+
+    image smoke_effect3:
+        Fixed(
+            SnowBlossom("images/smoke_particle.png", 
+                count=10,        # Number of particles
+                border=350,       # Border around the screen
+                xspeed=(-20, 2),  # Horizontal drift speed range
+                yspeed=(-20, -20), # Upward speed range
+                start=40,         # Start immediately
+                horizontal=False, # Vertical movement
+            )
+        )
+    #image snow1 = Fixed(SnowBlossom("images/smoke_particle.png", 50, xspeed=(20, 50), yspeed=(100, 200), start=50))
+    #image snow2 = Fixed(SnowBlossom("gui/smoke_particle.png", 50, xspeed=(20, 50), yspeed=(100, 200), start=50))
+
     transform my_shake:
         parallel:
             easein 0.2 xoffset 0 yoffset 30

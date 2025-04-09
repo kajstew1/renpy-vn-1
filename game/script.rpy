@@ -196,7 +196,9 @@ Your movements were painfully slow, but you were able to maneuver around the wre
 
     scene black
     show bg_crashsite with dissolve
-    show smoke_effect 
+    show smoke_effect1 
+    show smoke_effect2
+    show smoke_effect3
 
     $LongNVLText(narrator_none, (
     '''\
