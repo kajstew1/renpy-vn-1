@@ -693,7 +693,7 @@ label path_right_path_1:
     show bg_rightpath with dissolve
 
 
-    show protl protag_breathing:
+    show protl protag_mad_breathing:
         subpixel True pos (-0.2, 0.5)
 
     $LongNVLText(narrator_none, (
@@ -708,29 +708,46 @@ You are not a soldier. You aren’t a survivalist. You are a wounded captain wit
     '''
     ))
 
+    show protl protag_lookup_breathing_stay:
+        subpixel True pos (-0.2, 0.5)
+
+    scene black
+    #show images/Speedlines.mp4 onlayer character
+    show bg_rightpath at shake_and_fade
+
+
     $LongNVLText(narrator_none, (
     '''\
-You feel a cold sweat forming at your brow as you force your feet to move forward. Against all of your base instincts, you don’t look behind you. If you looked, you would accept the fear that threatened to spill out of your insides. 
+You feel a cold sweat forming at your brow as you force your feet to move forward. Against all of your base instincts, you don’t look behind you. 
     '''
     ))
 
-    scene black
-    show bg_rightpath with dissolve:
+    show protl protag_lookup_breathing_stay:
+        subpixel True pos (-0.2, 0.5)
+
+    $LongNVLText(narrator_none, (
+    '''\
+If you looked, you would accept the fear that threatened to spill out of your insides. 
+    '''
+    ))
+
+    #scene black
+    #show bg_rightpath with dissolve:
         #xpos 1.25 ypos 1.3 xanchor 0.5 yanchor 1.0 zoom 2.0
-        subpixel True
-        size (1920, 1080) crop (0, 0, 860, 600) # first tuple is the size of game screen, 
+        #subpixel True
+        #size (1920, 1080) crop (0, 0, 860, 600) # first tuple is the size of game screen, 
                                                 # second is size of picture in pixels
-        easein 4.0 crop (0, 430, 860, 600)    # first float is time in seconds, 
+        #easein 4.0 crop (0, 430, 860, 600)    # first float is time in seconds, 
                                                 # tuples are coordinates of the upper left corner of a rectangle 
                                                 # x: final pan right distance (screen is 1920 wide)
                                                 # y, final pan down distance (screen is 1080 high)
                                                 # width, height: size of the cropped rect, 
                                                 # and the second tuple is the size of that rectangle
-        easeout 5.0 crop (860, 300, 860, 600)       # here we change the y coordinate over 8 seconds to pan the image up
+        #easeout 5.0 crop (860, 300, 860, 600)       # here we change the y coordinate over 8 seconds to pan the image up
 
 
 #(Effect - zoom in and pan left to the right (In Work))
-    show protl protag_breathing:
+    show protl protag_scared_talking:
         subpixel True pos (-0.2, 0.5)
 
     $LongNVLText(narrator, (
@@ -739,25 +756,46 @@ You feel a cold sweat forming at your brow as you force your feet to move forwar
     '''
     ))
 
+    show protl protag_lookup_breathing_stay:
+        subpixel True pos (-0.2, 0.5)
+
     $LongNVLText(narrator_none, (
     '''\
-Over the thunderous beat of your heart, you hear soft footsteps coming towards you. Whatever was following you was doing so very slowly and very calmly. It must be a big, confident creature. You still have time. You could use it to your advantage that they want to play with their food. 
+Over the thunderous beat of your heart, you hear soft footsteps coming towards you. Whatever was following you was doing so very slowly and very calmly. 
     '''
     ))
 
     $LongNVLText(narrator_none, (
     '''\
-About 10 meters ahead of you, you see that the jagged mountains converge, creating what could only be described as a small tunnel. If you were to make it through the narrow gap before the creature catches up to you, you could possibly delay your imminent death.
+It must be a big, confident creature. You still have time. You could use it to your advantage that they want to play with their food. 
+    '''
+    ))
+
+    show bg_rightpath with shake_and_fade:
+        subpixel True
+        zoom 1.0 align (0.5, 0.5)
+        linear 1.5 zoom 1.5 align (1.0, 1.0)
+
+
+    $LongNVLText(narrator_none, (
+    '''\
+About 10 meters ahead of you, you see that the jagged mountains converge, creating what could only be described as a small tunnel. 
+    '''
+    ))
+
+    $LongNVLText(narrator_none, (
+    '''\
+If you were to make it through the narrow gap before the creature catches up to you, you could possibly delay your imminent death.
     '''
     ))
 
     #show bg_rightpath at center, Shake(None, 1.0, dist=5) with None
 
     scene black
-    show bg_rightpath at my_running
+    show bg_rightpath at my_running  
 
 # (Effect - running, shake up and down (In Work)
-    show protl protag_breathing:
+    show protl protag_lookup_breathing_stay:
         subpixel True pos (-0.2, 0.5)
 
     $LongNVLText(narrator_none, (
@@ -766,10 +804,7 @@ You clutch onto your wounded stomach with a small prayer that your thrown togeth
     '''
     ))
 
-    scene black
-    show bg_rightpath with dissolve
-
-    show protl protag_breathing:
+    show protl protag_lookup_breathing_stay:
         subpixel True pos (-0.2, 0.5)
 
     $LongNVLText(narrator_none, (
@@ -781,7 +816,14 @@ You wish you had trained harder when you had the chance. You barely made the cut
 
     $LongNVLText(narrator_none, (
     '''\
-You curse your past self as you choke on your ragged breaths, involuntarily running in a zigzag pattern as you spare yourself a few glances behind you. With the lack of regular exercise, your feet threaten to trip on themselves at any moment as your hands desperately search for any sort of leverage point to pull yourself quicker to your destination. 
+You curse your past self as you choke on your ragged breaths, involuntarily running in a zigzag pattern as you spare yourself a few glances behind you. 
+    '''
+    ))
+
+
+    $LongNVLText(narrator_none, (
+    '''\
+With the lack of regular exercise, your feet threaten to trip on themselves at any moment as your hands desperately search for any sort of leverage point to pull yourself quicker to your destination. 
     '''
     ))
 
@@ -791,11 +833,17 @@ The air behind you begins to get warmer as you realize you are losing this race.
     '''
     ))
 
+    show protl protag_lookup_breathing_stay_talking:
+        subpixel True pos (-0.2, 0.5)
+
     $LongNVLText(narrator, (
     '''\
 “Only a few more feet!” You shout to convince yourself you still had a chance. 
     '''
     ))
+
+    show protl protag_lookup_breathing_stay:
+        subpixel True pos (-0.2, 0.5)
 
     $LongNVLText(narrator_none, (
     '''\
@@ -803,11 +851,17 @@ You feel a presence looming over you with every step now. Matching you step by s
     '''
     ))
 
+    show protl protag_lookup_leftright:
+        subpixel True pos (-0.2, 0.5)
+
     $LongNVLText(narrator_none, (
     '''\
 You scan the area in a desperate attempt to come up with another strategy, you could almost hold onto the entrance to the tunnel now. You had to do something. 
     '''
     ))
+
+    show protl protag_lookup_breathing_stay:
+        subpixel True pos (-0.2, 0.5)
 
     $LongNVLText(narrator_none, (
     '''\
@@ -815,17 +869,34 @@ You sharply turn left and then double back. Claws scraped against the mountain r
     '''
     ))
 
+    scene black
+    show bg_insidecave with pushright
+
     $LongNVLText(narrator_none, (
     '''\
 You hear screams coming outside of the narrow gap. You made it. You were safe! You could barely believe it. 
     '''
     ))
 
+    show protl protag_lookup_breathing_stay_talking:
+        subpixel True pos (-0.2, 0.5)
+
     $LongNVLText(narrator, (
     '''\
-“Go find food elsewhere, you confounded beast!” You roar, the sound echoing off of the rocky walls. You only feel a little curious to know what kind of creature you had just barely outran, but not enough to peer through the opening to find out. 
+“Go find food elsewhere, you confounded beast!” You roar, the sound echoing off of the rocky walls. 
     '''
     ))
+
+    show protl protag_lookup_breathing_stay:
+        subpixel True pos (-0.2, 0.5)
+        
+    $LongNVLText(narrator, (
+    '''\
+You only feel a little curious to know what kind of creature you had just barely outran, but not enough to peer through the opening to find out. 
+    '''
+    ))
+
+
 
     jump path_cave
 

@@ -95,7 +95,7 @@ init -100:
             #linear 0.1 xoffset 0 yoffset 10
             #linear 0.1 xoffset 0 yoffset -15
             #linear 0.1 xoffset 0 yoffset 0
-            repeat 30
+            repeat
         parallel:
             linear 10 zoom 1.5
         parallel:
@@ -124,6 +124,23 @@ init -100:
         #parallel:
             #easein 4.0 crop (860, 430, 860, 600)
 
+    
+    transform shake_and_fade:
+        parallel:
+            yoffset 0
+            ease 0.15 yoffset 8 
+            ease 0.15 yoffset -8
+            ease 0.15 yoffset 6
+            ease 0.15 yoffset -6
+            ease 0.15 yoffset 0
+        repeat
+        parallel:
+            alpha 1.0
+            ease 1.0 alpha 0.5 
+            ease 1.0 alpha 1.0
+        repeat
+   
+    
     transform my_float:
         parallel:
             yoffset 0
