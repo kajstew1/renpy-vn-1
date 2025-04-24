@@ -907,19 +907,18 @@ You only feel a little curious to know what kind of creature you had just barely
 
 
 
-# Scene 2c
+ #Scene 2c
 label path_cave:
     scene black
     show  bg_insidecave with dissolve
 
-    show protl protag_breathing:
-        subpixel True pos (-0.2, 0.5)
 
     $LongNVLText(narrator_none, (
     '''\
 After taking a few minutes to properly settle your heartbeat, you blindly make your way down the pitch black tunnel. You use the only tool available to you to navigate–your sense of touch.
     '''
     ))
+    show bg_insidecave at slow_walking
 
     $LongNVLText(narrator_none, (
     '''\
@@ -936,13 +935,12 @@ It had taken a half an hour of blind exploration until you found a light source 
     jump path_cave_light
 
 
-
 # Scene 2d
 label path_cave_light:
     scene black
     show bg_lightinsidecave with dissolve
-
-    show protl protag_breathing:
+    
+    show protl protag_lookup_leftright:
         subpixel True pos (-0.2, 0.5)
 
     $LongNVLText(narrator_none, (
@@ -951,13 +949,28 @@ You examine the exit of the tunnel. You see grass and weeds dotting the ground i
     '''
     ))
 
+    show protl protag_lookup_breathing_stay:
+        subpixel True pos (-0.2, 0.5)
+
     $LongNVLText(narrator_none, (
     '''\
-Not surprisingly, your wound had opened back up from your harrowing escape. You really hope that you find some sort of town or civilization soon, but even if you couldn’t find help, you feel secure that you had enough excitement for one day. 
+Not surprisingly, your wound had opened back up from your harrowing escape. 
+    '''
+    ))
+
+    $LongNVLText(narrator_none, (
+    '''\
+You really hope that you find some sort of town or civilization soon, but even if you couldn’t find help, you feel secure that you had enough excitement for one day. 
+    '''
+    ))
+    
+    $LongNVLText(narrator_none, (
+    '''\
 It couldn’t get worse, could it? 
     '''
     ))
     jump path_hut
+
 
 
 
