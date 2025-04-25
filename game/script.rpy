@@ -716,6 +716,15 @@ You are not a soldier. You aren’t a survivalist. You are a wounded captain wit
     scene black
     #show images/Speedlines.mp4 onlayer character
     show bg_rightpath at shake_and_fade
+    # show speedline_animation behind character:
+    #     xalign 0.5
+    #     yalign 0.5
+    #     alpha 0.5  # Control overall transparency
+    show speedline_animation onlayer screens:
+        xalign 0.5 yalign 0.5 alpha 0.5
+        linear 0.5 alpha 1.0 zoom 1.0
+        linear 0.5 alpha 0.8 zoom 1.2
+        repeat
 
 
     $LongNVLText(narrator_none, (
@@ -773,7 +782,7 @@ It must be a big, confident creature. You still have time. You could use it to y
     '''
     ))
 
-    show bg_rightpath with shake_and_fade:
+    show bg_rightpath at shake_and_fade:
         subpixel True
         zoom 1.0 align (0.5, 0.5)
         linear 1.5 zoom 1.5 align (1.0, 1.0)

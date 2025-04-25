@@ -36,6 +36,31 @@ init python:
         else:
             return fallback
 
+    renpy.register_shader("custom.black_transparent", variables="""
+        uniform sampler2D tex0;
+        attribute vec2 a_tex_coord;
+        varying vec2 v_tex_coord;
+    """, vertex_300="""
+        v_tex_coord = a_tex_coord;
+    """, fragment_300="""
+        vec4 color = texture2D(tex0, v_tex_coord);
+        
+        /* Calculate brightness of the pixel */
+        float brightness = (color.r + color.g + color.b) / 3.0;
+        
+        /* Create a smooth transition from transparent to opaque */
+        float threshold = 0.1; /* Adjust this value as needed */
+        
+        if (brightness < threshold) {
+            /* Make dark pixels transparent */
+            gl_FragColor = vec4(color.rgb, 0.0);
+        } else {
+            /* Keep original color and alpha */
+            gl_FragColor = color;
+        }
+    """)
+
+
 init -100:
 
     # used to resize the main menu buttons
@@ -274,6 +299,34 @@ image black:
     Solid("#000")
 image white:
     Solid("#FFF")
+
+
+# Define your speedline images
+image speedline1_transparent:
+    "images/output_frame1.png"
+    shader "custom.black_transparent"
+image speedline2_transparent:
+    "images/output_frame2.png"
+    shader "custom.black_transparent"
+image speedline3_transparent:
+    "images/output_frame3.png"
+    shader "custom.black_transparent"
+image speedline4_transparent:
+    "images/output_frame4.png"
+    shader "custom.black_transparent"
+
+# Create the animation with transparent background
+image speedline_animation:
+    shader "custom.black_transparent"  # Apply shader to all frames
+    "speedline1_transparent"
+    pause 0.1
+    "speedline2_transparent" 
+    pause 0.1
+    "speedline3_transparent"
+    pause 0.1
+    "speedline4_transparent"
+    pause 0.1
+    repeat
 
 
 image main_menu_background = "gui/main_menu.png"
