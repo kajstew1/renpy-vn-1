@@ -720,11 +720,11 @@ You are not a soldier. You aren’t a survivalist. You are a wounded captain wit
     #     xalign 0.5
     #     yalign 0.5
     #     alpha 0.5  # Control overall transparency
-    show speedline_animation onlayer screens:
-        xalign 0.5 yalign 0.5 alpha 0.5
-        linear 0.5 alpha 1.0 zoom 1.0
-        linear 0.5 alpha 0.8 zoom 1.2
-        repeat
+    # show speedline_animation onlayer screens:
+    #     xalign 0.5 yalign 0.5 alpha 0.5
+    #     linear 0.5 alpha 1.0 zoom 1.0
+    #     linear 0.5 alpha 0.8 zoom 1.2
+    #     repeat
 
 
     $LongNVLText(narrator_none, (
@@ -880,8 +880,10 @@ You sharply turn left and then double back. Claws scraped against the mountain r
     '''
     ))
 
+
     scene black
-    show bg_insidecave with pushright
+    show bg_insidecave with pushright 
+    hide speedline_animation with dissolve
 
     $LongNVLText(narrator_none, (
     '''\
@@ -990,7 +992,7 @@ label path_hut:
     scene black
     show bg_hut with dissolve
 
-    show protl protag_breathing:
+    show protl protag_lookup_leftright:
         subpixel True pos (-0.2, 0.5)
 
     $LongNVLText(narrator_none, (
@@ -998,6 +1000,9 @@ label path_hut:
 You weakly limp towards the greenery in front of you. You find it to be a blessed respite from the dark, cold cavernous tunnel you had just escaped from.
     '''
     ))
+
+    show protl protag_lookup_breathing_stay:
+        subpixel True pos (-0.2, 0.5)
 
     $LongNVLText(narrator_none, (
     '''\
@@ -1012,21 +1017,71 @@ You take in the pleasant view as the soft rays of daylight descend across the gr
     '''
     ))
 
+    show protl protag_mad_breathing:
+        subpixel True pos (-0.2, 0.5)
+
     $LongNVLText(narrator_none, (
     '''\
-You glance at your reflection in the water beneath you, fighting every urge to drink from it. You may not be a survivalist by trade, but you certainly know the dangers of consuming still water–whether it be from an alien planet or not.  
+You glance at your reflection in the water beneath you, fighting every urge to drink from it. 
     '''
     ))
 
     $LongNVLText(narrator_none, (
     '''\
-Drawing your eyes away from the shallow water, you peer towards the central mass in front of you. You aren’t sure if it is from the blood loss or pure exhaustion, but you almost mistook the small hut for a meaningless pile of branches and moss. You rub your eyes with your free hand, fearing it as a mirage. 
+You may not be a survivalist by trade, but you certainly know the dangers of consuming still water–whether it be from an alien planet or not.  
+    '''
+    ))
+
+    show protl protag_lookup_breathing:
+        subpixel True pos (-0.2, 0.5)
+
+    $LongNVLText(narrator_none, (
+    '''\
+Drawing your eyes away from the shallow water, you peer towards the central mass in front of you. 
+    '''
+    ))
+
+    show protl protag_lookup_breathing_stay:
+        subpixel True pos (-0.2, 0.5)
+
+    $LongNVLText(narrator_none, (
+    '''\
+You aren’t sure if it is from the blood loss or pure exhaustion, but you almost mistook the small hut for a meaningless pile of branches and moss. 
     '''
     ))
 
     $LongNVLText(narrator_none, (
     '''\
-You follow the narrow path towards the hut with trepidation–unsure if the worst case scenario is it being occupied or unoccupied. From the outside, you peer through the window covered by a holey, dirty red curtain, looking for any signs of movement. 
+You rub your eyes with your free hand, fearing it as a mirage. 
+    '''
+    ))
+
+    show protl protag_lookup_breathing_stay:
+        subpixel True pos (-0.2, 0.5)
+
+
+    show bg_hut:
+        subpixel True yzoom 1.0 
+        parallel:
+            pos (0.5, 1.0) 
+            linear 1.17 pos (0.3, 1.25) 
+        parallel:
+            zoom 1.0 
+            linear 1.16 zoom 1.5 
+    with Pause(1.27)
+    show bg_hut:
+        pos (0.3, 1.25) zoom 1.5 
+
+
+    $LongNVLText(narrator_none, (
+    '''\
+You follow the narrow path towards the hut with trepidation–unsure if the worst case scenario is it being occupied or unoccupied. 
+    '''
+    ))
+
+    $LongNVLText(narrator_none, (
+    '''\
+From the outside, you peer through the window covered by a holey, dirty red curtain, looking for any signs of movement. 
     '''
     ))
 
@@ -1036,15 +1091,35 @@ Once you feel certain that no one is inside, you slowly and carefully pull the c
     '''
     ))
 
+    show protl protag_lookup_breathing_stay_talking:
+        subpixel True pos (-0.2, 0.5)
+
     $LongNVLText(narrator, (
     '''\
-“It is as dilapidated inside as it is outside,” you mutter as yourr eyes scan the inside, noticing the rotted wood as it had caved in from persistent pooling water and miscellaneous junk littered all around. 
+“It is as dilapidated inside as it is outside,” you mutter as your eyes scan the inside. 
+    '''
+    ))
+
+    show protl protag_lookup_breathing_stay:
+        subpixel True pos (-0.2, 0.5)
+
+    $LongNVLText(narrator, (
+    '''\
+You notice the rotted wood as it had caved in from persistent pooling water and miscellaneous junk littered all around. 
+    '''
+    ))
+
+
+
+    $LongNVLText(narrator_none, (
+    '''\
+Curiously, the only place left–for the most part–untouched by the destruction was the dining room table, located noticeably in the center of the shelter. 
     '''
     ))
 
     $LongNVLText(narrator_none, (
     '''\
-Curiously, the only place left–for the most part–untouched by the destruction was the dining room table, located noticeably in the center of the shelter. Whoever last used this hut had obviously used it for a singular activity. 
+Whoever last used this hut had obviously used it for a singular activity. 
     '''
     ))
 
@@ -1054,15 +1129,31 @@ Shelter was shelter though. At least you wouldn’t be sleeping outside tonight.
     '''
     ))
 
+    scene black
+    show bg_insidehut with slideright
+
     $LongNVLText(narrator_none, (
     '''\
-You walk towards the open entryway and start your search for supplies while you still have some energy left. Luckily, you are able to find some scraps of worn cloth in one of the junk piles, which you use to tend to your stomach wound. 
+You walk towards the open entryway and start your search for supplies while you still have some energy left. 
+    '''
+    ))
+
+
+    $LongNVLText(narrator_none, (
+    '''\
+Luckily, you are able to find some scraps of worn cloth in one of the junk piles, which you use to tend to your stomach wound. 
     '''
     ))
 
     $LongNVLText(narrator_none, (
     '''\
-You are finally starting to feel better about your situation. You had shelter, a–mostly–clean wound, and some half rotting food to eat. As you drift off to sleep you believe that maybe your situation isn’t so bad afterall? 
+You are finally starting to feel better about your situation. You had shelter, a–mostly–clean wound, and some half rotting food to eat. 
+    '''
+    ))
+
+    $LongNVLText(narrator_none, (
+    '''\
+As you drift off to sleep you believe that maybe your situation isn’t so bad afterall? 
     '''
     ))
     #show bg_hut:
