@@ -770,7 +770,7 @@ If you looked, you would accept the fear that threatened to spill out of your in
     show protl protag_lookup_breathing_stay:
         subpixel True pos (-0.2, 0.5)
     
-    show speedline_animation with dissolve
+    #show speedline_animation with dissolve
 
     $LongNVLText(narrator_none, (
     '''\
@@ -811,7 +811,7 @@ If you were to make it through the narrow gap before the creature catches up to 
     show protl protag_lookup_breathing_stay:
         subpixel True pos (-0.2, 0.5)
 
-    show speedline_animation with dissolve
+    #show speedline_animation with dissolve
 
     $LongNVLText(narrator_none, (
     '''\
@@ -2509,12 +2509,13 @@ Your past self dramatically falls onto the floor, unconscious. The disembodied v
     '''
     ))
 
+    hide protl protag_lookup_breathing_stay_talking
+
     hide bg_cockpit with dissolve
 
     scene black with dissolve
 
-    hide protl protag_lookup_breathing onlayer character
-
+    hide protl protag_lookup_breathing with dissolve
 
     $LongNVLText(narrator_none, (
     '''\
@@ -2566,6 +2567,8 @@ There has to be some way to fix this.
 In your blind rage, you don’t even notice that your stomach wound has healed. 
     '''
     ))
+    
+    hide protl protag_mad_breathing
 
     jump ship_remember
 
@@ -2598,7 +2601,7 @@ Nothing but regret and resentment fill your mind as you clumsily stumble your wa
 
 # (Effect: Shows running (fading and out) from bg_hut to bg_insidecave(In Work))
     
-    show protl protag_mad_breathing onlayer transient:
+    show protl protag_mad_breathing:
         subpixel True pos (-0.2, 0.5)
 
     $LongNVLText(narrator_none, (
