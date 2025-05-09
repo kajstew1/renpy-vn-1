@@ -769,6 +769,8 @@ If you looked, you would accept the fear that threatened to spill out of your in
 
     show protl protag_lookup_breathing_stay:
         subpixel True pos (-0.2, 0.5)
+    
+    show speedline_animation with dissolve
 
     $LongNVLText(narrator_none, (
     '''\
@@ -808,6 +810,8 @@ If you were to make it through the narrow gap before the creature catches up to 
 # (Effect - running, shake up and down (In Work)
     show protl protag_lookup_breathing_stay:
         subpixel True pos (-0.2, 0.5)
+
+    show speedline_animation with dissolve
 
     $LongNVLText(narrator_none, (
     '''\
