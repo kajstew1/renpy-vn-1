@@ -2806,9 +2806,9 @@ label path_left_path_decision:
 
 
 #(Effect - zoom in on left path)
-    show protl protag_breathing:
+    show protl protag_lookup_breathing_stay:
         subpixel True pos (-0.2, 0.5)
-
+    
     $LongNVLText(narrator_none, (
     '''\
 Your eyes land on the seemingly safer option. The two suns and neighboring planets were hung in the sky like ornaments on a Christmas tree, brightly lighting the path in front of you.
@@ -2830,7 +2830,7 @@ Your eyes land on the seemingly safer option. The two suns and neighboring plane
     #     #easeout 5.0 crop (0, 300, 860, 600)       # here we change the y coordinate over 8 seconds to pan the image up
 
 # (Effect - zoom in on right path)
-    show protl protag_breathing:
+    show protl protag_lookup_breathing_stay:
         subpixel True pos (-0.2, 0.5)
 
     $LongNVLText(narrator_none, (
@@ -2861,12 +2861,12 @@ You try to stand your ground in fear of being pulled into the imposing moon’s 
 
 
 # (Effect - zoom out (In Work))
-    show protl protag_breathing:
+    show protl protag_lookup_breathing_stay:
         subpixel True pos (-0.2, 0.5)
 
     $LongNVLText(narrator_none, (
     '''\
-Gritting your teeth, you tear your attention away from the dark path. Nothing good ever comes from embracing your inhibitions and dismissing your gut instincts." 
+Gritting your teeth, you tear your attention away from the dark path. Nothing good ever comes from embracing your inhibitions and dismissing your gut instincts. 
     '''
     ))
 
@@ -3364,6 +3364,9 @@ About an hour passes until you finally meet your escort. At this point, you’ve
     window auto show
 
 
+    show protl protag_lookup_breathing:
+        subpixel True pos (-0.2, 0.5) 
+
     $LongNVLText(narrator_none, (
     '''\
 Above your escort’s shoulder sits a small, outdated TV, projecting an unimpressed expression on his grayscale face. Dressed to the nines, he wears an expensive and sharply tailored suit.  
@@ -3384,9 +3387,12 @@ Above your escort’s shoulder sits a small, outdated TV, projecting an unimpres
         pos (0.5, 1.0) xzoom 1.0 yzoom 1.0 
     window auto show
 
+    show protl protag_lookup_breathing_stay:
+        subpixel True pos (-0.2, 0.5) 
+    
     $LongNVLText(narrator_none, (
     '''\
-You brows knit together in confusion…Is this how people dress on Psilicon 5? He can’t possibly have a working retro-style TV for a head, can he? 
+Your brows knit together in confusion…Is this how people dress on Psilicon 5? He can’t possibly have a working retro-style TV for a head, can he? 
     '''
     ))
 
@@ -3411,11 +3417,17 @@ Your escort flicks his wrist to look at his silver-plated watch impatiently.
     show ccl cc_bored: 
         subpixel True additive 0.0 matrixcolor InvertMatrix(0.0)*ContrastMatrix(1.5)*SaturationMatrix(1.75)*BrightnessMatrix(0.0)*HueMatrix(0.0) blend None
 
+    show protl protag_lookup_breathing_stay_talking:
+        subpixel True pos (-0.2, 0.5) 
+
     $LongNVLText(narrator, (
     '''\
 Without thinking, you blurt out what was on your mind. “Are you a cyborg?” 
     '''
     ))
+
+    show protl protag_lookup_breathing_stay:
+        subpixel True pos (-0.2, 0.5) 
 
     show ccl cc_squint_frown_breathing:
         subpixel True additive 0.0 matrixcolor InvertMatrix(0.0)*ContrastMatrix(1.5)*SaturationMatrix(1.75)*BrightnessMatrix(0.0)*HueMatrix(0.0) blend None
@@ -3468,14 +3480,38 @@ Clearing his throat, your escort motions toward himself.
     '''
     ))
 
+    show protl protag_lookup_breathing_stay_talking:
+        subpixel True pos (-0.2, 0.5) 
+
     show ccl cc_breathing:
         subpixel True additive 0.0 matrixcolor InvertMatrix(0.0)*ContrastMatrix(1.5)*SaturationMatrix(1.75)*BrightnessMatrix(0.0)*HueMatrix(0.0) blend None
 
     $LongNVLText(narrator, (
     '''\
-“Nice to meet you.” You hoist your folded-up belongings underneath your armpit and outstretch your free hand for a handshake. When you are met with just a confused stare, you proceed to return your hand to your side. “My name is [player_name] and as you’ve probably heard, my ship crash landed on this planet.” 
+“Nice to meet you.” 
     '''
     ))
+
+    show protl protag_lookup_breathing_stay:
+        subpixel True pos (-0.2, 0.5) 
+
+    $LongNVLText(narrator, (
+    '''\
+You hoist your folded-up belongings underneath your armpit and outstretch your free hand for a handshake. When you are met with just a confused stare, you proceed to return your hand to your side. 
+    '''
+    ))
+
+    show protl protag_lookup_breathing_stay_talking:
+        subpixel True pos (-0.2, 0.5) 
+   
+    $LongNVLText(narrator, (
+    '''\
+“My name is [player_name] and as you’ve probably heard, my ship crash landed on this planet.” 
+    '''
+    ))
+
+    show protl protag_lookup_breathing_stay:
+        subpixel True pos (-0.2, 0.5) 
 
     show ccl cc_talking:
         subpixel True additive 0.0 matrixcolor InvertMatrix(0.0)*ContrastMatrix(1.5)*SaturationMatrix(1.75)*BrightnessMatrix(0.0)*HueMatrix(0.0) blend None
