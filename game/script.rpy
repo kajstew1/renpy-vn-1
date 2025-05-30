@@ -2517,6 +2517,7 @@ Your past self dramatically falls onto the floor, unconscious. The disembodied v
 
     hide protl protag_lookup_breathing with dissolve
 
+
     $LongNVLText(narrator_none, (
     '''\
 The scene changes and all the colors disappear, leaving nothing but pure darkness behind. 
@@ -2583,7 +2584,7 @@ label ship_remember:
 
     scene black
     show bg_insidecave at basic_fade, my_walking with dissolve:
-        subpixel True matrixcolor InvertMatrix(0.0)*ContrastMatrix(1.0)*SaturationMatrix(1.5)*BrightnessMatrix(0.17)*HueMatrix(0.0) 
+        subpixel True matrixcolor InvertMatrix(0.0)*ContrastMatrix(1.0)*SaturationMatrix(1.5)*BrightnessMatrix(0)*HueMatrix(0.0) 
 
 
 #, my_shake 
@@ -2612,6 +2613,8 @@ Even though it was only yesterday that you first entered the cave, you feel none
 
     scene black
     show bg_crashsite at basic_fade, my_walking with dissolve
+    show bg_crashsite:
+
 
 
 # (Shows running (fading and out) from bg_insidecave to bg_crashedsite)
