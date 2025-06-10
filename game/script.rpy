@@ -3033,7 +3033,7 @@ Beep…Beep…Beep…
     '''
     ))
 
-    show protl protag_breathing with dissolve:
+    show protl protag_lookup_breathing with dissolve:
         subpixel True pos (-0.17, 0.5)
 
     $LongNVLText(narrator_none, (
@@ -3041,6 +3041,9 @@ Beep…Beep…Beep…
 A soft, rhythmic hum wakes you from your deep sleep. 
     '''
     ))
+
+    show protl protag_lookup_breathing_stay:
+        subpixel True pos (-0.17, 0.5)
 
     $LongNVLText(narrator_none, (
     '''\
@@ -3071,7 +3074,13 @@ As your focus sharpens, you take in your surroundings.
 
     $LongNVLText(narrator_none, (     
     '''\
-To your right you see a heartbeat monitor. To your left you see a slew of medical machines laid out alongside you. Against the wall you see a big blue screen projecting writing that you don’t recognize. 
+To your right you see a heartbeat monitor. To your left you see a slew of medical machines laid out alongside you. 
+    '''
+    ))
+
+    $LongNVLText(narrator_none, (     
+    '''\
+Against the wall you see a big blue screen projecting writing that you don’t recognize. 
     '''
     ))
 
@@ -3101,7 +3110,13 @@ Not waiting for a response, a figure enters through the doorway.
 
     $LongNVLText(narrator_none, (
     '''\
-Under normal circumstances, you would be happy to see a doctor sporting a crisp white lab coat and blue scrubs holding onto a clipboard chock full of patient notes…But this isn’t a normal circumstance. 
+Under normal circumstances, you would be happy to see a doctor sporting a crisp white lab coat and blue scrubs holding onto a clipboard chock full of patient notes.
+    '''
+    ))
+
+    $LongNVLText(narrator_none, (
+    '''\
+…But this isn’t a normal circumstance. 
     '''
     ))
     
@@ -3129,6 +3144,7 @@ Under normal circumstances, you would be happy to see a doctor sporting a crisp 
     show protl protag_lookup_breathing_stay: 
         subpixel True pos (-0.17, 0.5) 
 
+
     $LongNVLText(narrator_none, (
     '''\
 The “doctor’s” skin was a sickly green, moss color. Taking up half of his face, in lieu of a typical head of hair and eyes, he had a vibrant red mushroom cap, dotted with yellow spots. 
@@ -3154,7 +3170,13 @@ The “doctor’s” skin was a sickly green, moss color. Taking up half of his 
 
     $LongNVLText(narrator_none, (
     '''\
-You silently curse under your breath as you grip the sheets in front of you. Your knuckles turning white, trying to contain your strange cocktail of emotions–fear, rage, sadness–from bursting out. 
+You silently curse under your breath as you grip the sheets in front of you. 
+    '''
+    ))
+
+    $LongNVLText(narrator_none, (
+    '''\
+Your knuckles turning white, trying to contain your strange cocktail of emotions–fear, rage, sadness–from bursting out. 
     '''
     ))
 
@@ -3250,7 +3272,13 @@ He taps impatiently with his fingers onto his clipboard as he weighs his options
 
     $LongNVLText(drpsilicon.c, (
     '''\
-“You are in a hospital on the planet Psilicon 5. Due to your subpar piloting, you destroyed a nature preserve. I surely hope you have that ship insured or else you may find yourself in quite the conundrum.” 
+“You are in a hospital on the planet Psilicon 5. Due to your subpar piloting, you destroyed a nature preserve. 
+    '''
+    ))
+
+    $LongNVLText(drpsilicon.c, (
+    '''\
+I surely hope you have that ship insured or else you may find yourself in quite the conundrum.” 
     '''
     ))
 
@@ -3372,7 +3400,14 @@ About an hour passes until you finally meet your escort. At this point, you’ve
 
     $LongNVLText(narrator_none, (
     '''\
-Above your escort’s shoulder sits a small, outdated TV, projecting an unimpressed expression on his grayscale face. Dressed to the nines, he wears an expensive and sharply tailored suit.  
+Above your escort’s shoulder sits a small, outdated TV, projecting an unimpressed expression on his grayscale face. 
+    '''
+    ))
+
+
+    $LongNVLText(narrator_none, (
+    '''\
+Dressed to the nines, he wears an expensive and sharply tailored suit.  
     '''
     ))
 
@@ -3479,7 +3514,13 @@ Clearing his throat, your escort motions toward himself.
 
     $LongNVLText(commercialcris.c, (
     '''\
-“Now that you’ve displayed your comedic talent, let us start with some introductions. My name is Commercial Cris. As the mayor of this town, I’d like to hearby welcome you to Aisthesis, Psilicon 5’s largest city.” 
+“Now that you’ve displayed your comedic talent, let us start with some introductions. My name is Commercial Cris."
+    '''
+    ))
+
+    $LongNVLText(commercialcris.c, (
+    '''\
+"As the mayor of this town, I’d like to hearby welcome you to Aisthesis, Psilicon 5’s largest city.” 
     '''
     ))
 
@@ -3500,7 +3541,13 @@ Clearing his throat, your escort motions toward himself.
 
     $LongNVLText(narrator, (
     '''\
-You hoist your folded-up belongings underneath your armpit and outstretch your free hand for a handshake. When you are met with just a confused stare, you proceed to return your hand to your side. 
+You hoist your folded-up belongings underneath your armpit and outstretch your free hand for a handshake. 
+    '''
+    ))
+
+    $LongNVLText(narrator, (
+    '''\
+When you are met with just a confused stare, you proceed to return your hand to your side. 
     '''
     ))
 
@@ -3565,7 +3612,20 @@ You take the hint and follow him out of the hospital.
 # (Effect: Commercial Cris transitions in)
     $LongNVLText(narrator_none, (
     '''\
-Upon opening the exit door, you are flooded with a flurry of noises. Jumbled voices speaking in an unfamiliar language, screeching of wheels from kiosks holding a variety of items, clattering of metal from the construction workers fixing the roads. It all felt so familiar yet so different. 
+Upon opening the exit door, you are flooded with a flurry of noises. 
+    '''
+    ))
+
+    $LongNVLText(narrator_none, (
+    '''\
+Jumbled voices speaking in an unfamiliar language, screeching of wheels from kiosks holding a variety of items, clattering of metal from the construction workers fixing the roads. 
+    '''
+    ))
+
+
+    $LongNVLText(narrator_none, (
+    '''\
+It all felt so familiar yet so different. 
     '''
     ))
 
@@ -3580,7 +3640,13 @@ Passing through the crowds with ease, Commercial Cris wastes no time to start hi
 
     $LongNVLText(commercialcris.c, (
     '''\
-“This town was built after the last war. Mainly functioning as a trading post approximately 100 “earth” years ago. Due to the proximity to an abundant amount of natural resources, Aisthesis thrived.” 
+“This town was built after the last war. Mainly functioning as a trading post approximately 100 “earth” years ago." 
+    '''
+    ))
+
+    $LongNVLText(commercialcris.c, (
+    '''\
+"Due to the proximity to an abundant amount of natural resources, Aisthesis thrived.” 
     '''
     ))
     
@@ -3598,7 +3664,13 @@ Even when a passing kiosk almost runs into him, Commercial Cris continues his to
 
     $LongNVLText(commercialcris.c, (
     '''\
-“We have the best hospitals, schools, and transportation in all of Psilicon 5. Not to mention the alcohol!” Lifting his watch again to check the time, he says, “Since you’ve had quite the day, how about we grab ourselves a drink?” 
+“We have the best hospitals, schools, and transportation in all of Psilicon 5. Not to mention the alcohol!” 
+    '''
+    ))
+
+    $LongNVLText(commercialcris.c, (
+    '''\
+Lifting his watch again to check the time, he says, “Since you’ve had quite the day, how about we grab ourselves a drink?” 
     '''
     ))
 
@@ -3621,7 +3693,19 @@ Even when a passing kiosk almost runs into him, Commercial Cris continues his to
 
     $LongNVLText(narrator_none, (
     '''\
-As much as you try to focus on Commercial Cris’s tour, you find it hard to concentrate when you are in such a densely packed crowd. Even more so when you look up to the tall, perfectly oddly-jagged shaped buildings. You had never seen such architecture before. You wonder how it was possible to build such a feat with such sharp, awkward angles. 
+As much as you try to focus on Commercial Cris’s tour, you find it hard to concentrate when you are in such a densely packed crowd. 
+    '''
+    ))
+
+    $LongNVLText(narrator_none, (
+    '''\
+Even more so when you look up to the tall, perfectly oddly-jagged shaped buildings. You had never seen such architecture before. 
+    '''
+    ))
+
+    $LongNVLText(narrator_none, (
+    '''\
+You wonder how it was possible to build such a feat with such sharp, awkward angles. 
     '''
     ))
 
