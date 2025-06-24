@@ -3792,6 +3792,7 @@ Well if you want to lose your guide, now’s the time. To your right you see a b
 # Scene 3c1
 label path_town_alley:
     scene bg_town
+    scene black
     show bg_townalley with pushright 
     
     #show terrorlightz_talking at right
@@ -3809,7 +3810,13 @@ You wait until Commercial Cris’s silhouette disappears into the crowd before y
 # (Effect - screen bouncing up and down slowly, walking...)
     $LongNVLText(narrator_none, (
     '''\
-As you pass by the first round of unused trash cans, you notice a few shady looking aliens leaning onto the walls. The phrase “try not to stand out” runs through your mind as you quickly put your hands in your pockets and briskly walk with a fake air of confidence. 
+As you pass by the first round of unused trash cans, you notice a few shady looking aliens leaning onto the walls. 
+    '''
+    ))
+
+    $LongNVLText(narrator_none, (
+    '''\
+The phrase “try not to stand out” runs through your mind as you quickly put your hands in your pockets and briskly walk with a fake air of confidence. 
     '''
     ))
 
@@ -3819,19 +3826,39 @@ While you could dodge the shady alien’s stares, you couldn’t ignore the incr
     '''
     ))
 
+
+    show protl protag_lookup_breathing_stay_talking:
+        subpixel True pos (-0.2, 0.5) 
     $LongNVLText(narrator_none, (
     '''\
-“It’s fine. I’m fine, just feeling a bit paranoid,” You say to yourself quietly. Just yesterday you were wandering an empty desert. Today, you are trying to dodge suspicious looking aliens. If this is any indicator how your week is going to go, you aren’t sure how long you are going to keep a hold of your sanity. 
+“It’s fine. I’m fine, just feeling a bit paranoid,” You say to yourself quietly. 
     '''
     ))
 
+    show protl protag_mad_breathing:
+        subpixel True pos (-0.2, 0.5) 
+    $LongNVLText(narrator_none, (
+    '''\
+Just yesterday you were wandering an empty desert. Today, you are trying to dodge suspicious looking aliens. 
+    '''
+    ))
+
+    $LongNVLText(narrator_none, (
+    '''\
+If this is any indicator how your week is going to go, you aren’t sure how long you are going to keep a hold of your sanity. 
+    '''
+    ))
+    
+    show protl protag_lookup_breathing_stay:
+        subpixel True pos (-0.2, 0.5) 
     $LongNVLText(narrator_none, (
     '''\
 After involuntarily holding your breath as your heart thunders against your chest, you finally exit the alleyway. 
     '''
     ))
 
-    show bg_townoutskirts at my_walking with dissolve
+    scene black
+    show bg_townoutskirts at  str_walking with dissolve
 
 # (Effect: Change scene: bg_town alley...)
     $LongNVLText(narrator_none, (
@@ -3846,11 +3873,23 @@ If you had thought the alleyway was empty, the outskirts are completely barren i
     '''
     ))
 
+    show protl protag_mad_breathing:
+        subpixel True pos (-0.2, 0.5) 
+
     $LongNVLText(narrator_none, (
     '''\
-The silence is eerie as you make your way through the town. The difference in atmosphere was so starkly different, you almost want to turn and run back to the main strip. The fear of the unknown is man’s greatest fear after all. 
+The silence is eerie as you make your way through the town. The difference in atmosphere was so starkly different, you almost want to turn and run back to the main strip. 
     '''
     ))
+
+    $LongNVLText(narrator_none, (
+    '''\
+The fear of the unknown is man’s greatest fear after all. 
+    '''
+    ))
+
+    show protl protag_lookup_breathing_stay:
+        subpixel True pos (-0.2, 0.5) 
 
     $LongNVLText(narrator_none, (
     '''\
@@ -3863,6 +3902,9 @@ But you resist the feeling and press on. The soft smack of your shoes hitting th
 Passing through empty fluorescent lit buildings, you wonder why there isn’t anyone else around. Is it a dangerous area? That doesn’t seem right. 
     '''
     ))
+
+    show protl protag_mad_breathing:
+        subpixel True pos (-0.2, 0.5) 
 
     $LongNVLText(narrator_none, (
     '''\
@@ -3879,7 +3921,8 @@ You are so focused on making sense of your situation that you almost miss a trai
     scene black
     show bg_townalley 
 
-
+    show protl protag_lookup_breathing_stay:
+        subpixel True pos (-0.2, 0.5) 
 # (Effect: Stop walking animation, look towards right side...)
     $LongNVLText(narrator_none, (
     '''\
@@ -3906,7 +3949,7 @@ label path_town_outskirts:
     scene black
     #show bg_townoutskirts with dissolve
     show bg_townalley with dissolve
-    show mswl myst_s_woman_breathing at center
+    show mswl myst_s_woman_breathing at center with dissolve
 
 
     $LongNVLText(narrator_none, (
@@ -3923,11 +3966,38 @@ You knit your eyebrows together as you take in the strange…beautiful alien?
     '''
     ))
 
+
+    show mswl myst_s_woman_breathing:
+        subpixel True xzoom 1.0 
+        parallel:
+            pos (0.5, 1.0) 
+            linear 0.59 pos (0.5, 1.0) 
+            linear 1.04 pos (0.5, 1.5) 
+        parallel:
+            zoom 1.0 
+            linear 0.60 zoom 1.5 
+    with Pause(1.73)
+    show mswl myst_s_woman_breathing:
+        pos (0.5, 1.5) zoom 1.5 
+
+
     $LongNVLText(narrator_none, (
     '''\
 Enveloped in a billowing, pastel pink-colored tulle dress, there stands a fragile-looking, turquoise-skinned alien. A soft trail of pink smoke, matching the color of dress, emanates off of her.  
     '''
     ))
+
+    show mswl myst_s_woman_breathing:
+        subpixel True 
+        parallel:
+            pos (0.5, 1.5) 
+            linear 0.85 pos (0.5, 1.0) 
+        parallel:
+            zoom 1.5 
+            linear 0.86 zoom 1.0 
+    with Pause(0.96)
+    show mswl myst_s_woman_breathing:
+        pos (0.5, 1.0) zoom 1.0 
 
     $LongNVLText(narrator_none, (
     '''\
@@ -3935,10 +4005,17 @@ She takes a few moments to examine you. After she is satisfied, she smirks at yo
     '''
     ))
 
-    show mswl myst_s_woman_talking at center 
+    show mswl myst_s_woman_breathing with dissolve
     $LongNVLText(mysteryspacewoman.c, (
     '''\
-Her face–composed of soft, feminine features–produces an empathetic smile. A gentle, melodic voice breaks through the silence. “Hello there, sweetie. Are you lost?” 
+Her face–composed of soft, feminine features–produces an empathetic smile. A gentle, melodic voice breaks through the silence. 
+    '''
+    ))
+
+    show mswl myst_s_woman_talking
+    $LongNVLText(mysteryspacewoman.c, (
+    '''\
+“Hello there, sweetie. Are you lost?” 
     '''
     ))
 
