@@ -4020,45 +4020,104 @@ Her face–composed of soft, feminine features–produces an empathetic smile. A
     ))
 
     show mswl myst_s_woman_breathing
+    show protl protag_sigh:
+        subpixel True pos (-0.2, 0.5) 
     $LongNVLText(narrator_none, (
     '''\
 You let out a sigh of relief. Finally, a lucky break. You feel calmer already. 
     '''
     ))
 
+
+    show protl protag_lookup_breathing_stay_talking:
+        subpixel True pos (-0.2, 0.5) 
     $LongNVLText(narrator, (
     '''\
 Smiling back awkwardly, you say, “You could say that. I’m new here and got separated from my escort.” It feels more like a half-truth, but she didn’t need to know that. 
     '''
     ))
 
+
+    show protl protag_lookup_breathing_stay:
+        subpixel True pos (-0.2, 0.5) 
+
     show mswl myst_s_woman_giggle
+
     $LongNVLText(mysteryspacewoman.c, (
     '''\
-Her eyes widen slightly as she brings her slender hand towards her mouth. “Oh my, what poor luck you have. This is such a big city, afterall.”
+Her eyes widen slightly as she brings her slender hand towards her mouth. 
     '''
     ))
 
+    
+    show mswl myst_s_woman_talking
+
+    $LongNVLText(mysteryspacewoman.c, (
+    '''\
+“Oh my, what poor luck you have. This is such a big city, afterall.”
+    '''
+    ))
+
+    show protl protag_mad_breathing:
+        subpixel True pos (-0.2, 0.5) 
+
     show mswl myst_s_woman_breathing
+
     $LongNVLText(narrator, (
     '''\
-Feigning embarrassment, you look downward, clutching the back of your neck. “Yeah it was pretty busy downtown and I got a bit distracted by all of the sights.”
+Feigning embarrassment, you look downward, clutching the back of your neck. 
+    '''
+    ))
+
+    show protl protag_mad_talking:
+        subpixel True pos (-0.2, 0.5) 
+
+    $LongNVLText(narrator, (
+    '''\
+“Yeah it was pretty busy downtown and I got a bit distracted by all of the sights.”
+    '''
+    ))
+
+    show protl protag_mad_breathing:
+        subpixel True pos (-0.2, 0.5) 
+
+    show mswl myst_s_woman_breathing
+    $LongNVLText(mysteryspacewoman.c, (
+    '''\
+She cocked her head and frowned disapprovingly. 
     '''
     ))
 
     show mswl myst_s_woman_talking
+
+    show protl protag_lookup_breathing_stay:
+        subpixel True pos (-0.2, 0.5) 
+
     $LongNVLText(mysteryspacewoman.c, (
     '''\
-She cocked her head and frowned disapprovingly. “I can understand that, but do be careful. The first week I moved here I made a wrong turn and got mugged by some ruffians.” 
+“I can understand that, but do be careful. The first week I moved here I made a wrong turn and got mugged by some ruffians.” 
     '''
     ))
 
     show mswl myst_s_woman_breathing
+
     $LongNVLText(narrator, (
     '''\
-You could believe that. An elegant alien like her walking by herself down the wrong street would make her a bigger target than even you–and you aren’t even from this planet. “I’m sorry to hear that. Considering the dangers, you could say I’ve been pretty fortunate.” 
+You could believe that. An elegant alien like her walking by herself down the wrong street would make her a bigger target than even you–and you aren’t even from this planet. 
     '''
     ))
+
+    show protl protag_lookup_breathing_stay_talking:
+        subpixel True pos (-0.2, 0.5) 
+
+    $LongNVLText(narrator, (
+    '''\
+“I’m sorry to hear that. Considering the dangers, you could say I’ve been pretty fortunate.” 
+    '''
+    ))
+
+    show protl protag_lookup_breathing_stay:
+        subpixel True pos (-0.2, 0.5)
 
     show mswl myst_s_woman_talking
     $LongNVLText(mysteryspacewoman.c, (
@@ -4066,6 +4125,9 @@ You could believe that. An elegant alien like her walking by herself down the wr
 “That you have, sweetie. Now where are you heading, maybe I could help?” 
     '''
     ))
+
+    show protl protag_mad_breathing:
+        subpixel True pos (-0.2, 0.5) 
 
     show mswl myst_s_woman_breathing
     $LongNVLText(narrator_none, (
@@ -4076,14 +4138,59 @@ Where are you going? Do they have an immigration center here for unfortunate, lo
 
     $LongNVLText(narrator, (
     '''\
-After a few moments of pondering, you make up your mind. “The nearest ship station,” Maybe you could hitch a ride on the next spaceship heading towards your galaxy. You had valuable navigation skills so you could feasibly trade your services for a ride. 
+After a few moments of pondering, you make up your mind. 
     '''
     ))
+
+    show protl protag_lookup_breathing_stay_talking:
+        subpixel True pos (-0.2, 0.5) 
+
+    $LongNVLText(narrator, (
+    '''\
+“The nearest ship station.” 
+    '''
+    ))
+
+    show protl protag_lookup_breathing_stay:
+        subpixel True pos (-0.2, 0.5) 
+    $LongNVLText(narrator, (
+    '''\
+Maybe you could hitch a ride on the next spaceship heading towards your galaxy. 
+    '''
+    ))
+
+    show protl protag_lookup_breathing_stay:
+        subpixel True pos (-0.2, 0.5) 
+    
+    $LongNVLText(narrator, (
+    '''\
+You had valuable navigation skills so you could feasibly trade your services for a ride. 
+    '''
+    ))
+
+    show protl protag_lookup_breathing_stay:
+        subpixel True pos (-0.2, 0.5) 
 
     show mswl myst_s_woman_giggle
     $LongNVLText(mysteryspacewoman.c, (
     '''\
-She giggles. “I knew you weren’t from here.” She cups her face with her palm as she purses her lips and looks off into the distance. 
+She giggles. 
+    '''
+    ))
+
+    show mswl myst_s_woman_talking
+
+    $LongNVLText(mysteryspacewoman.c, (
+    '''\
+“I knew you weren’t from here.” 
+    '''
+    ))
+
+    show mswl myst_s_woman_breathing
+
+    $LongNVLText(mysteryspacewoman.c, (
+    '''\
+She cups her face with her palm as she purses her lips and looks off into the distance. 
     '''
     ))
 
@@ -4091,7 +4198,19 @@ She giggles. “I knew you weren’t from here.” She cups her face with her pa
     show mswl myst_s_woman_breathing 
     $LongNVLText(narrator_none, (
     '''\
-A minute goes by and you start doubting your odds. You start debating if you should ditch the pretty alien and try your luck exploring the city by yourself, but before you open your mouth to speak, she claps her hands excitedly and points toward the narrow alley in front of you. 
+A minute goes by and you start doubting your odds. 
+    '''
+    ))
+
+    $LongNVLText(narrator_none, (
+    '''\
+You start debating if you should ditch the pretty alien and try your luck exploring the city by yourself, but before you open your mouth to speak, she claps her hands excitedly. 
+    '''
+    ))
+
+    $LongNVLText(narrator_none, (
+    '''\
+She points toward the narrow alley in front of you. 
     '''
     ))
 
@@ -4125,7 +4244,14 @@ label path_town_alley_again:
 # (Effect: WALKING ANIMATION)
     $LongNVLText(narrator_none, (
     '''\
-After 30 minutes of seemingly aimless turns through endless rows of alleyways, you start to feel anxious. Every turn you take is the same as the last last. Dark and decrepit. While your guide is ever-confident, never once double-backed or hesitating, you still can’t comprehend that this endless maze of alleys would lead anywhere.    '''
+After 30 minutes of seemingly aimless turns through endless rows of alleyways, you start to feel anxious. Every turn you take is the same as the last last. Dark and decrepit. 
+    '''
+    ))
+    
+    $LongNVLText(narrator_none, (
+    '''\
+While your guide is ever-confident, never once double-backed or hesitating, you still can’t comprehend that this endless maze of alleys would lead anywhere.
+    '''
     ))
 
     $LongNVLText(narrator_none, (
@@ -4136,30 +4262,59 @@ Is she lost? You hope not. She’s your only hope to get off of this god-forsake
 
     $LongNVLText(narrator, (
     '''\
-You clear your throat as you make another sharp turn. Finally, she lets go of your hand. Unsurprisingly, it looks just as uninviting as the last. “Um, are you sure we are going in the right direction?” 
+You clear your throat as you make another sharp turn. Finally, she lets go of your hand. Unsurprisingly, it looks just as uninviting as the last. 
+    '''
+    ))
+
+    show protl protag_lookup_breathing_stay_talking:
+        subpixel True pos (-0.2, 0.5) 
+    $LongNVLText(narrator, (
+    '''\
+“Um, are you sure we are going in the right direction?” 
     '''
     ))
 
     scene black
     show bg_townalley 
     show mswl myst_s_woman_giggle
+    show protl protag_lookup_breathing_stay:
+        subpixel True pos (-0.2, 0.5) 
 
     $LongNVLText(mysteryspacewoman.c, (
     '''\
-You hear her giggle softly next to you. “Yes, of course, sweetie. You have to trust me.”
+You hear her giggle softly next to you. 
+    '''
+    ))
+
+    show mswl myst_s_woman_talking
+    $LongNVLText(mysteryspacewoman.c, (
+    '''\
+“Yes, of course, sweetie. You have to trust me.”
     '''
     ))
 
     show mswl myst_s_woman_breathing
     $LongNVLText(narrator_none, (
     '''\
-Trust her? How could you when you only met her an hour ago? Even worse, it is dark out. You lost the little amount of light you had left. Without daylight, you are completely and utterly helpless. 
+Trust her? How could you when you only met her an hour ago? Even worse, it is dark out. You lost the little amount of light you had left. 
     '''
     ))
 
     $LongNVLText(narrator_none, (
     '''\
-It doesn’t seem like your guide is as knowledgeable as you once hoped so you start your own investigation. Though it’s hard to make out in the dark, you feel your way around using the cracked brick-lined walls as your guide. It only takes a minute or two of feeling around, but you start to grow more anxious when you collide with the wall on the other side of the alley. Your assumptions are correct–this alley is a dead end.  
+Without daylight, you are completely and utterly helpless. 
+    '''
+    ))
+
+    $LongNVLText(narrator_none, (
+    '''\
+It doesn’t seem like your guide is as knowledgeable as you once hoped so you start your own investigation. 
+    '''
+    ))
+
+    $LongNVLText(narrator_none, (
+    '''\
+Though it’s hard to make out in the dark, you feel your way around using the cracked brick-lined walls as your guide. It only takes a minute or two of feeling around, but you start to grow more anxious when you collide with the wall on the other side of the alley. Your assumptions are correct–this alley is a dead end.  
     '''
     ))
 
