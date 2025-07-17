@@ -2613,7 +2613,7 @@ Even though it was only yesterday that you first entered the cave, you feel none
 
     scene black
     show bg_crashsite at basic_fade, my_walking with dissolve
-    show bg_crashsite:
+#    show bg_crashsite:
 
 
 
@@ -4238,7 +4238,7 @@ label path_town_alley_again:
     
     scene black
     #show bg_townoutskirts with dissolve
-    show bg_townalley at my_walking with dissolve
+    show bg_townalley at my_walking_focused with dissolve
     show mswl myst_s_woman_breathing
 
 # (Effect: WALKING ANIMATION)
