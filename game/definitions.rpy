@@ -227,6 +227,46 @@ init -100:
             linear 10 zoom 1.5
         #parallel:
             #easein 4.0 crop (860, 430, 860, 600)
+            
+    # A jogging motion that's faster than walking but not as intense as running
+    transform my_jogging:
+        parallel:
+            easein 0.3 xoffset 0 yoffset 35
+            easeout 0.3 xoffset 0 yoffset -35
+            repeat
+        parallel:
+            linear 8 zoom 1.5
+        parallel:
+            linear 0.6 xalign 0.5 yalign 0.5
+            
+    # Simulates walking into the background with focus maintained at pixel 1200,800
+    transform my_walking_focused:
+        subpixel True
+        # Set the anchor point to the focus coordinates (1200,800 in 1920x1080)
+        anchor (0.625, 0.741)  # 1200/1920, 800/1080
+        # Center this anchor point on screen
+        align (0.5, 0.5)
+        parallel:
+            # Natural walking gait with realistic timing
+            block:
+                linear 0.4 yoffset 15
+                ease 0.4 yoffset -15
+                repeat
+            time 17.0  # Start slowing down before zoom completes
+            # Gradually reduce the walking motion
+            easein 0.4 xoffset 0 yoffset 20
+            easeout 0.4 xoffset 0 yoffset -20
+            easein 0.5 xoffset 0 yoffset 10
+            easeout 0.5 xoffset 0 yoffset -10
+            easein 0.6 xoffset 0 yoffset 5
+            easeout 0.6 xoffset 0 yoffset 0  # Gently come to rest
+        parallel:
+            # Enhanced zoom effect to simulate walking deeper into the background
+            zoom 1.0
+            linear 20 zoom 2.5  # Further increased zoom and duration
+        parallel:
+            # More pronounced movement toward the focus point
+            linear 20 xpos 0.46 ypos 0.46  # More movement in the direction of focus
 
     # called from Scene 2h
     transform basic_fade:
