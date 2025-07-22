@@ -4293,6 +4293,9 @@ You hear her giggle softly next to you.
     '''
     ))
 
+    show protl protag_mad_breathing:
+        subpixel True pos (-0.2, 0.5) 
+
     show mswl myst_s_woman_breathing
     $LongNVLText(narrator_none, (
     '''\
@@ -4305,24 +4308,83 @@ Trust her? How could you when you only met her an hour ago? Even worse, it is da
 Without daylight, you are completely and utterly helpless. 
     '''
     ))
-
+   
+    hide mswl with dissolve
+    show protl protag_lookup_breathing_stay:
+        subpixel True pos (-0.2, 0.5) 
     $LongNVLText(narrator_none, (
     '''\
 It doesn’t seem like your guide is as knowledgeable as you once hoped so you start your own investigation. 
     '''
     ))
 
+    show protl protag_lookup_leftright:
+        subpixel True pos (-0.2, 0.5) 
+
+    show bg_townalley:
+        subpixel True 
+        parallel:
+            xpos 0.5 
+            linear 1.49 xpos 0.6 
+            linear 0.36 xpos 0.6 
+            linear 0.41 xpos 0.6 
+            linear 1.15 xpos 0.3 
+            linear 0.36 xpos 0.3 
+            linear 0.70 xpos 0.5 
+        parallel:
+            ypos 1.0 
+            linear 1.48 ypos 1.0 
+        parallel:
+            zoom 1.0 
+            linear 1.49 zoom 1.5 
+            linear 0.42 zoom 1.5 
+            linear 1.55 zoom 1.5 
+            linear 0.36 zoom 1.5 
+            linear 0.63 zoom 1.0 
+    with Pause(4.57)
+    show bg_townalley:
+        pos (0.5, 1.0) zoom 1.0 
+
     $LongNVLText(narrator_none, (
     '''\
-Though it’s hard to make out in the dark, you feel your way around using the cracked brick-lined walls as your guide. It only takes a minute or two of feeling around, but you start to grow more anxious when you collide with the wall on the other side of the alley. Your assumptions are correct–this alley is a dead end.  
+Though it’s hard to make out in the dark, you feel your way around using the cracked brick-lined walls as your guide. 
     '''
     ))
 
+    show protl protag_lookup_breathing_stay:
+        subpixel True pos (-0.2, 0.5) 
+
+    scene black
+    show bg_townalley with vpunch
+
+    $LongNVLText(narrator_none, (
+    '''\
+It only takes a minute or two of feeling around, but you start to grow more anxious when you collide with the wall on the other side of the alley. 
+    '''
+    ))
+
+    $LongNVLText(narrator_none, (
+    '''\
+Your assumptions are correct–this alley is a dead end.  
+    '''
+    ))
+
+    show protl protag_mad_breathing:
+        subpixel True pos (-0.2, 0.5) 
 #point and click
 
     $LongNVLText(narrator_none, (
     '''\
-You gulp and the hairs on the back of your neck perk up. This would be the perfect opportunity for someone to rob you. You shake your head and dismiss the thought. There is no way she is a criminal! 
+You gulp and the hairs on the back of your neck perk up. This would be the perfect opportunity for someone to rob you. 
+    '''
+    ))
+
+    show protl protag_lookup_breathing_stay:
+        subpixel True pos (-0.2, 0.5) 
+
+    $LongNVLText(narrator_none, (
+    '''\
+You shake your head and dismiss the thought. There is no way she is a criminal! 
     '''
     ))
 
@@ -4343,15 +4405,22 @@ You gulp and the hairs on the back of your neck perk up. This would be the perfe
         pos (0.5, 1.15) zpos 1.0 
     window auto show
 
-# EFFECT: BOUNCE 
-    show mswl myst_s_woman_scary_transition
+# EFFECT: BOUNCE
+
+    show protl protag_lookup_breathing_shocked:
+        subpixel True pos (-0.2, 0.5) 
+
     $LongNVLText(narrator_none, (
     '''\
 As your mind was racing with how to handle this situation, you turn too quickly to the left and trip over an overturned trash can. The metallic lid screeches as it rolls through the alley.
     '''
     ))
+    
+    show mswl myst_s_woman_scary_transition with dissolve 
 
-    show mswl myst_s_woman_scary
+    show protl protag_lookup_breathing_stay:
+        subpixel True pos (-0.2, 0.5) 
+
     $LongNVLText(narrator_none, (
     '''\
 A soft voice cuts through the darkness. 
@@ -4381,6 +4450,7 @@ You reach up to take her outstretched arm, but pull away before you make contact
     '''
     ))
 
+    hide protl with dissolve 
     show mswl myst_s_woman_scary:
         subpixel True matrixcolor InvertMatrix(0.0)*ContrastMatrix(1.0)*SaturationMatrix(1.0)*BrightnessMatrix(-0.5)*HueMatrix(1.0) 
         subpixel True 
@@ -4396,7 +4466,8 @@ You reach up to take her outstretched arm, but pull away before you make contact
     show mswl myst_s_woman_scary:
         pos (0.5, 2.75) zoom 1.75 
     
-  
+
+
   #(Effect: PAN IN CLOSER TO ALIEN’s FACE)
     $LongNVLText(narrator_none, (
     '''\
@@ -4419,6 +4490,8 @@ The pink, elegant clothes she once wore melted away, revealing a horrifying wolf
     ))
 
     show mswl myst_s_woman_scary_happy
+
+
     $LongNVLText(narrator_none, (
     '''\
 You scream for the last time as the terrifying alien licks its lips and dives into you. 
