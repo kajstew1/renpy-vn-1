@@ -92,7 +92,13 @@ label path_crash_site:
 
     $LongNVLText(narrator_none, (
     '''\
-Smoke billows out of the crashed spacecraft. You, the sole survivor, wake up in a haze. Your blurry eyes, disoriented from the sharp impact, try to make sense of the destruction in front of you.
+Smoke billows out of the crashed spacecraft. You, the sole survivor, wake up in a haze. 
+    '''
+    ))
+
+    $LongNVLText(narrator_none, (
+    '''\
+Your blurry eyes, disoriented from the sharp impact, try to make sense of the destruction in front of you.
     '''
     ))
 
@@ -838,7 +844,13 @@ You curse your past self as you choke on your ragged breaths, involuntarily runn
 
     $LongNVLText(narrator_none, (
     '''\
-With the lack of regular exercise, your feet threaten to trip on themselves at any moment as your hands desperately search for any sort of leverage point to pull yourself quicker to your destination. 
+With the lack of regular exercise, your feet threaten to trip on themselves at any moment. 
+    '''
+    ))
+
+    $LongNVLText(narrator_none, (
+    '''\
+Your hands desperately search for any sort of leverage point to pull yourself quicker to your destination. 
     '''
     ))
 
@@ -1257,7 +1269,14 @@ You feel the vibrations from his voice coarse through your body. Unexplainably, 
 
     $LongNVLText(narrator_none, (
     '''\
-His glare produces a hypnotic effect that prevents you from moving your body. Meeting his gaze, you see an optical illusion. His eyes move in an inexplicable, neverending ciruclar motion. To further punctuate his ominous presence, smoke continuously emanates out from the corners of his almond eyes. 
+His glare produces a hypnotic effect that prevents you from moving your body. Meeting his gaze, you see an optical illusion. His eyes move in an inexplicable, neverending ciruclar motion. 
+    '''
+    ))
+
+
+    $LongNVLText(narrator_none, (
+    '''\
+To further punctuate his ominous presence, smoke continuously emanates out from the corners of his almond eyes. 
     '''
     ))
 
@@ -1280,7 +1299,31 @@ His glare produces a hypnotic effect that prevents you from moving your body. Me
 
     $LongNVLText(terrorlightz.c, (
     '''\
-The ghastly alien cackles at your response. His sharp, pointed teeth glint in the light as he thrusts his head back. “See, now that’s better.” Returning his gaze to you, he gives you a half smirk. 
+The ghastly alien cackles at your response. His sharp, pointed teeth glint in the light as he thrusts his head back. 
+    '''
+    ))
+
+    show tll terrorlightz_talking at center:
+        subpixel True alpha 1.0 additive 0.0 
+        matrixcolor InvertMatrix(0.0)*ContrastMatrix(1.5)*SaturationMatrix(1.0)*BrightnessMatrix(0.0)*HueMatrix(0.0) 
+        linear 0.01 matrixcolor InvertMatrix(0.0)*ContrastMatrix(1.5)*SaturationMatrix(1.0)*BrightnessMatrix(0.0)*HueMatrix(0.0)  
+
+
+    $LongNVLText(terrorlightz.c, (
+    '''\
+“See, now that’s better.” 
+    '''
+    ))
+
+    show tll terrorlightz_breathing at center:
+        subpixel True alpha 1.0 additive 0.0 
+        matrixcolor InvertMatrix(0.0)*ContrastMatrix(1.5)*SaturationMatrix(1.0)*BrightnessMatrix(0.0)*HueMatrix(0.0) 
+        linear 0.01 matrixcolor InvertMatrix(0.0)*ContrastMatrix(1.5)*SaturationMatrix(1.0)*BrightnessMatrix(0.0)*HueMatrix(0.0)  
+
+
+    $LongNVLText(terrorlightz.c, (
+    '''\
+Returning his gaze to you, he gives you a half smirk. 
     '''
     ))
 
@@ -1340,7 +1383,13 @@ In a bizarre turn of events, he gives you an overdramatic bow, his arms outstret
 
     $LongNVLText(narrator_none, (
     '''\
-You are speechless. You can’t fathom how this many contradictions can exist in a singular space. In front of you, stands a nightmarish creature wearing a three-piece suit who supposedly lives in this broken down shack. You can’t tell if you want to laugh or cry. 
+You are speechless. You can’t fathom how this many contradictions can exist in a singular space. 
+    '''
+    ))
+
+    $LongNVLText(narrator_none, (
+    '''\
+In front of you, stands a nightmarish creature wearing a three-piece suit who supposedly lives in this broken down shack. You can’t tell if you want to laugh or cry. 
     '''
     ))
 
@@ -1464,7 +1513,13 @@ You stare at his outstretched hand momentarily before you grasp ahold of it. You
 
     $LongNVLText(narrator_none, (
     '''\
-The academy only taught you basic first aid and your half-assed attempt at putting your stomach back together isn’t going to cut it. You either slowly bleed out or take a chance that Terrorlightz doesn’t have ulterior motives. 
+The academy only taught you basic first aid and your half-assed attempt at putting your stomach back together isn’t going to cut it. 
+    '''
+    ))
+
+    $LongNVLText(narrator_none, (
+    '''\
+You either slowly bleed out or take a chance that Terrorlightz doesn’t have ulterior motives. 
     '''
     ))
 
@@ -1524,7 +1579,13 @@ He can’t be serious can he? He actually wants to forage for mushrooms?
 
     $LongNVLText(narrator_none, (
     '''\
-You hesitantly follow Terrorlightz outside of the hut. It goes against all of your instincts to trust this stranger, even more so to root around for unknown plants. But he hasn’t killed you yet and he’s had ample opportunities. That’s something, isn’t it? 
+You hesitantly follow Terrorlightz outside of the hut. It goes against all of your instincts to trust this stranger, even more so to root around for unknown plants. 
+    '''
+    ))
+
+    $LongNVLText(narrator_none, (
+    '''\
+But he hasn’t killed you yet and he’s had ample opportunities. That’s something, isn’t it? 
     '''
     ))
 
@@ -1551,7 +1612,13 @@ label path_hut_forage:
 
     $LongNVLText(narrator_none, (
     '''\
-Leaving the confines of your temporary shelter reminds you that you are still on an alien, unfamiliar planet. It felt much too easy to forget where you are–even with Terrorlightz’s jarring presence.
+Leaving the confines of your temporary shelter reminds you that you are still on an alien, unfamiliar planet. 
+    '''
+    ))
+
+    $LongNVLText(narrator_none, (
+    '''\
+It felt much too easy to forget where you are–even with Terrorlightz’s jarring presence.
     '''
     ))
 
@@ -1560,7 +1627,20 @@ Leaving the confines of your temporary shelter reminds you that you are still on
 
     $LongNVLText(narrator_none, (
     '''\
-Stepping out of the hut, the sunlight was blinding. You are forced to squint and throw your hands up to shield your eyes. It must be the start of a new day as the two suns in the sky are much brighter than before. Either you are right and the days here last a long time or the shock from the crash dulled your senses. 
+Stepping out of the hut, the sunlight was blinding. You are forced to squint and throw your hands up to shield your eyes. 
+    '''
+    ))
+
+    $LongNVLText(narrator_none, (
+    '''\
+It must be the start of a new day as the two suns in the sky are much brighter than before. 
+
+    '''
+    ))
+
+    $LongNVLText(narrator_none, (
+    '''\
+Either you are right and the days here last a long time or the shock from the crash dulled your senses. 
     '''
     ))
 
@@ -1578,7 +1658,13 @@ You feel a sudden rush of homesickness. Will you ever be back home? You had crav
 
     $LongNVLText(narrator_none, (
     '''\
-What was it all for? You would have never signed up if you knew you would end up alone, crash landed on a bizarre planet, foraging for–most likely poisonous–mushrooms with an absolute utter madman? 
+What was it all for? 
+    '''
+    ))
+
+    $LongNVLText(narrator_none, (
+    '''\
+You would have never signed up if you knew you would end up alone, crash landed on a bizarre planet, foraging for–most likely poisonous–mushrooms with an absolute utter madman? 
     '''
     ))
 
@@ -1638,7 +1724,13 @@ With resignation, you decide to stick with Terrorlightz. Better than starving.
 
     $LongNVLText(narrator_none, (
     '''\
-You search south of the hut where a clump of tall trees swallow the nearby light, blanketing the floor in almost near darkness. If mushrooms grow similarly here as they did in your home planet, this is most likely where they would grow.
+You search south of the hut where a clump of tall trees swallow the nearby light, blanketing the floor in almost near darkness. 
+    '''
+    ))
+
+    $LongNVLText(narrator_none, (
+    '''\
+If mushrooms grow similarly here as they did in your home planet, this is most likely where they would grow.
     '''
     ))
 
@@ -1849,7 +1941,13 @@ But Terrorlightz didn’t need to know that.
 
     $LongNVLText(narrator_none, (
     '''\
-You feel the hairs on your back raise when you meet his eyes. Behind the emptiness there was a hint of madness that wasn’t there before. The normally disconcerting smile crinkled into something more devious. 
+You feel the hairs on your back raise when you meet his eyes. Behind the emptiness there was a hint of madness that wasn’t there before. 
+    '''
+    ))
+
+    $LongNVLText(narrator_none, (
+    '''\
+The normally disconcerting smile crinkled into something more devious. 
     '''
     ))
 
@@ -1873,7 +1971,13 @@ You feel the hairs on your back raise when you meet his eyes. Behind the emptine
 
     $LongNVLText(narrator_none, (
     '''\
-You start slowly walking backwards as Terrorlightz, much too easily, wipes the dirt off of his pants and moves to stand up. Your hands involuntarily reflex from an unclenched to clenched position as your mind races between fight or flight mode. 
+You start slowly walking backwards as Terrorlightz, much too easily, wipes the dirt off of his pants and moves to stand up. 
+    '''
+    ))
+
+    $LongNVLText(narrator_none, (
+    '''\
+Your hands involuntarily reflex from an unclenched to clenched position as your mind races between fight or flight mode. 
     '''
     ))
 
@@ -1987,7 +2091,13 @@ Why is this planet constantly trying to kill you? It would be nice to have one f
 
     $LongNVLText(narrator_none, (
     '''\
-You feel lightheaded as you suck in air as quickly as you exhale. The humidity in the air feels thick in your lungs, making running a much harder endeavor. Mud spits onto your pants as you slide around the rotund trees, trying to distance yourself from the madman close onto your tail.
+You feel lightheaded as you suck in air as quickly as you exhale. The humidity in the air feels thick in your lungs, making running a much harder endeavor. 
+    '''
+    ))
+
+    $LongNVLText(narrator_none, (
+    '''\
+Mud spits onto your pants as you slide around the rotund trees, trying to distance yourself from the madman close onto your tail.
     '''
     ))
 
@@ -2056,7 +2166,18 @@ Before you can process what was happening, you are being lifted off the ground b
 
     $LongNVLText(terrorlightz.c, (
     '''\
-You struggle against Terrolightz’s fierce grip as he positions you to face him. “You are a difficult one, aren’t you?” You desperately cling onto Terrorlightz’s fierce grip, trying to release yourself, but his strength is inhuman. 
+You struggle against Terrolightz’s fierce grip as he positions you to face him. “You are a difficult one, aren’t you?” 
+    '''
+    ))
+
+    show tll terrorlightz_scary_stay at center:
+        subpixel True alpha 1.0 additive 0.0 
+        matrixcolor InvertMatrix(0.0)*ContrastMatrix(1.5)*SaturationMatrix(1.0)*BrightnessMatrix(0.0)*HueMatrix(0.0) 
+        linear 0.01 matrixcolor InvertMatrix(0.0)*ContrastMatrix(1.5)*SaturationMatrix(1.0)*BrightnessMatrix(0.0)*HueMatrix(0.0)  
+
+    $LongNVLText(terrorlightz.c, (
+    '''\
+You desperately cling onto Terrorlightz’s fierce grip, trying to release yourself, but his strength is inhuman. 
     '''
     ))
 
@@ -2068,7 +2189,13 @@ You struggle against Terrolightz’s fierce grip as he positions you to face him
 
     $LongNVLText(narrator_none, (
     '''\
-Using his available hand, Terrolightz reaches into his pocket to retrieve the mushroom and shows it to you. Somehow, despite the scuffle, it is still perfectly preserved. The pink moss covering the mushroom faintly glows among the intense shade. 
+Using his available hand, Terrolightz reaches into his pocket to retrieve the mushroom and shows it to you. Somehow, despite the scuffle, it is still perfectly preserved. 
+    '''
+    ))
+
+    $LongNVLText(narrator_none, (
+    '''\
+The pink moss covering the mushroom faintly glows among the intense shade. 
     '''
     ))
 
@@ -2122,7 +2249,13 @@ Then suddenly, Terrorlightz, just as easily as he picked you up, drops you to th
 
     $LongNVLText(narrator_none, (
     '''\
-Your consciousness fades as you enter a dream state. Your vision fills with abstract, colorful shapes that gently pulsate and come in and out of focus. You aren’t an individual anymore, you are part of a singularity. 
+Your consciousness fades as you enter a dream state. Your vision fills with abstract, colorful shapes that gently pulsate and come in and out of focus. 
+    '''
+    ))
+
+    $LongNVLText(narrator_none, (
+    '''\
+You aren’t an individual anymore, you are part of a singularity. 
     '''
     ))
 
@@ -2155,7 +2288,13 @@ Your consciousness fades as you enter a dream state. Your vision fills with abst
 
     $LongNVLText(narrator_none, (
     '''\
-Thoughts and feelings that aren’t your own come through all at once in diverse pitch and tone. The senseless gibberish is impossible to describe, but you understand that it is trying to communicate with you. 
+Thoughts and feelings that aren’t your own come through all at once in diverse pitch and tone. 
+    '''
+    ))
+
+    $LongNVLText(narrator_none, (
+    '''\
+The senseless gibberish is impossible to describe, but you understand that it is trying to communicate with you. 
     '''
     ))
 
@@ -2229,7 +2368,19 @@ Wait. Is that your ship?
 
     $LongNVLText(narrator_none, (
     '''\
-You focus closer in on the front console. On the captain's chair, you recognize the cheap, worn black leather with a sharp gash in the back and the rusty gear shifts positioned directly alongside it. After confirming the most familiar part of the ship, you inspect the rest of the vessel. 
+You focus closer in on the front console. 
+    '''
+    ))
+
+    $LongNVLText(narrator_none, (
+    '''\
+On the captain's chair, you recognize the cheap, worn black leather with a sharp gash in the back and the rusty gear shifts positioned directly alongside it. 
+    '''
+    ))
+
+    $LongNVLText(narrator_none, (
+    '''\
+After confirming the most familiar part of the ship, you inspect the rest of the vessel. 
     '''
     ))
 
@@ -2339,7 +2490,13 @@ Jack’s voice changed to a higher, more confident pitch. “Of course, you are 
 
     $LongNVLText(narrator_none, (
     '''\
-Only you know the expression on your face. Self-deprecation. Your crew hated you, you knew that better than anyone. You believe that this must be yet another prank to undermine your authority. 
+Only you know the expression on your face. Self-deprecation. Your crew hated you, you knew that better than anyone. 
+    '''
+    ))
+
+    $LongNVLText(narrator_none, (
+    '''\
+You believe that this must be yet another prank to undermine your authority. 
     '''
     ))
 
@@ -2547,7 +2704,13 @@ You ignore the violent shaking of your legs as you pull yourself up.
 
     $LongNVLText(narrator, (
     '''\
-You snarl, “Those sons of bitches! I won’t let them get away with this.” You violently clutch onto the passing trees as you start running through the thick mud. You have to get back to your ship. 
+You snarl, “Those sons of bitches! I won’t let them get away with this.” You violently clutch onto the passing trees as you start running through the thick mud. 
+    '''
+    ))
+
+    $LongNVLText(narrator, (
+    '''\
+You have to get back to your ship. 
     '''
     ))
 
@@ -2921,7 +3084,19 @@ Using the array of planets and suns above you as an anchoring point, you continu
 
     $LongNVLText(narrator_none, (
     '''\
-Every time you feel like you are making decent progress, the unchanging environment around you reminds you that you aren’t in control of this journey. With no map, no navigation equipment, you only had yourself to reassure you that you are indeed on your way to finding some sort of resources or help. If nothing else, you at least had enough mental fortitude to do that. 
+Every time you feel like you are making decent progress, the unchanging environment around you reminds you that you aren’t in control of this journey. 
+    '''
+    ))
+
+    $LongNVLText(narrator_none, (
+    '''\
+With no map, no navigation equipment, you only had yourself to reassure you that you are indeed on your way to finding some sort of resources or help. 
+    '''
+    ))
+
+    $LongNVLText(narrator_none, (
+    '''\
+If nothing else, you at least had enough mental fortitude to do that. 
     '''
     ))
 
@@ -2930,7 +3105,19 @@ Every time you feel like you are making decent progress, the unchanging environm
 
     $LongNVLText(narrator_none, (
     '''\
-To pass the time, your eyes scan the path for signs of footsteps–either friendly or unfriendly. Disconcertingly, you find neither. The wind hasn’t been that strong, so if someone had passed within the last 24 hours, you should be able to identify at least some remindents or indentations in the sand. But sadly, there was nothing. 
+To pass the time, your eyes scan the path for signs of footsteps–either friendly or unfriendly. Disconcertingly, you find neither. 
+    '''
+    ))
+
+    $LongNVLText(narrator_none, (
+    '''\
+The wind hasn’t been that strong, so if someone had passed within the last 24 hours, you should be able to identify at least some remindents or indentations in the sand. 
+    '''
+    ))
+
+    $LongNVLText(narrator_none, (
+    '''\
+But sadly, there was nothing. 
     '''
     ))
 
@@ -2948,7 +3135,13 @@ Well your situation could be worse, you could be running away from some sort of 
 
     $LongNVLText(narrator_none, (
     '''\
-After a few hours of exploring an endless desert path, you begin to feel weak. Your coughing fits–once rare–are now almost nonstop. In a way to deter the incoming madness from your frail constitution, you start to connect the blood spatters running across your palm for some sort of comfort. 
+After a few hours of exploring an endless desert path, you begin to feel weak. Your coughing fits–once rare–are now almost nonstop. 
+    '''
+    ))
+
+    $LongNVLText(narrator_none, (
+    '''\
+In a way to deter the incoming madness from your frail constitution, you start to connect the blood spatters running across your palm for some sort of comfort. 
     '''
     ))
 
@@ -2987,7 +3180,20 @@ You feel the chill in the air as darkness descends upon the landscape. This day 
 
     $LongNVLText(narrator_none, (
     '''\
-Your vision begins to blur and your body feels immovable. Your face droops first, before your eyelids follow in suit. Soon you find yourself collapsed on the ground, surrounded by nothing but the night sky. Before you lose consciousness, you see in your periphery, the imposing moon that had taunted you earlier today. 
+Your vision begins to blur and your body feels immovable. Your face droops first, before your eyelids follow in suit. 
+    '''
+    ))
+
+    $LongNVLText(narrator_none, (
+    '''\
+Soon you find yourself collapsed on the ground, surrounded by nothing but the night sky. 
+    '''
+    ))
+
+
+    $LongNVLText(narrator_none, (
+    '''\
+Before you lose consciousness, you see in your periphery, the imposing moon that had taunted you earlier today. 
     '''
     ))
 
@@ -3272,13 +3478,13 @@ He taps impatiently with his fingers onto his clipboard as he weighs his options
 
     $LongNVLText(drpsilicon.c, (
     '''\
-“You are in a hospital on the planet Psilicon 5. Due to your subpar piloting, you destroyed a nature preserve. 
+“You are in a hospital on the planet Psilicon 5. Due to your subpar piloting, you destroyed a nature preserve." 
     '''
     ))
 
     $LongNVLText(drpsilicon.c, (
     '''\
-I surely hope you have that ship insured or else you may find yourself in quite the conundrum.” 
+"I surely hope you have that ship insured or else you may find yourself in quite the conundrum.” 
     '''
     ))
 
@@ -4677,7 +4883,13 @@ label path_tavern_heater:
 
     $LongNVLText(narrator_none, (
     '''\
-Centrally placed in the tavern is a giant heater. Ornately decorated in carvings and hanging trinkets, it looms over the tavern’s patrons. You wonder how something that large emitting so much heat hadn’t burned the place down. Maybe it had? 
+Centrally placed in the tavern is a giant heater. Ornately decorated in carvings and hanging trinkets, it looms over the tavern’s patrons. 
+    '''
+    ))
+
+    $LongNVLText(narrator_none, (
+    '''\
+You wonder how something that large emitting so much heat hadn’t burned the place down. Maybe it had? 
     '''
     ))
     jump path_tavern_nav
