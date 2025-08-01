@@ -4007,7 +4007,14 @@ label path_town_alley:
 
     $LongNVLText(narrator_none, (
     '''\
-You wait until Commercial Cris’s silhouette disappears into the crowd before you slip into the empty alleyway. Much like the alleys on your home planet, it is mostly filled with discarded trash and a distinct smell of urine. 
+You wait until Commercial Cris’s silhouette disappears into the crowd before you slip into the empty alleyway. 
+    '''
+    ))
+
+
+    $LongNVLText(narrator_none, (
+    '''\
+Much like the alleys on your home planet, it is mostly filled with discarded trash and a distinct smell of urine. 
     '''
     ))
 
