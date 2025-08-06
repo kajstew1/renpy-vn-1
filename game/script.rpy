@@ -126,7 +126,7 @@ Your breathing is staggered as you move to stand, clutching onto your wounded st
     show protl protag_scared:
         subpixel True pos (-0.2, 0.5)
 
-    $LongNVLText(narrator, (
+    $LongNVLText(narrator_none, (
     '''\
 Your memories were far and few between as your brain hadn’t made sense out of the situation yet. 
     '''
@@ -321,14 +321,14 @@ With no food, no water, and only the clothes on your back, you look towards the 
     show protl protag_scared_stay:
         pos (-0.2, 0.5) 
 
-    $LongNVLText(narrator, (
+    $LongNVLText(narrator_none, (
     '''\
 You had trekked up the worn, uneven path in front of you. It was disconcerting as it appeared as though it hadn’t been used in half of a century. 
     '''
     ))
 
 
-    $LongNVLText(narrator, (
+    $LongNVLText(narrator_none, (
     '''\
 But seeming as though you had no other option, you continued onward, desperately hoping for a sign of civilization or at least another living being. 
     '''
@@ -472,7 +472,7 @@ You decide to take a look around before you make your decision.
 label crash_fork_menu:
     $config.menu_include_disabled = False
     menu: 
-        "Do you take the right or left path?"
+        narrator_none "Do you take the right or left path?"
         "Left...":
             # if (persistent.path_to_outskirts_taken == False or persistent.path_to_tavern_taken == False):
             #show screen evt_choose_path
@@ -3001,7 +3001,7 @@ Your eyes land on the seemingly safer option. The two suns and neighboring plane
 
     $LongNVLText(narrator_none, (
     '''\
-The right path scared you. It called to you like a siren in turbulent waters, inviting you in with a sweet song."
+The right path scared you. It called to you like a siren in turbulent waters, inviting you in with a sweet song.
     '''
     ))
 
@@ -4018,7 +4018,7 @@ Much like the alleys on your home planet, it is mostly filled with discarded tra
     '''
     ))
 
-    show bg_townalley at my_walking with dissolve
+    show bg_townalley at my_walking_focused with dissolve
 
 # (Effect - screen bouncing up and down slowly, walking...)
     $LongNVLText(narrator_none, (
