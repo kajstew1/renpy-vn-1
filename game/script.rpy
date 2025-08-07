@@ -919,7 +919,7 @@ You hear screams coming outside of the narrow gap. You made it. You were safe! Y
     show protl protag_lookup_breathing_stay:
         subpixel True pos (-0.2, 0.5)
         
-    $LongNVLText(narrator, (
+    $LongNVLText(narrator_none, (
     '''\
 You only feel a little curious to know what kind of creature you had just barely outran, but not enough to peer through the opening to find out. 
     '''
@@ -1119,7 +1119,7 @@ Once you feel certain that no one is inside, you slowly and carefully pull the c
     show protl protag_lookup_breathing_stay:
         subpixel True pos (-0.2, 0.5)
 
-    $LongNVLText(narrator, (
+    $LongNVLText(narrator_none, (
     '''\
 You notice the rotted wood as it had caved in from persistent pooling water and miscellaneous junk littered all around. 
     '''
@@ -1176,12 +1176,12 @@ As you drift off to sleep you believe that maybe your situation isn’t so bad a
     #    blur 0.0 
     hide protl protag_breathing  with dissolve
 
-    show bg_hut:
+    show bg_insidehut:
         subpixel True 
         blur 0.0 
         linear 2.0 blur 15.0 
     with Pause(1.00)
-    show bg_hut:
+    show bg_insidehut:
         blur 15.0 
 
     # out_eye transition in definitions.rpy
@@ -1297,7 +1297,7 @@ To further punctuate his ominous presence, smoke continuously emanates out from 
         matrixcolor InvertMatrix(0.0)*ContrastMatrix(1.5)*SaturationMatrix(1.0)*BrightnessMatrix(0.0)*HueMatrix(0.0) 
         linear 0.01 matrixcolor InvertMatrix(0.0)*ContrastMatrix(1.5)*SaturationMatrix(1.0)*BrightnessMatrix(0.0)*HueMatrix(0.0)  
 
-    $LongNVLText(terrorlightz.c, (
+    $LongNVLText(narrator_none, (
     '''\
 The ghastly alien cackles at your response. His sharp, pointed teeth glint in the light as he thrusts his head back. 
     '''
@@ -1321,7 +1321,7 @@ The ghastly alien cackles at your response. His sharp, pointed teeth glint in th
         linear 0.01 matrixcolor InvertMatrix(0.0)*ContrastMatrix(1.5)*SaturationMatrix(1.0)*BrightnessMatrix(0.0)*HueMatrix(0.0)  
 
 
-    $LongNVLText(terrorlightz.c, (
+    $LongNVLText(narrator_none, (
     '''\
 Returning his gaze to you, he gives you a half smirk. 
     '''
@@ -1431,7 +1431,7 @@ You are careful with your words. You don’t trust this stranger. He was excepti
         matrixcolor InvertMatrix(0.0)*ContrastMatrix(1.5)*SaturationMatrix(1.0)*BrightnessMatrix(0.0)*HueMatrix(0.0) 
         linear 0.01 matrixcolor InvertMatrix(0.0)*ContrastMatrix(1.5)*SaturationMatrix(1.0)*BrightnessMatrix(0.0)*HueMatrix(0.0)  
 
-    $LongNVLText(terrorlightz.c, (
+    $LongNVLText(narrator_none, (
     '''\
 His eyes slit, his voice drawing out every word. 
     '''
@@ -1899,7 +1899,7 @@ You gulp. You definitely should have run when you had the chance.
     show protl protag_mad_breathing:
         subpixel True pos (-0.2, 0.5)
 
-    $LongNVLText(terrorlightz.c, (
+    $LongNVLText(narrator_none, (
     '''\
 Sweat beads your forehead as you contemplate your available options. 
     '''
@@ -1909,7 +1909,7 @@ Sweat beads your forehead as you contemplate your available options.
     show protl protag_talking:
         subpixel True pos (-0.2, 0.5)
 
-    $LongNVLText(narrator_none, (
+    $LongNVLText(narrator, (
     '''\
 “I appreciate the offer, but I think I’m okay,” you say, patting your stomach wound gently. “A few more nights rest and I’ll be good as new.” 
     '''
@@ -2219,7 +2219,7 @@ Your eyes grow wide when you realize that you don’t have a choice in this matt
         linear 0.01 matrixcolor InvertMatrix(0.0)*ContrastMatrix(1.5)*SaturationMatrix(1.0)*BrightnessMatrix(0.0)*HueMatrix(0.0)  
     window auto hide
 
-    $LongNVLText(terrorlightz.c, (
+    $LongNVLText(narrator_none, (
     '''\
 With a final cackle, Terrorlightz shoves the mushroom into your mouth, holding it closed until you finally swallow. 
     '''
@@ -4219,7 +4219,7 @@ She takes a few moments to examine you. After she is satisfied, she smirks at yo
     ))
 
     show mswl myst_s_woman_breathing with dissolve
-    $LongNVLText(mysteryspacewoman.c, (
+    $LongNVLText(narrator_none, (
     '''\
 Her face–composed of soft, feminine features–produces an empathetic smile. A gentle, melodic voice breaks through the silence. 
     '''
@@ -4256,7 +4256,7 @@ Smiling back awkwardly, you say, “You could say that. I’m new here and got s
 
     show mswl myst_s_woman_giggle
 
-    $LongNVLText(mysteryspacewoman.c, (
+    $LongNVLText(narrator_none, (
     '''\
 Her eyes widen slightly as she brings her slender hand towards her mouth. 
     '''
@@ -4276,7 +4276,7 @@ Her eyes widen slightly as she brings her slender hand towards her mouth.
 
     show mswl myst_s_woman_breathing
 
-    $LongNVLText(narrator, (
+    $LongNVLText(narrator_none, (
     '''\
 Feigning embarrassment, you look downward, clutching the back of your neck. 
     '''
@@ -4295,7 +4295,7 @@ Feigning embarrassment, you look downward, clutching the back of your neck.
         subpixel True pos (-0.2, 0.5) 
 
     show mswl myst_s_woman_breathing
-    $LongNVLText(mysteryspacewoman.c, (
+    $LongNVLText(narrator_none, (
     '''\
 She cocked her head and frowned disapprovingly. 
     '''
@@ -4314,7 +4314,7 @@ She cocked her head and frowned disapprovingly.
 
     show mswl myst_s_woman_breathing
 
-    $LongNVLText(narrator, (
+    $LongNVLText(narrator_none, (
     '''\
 You could believe that. An elegant alien like her walking by herself down the wrong street would make her a bigger target than even you–and you aren’t even from this planet. 
     '''
@@ -4349,7 +4349,7 @@ Where are you going? Do they have an immigration center here for unfortunate, lo
     '''
     ))
 
-    $LongNVLText(narrator, (
+    $LongNVLText(narrator_none, (
     '''\
 After a few moments of pondering, you make up your mind. 
     '''
@@ -4366,7 +4366,7 @@ After a few moments of pondering, you make up your mind.
 
     show protl protag_lookup_breathing_stay:
         subpixel True pos (-0.2, 0.5) 
-    $LongNVLText(narrator, (
+    $LongNVLText(narrator_none, (
     '''\
 Maybe you could hitch a ride on the next spaceship heading towards your galaxy. 
     '''
@@ -4375,7 +4375,7 @@ Maybe you could hitch a ride on the next spaceship heading towards your galaxy.
     show protl protag_lookup_breathing_stay:
         subpixel True pos (-0.2, 0.5) 
     
-    $LongNVLText(narrator, (
+    $LongNVLText(narrator_none, (
     '''\
 You had valuable navigation skills so you could feasibly trade your services for a ride. 
     '''
@@ -4385,7 +4385,7 @@ You had valuable navigation skills so you could feasibly trade your services for
         subpixel True pos (-0.2, 0.5) 
 
     show mswl myst_s_woman_giggle
-    $LongNVLText(mysteryspacewoman.c, (
+    $LongNVLText(narrator_none, (
     '''\
 She giggles. 
     '''
@@ -4401,7 +4401,7 @@ She giggles.
 
     show mswl myst_s_woman_breathing
 
-    $LongNVLText(mysteryspacewoman.c, (
+    $LongNVLText(narrator_none, (
     '''\
 She cups her face with her palm as she purses her lips and looks off into the distance. 
     '''
@@ -4473,7 +4473,7 @@ Is she lost? You hope not. She’s your only hope to get off of this god-forsake
     '''
     ))
 
-    $LongNVLText(narrator, (
+    $LongNVLText(narrator_none, (
     '''\
 You clear your throat as you make another sharp turn. Finally, she lets go of your hand. Unsurprisingly, it looks just as uninviting as the last. 
     '''
@@ -4493,7 +4493,7 @@ You clear your throat as you make another sharp turn. Finally, she lets go of yo
     show protl protag_lookup_breathing_stay:
         subpixel True pos (-0.2, 0.5) 
 
-    $LongNVLText(mysteryspacewoman.c, (
+    $LongNVLText(narrator_none, (
     '''\
 You hear her giggle softly next to you. 
     '''
