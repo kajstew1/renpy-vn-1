@@ -456,7 +456,7 @@ image tll = MyLive2D("images/terrorlightz_motions", default_fade=0.0, top=0.0, b
 
 
 #introduced in Scene 3b seems to be the protl side character
-define drpsilicon =  Actor(Character("Dr. Psilicon", who_color="9EFB65", what_color="#8ac924"), "Dr. Psilicon")
+define drpsilicon =  Actor(Character("Dr. Psilicon", color="#8ac924"), "Dr. Psilicon")
 
 image drp_motions = MyLive2D("images/dr_p_motions", default_fade=0.0, loop=True, fallback="dr_p casual talking")
 image drpl = MyLive2D("images/dr_p_motions", default_fade=0.0, top=0.0, base=1.0, height=1.0, loop=True, fallback="drp casual talking")

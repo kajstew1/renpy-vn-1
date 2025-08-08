@@ -4,6 +4,7 @@
 label start:
     camera:
         perspective True
+
     #scene black 
     #with Pause(1)
     #show mytext "Dr. Psilicon Presents......" with dissolve
@@ -21,12 +22,13 @@ label start:
 
 label path_char_customization:
     scene black 
-
+    hide protl
     call screen screen_customization_nav
 #    jump path_choose_char  # in unusedcode.rpy
 
 
 # called from eventscreens.rpy:screen screen_customization_nav
+hide protl
 label set_customization_he_vars:
     $ pronouns = "He/Him"
     $ pronoun1 = "he"
@@ -2924,6 +2926,8 @@ That’s it. You are stuck on a godforsaken planet with only a useless ship to y
     ))
     scene black
     hide bg_escapepod with dissolve
+    camera:
+        matrixcolor None
     jump game_over
 
 
