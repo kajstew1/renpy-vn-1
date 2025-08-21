@@ -5225,7 +5225,7 @@ Nervously, you look towards your guide who seems utterly amused by this new deve
     show ccl cc_amused_smug_breathing:
             subpixel True additive 0.0 matrixcolor InvertMatrix(0.0)*ContrastMatrix(1.5)*SaturationMatrix(1.75)*BrightnessMatrix(0.0)*HueMatrix(0.0) blend None
 
-    $LongNVLText(commercialcris.c, (
+    $LongNVLText(narrator_none, (
     '''\
 With one hand on the table balancing the tv screen, he motions with his free hand towards the noise. 
     '''
